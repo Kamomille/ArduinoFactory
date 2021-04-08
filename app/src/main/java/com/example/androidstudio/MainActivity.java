@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Page_Contact.class);
         startActivity(intent);
     }
-    public void openActivtity_parametre(){
+    public void openActivtity_parametre() {
         Intent intent = new Intent(this, Page_Parametre.class);
         startActivity(intent);
     }
