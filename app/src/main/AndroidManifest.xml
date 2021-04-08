@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androidstudio">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Arduino Factory"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidStudio">
+        <activity android:name=".pages.achat_version2"></activity>
+        <activity android:name=".pages.Page_Favoris" />
+        <activity android:name=".achat.Achat" />
+        <activity
+            android:name=".pages.Page_Parametre"
+            android:label="Paramètre" />
+        <activity
+            android:name=".contact.Contactez_nous"
+            android:label="Contactez-nous" />
+        <activity android:name=".Page_Internet" />
+        <activity
+            android:name=".contact.A_propos"
+            android:label="A propos" />
+        <activity
+            android:name=".pages.Page_Achat"
+            android:label="Achat" />
+        <activity
+            android:name=".pages.Page_Contact"
+            android:label="Contact" />
+        <activity
+            android:name=".pages.Page_Cours"
+            android:label="Cours" />
+        <activity
+            android:name=".outils.Outils_telecommande"
+            android:label="Télécommande" />
+        <activity
+            android:name=".outils.Outils_resistance"
+            android:label="Résistance" />
+        <activity
+            android:name=".pages.Page_Outils"
+            android:label="Outils" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Arduino Factory">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

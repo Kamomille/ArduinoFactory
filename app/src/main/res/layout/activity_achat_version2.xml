@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.achat_version2">
+
+     <!-- Scrollview permet de faire défiler la page-->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+        <!-- Les linearLayout verticale permettent de maintenir le text et image dans le bon ordre-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- La barre de recherche-->
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search Version"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.34"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.096">
+
+                </SearchView>
+                <!-- La liste proposé par la barre de recherche-->
+                <ListView
+                    android:id="@+id/list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="138dp"
+                    android:layout_below="@id/searchView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.318"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.176"></ListView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="vertical">
+                <!-- Texte A acheter pour bien débuter-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="A acheter pour bien débuter  "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+            <!-- Les images boutons de kit elegoo et carte arduino-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_kit_elegoo"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_kit" />
+
+                <ImageView
+                    android:id="@+id/Carte_arduino"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_carte_arduino" />
+
+            </LinearLayout>
+            <!-- Les  boutons de kit elegoo et carte arduino-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Elegoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Kit Elegoo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/carte_arduino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Carte Arduino"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:text="blabla"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Les Capteurs  "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

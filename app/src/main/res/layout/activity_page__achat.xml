@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4FCFE"
+    tools:context=".pages.Page_Achat">
+
+     <!-- Scrollview permet de faire défiler la page-->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+        <!-- Les linearLayout verticale permettent de maintenir le text et image dans le bon ordre-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="466dp"
+                android:layout_height="56dp"
+                android:orientation="vertical">
+                 <!-- Affiche la ligne Achat-->
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Achat "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+                <!-- Permet d'afficher la barre en dessous d'achat-->
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/barre" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- La barre de recherche-->
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search Version"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.34"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.096">
+
+                </SearchView>
+                <!-- La liste proposé par la barre de recherche-->
+                <ListView
+                    android:id="@+id/list_view"
+                    android:layout_width="323dp"
+                    android:layout_height="138dp"
+                    android:layout_below="@id/searchView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.318"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.176"></ListView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="466dp"
+                android:layout_height="56dp"
+                android:orientation="vertical">
+                <!-- Texte A acheter pour bien débuter-->
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A acheter pour bien débuter  "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/barre" />
+
+            </LinearLayout>
+            <!-- Les images boutons de kit elegoo et carte arduino-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_kit_elegoo"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_kit" />
+
+                <ImageView
+                    android:id="@+id/Carte_arduino"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_carte_arduino" />
+
+            </LinearLayout>
+            <!-- Les  boutons de kit elegoo et carte arduino-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Elegoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Kit Elegoo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/carte_arduino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Carte Arduino"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Les Capteurs  "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/barre" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+            <!-- Les  images boutons de capteur de distance et bouton poussoir-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_capteur_distance"
+                    android:layout_width="287dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_distance" />
+                <ImageView
+                    android:id="@+id/image_bouton_poussoir"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_bouton" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="466dp"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+                <!-- Les  boutons de capteur de distance et bouton poussoir-->
+                <Button
+                    android:id="@+id/capteur_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Capteur distance"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/bouton_poussoir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Bouton poussoir "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de Joystick et capteur de son-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Joystick"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_joystick" />
+
+                <ImageView
+                    android:id="@+id/Capteur_son"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_capteur_son" />
+            </LinearLayout>
+            <!-- Les boutons de joystick et capteur de son-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/joystick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Joystick"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/capteur_son"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Capteur son "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de buzzer et Shock-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Buzzer"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_buzzer" />
+
+                <ImageView
+                    android:id="@+id/Shock"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_shock" />
+            </LinearLayout>
+            <!-- Les boutons de Buzzer et shock-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buzzer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Buzzer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/shock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Shock "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de Photorésistance et Humidité-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Photoresistance"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_photoresistance" />
+
+                <ImageView
+                    android:id="@+id/Humidite"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_humidite" />
+            </LinearLayout>
+            <!-- Les boutons de photorésistance et humidité-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/photoresistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Photorésistance"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/humidite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Capteur Température "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+
+            <!-- Texte et barre Les cartes-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Les cartes"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/barre" />
+            </LinearLayout>
+            <!-- Les  images boutons de carte arduino et carte motorshield-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Carte_arduino2"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_carte_arduino" />
+
+                <ImageView
+                    android:id="@+id/image_motorshield"
+                    android:layout_width="185dp"
+                    android:layout_height="109dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_motorshield" />
+            </LinearLayout>
+            <!-- Les boutons de carte arduino et carte motorshield-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/carte_arduino2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Carte Arduino"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/Motorshield"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Motorshield "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de carte mega et carte nano-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Carte_mega"
+                    android:layout_width="150dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_carte_mega" />
+
+                <ImageView
+                    android:id="@+id/Carte_nano"
+                    android:layout_width="185dp"
+                    android:layout_height="109dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_carte_nano" />
+
+            </LinearLayout>
+            <!-- Les  boutons de carte mega et carte nano-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/carte_mega"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Carte Mega"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/carte_nano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Carte Nano "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de raspberry et kit raspberry-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Raspberry"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_raspberry" />
+
+                <ImageView
+                    android:id="@+id/Kit_raspberry"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_kit_raspberry" />
+            </LinearLayout>
+            <!-- Les boutons de raspberry et kit raspberry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/raspberry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Raspberry"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/kit_raspberry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Kit Raspberry "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+            </LinearLayout>
+            <!-- On affiche le text Soudure et l'image barre-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Text_Soudure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Soudure"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/barre" />
+            </LinearLayout>
+            <!-- Les  images  Machine à souder et l'étain-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Machine_souder"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_machine_soudure" />
+
+                <ImageView
+                    android:id="@+id/Etain"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_etain" />
+
+
+            </LinearLayout>
+            <!-- Les boutons de machine à souder et étain-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/machine_souder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Machine souder"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/etain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Etain"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons de kit soudure et dénudeur-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Kit_soudure"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_kit_soudure" />
+
+                <ImageView
+                    android:id="@+id/Denudeur"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_pince_soudure" />
+            </LinearLayout>
+            <!-- Les boutons de kit soudure et dénudeur-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/kit_soudure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Kit Soudure"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/denudeur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Denudeur"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Le texte moteur et la barre en dessous-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Text_Moteur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Moteur"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/barre" />
+            </LinearLayout>
+            <!-- Les  images boutons moteur dc et servomoteur-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_moteur_dc"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_moteur_dc" />
+
+                <ImageView
+                    android:id="@+id/image_servomoteur"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_servomoteur" />
+            </LinearLayout>
+            <!-- Les  boutons moteur dc et servomoteur-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/moteur_dc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Moteur DC"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/servomoteur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Servomoteur"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Texte autre et barre grise en dessous-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Autre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Autre"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#0B789C"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/barre" />
+            </LinearLayout>
+            <!-- Les  images boutons resistance et led-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_resistance"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_resistance" />
+
+                <ImageView
+                    android:id="@+id/image_led"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_led" />
+            </LinearLayout>
+            <!-- Les boutons resistance et led-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/resistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Resistance"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Led "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons breadboard et Prototype-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Breadboard"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_breadboard" />
+
+                <ImageView
+                    android:id="@+id/Prototype"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/prototype" />
+
+            </LinearLayout>
+            <!-- Les boutons breadboard et led-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/breadboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Breadboard"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/prototype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Prototype "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+            <!-- Les  images boutons module wifi et module bluetooth-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Module_wifi"
+                    android:layout_width="178dp"
+                    android:layout_height="102dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_module_wifi" />
+
+                <ImageView
+                    android:id="@+id/Module_bluetooth"
+                    android:layout_width="124dp"
+                    android:layout_height="144dp"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/achat_module_bluetooth" />
+            </LinearLayout>
+            <!-- Les boutons module wifi et module bluetooth-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/module_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Module Wifi"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+
+                <Button
+                    android:id="@+id/module_bluetooth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Module Bluetooth "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:backgroundTint="#0B789C"
+                    app:cornerRadius="50sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4FCFE"
+    tools:context=".outils.Outils_resistance">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:text=" Calcul Résistance"
+        android:textAlignment="center"
+        android:textColor="#0B789C"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".... Ohm"
+        android:textColor="#0B789C"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002" />
+
+    <TextView
+        android:id="@+id/textView_TCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TCR"
+        android:textColor="#0B789C"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="365dp"
+        android:layout_height="142dp"
+        android:src="@drawable/outils_resistance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="404dp"
+        android:layout_height="198dp"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999">
+
+        <LinearLayout
+            android:id="@+id/bande1"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH1"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor1"
+
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB1"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande2"
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH2"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor2"
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB2"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande3"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH3"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor3"
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB3"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande4"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor4"
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande5"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH5"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor5"
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB5"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande6"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor6"
+                android:layout_width="25dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="#F4FCFE"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/boutonInfo"
+        android:layout_width="75dp"
+        android:layout_height="62dp"
+        android:clickable="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/outils_info"
+        app:backgroundTint="#F4FCFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tt"
+        android:layout_width="341dp"
+        android:layout_height="55dp"
+        android:background="#F4FCFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001"
+        app:tabIndicatorColor="#0B789C"
+        app:tabSelectedTextColor="#0B789C"
+        app:tabTextColor="#B3B3B3">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 anneaux" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 anneaux" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 anneaux" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPaletteCouleur"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799">
+        <!-- android:visibility="invisible" -->
+
+        <LinearLayout
+
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:background="#D9E8EC"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/carreCouleur_1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000"
+                app:backgroundTint="#000000" />
+
+            <Button
+                android:id="@+id/carreCouleur_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#CC6633"
+                app:backgroundTint="#CC6633" />
+
+            <Button
+                android:id="@+id/carreCouleur_3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#FE0000"
+                app:backgroundTint="#FE0000" />
+
+            <Button
+                android:id="@+id/carreCouleur_4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#FE8000"
+                app:backgroundTint="#FE8000" />
+
+            <Button
+                android:id="@+id/carreCouleur_5"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#FEFE00"
+                app:backgroundTint="#FEFE00" />
+
+            <Button
+                android:id="@+id/carreCouleur_6"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#00EA00"
+                app:backgroundTint="#00EA00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="65dp"
+            android:background="#D9E8EC"
+            android:orientation="horizontal">
+            <!-- android:visibility="invisible" -->
+
+            <Button
+                android:id="@+id/carreCouleur_7"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#0000FE"
+                app:backgroundTint="#0000FE" />
+
+            <Button
+                android:id="@+id/carreCouleur_8"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#8000FE"
+                app:backgroundTint="#8000FE" />
+
+            <Button
+                android:id="@+id/carreCouleur_9"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#999999"
+                app:backgroundTint="#999999" />
+
+            <Button
+                android:id="@+id/carreCouleur_10"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                app:backgroundTint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/carreCouleur_11"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#CCCCCC"
+                app:backgroundTint="#CCCCCC" />
+
+            <Button
+                android:id="@+id/carreCouleur_12"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFD700"
+                app:backgroundTint="#FFD700" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nomBande"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:text="1er chiffre significatif"
+            android:textColor="#0B789C"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.082" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:alpha="0.9"
+        android:background="#0B789C"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987">
+
+        <ImageButton
+            android:id="@+id/buttonCroix"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="right"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/outils_croix" />
+
+        <TextView
+            android:id="@+id/textResistance"
+            android:layout_width="294dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Dans quel sens se trouve la résistance ? En général, la résistance a un anneau doré ou argenté, qu'il faut placer à droite. Sinon, c'est l'anneau le plus large qu'il faut placer à droite."
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
