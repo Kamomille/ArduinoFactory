@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F4FCFE"
     tools:context=".contact.A_propos">
-
+    //AAAAAAAA
 
     <LinearLayout
         android:layout_width="match_parent"
