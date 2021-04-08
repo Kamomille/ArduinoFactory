@@ -11,7 +11,7 @@ public class Page_Cours extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page__cours);
+        setContentView(R.layout.activity_page__menu_cours);
 
     }
 }

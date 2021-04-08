@@ -30,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        buttonOutils= findViewById(R.id.buttonOutils);
+        buttonCours= findViewById(R.id.buttonCours);
+        buttonAchat= findViewById(R.id.buttonAchat);
+        buttonContact= findViewById(R.id.buttonContacter);
+        imageOutils= findViewById(R.id.imageOutils);
+        imageOutils= findViewById(R.id.imageCours);
+        imageOutils= findViewById(R.id.imageAchat);
+        imageOutils= findViewById(R.id.imageContacter);
+
+
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -68,44 +79,22 @@ public class MainActivity extends AppCompatActivity {
 
         // Pour faire fonctionner les boutons et les imageBoutons -----------------------------------------------
 
-        buttonOutils = (Button) findViewById(R.id.buttonOutils);
-        buttonOutils.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outils(); } } );
-
-        buttonCours = (Button) findViewById(R.id.buttonCours);
-        buttonCours.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_cours(); } } );
-
-        buttonAchat = (Button) findViewById(R.id.buttonAchat);
-        buttonAchat.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_achat(); } } );
-
-        buttonContact = (Button) findViewById(R.id.buttonContact);
-        buttonContact.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_contact(); } } );
-
-        buttonParametre = (ImageButton) findViewById(R.id.buttonParametre);
-        buttonParametre.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_parametre(); } } );
-
-        imageOutils = (ImageButton) findViewById(R.id.imageOutils);
-        imageOutils.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outils(); } } );
-
-        imageCours = (ImageButton) findViewById(R.id.imageCours);
-        imageCours.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_cours(); } } );
-
-        imageAchat = (ImageButton) findViewById(R.id.imageAchat);
-        imageAchat.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_achat(); } } );
-
-        imageContact = (ImageButton) findViewById(R.id.imageContact);
-        imageContact.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_contact(); } } );
-
+}
+    public void onClickOutils (View view){
+        openActivtity_outils();
     }
-
+    public void onClickCours (View view){
+        openActivtity_cours();
+    }
+    public void onClickAchat (View view){
+        openActivtity_achat();
+    }
+    public void onClickContacter (View view){
+        openActivtity_contacter();
+    }
+    public void onClickParametre (View view){
+        openActivtity_parametre();
+    }
     public void openActivtity_outils(){
         Intent intent = new Intent(this, Page_Outils.class);
         startActivity(intent);
@@ -118,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, achat_version2.class);
         startActivity(intent);
     }
-    public void openActivtity_contact(){
+    public void openActivtity_contacter(){
         Intent intent = new Intent(this, Page_Contact.class);
         startActivity(intent);
     }
@@ -126,5 +115,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Page_Parametre.class);
         startActivity(intent);
     }
-
 }
+
+
+

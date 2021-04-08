@@ -14,27 +14,15 @@
         android:layout_marginBottom="4dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
     <ImageView
-        android:id="@+id/imagegrey"
-        android:layout_width="808dp"
-        android:layout_height="234dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/grey2" />
-
-    <ImageView
         android:id="@+id/imagefond"
-        android:layout_width="737dp"
-        android:layout_height="281dp"
+        android:layout_width="833dp"
+        android:layout_height="296dp"
         android:layout_marginBottom="508dp"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
@@ -43,19 +31,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.388"
         app:srcCompat="@drawable/fond" />
 
     <ImageView
         android:id="@+id/imagelogo"
-        android:layout_width="121dp"
-        android:layout_height="66dp"
+        android:layout_width="198dp"
+        android:layout_height="87dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
     <fragment
@@ -75,62 +64,41 @@
 
     <ImageButton
         android:id="@+id/buttonParametre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="59dp"
+        android:layout_height="57dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"
-        app:srcCompat="@drawable/engrenage"
-        android:onClick="onClickParametre"/>
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/engrenage" />
 
     <ImageButton
-        android:id="@+id/imageCours"
+        android:id="@+id/ImageCours"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:background="#00F4FCFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.367"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
-        app:srcCompat="@drawable/livres"
-        android:onClick="onClickCours"/>
-
-    <Button
-        android:id="@+id/buttonCours"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Cours"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:backgroundTint="#E8053768"
-        app:cornerRadius="50dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574"
-        android:onClick="onClickCours"/>
+        app:srcCompat="@drawable/livres" />
 
     <ImageButton
-        android:id="@+id/imageContacter"
-        android:layout_width="110dp"
-        android:layout_height="115dp"
+        android:id="@+id/ImageContacter"
+        android:layout_width="103dp"
+        android:layout_height="101dp"
         android:background="#00F4FCFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761"
-        app:srcCompat="@drawable/contacter"
-        android:onClick="onClickContacter"/>
+        app:layout_constraintVertical_bias="0.518"
+        app:srcCompat="@drawable/contacter" />
 
     <Button
         android:id="@+id/buttonContacter"
@@ -143,25 +111,23 @@
         app:cornerRadius="50dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857"
-        android:onClick="onClickContacter"/>
+        app:layout_constraintVertical_bias="0.74" />
 
     <ImageButton
-        android:id="@+id/imageOutils"
-        android:layout_width="113dp"
-        android:layout_height="109dp"
+        android:id="@+id/ImageOutils"
+        android:layout_width="97dp"
+        android:layout_height="104dp"
         android:background="#00F4FCFE"
         app:layout_constraintBottom_toBottomOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477"
-        app:srcCompat="@drawable/outil"
-        android:onClick="onClickOutils"/>
+        app:layout_constraintVertical_bias="0.519"
+        app:srcCompat="@drawable/outil" />
 
     <Button
         android:id="@+id/buttonOutils"
@@ -174,25 +140,23 @@
         app:cornerRadius="50dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574"
-        android:onClick="onClickOutils"/>
+        app:layout_constraintVertical_bias="0.74" />
 
     <ImageButton
-        android:id="@+id/imageAchat"
+        android:id="@+id/ImageAchat"
         android:layout_width="106dp"
         android:layout_height="108dp"
         android:background="#00F4FCFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764"
-        app:srcCompat="@drawable/panier"
-        android:onClick="onClickAchat"/>
+        app:layout_constraintVertical_bias="0.508"
+        app:srcCompat="@drawable/panier" />
 
     <Button
         android:id="@+id/buttonAchat"
@@ -205,11 +169,26 @@
         app:cornerRadius="50dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857"
-        android:onClick="onClickAchat"/>
+        app:layout_constraintVertical_bias="0.74" />
+
+    <Button
+        android:id="@+id/buttonCours"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Cours"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:backgroundTint="#E8053768"
+        app:cornerRadius="50dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
