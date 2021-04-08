@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonOutils, buttonCours, buttonAchat, buttonContact;
     private ImageButton buttonParametre, imageOutils, imageCours, imageAchat, imageContact;
 
-    // Pour gérer les fragment (dasboard, home, notif) -------------------------------------------------------MOI88
+    // Pour gérer les fragment (dasboard, home, notif) -------------------------------------------------------NNN
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
