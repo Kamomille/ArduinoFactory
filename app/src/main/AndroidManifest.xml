@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name=".pages.achat_version2"></activity>
+        <activity android:name=".outils.Outils_telecommande_Bluetooth"></activity>
+        <activity android:name=".pages.achat_version2" />
         <activity android:name=".pages.Page_Favoris" />
         <activity
             android:name=".pages.Page_Parametre"
@@ -38,9 +39,6 @@
         <activity
             android:name=".pages.Page_Cours"
             android:label="Cours" />
-        <activity
-            android:name=".outils.Outils_telecommande"
-            android:label="Télécommande" />
         <activity
             android:name=".outils.Outils_resistance"
             android:label="Résistance" />
