@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.androidstudio.R;
 
@@ -58,6 +59,10 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_telecommande__bluetooth);
+        ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande_bluetooth);
+        viewFlipper.setDisplayedChild(2);
+        //viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
         ckb_led1 = (CheckBox) findViewById(R.id.CKB_LED);
@@ -162,8 +167,8 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
                     }
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    //openbouton_telecommande();
-
+                    ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande_bluetooth);
+                    viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
                 }

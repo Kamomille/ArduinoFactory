@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/outil_telecommande_bluetooth"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,15 +29,6 @@
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/barre" />
-        <Button
-            android:id="@+id/Led"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="Led"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            app:backgroundTint="#0B789C"
-            app:cornerRadius="50sp" />
 
         <ListView
             android:id="@+id/LV_DEVLIST"
@@ -50,5 +42,47 @@
             android:divider="@android:color/holo_blue_dark"
             android:dividerHeight="5dp" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/outil_telecommande_manette"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- Permet d'afficher la barre en dessous de Bluetooth-->
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Telecommande"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#0B789C"
+            android:textSize="25sp" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/barre" />
+        <CheckBox
+            android:id="@+id/CKB_LED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LV_DEVLIST"
+            android:layout_marginTop="30dp"
+            android:onClick="ledcommand"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="LED" />
+        <Button
+            android:id="@+id/Led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Led"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:backgroundTint="#0B789C"
+            app:cornerRadius="50sp" />
+
+    </LinearLayout>
+
+</ViewFlipper>
