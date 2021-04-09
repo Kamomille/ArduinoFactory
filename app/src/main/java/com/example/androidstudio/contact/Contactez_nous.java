@@ -1,15 +1,19 @@
 package com.example.androidstudio.contact;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.androidstudio.R;
+import com.example.androidstudio.pages.Page_Contact;
+import com.example.androidstudio.pages.Page_Outils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +25,14 @@ public class Contactez_nous extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactez_nous);
+
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+
         // champs de texte dans le formulaire de contact
         final EditText your_first_name  = (EditText) findViewById(R.id.your_first_name);
         final EditText your_name        = (EditText) findViewById(R.id.your_name);
@@ -94,5 +106,13 @@ public class Contactez_nous extends AppCompatActivity {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    // Permet de retourner à la page contact
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), Page_Contact.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+    }
+
 }
 

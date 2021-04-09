@@ -1,5 +1,6 @@
 package com.example.androidstudio;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -7,11 +8,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.example.androidstudio.pages.Page_Contact;
+import com.example.androidstudio.pages.Page_Outils;
 
 
 public class Page_Internet extends AppCompatActivity {
@@ -25,6 +29,13 @@ public class Page_Internet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__internet);
+
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         webview=(WebView) findViewById(R.id.webview);
         WebSettings settings =webview.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -164,6 +175,13 @@ public class Page_Internet extends AppCompatActivity {
             Log.e("Myapp", "Error: " + description);
             Toast.makeText(getApplicationContext(), "Erreur: "+description, Toast.LENGTH_LONG).show();
         }
+    }
+
+    // Permet de retourner à la page contact
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), Page_Contact.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 
 }

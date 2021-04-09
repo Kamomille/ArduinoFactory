@@ -1,10 +1,12 @@
 package com.example.androidstudio.pages;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +16,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
 
@@ -109,6 +112,13 @@ public class Page_Achat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__achat);
+
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         // Permet de récupérer les valeurs de searchview et listeview que l'utilisateur à entré.
         listView = findViewById(R.id.list_view);
         searchView = findViewById(R.id.searchView);
@@ -795,6 +805,11 @@ public class Page_Achat extends AppCompatActivity {
         startActivity(kit_raspberry_intent);
 
     }
-
+    // Permet de retourner à la page menu
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+    }
 
 }

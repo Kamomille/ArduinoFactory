@@ -1,5 +1,6 @@
 package com.example.androidstudio.outils;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -146,10 +147,12 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
                 switch (position){
                     case 0: // 4 anneaux
                         calcul_4();
+                        enleveTousLesCadres();
                         NbBandeSelect =4;
                         bande3.setVisibility(View.INVISIBLE);
                         bande6.setVisibility(View.INVISIBLE);
                         textView_TCR.setVisibility(View.INVISIBLE);
+                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
 
                         resistanceColor1.setScaleX((float) 1.5);
                         resistanceColor2.setScaleX((float) 1.5);
@@ -164,10 +167,12 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
 
                     case 1: // 5 anneaux
                         calcul_5();
+                        enleveTousLesCadres();
                         NbBandeSelect =5;
                         bande3.setVisibility(View.VISIBLE);
                         bande6.setVisibility(View.INVISIBLE);
                         textView_TCR.setVisibility(View.INVISIBLE);
+                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
 
                         resistanceColor1.setScaleX((float) 1.3);
                         resistanceColor2.setScaleX((float) 1.3);
@@ -184,10 +189,12 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
 
                     case 2: // 6 anneaux
                         calcul_6();
+                        enleveTousLesCadres();
                         NbBandeSelect =6;
                         bande3.setVisibility(View.VISIBLE);
                         bande6.setVisibility(View.VISIBLE);
                         textView_TCR.setVisibility(View.VISIBLE);
+                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
 
                         resistanceColor1.setScaleX((float) 1.1);
                         resistanceColor2.setScaleX((float) 1.1);
@@ -284,7 +291,6 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             @Override
             public void onClick(View v){ clicButtonFlecheB6(); }});
 
-
         }
 
 
@@ -377,7 +383,6 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande5.setBackgroundResource(R.drawable.outils_vide);
         bande6.setBackgroundResource(R.drawable.outils_vide);
 
-
         listeCompteur[numBande] -=1;
         if (listeCompteur[numBande] < 0){ listeCompteur[numBande] = indiceListe; }
         l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
@@ -385,7 +390,6 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             listeCompteur[numBande] -= 1;
             if (listeCompteur[numBande] < 0){ listeCompteur[numBande] = indiceListe; }
             l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
-
         }
         r.setBackgroundColor(parseColor(listeCouleur[listeCompteur[numBande]][0]));
         if (NbBandeSelect == 4){ calcul_4(); }
@@ -393,11 +397,9 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         if (NbBandeSelect == 6){ calcul_6(); }
     }
     public void clicButtonFlecheH1(){
-        textView.setText("H1");
         if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheHaut(0, 1, resistanceColor1); }
     }
     public void clicButtonFlecheB1(){
-        textView.setText("B1");
         if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheBas(0, 1, resistanceColor1); }
     }
     public void clicButtonFlecheH2(){
@@ -414,28 +416,24 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
     }
     public void clicButtonFlecheH4(){
         if (NbBandeSelect == 4){clicFlecheHaut(2, 2, resistanceColor4); }
-        if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheHaut(3, 3, resistanceColor4); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheHaut(3, 2, resistanceColor4); }
     }
     public void clicButtonFlecheB4(){
         if (NbBandeSelect == 4){clicFlecheBas(2, 2, resistanceColor4); }
-        if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheBas(3, 3, resistanceColor4); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheBas(3, 2, resistanceColor4); }
     }
     public void clicButtonFlecheH5(){
-        textView.setText("H5");
         if (NbBandeSelect == 4){clicFlecheHaut(3, 3, resistanceColor5); }
         if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheHaut(4, 3, resistanceColor5); }
     }
     public void clicButtonFlecheB5(){
-        textView.setText("B5");
         if (NbBandeSelect == 4){clicFlecheBas(3, 3, resistanceColor5); }
         if (NbBandeSelect == 5 || NbBandeSelect == 6){clicFlecheBas(4, 3, resistanceColor5); }
     }
     public void clicButtonFlecheH6(){
-        textView.setText("H6");
         if (NbBandeSelect == 6){clicFlecheHaut(5, 4, resistanceColor6); }
     }
     public void clicButtonFlecheB6(){
-        textView.setText("B6");
         if (NbBandeSelect == 6){clicFlecheBas(5, 4, resistanceColor6); }
     }
 
@@ -452,45 +450,61 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande6.setBackgroundResource(R.drawable.outils_vide);
     }
 
+
+    public void apparitionDelaPalette(int numBande, int numRangerListeCouleur, ImageView r){
+        layoutPaletteCouleur.setVisibility(View.VISIBLE);
+        for (int i=0; i<listeCouleur.length; i+=1){
+            liste_CarreCouleur[i].setVisibility(View.VISIBLE);
+        }
+        for (int i=0; i<listeCouleur.length; i+=1){
+            l =listeCouleur[i][numRangerListeCouleur];
+            if (l.equals("1000")){
+                liste_CarreCouleur[i].setVisibility(View.INVISIBLE);
+             }
+        }
+    }
+
     public void clicResistanceColor1(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(0, 1, resistanceColor1); }
         NbBandeclick=0;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande1.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("1er chiffre significatif");
     }
     public void clicResistanceColor2(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(1, 1, resistanceColor2); }
         NbBandeclick=1;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande2.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("2eme chiffre significatif");
     }
     public void clicResistanceColor3(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){ apparitionDelaPalette(2, 1, resistanceColor3); }
         NbBandeclick=2;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande3.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("3eme chiffre significatif");
     }
     public void clicResistanceColor4(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 4){apparitionDelaPalette(2, 2, resistanceColor4); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(3, 2, resistanceColor4); }
         NbBandeclick=3;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande4.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("multiplicateur");
     }
     public void clicResistanceColor5(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 4){apparitionDelaPalette(3, 3, resistanceColor5); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(4, 3, resistanceColor5); }
         NbBandeclick=4;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande5.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("tolérance");
     }
     public void clicResistanceColor6(){
         enleveTousLesCadres();
+        if (NbBandeSelect == 6){apparitionDelaPalette(5, 4, resistanceColor6); }
         NbBandeclick=5;
-        layoutPaletteCouleur.setVisibility(View.VISIBLE);
         bande6.setBackgroundResource(R.drawable.cadre);
         nomBande.setText("TCR");
     }
@@ -518,15 +532,15 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         if(v == findViewById(R.id.carreCouleur_1)){ onClick_carreCourleurGeneral(listeCouleur[0][0]); } //noir
         else if(v == findViewById(R.id.carreCouleur_2)){ onClick_carreCourleurGeneral(listeCouleur[1][0]); } //marron
         else if(v == findViewById(R.id.carreCouleur_3)){ onClick_carreCourleurGeneral(listeCouleur[2][0]); } //rouge
-        else if(v == findViewById(R.id.carreCouleur_4)){ onClick_carreCourleurGeneral(listeCouleur[3][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_5)){ onClick_carreCourleurGeneral(listeCouleur[4][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_6)){ onClick_carreCourleurGeneral(listeCouleur[5][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_7)){ onClick_carreCourleurGeneral(listeCouleur[6][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_8)){ onClick_carreCourleurGeneral(listeCouleur[7][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_9)){ onClick_carreCourleurGeneral(listeCouleur[8][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_10)){ onClick_carreCourleurGeneral(listeCouleur[9][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_11)){ onClick_carreCourleurGeneral(listeCouleur[10][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_12)){ onClick_carreCourleurGeneral(listeCouleur[11][0]);  } //marron
+        else if(v == findViewById(R.id.carreCouleur_4)){ onClick_carreCourleurGeneral(listeCouleur[3][0]); } //orange
+        else if(v == findViewById(R.id.carreCouleur_5)){ onClick_carreCourleurGeneral(listeCouleur[4][0]); } //jaune
+        else if(v == findViewById(R.id.carreCouleur_6)){ onClick_carreCourleurGeneral(listeCouleur[5][0]); } //vert
+        else if(v == findViewById(R.id.carreCouleur_7)){ onClick_carreCourleurGeneral(listeCouleur[6][0]); } //bleu
+        else if(v == findViewById(R.id.carreCouleur_8)){ onClick_carreCourleurGeneral(listeCouleur[7][0]); } //violet
+        else if(v == findViewById(R.id.carreCouleur_9)){ onClick_carreCourleurGeneral(listeCouleur[8][0]); } //gris
+        else if(v == findViewById(R.id.carreCouleur_10)){ onClick_carreCourleurGeneral(listeCouleur[9][0]); } //blanc
+        else if(v == findViewById(R.id.carreCouleur_11)){ onClick_carreCourleurGeneral(listeCouleur[10][0]); } //argent
+        else if(v == findViewById(R.id.carreCouleur_12)){ onClick_carreCourleurGeneral(listeCouleur[11][0]);  } //or
     }
 }
 

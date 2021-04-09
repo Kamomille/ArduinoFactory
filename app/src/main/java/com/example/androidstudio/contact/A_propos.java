@@ -1,15 +1,18 @@
 package com.example.androidstudio.contact;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
+import com.example.androidstudio.pages.Page_Contact;
 
 public class A_propos extends AppCompatActivity {
 
@@ -22,6 +25,13 @@ public class A_propos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_propos);
+
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         TextView qui = (TextView) findViewById(R.id.qui);
         qui.setPaintFlags(qui.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         TextView remerciement = (TextView) findViewById(R.id.remerciement);
@@ -31,7 +41,7 @@ public class A_propos extends AppCompatActivity {
         TextView nom2 = (TextView) findViewById(R.id.nom2);
         nom2.setText("\u2022 Cedric Chhunon");
         TextView nom3 = (TextView) findViewById(R.id.nom3);
-        nom3.setText("\u2022 Pierre Huruhguen");
+        nom3.setText("\u2022 Pierre Huruguen");
         TextView nom4 = (TextView) findViewById(R.id.nom4);
         nom4.setText("\u2022 Julien Gouban");
         TextView rejoignez = (TextView) findViewById(R.id.rejoignez);
@@ -78,6 +88,13 @@ public class A_propos extends AppCompatActivity {
         instagram_intent.putExtra("it",instagram_url);
         startActivity(instagram_intent);
 
+    }
+
+    // Permet de retourner à la page contact
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), Page_Contact.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 
 }

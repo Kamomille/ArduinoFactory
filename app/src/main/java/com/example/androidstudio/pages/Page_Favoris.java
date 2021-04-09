@@ -1,15 +1,18 @@
 package com.example.androidstudio.pages;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,8 +35,18 @@ public class Page_Favoris extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.nav_view);
 
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
 
-
+    }
+    // Permet de retourner à la page menu
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 }

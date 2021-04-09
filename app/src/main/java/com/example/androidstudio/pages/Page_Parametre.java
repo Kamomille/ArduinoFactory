@@ -1,11 +1,14 @@
 package com.example.androidstudio.pages;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
 
 public class Page_Parametre extends AppCompatActivity {
@@ -24,6 +27,12 @@ public class Page_Parametre extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

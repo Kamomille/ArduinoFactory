@@ -1,12 +1,16 @@
 package com.example.androidstudio.pages;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
 
 public class Page_Cours extends AppCompatActivity {
@@ -28,6 +32,13 @@ public class Page_Cours extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__menu_cours);
+
+        // Permet d'avoir une fleche retour en haut
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         button = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
         button3= findViewById(R.id.button3);
@@ -65,5 +76,12 @@ public class Page_Cours extends AppCompatActivity {
         stock[0]=view;
 
 
+    }
+
+    // Permet de retourner à la page menu
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
     }
 }

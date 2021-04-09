@@ -294,7 +294,6 @@
         android:id="@+id/boutonInfo"
         android:layout_width="75dp"
         android:layout_height="62dp"
-        android:clickable="true"
         android:scaleType="fitCenter"
         android:src="@drawable/outils_info"
         app:backgroundTint="#F4FCFE"
