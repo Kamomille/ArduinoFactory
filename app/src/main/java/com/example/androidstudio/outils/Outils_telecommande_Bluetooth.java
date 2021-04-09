@@ -1,8 +1,10 @@
 package com.example.androidstudio.outils;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -38,7 +40,8 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
     private CheckBox ckb_led2;
     private CheckBox ckb_led3;
     private ListView lv_devlist;
-    Button bouton_telecommande;
+    private Button bouton_led;
+    private Fragment fragment1;
 
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
@@ -57,8 +60,16 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
         setContentView(R.layout.activity_outils_telecommande__bluetooth);
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
-        //ckb_led1 = (CheckBox) findViewById(R.id.CKB_LED);
+        ckb_led1 = (CheckBox) findViewById(R.id.CKB_LED);
         tv_lm35 = (TextView) findViewById(R.id.TV_STATUS);
+        bouton_led= findViewById(R.id.Led);
+        bouton_led.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte ledcomm = 'A';
+                mybluetooth.writebyte(ledcomm);
+            }
+        }));
 
         //=== Définir le handler  ==================================================================
         my_handler = new Handler() {
@@ -110,7 +121,6 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
         }
     };
 
-
     // définition de la classe BluetoothClass pour (connexion , lecture , écriture, déconnexion)
     class MyBluetoothClass extends Thread {
         public void run() {
@@ -152,7 +162,7 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
                     }
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    openbouton_telecommande();
+                    //openbouton_telecommande();
 
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
@@ -246,5 +256,6 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
         startActivity(Outils_telecommande_manette_intent);
 
     }
+
 
 }
