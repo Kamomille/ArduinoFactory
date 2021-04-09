@@ -28,6 +28,15 @@
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/barre" />
+        <Button
+            android:id="@+id/Led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Led"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:backgroundTint="#0B789C"
+            app:cornerRadius="50sp" />
 
         <ListView
             android:id="@+id/LV_DEVLIST"
