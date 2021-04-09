@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -30,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
 
-public class Outils_telecommande_Bluetooth extends AppCompatActivity {
+public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
     private TextView tv_lm35;
     private TextView tv_sht31_t;
@@ -58,10 +57,10 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_outils_telecommande__bluetooth);
-        ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande_bluetooth);
+        setContentView(R.layout.activity_outils_telecommande);
+        ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande);
         viewFlipper.setDisplayedChild(2);
-        //viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
@@ -121,7 +120,7 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
             //dev_name = devchoisi.substring(0, devchoisi.length() - 17);
             tv_status.setText("CONNEXION EN COURS");
             // démarrer le Thread qui gère la connexion
-            mybluetooth = new MyBluetoothClass();
+            mybluetooth = new Outils_telecommande.MyBluetoothClass();
             mybluetooth.start();
         }
     };
@@ -167,8 +166,8 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
                     }
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande_bluetooth);
-                    viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                    ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
+                    viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
                 }
@@ -256,11 +255,5 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
         mybluetooth.disconnect();
         tv_status.setText("Déconnecté");
     }
-    public void openbouton_telecommande(){
-        Intent Outils_telecommande_manette_intent= new Intent(this,Outils_telecommande_Manette.class);
-        startActivity(Outils_telecommande_manette_intent);
-
-    }
-
 
 }
