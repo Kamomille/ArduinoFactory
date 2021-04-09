@@ -179,7 +179,7 @@ public class Page_Internet extends AppCompatActivity {
 
     // Permet de retourner à la page contact
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), Page_Contact.class);
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
     }

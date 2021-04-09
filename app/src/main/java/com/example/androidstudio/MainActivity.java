@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivtity_achat(){
-        Intent intent = new Intent(this, Page_Achat.class);
+        Intent intent = new Intent(this, achat_version2.class);
         startActivity(intent);
     }
     public void openActivtity_contacter(){
