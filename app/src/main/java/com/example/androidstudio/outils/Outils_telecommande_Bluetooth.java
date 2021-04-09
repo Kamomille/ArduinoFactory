@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
+import com.example.androidstudio.pages.Page_Outils;
 
 public class Outils_telecommande_Bluetooth extends AppCompatActivity {
 
@@ -16,7 +17,6 @@ public class Outils_telecommande_Bluetooth extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_telecommande__bluetooth);
-        setContentView(R.layout.activity_outils_telecommande);
 
         // Permet d'avoir une fleche retour en haut --------------------------------------------
         ActionBar actionBar = getSupportActionBar();
