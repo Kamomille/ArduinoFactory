@@ -164,6 +164,7 @@ public class Outils_telecommande extends AppCompatActivity {
 
                         INPS_OK = false;
                     }
+                    //ceci est un commantaire
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
                     ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
