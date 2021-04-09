@@ -17,8 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name=".outils.Outils_telecommande_Manette" />
-        <activity android:name=".outils.Outils_telecommande_Bluetooth" />
+        <activity android:name=".outils.Outils_telecommande"></activity>
         <activity android:name=".pages.achat_version2" />
         <activity android:name=".pages.Page_Favoris" />
         <activity

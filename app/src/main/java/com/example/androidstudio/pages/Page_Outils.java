@@ -12,11 +12,11 @@ import android.widget.LinearLayout;
 import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.outils.Outils_resistance;
 import com.example.androidstudio.R;
-import com.example.androidstudio.outils.Outils_telecommande_Bluetooth;
+import com.example.androidstudio.outils.Outils_telecommande;
 
 public class Page_Outils extends AppCompatActivity {
 
-    private LinearLayout outil_resistance, outil_telecommande_bluetooth;
+    private LinearLayout outil_resistance, outil_telecommande;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class Page_Outils extends AppCompatActivity {
         outil_resistance.setOnClickListener(new View.OnClickListener(){
             @Override public void onClick(View v){ openActivtity_outilsResistance(); } } );
 
-       outil_telecommande_bluetooth = (LinearLayout) findViewById(R.id.outil_telecommande);
-        outil_telecommande_bluetooth.setOnClickListener(new View.OnClickListener(){
+       outil_telecommande = (LinearLayout) findViewById(R.id.outil_telecommande);
+        outil_telecommande.setOnClickListener(new View.OnClickListener(){
             @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
     }
 
@@ -43,7 +43,7 @@ public class Page_Outils extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivtity_outilsTelecommande(){
-        Intent intent = new Intent(this, Outils_telecommande_Bluetooth.class);
+        Intent intent = new Intent(this, Outils_telecommande.class);
         startActivity(intent);
     }
 
