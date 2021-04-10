@@ -63,16 +63,6 @@
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/barre" />
-        <CheckBox
-            android:id="@+id/CKB_LED"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/LV_DEVLIST"
-            android:layout_marginTop="30dp"
-            android:onClick="ledcommand"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:text="LED" />
         <Button
             android:id="@+id/Led"
             android:layout_width="wrap_content"

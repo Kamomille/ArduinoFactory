@@ -52,6 +52,7 @@ public class Outils_telecommande extends AppCompatActivity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
+    int Etat = 0;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -64,13 +65,19 @@ public class Outils_telecommande extends AppCompatActivity {
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
-        ckb_led1 = (CheckBox) findViewById(R.id.CKB_LED);
         tv_lm35 = (TextView) findViewById(R.id.TV_STATUS);
         bouton_led= findViewById(R.id.Led);
         bouton_led.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 byte ledcomm = 'A';
+                if (Etat==0) {
+                    ledcomm = 'A';
+                    Etat=1;
+                } else {
+                    ledcomm = 'B';
+                    Etat=0;
+                }
                 mybluetooth.writebyte(ledcomm);
             }
         }));
@@ -241,17 +248,6 @@ public class Outils_telecommande extends AppCompatActivity {
         T = M * (float) 110 / (float) 1023;
         tv_lm35.setText(String.format("%.2f   °C", T));
     }
-
-    public void ledcommand(View VW) {
-        byte ledcomm = '0';
-        if (ckb_led1.isChecked()) {
-            ledcomm = 'A';
-        } else {
-            ledcomm = 'B';
-        }
-        mybluetooth.writebyte(ledcomm);
-    }
-
     public void deconnecter(View view) {
         mybluetooth.disconnect();
         tv_status.setText("Déconnecté");
