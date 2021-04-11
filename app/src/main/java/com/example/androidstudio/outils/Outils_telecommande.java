@@ -31,17 +31,8 @@ import java.util.UUID;
 
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
-    private TextView tv_lm35;
-    private TextView tv_sht31_t;
-    private TextView tv_sht31_h;
-    private TextView tv_lm75;
-    private TextView tv_ds1820;
-    private CheckBox ckb_led1;
-    private CheckBox ckb_led2;
-    private CheckBox ckb_led3;
     private ListView lv_devlist;
     private Button bouton_led;
-    private Fragment fragment1;
 
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
@@ -65,7 +56,6 @@ public class Outils_telecommande extends AppCompatActivity {
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
-        tv_lm35 = (TextView) findViewById(R.id.TV_STATUS);
         bouton_led= findViewById(R.id.Led);
         bouton_led.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -234,20 +224,6 @@ public class Outils_telecommande extends AppCompatActivity {
         }
     }
 
-
-    public void lm35(View view) {
-        tv_lm35.setText("      ");
-        byte[] inpbuff = new byte[32];
-        int lsb = 0, msb = 0, M;
-        float T;
-        while (mybluetooth.available() > 0) mybluetooth.readbytes(inpbuff); // vider le buffer
-        mybluetooth.writebyte((byte) 'C');
-        lsb = mybluetooth.readbyte();
-        msb = mybluetooth.readbyte();
-        M = ((msb & 0xff) << 8) | (lsb & 0xFF);
-        T = M * (float) 110 / (float) 1023;
-        tv_lm35.setText(String.format("%.2f   °C", T));
-    }
     public void deconnecter(View view) {
         mybluetooth.disconnect();
         tv_status.setText("Déconnecté");
