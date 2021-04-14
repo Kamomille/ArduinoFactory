@@ -65,17 +65,6 @@
         android:id="@+id/relativelayout2"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/Telecommande"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:text="blabla "
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#0B789C"
-            android:textSize="25sp" />
-
-
             <LinearLayout
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"

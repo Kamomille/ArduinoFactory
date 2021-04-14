@@ -35,13 +35,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
-    private TextView telecommande;
     private ListView lv_devlist;
     private ImageButton volplus;
     private ImageButton bouton_deconnecter;
     private ImageButton bouton_function;
-    private LinearLayout linear2;
-
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
     private BluetoothSocket my_bt_soket = null;
@@ -60,11 +57,10 @@ public class Outils_telecommande extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_telecommande);
         ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande);
-        //viewFlipper.setDisplayedChild(2);
-        viewFlipper.setDisplayedChild(1);
+        viewFlipper.setDisplayedChild(2);
+        //viewFlipper.setDisplayedChild(1);
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
-        telecommande = (TextView) findViewById(R.id.Telecommande);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
 
         bouton_function = findViewById(R.id.deconnecter);
@@ -86,7 +82,6 @@ public class Outils_telecommande extends AppCompatActivity {
         bouton_deconnecter.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                telecommande.setText("Déconnecté");
                 mybluetooth.disconnect();
                 SystemClock.sleep(1000);
                 tv_status.setText("Choisir un device dans la liste");
