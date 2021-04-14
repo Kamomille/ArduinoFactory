@@ -11,11 +11,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -28,11 +30,16 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
+    private TextView telecommande;
     private ListView lv_devlist;
-    private Button bouton_led;
+    private Button volplus;
+    private Button bouton_deconnecter;
+    private Button bouton_function;
+    private LinearLayout linear2;
 
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
@@ -43,7 +50,8 @@ public class Outils_telecommande extends AppCompatActivity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
-    int Etat = 0;
+    int Etat_volplus = 0;
+    int Etat_function = 0;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -51,22 +59,51 @@ public class Outils_telecommande extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_telecommande);
         ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande);
-        viewFlipper.setDisplayedChild(2);
-
+        //viewFlipper.setDisplayedChild(2);
+        viewFlipper.setDisplayedChild(1);
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
+        telecommande = (TextView) findViewById(R.id.Telecommande);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
-        bouton_led= findViewById(R.id.Led);
-        bouton_led.setOnClickListener((new View.OnClickListener() {
+
+        bouton_function = findViewById(R.id.deconnecter);
+        bouton_function.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 byte ledcomm = 'A';
-                if (Etat==0) {
+                if (Etat_function==0) {
+                    ledcomm = 'C';
+                    Etat_function=1;
+                } else {
+                    ledcomm = 'D';
+                    Etat_function=0;
+                }
+                mybluetooth.writebyte(ledcomm);
+            }
+        }));
+        bouton_deconnecter= findViewById(R.id.deconnecter);
+        bouton_deconnecter.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                telecommande.setText("Déconnecté");
+                mybluetooth.disconnect();
+                SystemClock.sleep(1000);
+                tv_status.setText("Choisir un device dans la liste");
+                ViewFlipper viewFlipper3 = (ViewFlipper) findViewById(R.id.outil_telecommande);
+                viewFlipper3.setDisplayedChild(2);
+            }
+        }));
+        volplus= findViewById(R.id.Volplus);
+        volplus.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte ledcomm = 'A';
+                if (Etat_volplus==0) {
                     ledcomm = 'A';
-                    Etat=1;
+                    Etat_volplus=1;
                 } else {
                     ledcomm = 'B';
-                    Etat=0;
+                    Etat_volplus=0;
                 }
                 mybluetooth.writebyte(ledcomm);
             }
@@ -105,6 +142,12 @@ public class Outils_telecommande extends AppCompatActivity {
         ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
         lv_devlist.setAdapter(my_list_adapter);
         tv_status.setText("Choisir un device dans la liste");
+        if (pairedDevices.isEmpty()) {
+            tv_status.setText("Liste Vide");
+            pairedlist.add("Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth");
+            ArrayAdapter my_list_adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
+            lv_devlist.setAdapter(my_list_adapter2);
+        };
         lv_devlist.setOnItemClickListener(devlist_listener);
 
     }
@@ -165,7 +208,8 @@ public class Outils_telecommande extends AppCompatActivity {
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
                     ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
-                    viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                    //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                    viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
                 }
@@ -222,11 +266,7 @@ public class Outils_telecommande extends AppCompatActivity {
                 my_handler.obtainMessage(STATUS, -1, -1, "Echec Déconnexion").sendToTarget();
             }
         }
-    }
 
-    public void deconnecter(View view) {
-        mybluetooth.disconnect();
-        tv_status.setText("Déconnecté");
     }
 
 }

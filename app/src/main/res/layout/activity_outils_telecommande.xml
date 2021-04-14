@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".outils.Outils_telecommande">
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center|top"
+        android:gravity="center|top"
+        android:id="@+id/relativelayout"
+        android:orientation="vertical" >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,18 +51,27 @@
             android:divider="@android:color/holo_blue_dark"
             android:dividerHeight="5dp" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/outil_telecommande_manette"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <!-- Permet d'afficher la barre en dessous de Bluetooth-->
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center|top"
+        android:gravity="center|top"
+        android:id="@+id/relativelayout2"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <TextView
+            android:id="@+id/Telecommande"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:text="Telecommande"
+            android:text="Télécommande"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#0B789C"
             android:textSize="25sp" />
@@ -63,17 +81,256 @@
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/barre" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
         <Button
-            android:id="@+id/Led"
+            android:id="@+id/deconnecter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="Led"
+            android:text="Power"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:backgroundTint="#0B789C"
             app:cornerRadius="50sp" />
-</LinearLayout>
 
+        <Button
+            android:id="@+id/Volplus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Vol+"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:backgroundTint="#0B789C"
+            app:cornerRadius="50sp" />
 
+        <Button
+            android:id="@+id/function"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="func/stop"
+            android:layout_marginLeft="30dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:backgroundTint="#0B789C"
+            app:cornerRadius="50sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="190dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+            <Button
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Back"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Pause"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Next"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="260dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/monter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Monter"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/volumemoins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Vol-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/descendre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Descendre"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="350dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bouton_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/egaliser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="EQ"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/repeter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="st/rept"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="420dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bouton_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="500dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bouton_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="580dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/bouton_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+
+            <Button
+                android:id="@+id/bouton_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:backgroundTint="#0B789C"
+                app:cornerRadius="50sp" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </ViewFlipper>
