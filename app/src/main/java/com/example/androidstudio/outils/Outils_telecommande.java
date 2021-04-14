@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,9 +37,9 @@ public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
     private TextView telecommande;
     private ListView lv_devlist;
-    private Button volplus;
-    private Button bouton_deconnecter;
-    private Button bouton_function;
+    private ImageButton volplus;
+    private ImageButton bouton_deconnecter;
+    private ImageButton bouton_function;
     private LinearLayout linear2;
 
     private BluetoothAdapter my_bt_adapter;
