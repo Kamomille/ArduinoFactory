@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4FCFE"
     tools:context=".pages.achat_version2">
 
 
@@ -37,7 +38,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentTop="true"
                     android:iconifiedByDefault="false"
-                    android:queryHint="Search Version"
+                    android:queryHint="Carte arduino"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.34"
@@ -61,9 +62,18 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/layout_recherche"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="invisible">
+            </LinearLayout>
+
             <!-- Achat produit -->
 
             <LinearLayout
+                android:id="@+id/layout_achat"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
