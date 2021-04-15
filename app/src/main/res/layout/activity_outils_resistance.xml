@@ -50,32 +50,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.829" />
 
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="365dp"
-        android:layout_height="142dp"
+        android:layout_width="375dp"
+        android:layout_height="149dp"
         android:src="@drawable/outils_resistance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.438" />
 
-
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="356dp"
-        android:layout_height="207dp"
+        android:layout_width="370dp"
+        android:layout_height="225dp"
         android:layout_centerInParent="true"
-        android:layout_gravity="right"
         android:orientation="horizontal"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444">
+        app:layout_constraintVertical_bias="0.463"
+        tools:visibility="visible">
 
         <LinearLayout
             android:id="@+id/bande1"
