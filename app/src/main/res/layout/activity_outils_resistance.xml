@@ -73,7 +73,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443">
+        app:layout_constraintVertical_bias="0.443"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="right">
 
         <LinearLayout
             android:id="@+id/bande1"
@@ -303,8 +305,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
-
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tt"
