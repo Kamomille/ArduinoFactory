@@ -26,7 +26,7 @@ public class Page_Cours extends AppCompatActivity {
     Button button10;
     LinearLayout layout;
 
-    View stock [] = new View[2];
+    View stock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,7 @@ public class Page_Cours extends AppCompatActivity {
         View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
         int index = layout.indexOfChild(button);
         layout.addView(layout2,index+1);
-        stock[0]=button;
-        stock[1]=button;
+        stock=button;
     }
     public void onClick(View view){
 
@@ -62,18 +61,21 @@ public class Page_Cours extends AppCompatActivity {
         View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
         int index = layout.indexOfChild(view);
 
-        if (stock[0]==view && stock[0]!=stock[1]){
-            layout.removeViewAt(index+1);
-        }
-        else{
-
+        if(stock==null){
             layout.addView(layout2,index+1);
-            int indexstock = layout.indexOfChild(stock[0]);
-            layout.removeViewAt(indexstock+1);
-
+            stock=view;
         }
-        stock[1]=stock[0];
-        stock[0]=view;
+        else if (stock==view) {
+            layout.removeViewAt(index + 1);
+            stock = null;
+        }
+        else {
+            layout.addView(layout2,index+1);
+            int indexstock = layout.indexOfChild(stock);
+            layout.removeViewAt(indexstock+1);
+            stock=view;
+        }
+
 
 
     }
@@ -83,5 +85,8 @@ public class Page_Cours extends AppCompatActivity {
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
+    }
+    public void onClick_cours(View view){
+
     }
 }

@@ -73,7 +73,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047"
-        app:srcCompat="@drawable/engrenage" />
+        app:srcCompat="@drawable/engrenage"
+        android:onClick="onClickParametre"/>
 
     <ImageButton
         android:id="@+id/ImageCours"
@@ -85,7 +86,8 @@
         app:layout_constraintHorizontal_bias="0.367"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/livres" />
+        app:srcCompat="@drawable/livres"
+        android:onClick="onClickCours"/>
 
     <ImageButton
         android:id="@+id/ImageContacter"
@@ -98,7 +100,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.518"
-        app:srcCompat="@drawable/contacter" />
+        app:srcCompat="@drawable/contacter"
+        android:onClick="onClickContacter"/>
 
     <Button
         android:id="@+id/buttonContacter"
@@ -114,7 +117,8 @@
         app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.74"
+        android:onClick="onClickContacter"/>
 
     <ImageButton
         android:id="@+id/ImageOutils"
@@ -127,7 +131,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.519"
-        app:srcCompat="@drawable/outil" />
+        app:srcCompat="@drawable/outil"
+        android:onClick="onClickOutils"/>
 
     <Button
         android:id="@+id/buttonOutils"
@@ -143,7 +148,9 @@
         app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.74"
+        android:onClick="onClickOutils"
+        />
 
     <ImageButton
         android:id="@+id/ImageAchat"
@@ -156,7 +163,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.508"
-        app:srcCompat="@drawable/panier" />
+        app:srcCompat="@drawable/panier"
+        android:onClick="onClickAchat"/>
 
     <Button
         android:id="@+id/buttonAchat"
@@ -172,7 +180,8 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.74"
+        android:onClick="onClickAchat"/>
 
     <Button
         android:id="@+id/buttonCours"
@@ -188,7 +197,8 @@
         app:layout_constraintHorizontal_bias="0.357"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.737"
+        android:onClick="onClickCours"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

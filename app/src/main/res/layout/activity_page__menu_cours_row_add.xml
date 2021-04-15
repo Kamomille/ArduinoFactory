@@ -18,33 +18,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#6A3F51B5"
-            android:onClick="onClick"
+            android:backgroundTint="#967EC1"
+            android:onClick="onClick_cours"
             android:text="Button"
             android:textColorHighlight="#FFFFFF"
-            app:cornerRadius="10dp" />
+            app:backgroundTint="#E6FFFFFF"
+            app:cornerRadius="6dp" />
 
         <Button
             android:id="@+id/button101"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#6A3F51B5"
-            android:onClick="onClick"
+            android:backgroundTint="#967EC1"
             android:text="Button"
             android:textColorHighlight="#FFFFFF"
-            app:cornerRadius="10dp" />
+            app:backgroundTint="#E6FFFFFF"
+            app:cornerRadius="6dp"
+            android:onClick="onClick_cours"/>
 
         <Button
             android:id="@+id/button102"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#6A3F51B5"
-            android:onClick="onClick"
+            android:backgroundTint="#967EC1"
             android:text="Button"
             android:textColorHighlight="#FFFFFF"
-            app:cornerRadius="10dp" />
+            app:backgroundTint="#E6FFFFFF"
+            app:cornerRadius="6dp"
+            android:onClick="onClick_cours"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

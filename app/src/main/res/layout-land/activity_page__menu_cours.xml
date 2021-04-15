@@ -6,20 +6,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="24dp"
+            android:layout_height="29dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="461dp"
-        android:layout_height="866dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        android:id="@+id/imageView9"
+        android:layout_width="962dp"
+        android:layout_height="571dp"
+        android:alpha="0.75"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio=""
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        app:srcCompat="@drawable/cours_fond2" />
+        app:srcCompat="@drawable/cours_fond3" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="356dp"
-        android:layout_height="570dp"
+        android:id="@+id/scrollView3"
+        android:layout_width="636dp"
+        android:layout_height="244dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,41 +163,17 @@
                 app:backgroundTint="#E94E4E50"
                 app:cornerRadius="6dp" />
 
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:alpha="1"
                 app:srcCompat="@android:drawable/arrow_up_float" />
 
 
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-
-        <fragment
-            android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="24dp"
-            android:layout_height="29dp"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/mobile_navigation" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
