@@ -23,7 +23,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
+import com.example.androidstudio.pages.Page_Outils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,10 +69,8 @@ public class Outils_telecommande extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mybluetooth.disconnect();
-                SystemClock.sleep(1000);
-                tv_status.setText("Choisir un device dans la liste");
-                ViewFlipper viewFlipper3 = (ViewFlipper) findViewById(R.id.outil_telecommande);
-                viewFlipper3.setDisplayedChild(2);
+                openActivtity_outils();
+
             }
         }));
         bouton_volplus= findViewById(R.id.Volplus);
@@ -407,13 +407,15 @@ public class Outils_telecommande extends AppCompatActivity {
         ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
         lv_devlist.setAdapter(my_list_adapter);
         tv_status.setText("Choisir un device dans la liste");
+        lv_devlist.setOnItemClickListener(devlist_listener);
         if (pairedDevices.isEmpty()) {
             tv_status.setText("Liste Vide");
             pairedlist.add("Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth");
             ArrayAdapter my_list_adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
             lv_devlist.setAdapter(my_list_adapter2);
+            lv_devlist.setSelector(android.R.color.transparent);
+            lv_devlist.setOnItemClickListener(null);
         };
-        lv_devlist.setOnItemClickListener(devlist_listener);
 
     }
 
@@ -423,7 +425,7 @@ public class Outils_telecommande extends AppCompatActivity {
             String devchoisi = ((TextView) v).getText().toString();
             dev_address = devchoisi.substring(devchoisi.length() - 17);
             //dev_name = devchoisi.substring(0, devchoisi.length() - 17);
-            tv_status.setText("CONNEXION EN COURS");
+            tv_status.setText("Connexion en cours");
             // démarrer le Thread qui gère la connexion
             mybluetooth = new Outils_telecommande.MyBluetoothClass();
             mybluetooth.start();
@@ -477,6 +479,7 @@ public class Outils_telecommande extends AppCompatActivity {
                     viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
+
                 }
             } else {
                 my_handler.obtainMessage(STATUS, -1, -1, "Echec création Soket COMM").sendToTarget();
@@ -532,6 +535,10 @@ public class Outils_telecommande extends AppCompatActivity {
             }
         }
 
+    }
+    public void openActivtity_outils(){
+        Intent intent = new Intent(this, Page_Outils.class);
+        startActivity(intent);
     }
 
 }
