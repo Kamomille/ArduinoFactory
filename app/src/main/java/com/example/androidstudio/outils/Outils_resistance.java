@@ -91,7 +91,6 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande5 = (LinearLayout) findViewById(R.id.bande5);
         bande6 = (LinearLayout) findViewById(R.id.bande6);
 
-       // coucou
         button_flecheH1 = (ImageButton)findViewById(R.id.flecheH1);
         button_flecheB1 = (ImageButton)findViewById(R.id.flecheB1);
         button_flecheH2 = (ImageButton)findViewById(R.id.flecheH2);

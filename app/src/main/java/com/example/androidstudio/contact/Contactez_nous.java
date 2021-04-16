@@ -13,7 +13,6 @@ import android.widget.EditText;
 
 import com.example.androidstudio.R;
 import com.example.androidstudio.pages.Page_Contact;
-import com.example.androidstudio.pages.Page_Outils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

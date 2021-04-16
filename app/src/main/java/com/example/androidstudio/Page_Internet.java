@@ -47,6 +47,10 @@ public class Page_Internet extends AppCompatActivity {
             Bundle data = getIntent().getExtras();
             // Ici on récupère le bon url suivant si on a cliqué sur bouton poussoir grâce aux mots clé associé
             // à l'url dans achat.
+            if (data.containsKey("url_achat")) {
+                url = data.getString("url_achat");
+            }
+
             if (data.containsKey("bp")) {
                 url = data.getString("bp");
             }
@@ -177,7 +181,7 @@ public class Page_Internet extends AppCompatActivity {
         }
     }
 
-    // Permet de retourner à la page contact
+    // Permet de retourner à la page d'accueil
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
