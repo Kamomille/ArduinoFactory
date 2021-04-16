@@ -18,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
         <activity android:name=".achat.recherche_achat"></activity>
-        <activity android:name=".outils.Outils_telecommande" />
+
+        <activity android:name=".outils.Outils_telecommande"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".pages.achat_version2"
             android:label="Achat" />

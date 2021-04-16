@@ -36,27 +36,8 @@ import java.util.concurrent.TimeUnit;
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
     private ListView lv_devlist;
-    private ImageButton bouton_deconnecter;
-    private ImageButton bouton_volplus;
-    private ImageButton bouton_function;
-    private ImageButton bouton_back;
-    private ImageButton bouton_pause;
-    private ImageButton bouton_next;
-    private ImageButton bouton_descendre;
-    private ImageButton bouton_volmoins;
-    private ImageButton bouton_monter;
-    private Button Bouton_0;
-    private ImageButton bouton_eq;
-    private ImageButton bouton_rept;
-    private Button Bouton_1;
-    private Button Bouton_2;
-    private Button Bouton_3;
-    private Button Bouton_4;
-    private Button Bouton_5;
-    private Button Bouton_6;
-    private Button Bouton_7;
-    private Button Bouton_8;
-    private Button Bouton_9;
+    private ImageButton bouton_deconnecter,bouton_volplus,bouton_function,bouton_back,bouton_pause,bouton_next,bouton_descendre,bouton_volmoins,bouton_monter,bouton_eq,bouton_rept;
+    private Button Bouton_0,Bouton_1,Bouton_2,Bouton_3,Bouton_4,Bouton_5,Bouton_6,Bouton_7,Bouton_8,Bouton_9;
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
     private BluetoothSocket my_bt_soket = null;
@@ -66,26 +47,7 @@ public class Outils_telecommande extends AppCompatActivity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
-    int Etat_volplus = 0;
-    int Etat_function = 0;
-    int Etat_back = 0;
-    int Etat_pause = 0;
-    int Etat_next = 0;
-    int Etat_descendre = 0;
-    int Etat_volmoins = 0;
-    int Etat_monter = 0;
-    int Etat_bouton_0 = 0;
-    int Etat_eq = 0;
-    int Etat_rept = 0;
-    int Etat_bouton_1 = 0;
-    int Etat_bouton_2 = 0;
-    int Etat_bouton_3 = 0;
-    int Etat_bouton_4 = 0;
-    int Etat_bouton_5 = 0;
-    int Etat_bouton_6 = 0;
-    int Etat_bouton_7 = 0;
-    int Etat_bouton_8 = 0;
-    int Etat_bouton_9 = 0;
+    int Etat_volplus = 0,Etat_function = 0,Etat_back = 0,Etat_pause = 0,Etat_next = 0,Etat_descendre = 0,Etat_volmoins = 0,Etat_monter = 0,Etat_bouton_0 = 0,Etat_eq = 0,Etat_rept = 0,Etat_bouton_1 = 0,Etat_bouton_2 = 0,Etat_bouton_3 = 0,Etat_bouton_4 = 0,Etat_bouton_5 = 0,Etat_bouton_6 = 0,Etat_bouton_7 = 0,Etat_bouton_8 = 0,Etat_bouton_9 = 0;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -126,7 +88,7 @@ public class Outils_telecommande extends AppCompatActivity {
                 mybluetooth.writebyte(volplus_valeur);
             }
         }));
-        bouton_function = findViewById(R.id.deconnecter);
+        bouton_function = findViewById(R.id.function);
         bouton_function.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -402,10 +364,10 @@ public class Outils_telecommande extends AppCompatActivity {
             public void onClick(View v) {
                 byte bouton_9_valeur = 'A';
                 if (Etat_bouton_9==0) {
-                    bouton_9_valeur= 'k';
+                    bouton_9_valeur= 'm';
                     Etat_bouton_9=1;
                 } else {
-                    bouton_9_valeur = 'l';
+                    bouton_9_valeur = 'n';
                     Etat_bouton_9=0;
                 }
                 mybluetooth.writebyte(bouton_9_valeur);
