@@ -36,9 +36,8 @@ import java.util.concurrent.TimeUnit;
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
     private ListView lv_devlist;
-    private ImageButton volplus;
-    private ImageButton bouton_deconnecter;
-    private ImageButton bouton_function;
+    private ImageButton bouton_deconnecter,bouton_volplus,bouton_function,bouton_back,bouton_pause,bouton_next,bouton_descendre,bouton_volmoins,bouton_monter,bouton_eq,bouton_rept;
+    private Button Bouton_0,Bouton_1,Bouton_2,Bouton_3,Bouton_4,Bouton_5,Bouton_6,Bouton_7,Bouton_8,Bouton_9;
     private BluetoothAdapter my_bt_adapter;
     private MyBluetoothClass mybluetooth;
     private BluetoothSocket my_bt_soket = null;
@@ -48,8 +47,7 @@ public class Outils_telecommande extends AppCompatActivity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
-    int Etat_volplus = 0;
-    int Etat_function = 0;
+    int Etat_volplus = 0,Etat_function = 0,Etat_back = 0,Etat_pause = 0,Etat_next = 0,Etat_descendre = 0,Etat_volmoins = 0,Etat_monter = 0,Etat_bouton_0 = 0,Etat_eq = 0,Etat_rept = 0,Etat_bouton_1 = 0,Etat_bouton_2 = 0,Etat_bouton_3 = 0,Etat_bouton_4 = 0,Etat_bouton_5 = 0,Etat_bouton_6 = 0,Etat_bouton_7 = 0,Etat_bouton_8 = 0,Etat_bouton_9 = 0;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -63,21 +61,7 @@ public class Outils_telecommande extends AppCompatActivity {
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);
 
-        bouton_function = findViewById(R.id.deconnecter);
-        bouton_function.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                byte ledcomm = 'A';
-                if (Etat_function==0) {
-                    ledcomm = 'C';
-                    Etat_function=1;
-                } else {
-                    ledcomm = 'D';
-                    Etat_function=0;
-                }
-                mybluetooth.writebyte(ledcomm);
-            }
-        }));
+
         bouton_deconnecter= findViewById(R.id.deconnecter);
         bouton_deconnecter.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -89,19 +73,304 @@ public class Outils_telecommande extends AppCompatActivity {
                 viewFlipper3.setDisplayedChild(2);
             }
         }));
-        volplus= findViewById(R.id.Volplus);
-        volplus.setOnClickListener((new View.OnClickListener() {
+        bouton_volplus= findViewById(R.id.Volplus);
+        bouton_volplus.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                byte ledcomm = 'A';
+                byte volplus_valeur = 'A';
                 if (Etat_volplus==0) {
-                    ledcomm = 'A';
+                    volplus_valeur = 'A';
                     Etat_volplus=1;
                 } else {
-                    ledcomm = 'B';
+                    volplus_valeur = 'B';
                     Etat_volplus=0;
                 }
-                mybluetooth.writebyte(ledcomm);
+                mybluetooth.writebyte(volplus_valeur);
+            }
+        }));
+        bouton_function = findViewById(R.id.function);
+        bouton_function.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte function_valeur = 'A';
+                if (Etat_function==0) {
+                    function_valeur = 'C';
+                    Etat_function=1;
+                } else {
+                    function_valeur = 'D';
+                    Etat_function=0;
+                }
+                mybluetooth.writebyte(function_valeur);
+            }
+        }));
+        bouton_back = findViewById(R.id.back);
+        bouton_back.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte back_valeur = 'A';
+                if (Etat_back==0) {
+                    back_valeur = 'E';
+                    Etat_back=1;
+                } else {
+                    back_valeur = 'F';
+                    Etat_back=0;
+                }
+                mybluetooth.writebyte(back_valeur);
+            }
+        }));
+        bouton_pause = findViewById(R.id.pause);
+        bouton_pause.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte pause_valeur = 'A';
+                if (Etat_pause==0) {
+                    pause_valeur = 'G';
+                    Etat_pause=1;
+                } else {
+                    pause_valeur = 'H';
+                    Etat_pause=0;
+                }
+                mybluetooth.writebyte(pause_valeur);
+            }
+        }));
+        bouton_next = findViewById(R.id.next);
+        bouton_next.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte next_valeur = 'A';
+                if (Etat_next==0) {
+                    next_valeur = 'I';
+                    Etat_next=1;
+                } else {
+                    next_valeur = 'J';
+                    Etat_next=0;
+                }
+                mybluetooth.writebyte(next_valeur);
+            }
+        }));
+        bouton_descendre = findViewById(R.id.descendre);
+        bouton_descendre.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte descendre_valeur = 'A';
+                if (Etat_descendre==0) {
+                    descendre_valeur = 'K';
+                    Etat_descendre=1;
+                } else {
+                    descendre_valeur = 'L';
+                    Etat_descendre=0;
+                }
+                mybluetooth.writebyte(descendre_valeur);
+            }
+        }));
+        bouton_volmoins = findViewById(R.id.volumemoins);
+        bouton_volmoins.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte volumemoins_valeur = 'A';
+                if (Etat_volmoins==0) {
+                    volumemoins_valeur= 'M';
+                    Etat_volmoins=1;
+                } else {
+                    volumemoins_valeur = 'N';
+                    Etat_volmoins=0;
+                }
+                mybluetooth.writebyte(volumemoins_valeur);
+            }
+        }));
+        bouton_monter = findViewById(R.id.monter);
+        bouton_monter.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte monter_valeur = 'A';
+                if (Etat_monter==0) {
+                    monter_valeur= 'O';
+                    Etat_monter=1;
+                } else {
+                    monter_valeur = 'P';
+                    Etat_monter=0;
+                }
+                mybluetooth.writebyte(monter_valeur);
+            }
+        }));
+        Bouton_0 = findViewById(R.id.bouton_0);
+        Bouton_0.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_0_valeur = 'A';
+                if (Etat_bouton_0==0) {
+                    bouton_0_valeur= 'Q';
+                    Etat_bouton_0=1;
+                } else {
+                    bouton_0_valeur = 'R';
+                    Etat_bouton_0=0;
+                }
+                mybluetooth.writebyte(bouton_0_valeur);
+            }
+        }));
+        bouton_eq = findViewById(R.id.egaliser);
+        bouton_eq.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte eq_valeur = 'A';
+                if (Etat_eq==0) {
+                    eq_valeur = 'S';
+                    Etat_eq=1;
+                } else {
+                    eq_valeur = 'T';
+                    Etat_eq=0;
+                }
+                mybluetooth.writebyte(eq_valeur);
+            }
+        }));
+        bouton_rept = findViewById(R.id.repeter);
+        bouton_rept.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte rept_valeur = 'A';
+                if (Etat_rept==0) {
+                    rept_valeur = 'U';
+                    Etat_rept=1;
+                } else {
+                    rept_valeur = 'V';
+                    Etat_rept=0;
+                }
+                mybluetooth.writebyte(rept_valeur);
+            }
+        }));
+        Bouton_1 = findViewById(R.id.bouton_1);
+        Bouton_1.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_1_valeur = 'A';
+                if (Etat_bouton_1==0) {
+                    bouton_1_valeur= 'W';
+                    Etat_bouton_1=1;
+                } else {
+                    bouton_1_valeur = 'X';
+                    Etat_bouton_1=0;
+                }
+                mybluetooth.writebyte(bouton_1_valeur);
+            }
+        }));
+        Bouton_2 = findViewById(R.id.bouton_2);
+        Bouton_2.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_2_valeur = 'A';
+                if (Etat_bouton_2==0) {
+                    bouton_2_valeur= 'Y';
+                    Etat_bouton_2=1;
+                } else {
+                    bouton_2_valeur = 'Z';
+                    Etat_bouton_2=0;
+                }
+                mybluetooth.writebyte(bouton_2_valeur);
+            }
+        }));
+        Bouton_3 = findViewById(R.id.bouton_3);
+        Bouton_3.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_3_valeur = 'A';
+                if (Etat_bouton_3==0) {
+                    bouton_3_valeur= 'a';
+                    Etat_bouton_3=1;
+                } else {
+                    bouton_3_valeur = 'b';
+                    Etat_bouton_3=0;
+                }
+                mybluetooth.writebyte(bouton_3_valeur);
+            }
+        }));
+        Bouton_4 = findViewById(R.id.bouton_4);
+        Bouton_4.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_4_valeur = 'A';
+                if (Etat_bouton_4==0) {
+                    bouton_4_valeur= 'c';
+                    Etat_bouton_4=1;
+                } else {
+                    bouton_4_valeur = 'd';
+                    Etat_bouton_4=0;
+                }
+                mybluetooth.writebyte(bouton_4_valeur);
+            }
+        }));
+        Bouton_5= findViewById(R.id.bouton_5);
+        Bouton_5.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_5_valeur = 'A';
+                if (Etat_bouton_5==0) {
+                    bouton_5_valeur= 'e';
+                    Etat_bouton_5=1;
+                } else {
+                    bouton_5_valeur = 'f';
+                    Etat_bouton_5=0;
+                }
+                mybluetooth.writebyte(bouton_5_valeur);
+            }
+        }));
+        Bouton_6= findViewById(R.id.bouton_6);
+        Bouton_6.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_6_valeur = 'A';
+                if (Etat_bouton_6==0) {
+                    bouton_6_valeur= 'g';
+                    Etat_bouton_6=1;
+                } else {
+                    bouton_6_valeur = 'h';
+                    Etat_bouton_6=0;
+                }
+                mybluetooth.writebyte(bouton_6_valeur);
+            }
+        }));
+        Bouton_7= findViewById(R.id.bouton_7);
+        Bouton_7.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_7_valeur = 'A';
+                if (Etat_bouton_7==0) {
+                    bouton_7_valeur= 'i';
+                    Etat_bouton_7=1;
+                } else {
+                    bouton_7_valeur = 'j';
+                    Etat_bouton_7=0;
+                }
+                mybluetooth.writebyte(bouton_7_valeur);
+            }
+        }));
+        Bouton_8= findViewById(R.id.bouton_8);
+        Bouton_8.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_8_valeur = 'A';
+                if (Etat_bouton_8==0) {
+                    bouton_8_valeur= 'k';
+                    Etat_bouton_8=1;
+                } else {
+                    bouton_8_valeur = 'l';
+                    Etat_bouton_8=0;
+                }
+                mybluetooth.writebyte(bouton_8_valeur);
+            }
+        }));
+        Bouton_9= findViewById(R.id.bouton_9);
+        Bouton_9.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                byte bouton_9_valeur = 'A';
+                if (Etat_bouton_9==0) {
+                    bouton_9_valeur= 'm';
+                    Etat_bouton_9=1;
+                } else {
+                    bouton_9_valeur = 'n';
+                    Etat_bouton_9=0;
+                }
+                mybluetooth.writebyte(bouton_9_valeur);
             }
         }));
 
