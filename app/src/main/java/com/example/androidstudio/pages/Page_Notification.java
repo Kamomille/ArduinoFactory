@@ -19,35 +19,35 @@ import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Page_Favoris extends AppCompatActivity {
-    private Button Favoris;
-    private TextView Texteview_Favoris;
+public class Page_Notification extends AppCompatActivity {
+    private Button Notification;
+    private TextView Texteview_Notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page__favoris);
-        Texteview_Favoris = (TextView) findViewById(R.id.textView_Favoris);
-        Favoris= findViewById(R.id.Favoris1);
-        Favoris.setOnClickListener((new View.OnClickListener() {
+        setContentView(R.layout.activity_page__notification);
+        Texteview_Notification = (TextView) findViewById(R.id.textView_Notification);
+        Notification= findViewById(R.id.Notification1);
+        Notification.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivtity_Favoris();
+                openActivtity_Notifbouton();
 
             }
         }));
-        BottomNavigationView navView = findViewById(R.id.nav_view2);
+        BottomNavigationView navView = findViewById(R.id.nav_view3);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment2);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment3);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.nav_view2);
+                findViewById(R.id.nav_view3);
 
         // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
 
@@ -60,10 +60,10 @@ public class Page_Favoris extends AppCompatActivity {
                                 openActivitity_MainActivity();
                                 break;
                             case R.id.navigation_dashboard:
+                                openActivitity_Favoris();
 
                                 break;
                             case R.id.navigation_notifications:
-                                openActivitity_Notification();
                                 break;
                         }
                         return false;
@@ -83,11 +83,11 @@ public class Page_Favoris extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void openActivitity_Notification(){
-        Intent intent = new Intent(this, Page_Notification.class);
+    public void openActivitity_Favoris(){
+        Intent intent = new Intent(this, Page_Favoris.class);
         startActivity(intent);
     }
-    public void openActivtity_Favoris(){
-        Texteview_Favoris.setText("Vous êtes dans le fragment Favoris");
+    public void openActivtity_Notifbouton(){
+        Texteview_Notification.setText("Vous êtes dans le fragment Notif");
     }
-}
+    }

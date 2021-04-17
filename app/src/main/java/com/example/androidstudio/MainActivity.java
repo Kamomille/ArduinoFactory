@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 import com.example.androidstudio.pages.Page_Achat;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Cours;
+import com.example.androidstudio.pages.Page_Favoris;
+import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;
 import com.example.androidstudio.pages.achat_version2;
@@ -64,13 +66,17 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.navigation_home:
-                                //setContentView(R.layout.activity_outils_resistance);
+                                //setContentView(R.layout.activity_main);
+                                //openActivtity_cours();
+                                openActivtity_main();
                                 break;
                             case R.id.navigation_dashboard:
-                                setContentView(R.layout.activity_page__favoris);
+                                openFavoris();
+                                //setContentView(R.layout.activity_page__favoris);
+                                //setContentView(R.layout.activity_outils_resistance);
                                 break;
                             case R.id.navigation_notifications:
-                                setContentView(R.layout.fragment_notifications);
+                                openNotification();
                                 break;
                         }
                         return false;
@@ -81,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         // Pour faire fonctionner les boutons et les imageBoutons -----------------------------------------------
 
 }
+
+
     public void onClickOutils (View view){
         openActivtity_outils();
     }
@@ -114,6 +122,19 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openActivtity_parametre() {
         Intent intent = new Intent(this, Page_Parametre.class);
+        startActivity(intent);
+    }
+    public void openFavoris() {
+        Intent intent = new Intent(this, Page_Favoris.class);
+        startActivity(intent);
+    }
+    public void openActivtity_main(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openNotification(){
+        Intent intent = new Intent(this, Page_Notification.class);
         startActivity(intent);
     }
 }

@@ -4,31 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.Page_Favoris"
-    android:paddingTop="?attr/actionBarSize">
+    tools:context=".pages.Page_Notification">
 
     <TextView
-        android:id="@+id/textView_Favoris"
+        android:id="@+id/textView_Notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Page pour les favoris -> EN CONSTRUCTION"
+        android:text="Page pour les notifications -> EN CONSTRUCTION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/Favoris1"
+        android:id="@+id/Notification1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:text="Favoris"
+        android:text="Notification"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:backgroundTint="#0B789C"
         app:cornerRadius="50sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view2"
+        android:id="@+id/nav_view3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
@@ -38,7 +37,7 @@
         app:menu="@menu/bottom_nav_menu">
 
         <fragment
-            android:id="@+id/nav_host_fragment2"
+            android:id="@+id/nav_host_fragment3"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="24dp"
             android:layout_height="29dp"
@@ -51,6 +50,5 @@
             android:orientation="vertical"></LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

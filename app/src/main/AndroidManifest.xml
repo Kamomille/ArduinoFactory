@@ -17,11 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-
+        <activity android:name=".pages.Page_Notification"></activity>
         <activity
             android:name=".outils.Outils_telecommande"
-            android:screenOrientation="portrait"
-            android:label="Télécommande"/>
+            android:label="Télécommande"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".pages.achat_version2"
             android:label="Achat" />
