@@ -2,6 +2,7 @@ package com.example.androidstudio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.example.androidstudio.pages.achat_version2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -44,36 +46,26 @@ public class MainActivity extends AppCompatActivity {
         imageOutils= findViewById(R.id.imageContacter);
 
 
-        setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
 
+        setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.nav_view);
 
         // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
+
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.navigation_home:
-                                //setContentView(R.layout.activity_main);
-                                //openActivtity_cours();
+
                                 openActivtity_main();
                                 break;
                             case R.id.navigation_dashboard:
                                 openFavoris();
-                                //setContentView(R.layout.activity_page__favoris);
-                                //setContentView(R.layout.activity_outils_resistance);
+
                                 break;
                             case R.id.navigation_notifications:
                                 openNotification();
@@ -137,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Page_Notification.class);
         startActivity(intent);
     }
-}
+
+    }
+
 
 
 
