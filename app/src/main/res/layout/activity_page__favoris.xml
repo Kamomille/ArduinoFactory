@@ -28,7 +28,7 @@
         app:cornerRadius="50sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view2"
+        android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
@@ -38,7 +38,7 @@
         app:menu="@menu/bottom_nav_menu">
 
         <fragment
-            android:id="@+id/nav_host_fragment2"
+            android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="24dp"
             android:layout_height="29dp"
@@ -51,6 +51,5 @@
             android:orientation="vertical"></LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

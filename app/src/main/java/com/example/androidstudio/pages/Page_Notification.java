@@ -36,18 +36,8 @@ public class Page_Notification extends AppCompatActivity {
 
             }
         }));
-        BottomNavigationView navView = findViewById(R.id.nav_view3);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment3);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.nav_view3);
+                findViewById(R.id.nav_view);
 
         // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
 
