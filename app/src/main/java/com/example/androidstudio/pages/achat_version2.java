@@ -232,7 +232,6 @@ public class achat_version2 extends AppCompatActivity implements View.OnClickLis
         startActivity(intent_achat);
     }
 
-
     public void onClick(View v) {
 
         for (int i = 0; i < listeMateriel.length; i++) {

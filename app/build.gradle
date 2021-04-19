@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     //noinspection GradleCompatible
@@ -46,4 +47,5 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }

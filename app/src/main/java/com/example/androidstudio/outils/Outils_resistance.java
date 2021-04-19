@@ -308,12 +308,14 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         d = listeCouleur[listeCompteur[3]][3];
         float ab = Float.parseFloat(a + b);
         ab = (float) (ab * Math.pow(10,Float.parseFloat(c)));
+
         if(1000 <= ab && ab < 1000000){
             ab = ab/1000;
             ab = (float) Math.round(ab * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            // + "  A"+a+"   B"+b+"     C"+c
             textView.setText(String.valueOf(ab) + " KΩ  ± " + String.valueOf(d) +" %");
         }
-        else if(6 <= 1000000){
+        else if(ab >= 1000000){
             ab = ab/1000000;
             ab = (float) Math.round(ab * 100) / 100; // arrondi à 2 chiffres apres la virgules
             textView.setText(String.valueOf(ab) + " MΩ  ± " + String.valueOf(d) +" %");
@@ -337,7 +339,7 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             abc = (float) Math.round(abc * 100) / 100; // arrondi à 2 chiffres apres la virgules
             textView.setText(String.valueOf(abc) + " KΩ  ± " + String.valueOf(e) +" %");
         }
-        else if(6 <= 1000000){
+        else if(abc >= 1000000){
             abc = abc/1000000;
             abc = (float) Math.round(abc * 100) / 100; // arrondi à 2 chiffres apres la virgules
             textView.setText(String.valueOf(abc) + " MΩ  ± " + String.valueOf(e) +" %");
@@ -509,7 +511,7 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
     }
 
 
-    public void onClick_carreCourleurGeneral(String couleur){
+    public void onClick_carreCourleurGeneral(String couleur, int positionCouleur){
         if(NbBandeclick ==0){resistanceColor1.setBackgroundColor(parseColor(couleur));}
         if(NbBandeclick ==1){resistanceColor2.setBackgroundColor(parseColor(couleur));}
         if(NbBandeclick ==2){resistanceColor3.setBackgroundColor(parseColor(couleur));}
@@ -518,28 +520,28 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         if(NbBandeclick ==5){resistanceColor6.setBackgroundColor(parseColor(couleur));}
 
         layoutPaletteCouleur.setVisibility(View.INVISIBLE);
-        for (int i=0; i<listeCouleur.length; i+=1){
-            l =listeCouleur[i][0];
-            if (l.equals(couleur)){
-                listeCompteur[NbBandeclick] = i;
-                break;
-            }
-        }
+
+        listeCompteur[NbBandeclick] = positionCouleur;
+
+        if (NbBandeSelect == 4){ calcul_4(); }
+        if (NbBandeSelect == 5){ calcul_5(); }
+        if (NbBandeSelect == 6){ calcul_6(); }
+
     }
 
     public void onClick(View v) {
-        if(v == findViewById(R.id.carreCouleur_1)){ onClick_carreCourleurGeneral(listeCouleur[0][0]); } //noir
-        else if(v == findViewById(R.id.carreCouleur_2)){ onClick_carreCourleurGeneral(listeCouleur[1][0]); } //marron
-        else if(v == findViewById(R.id.carreCouleur_3)){ onClick_carreCourleurGeneral(listeCouleur[2][0]); } //rouge
-        else if(v == findViewById(R.id.carreCouleur_4)){ onClick_carreCourleurGeneral(listeCouleur[3][0]); } //orange
-        else if(v == findViewById(R.id.carreCouleur_5)){ onClick_carreCourleurGeneral(listeCouleur[4][0]); } //jaune
-        else if(v == findViewById(R.id.carreCouleur_6)){ onClick_carreCourleurGeneral(listeCouleur[5][0]); } //vert
-        else if(v == findViewById(R.id.carreCouleur_7)){ onClick_carreCourleurGeneral(listeCouleur[6][0]); } //bleu
-        else if(v == findViewById(R.id.carreCouleur_8)){ onClick_carreCourleurGeneral(listeCouleur[7][0]); } //violet
-        else if(v == findViewById(R.id.carreCouleur_9)){ onClick_carreCourleurGeneral(listeCouleur[8][0]); } //gris
-        else if(v == findViewById(R.id.carreCouleur_10)){ onClick_carreCourleurGeneral(listeCouleur[9][0]); } //blanc
-        else if(v == findViewById(R.id.carreCouleur_11)){ onClick_carreCourleurGeneral(listeCouleur[10][0]); } //argent
-        else if(v == findViewById(R.id.carreCouleur_12)){ onClick_carreCourleurGeneral(listeCouleur[11][0]);  } //or
+        if(v == findViewById(R.id.carreCouleur_1)){ onClick_carreCourleurGeneral(listeCouleur[0][0], 0); } //noir
+        else if(v == findViewById(R.id.carreCouleur_2)){ onClick_carreCourleurGeneral(listeCouleur[1][0], 1); } //marron
+        else if(v == findViewById(R.id.carreCouleur_3)){ onClick_carreCourleurGeneral(listeCouleur[2][0], 2); } //rouge
+        else if(v == findViewById(R.id.carreCouleur_4)){ onClick_carreCourleurGeneral(listeCouleur[3][0], 3); } //orange
+        else if(v == findViewById(R.id.carreCouleur_5)){ onClick_carreCourleurGeneral(listeCouleur[4][0], 4); } //jaune
+        else if(v == findViewById(R.id.carreCouleur_6)){ onClick_carreCourleurGeneral(listeCouleur[5][0], 5); } //vert
+        else if(v == findViewById(R.id.carreCouleur_7)){ onClick_carreCourleurGeneral(listeCouleur[6][0], 6); } //bleu
+        else if(v == findViewById(R.id.carreCouleur_8)){ onClick_carreCourleurGeneral(listeCouleur[7][0], 7); } //violet
+        else if(v == findViewById(R.id.carreCouleur_9)){ onClick_carreCourleurGeneral(listeCouleur[8][0], 8); } //gris
+        else if(v == findViewById(R.id.carreCouleur_10)){ onClick_carreCourleurGeneral(listeCouleur[9][0], 9); } //blanc
+        else if(v == findViewById(R.id.carreCouleur_11)){ onClick_carreCourleurGeneral(listeCouleur[10][0], 10); } //argent
+        else if(v == findViewById(R.id.carreCouleur_12)){ onClick_carreCourleurGeneral(listeCouleur[11][0], 11);  } //or
     }
 }
 
