@@ -26,11 +26,9 @@ public class Page_Contact extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__contact);
 
-        // Permet d'avoir une fleche retour en haut
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // bouton retour ----------------------
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
     buttonSite = (LinearLayout) findViewById(R.id.buttonSite);
     buttonSite.setOnClickListener(new View.OnClickListener(){
@@ -57,10 +55,5 @@ public class Page_Contact extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Permet de retourner à la page menu
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
-    }
+
 }

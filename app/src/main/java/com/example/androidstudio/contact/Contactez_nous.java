@@ -25,11 +25,9 @@ public class Contactez_nous extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactez_nous);
 
-        // Permet d'avoir une fleche retour en haut
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // bouton retour
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         // champs de texte dans le formulaire de contact
@@ -104,13 +102,6 @@ public class Contactez_nous extends AppCompatActivity {
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
-    }
-
-    // Permet de retourner à la page contact
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), Page_Contact.class);
-        startActivityForResult(myIntent, 0);
-        return true;
     }
 
 }

@@ -60,12 +60,6 @@ public class Page_Notification extends AppCompatActivity {
                     }
                 });
 
-        // Permet d'avoir une fleche retour en haut
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
 
     }
     // Permet de retourner à la page menu

@@ -17,46 +17,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name=".pages.Page_Notification"></activity>
-        <activity
-            android:name=".outils.Outils_telecommande"
-            android:label="Télécommande"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".pages.achat_version2"
-            android:label="Achat" />
-        <activity android:name=".pages.Page_Favoris" />
-        <activity
-            android:name=".pages.Page_Parametre"
-            android:label="Paramètre" />
-        <activity
-            android:name=".contact.Contactez_nous"
-            android:label="Contactez-nous" />
+
         <activity android:name=".Page_Internet" />
-        <activity
-            android:name=".contact.A_propos"
-            android:label="A propos" />
-        <activity
-            android:name=".pages.Page_Achat"
-            android:label="Achat" />
-        <activity
-            android:name=".pages.Page_Contact"
-            android:label="Contact" />
-        <activity
-            android:name=".pages.Page_Cours"
-            android:label="Cours" />
-        <activity
-            android:name=".outils.Outils_resistance"
-            android:label="Résistance" />
-        <activity
-            android:name=".pages.Page_Outils"
-            android:label="Outils" />
+        <activity android:name=".pages.Page_Notification" android:label="Nouveauté" android:value=".MainActivity" />
+        <activity android:name=".pages.Page_Favoris" android:label="Favoris" android:value=".MainActivity" />
+
+        <activity android:name=".pages.Page_Parametre" android:label="Paramètre" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".outils.Outils_telecommande" android:label="Télécommande" android:screenOrientation="portrait" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Outils" /> </activity>
+
+        <activity android:name=".outils.Outils_resistance" android:label="Résistance" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Outils" /> </activity>
+
+        <activity android:name=".pages.Page_Outils" android:label="Outils" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".pages.Page_Achat" android:label="Achat" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".pages.achat_version2" android:label="Achat" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".contact.Contactez_nous" android:label="Contactez-nous" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Contact" /> </activity>
+
+        <activity android:name=".contact.A_propos" android:label="A propos" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Contact" /> </activity>
+
+        <activity android:name=".pages.Page_Contact" android:label="Contact">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".pages.Page_Cours" android:label="Cours" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:label="Arduino Factory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

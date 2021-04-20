@@ -105,11 +105,9 @@ public class achat_version2 extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achat_version2);
 
-        // Permet d'avoir une fleche retour en haut
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        // bouton retour
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         searchView = (SearchView) findViewById(R.id.searchView);
         listView = (ListView) findViewById(R.id.list_view);
@@ -169,13 +167,6 @@ public class achat_version2 extends AppCompatActivity implements View.OnClickLis
             }
 
         });
-    }
-
-    // Permet de retourner à la page menu
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
     }
 
 

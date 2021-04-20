@@ -1,5 +1,6 @@
 package com.example.androidstudio.outils;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -59,6 +60,11 @@ public class Outils_telecommande extends AppCompatActivity {
         ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.outil_telecommande);
         viewFlipper.setDisplayedChild(2);
         //viewFlipper.setDisplayedChild(1);
+
+        // bouton retour
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         tv_status = (TextView) findViewById(R.id.TV_STATUS);
         lv_devlist = (ListView) findViewById(R.id.LV_DEVLIST);

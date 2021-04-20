@@ -113,11 +113,7 @@ public class Page_Achat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__achat);
 
-        // Permet d'avoir une fleche retour en haut
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+
 
         // Permet de récupérer les valeurs de searchview et listeview que l'utilisateur à entré.
         listView = findViewById(R.id.list_view);
@@ -804,12 +800,6 @@ public class Page_Achat extends AppCompatActivity {
         kit_raspberry_intent.putExtra("kr",kit_raspberry_url);
         startActivity(kit_raspberry_intent);
 
-    }
-    // Permet de retourner à la page menu
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
     }
 
 }
