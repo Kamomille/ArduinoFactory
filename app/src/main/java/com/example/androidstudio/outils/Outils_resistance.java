@@ -53,13 +53,38 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             {"#FFD700", "1000", "-1", "5", "1000"}, //or 11
     }; // Remarque : je met 1000 ppour signifier espace vide
 
-    private int[] listeCompteur = {2,2,2,2,2,2}; //car 6 bande max et car on commence avec la couleur rouge
+    //private int[] listeCompteur = {2,2,2,2,2,2}; //car 6 bande max et car on commence avec la couleur rouge
+
+
+    public static final String BUNDLE_STATE_listeCompteur= "currentListeCompteur";
+    public static final String BUNDLE_STATE_NbBandeSelect = "currentNbBandeSelect";
+
+    int[] listeCompteur = {2,2,2,2,2,2};
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putIntArray(BUNDLE_STATE_listeCompteur, listeCompteur);
+        outState.putInt(BUNDLE_STATE_NbBandeSelect, NbBandeSelect);
+
+        super.onSaveInstanceState(outState);
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_resistance);
+
+
+        if (savedInstanceState != null) {
+            listeCompteur = savedInstanceState.getIntArray(BUNDLE_STATE_listeCompteur);
+            NbBandeSelect = savedInstanceState.getInt(BUNDLE_STATE_NbBandeSelect);
+        } else {
+            listeCompteur = new int[]{2, 2, 2, 2, 2, 2};
+            NbBandeSelect = 4;
+        }
+
 
         textView = (TextView)findViewById(R.id.textView);
         layoutPopup = (LinearLayout) findViewById(R.id.layoutPopup);
@@ -134,10 +159,13 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande5.setTranslationX(20);
         calcul_4();
 
-
         // Gestion du nombre d'anneaux ----------------------------------------------------------------------------
 
         TabLayout tt = (TabLayout) findViewById(R.id.tt);
+
+        //TabLayout.Tab tab = tt.getTabAt(NbBandeSelect-4);
+        //tab.select();
+
         tt.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
