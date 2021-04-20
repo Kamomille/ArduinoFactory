@@ -1,6 +1,5 @@
 package com.example.androidstudio.outils;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,9 @@ import static android.graphics.Color.parseColor;
 
 public class Outils_resistance extends Activity implements View.OnClickListener {
 
-    // Déclaration et initialisation ----------------------------------------------------------------------------
+    // ========================================================================================================================
+    //                              Déclaration et initialisation
+    // ========================================================================================================================
 
     Button liste_CarreCouleur[] = new Button[12];
 
@@ -35,38 +36,38 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
     private String a,b,c,d,e,l;
 
     private String[][] listeCouleur = {
-    //                 CS   multi  tol    TCR
-    //si 4 bandes :   1et2   3     4
-    //si 5 bandes :   1,2,3  4     5
-    //si 6 bandes :   1,2,3  4     5       6
-            {"#000000", "0", "0", "20", "1000"},//noir 0
-            {"#CC6633", "1", "1", "1", "100"}, //marron 1
-            {"#FE0000", "2", "2", "2", "50"}, //rouge 2
-            {"#FE8000", "3", "3", "1000", "15"}, //orange 3
-            {"#FEFE00", "4", "4", "1000", "25"}, //jaune 4
-            {"#00EA00", "5", "5", "0,5", "1000"}, //vert 5
-            {"#0000FE", "6", "6", "0,25", "10"}, //bleu 6
-            {"#8000FE", "7", "7", "0,1", "5"}, //violet 7
-            {"#999999", "8", "8", "0,05", "1000"}, //gris 8
-            {"#FFFFFF", "9", "9", "1000", "1"}, //blanc 9
-            {"#CCCCCC", "1000", "-2", "10", "1000"}, //argent 10
-            {"#FFD700", "1000", "-1", "5", "1000"}, //or 11
-    }; // Remarque : je met 1000 ppour signifier espace vide
+    //                       CS   multi  tol    TCR
+    //si 4 bandes :         1et2   3     4
+    //si 5 bandes :         1,2,3  4     5
+    //si 6 bandes :         1,2,3  4     5       6
+            {"#000000",    "0",  "0",   "20", "1000"}, //noir 0
+            {"#CC6633",    "1",  "1",    "1",  "100"}, //marron 1
+            {"#FE0000",    "2",  "2",    "2",   "50"}, //rouge 2
+            {"#FE8000",    "3",  "3", "1000",   "15"}, //orange 3
+            {"#FEFE00",    "4",  "4", "1000",   "25"}, //jaune 4
+            {"#00EA00",    "5",  "5",  "0,5", "1000"}, //vert 5
+            {"#0000FE",    "6",  "6", "0,25",   "10"}, //bleu 6
+            {"#8000FE",    "7",  "7",  "0,1",    "5"}, //violet 7
+            {"#999999",    "8",  "8", "0,05", "1000"}, //gris 8
+            {"#FFFFFF",    "9",  "9", "1000",    "1"}, //blanc 9
+            {"#CCCCCC", "1000", "-2",   "10", "1000"}, //argent 10
+            {"#FFD700", "1000", "-1",    "5", "1000"}, //or 11
+    }; // Remarque : je met 1000 pour signifier espace vide
 
-    //private int[] listeCompteur = {2,2,2,2,2,2}; //car 6 bande max et car on commence avec la couleur rouge
 
+    // ========================================================================================================================
+    //                              Sauvegarde des valeurs lors de la rotation
+    // ========================================================================================================================
 
     public static final String BUNDLE_STATE_listeCompteur= "currentListeCompteur";
     public static final String BUNDLE_STATE_NbBandeSelect = "currentNbBandeSelect";
 
-    int[] listeCompteur = {2,2,2,2,2,2};
+    int[] listeCompteur = {2,2,2,2,2,2}; //car 6 bande max et car on commence avec la couleur rouge
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
         outState.putIntArray(BUNDLE_STATE_listeCompteur, listeCompteur);
         outState.putInt(BUNDLE_STATE_NbBandeSelect, NbBandeSelect);
-
         super.onSaveInstanceState(outState);
     }
 
@@ -85,6 +86,9 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             NbBandeSelect = 4;
         }
 
+        // ========================================================================================================================
+        //                              ID -> relier xml au code java
+        // ========================================================================================================================
 
         textView = (TextView)findViewById(R.id.textView);
         layoutPopup = (LinearLayout) findViewById(R.id.layoutPopup);
@@ -137,15 +141,17 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         resistanceColor5 = (ImageButton)findViewById(R.id.resistanceColor5);
         resistanceColor6 = (ImageButton)findViewById(R.id.resistanceColor6);
 
+
         resistanceColor1.setBackgroundColor(parseColor(listeCouleur[listeCompteur[0]][0]));
         resistanceColor2.setBackgroundColor(parseColor(listeCouleur[listeCompteur[1]][0]));
         resistanceColor3.setBackgroundColor(parseColor(listeCouleur[listeCompteur[2]][0]));
         resistanceColor4.setBackgroundColor(parseColor(listeCouleur[listeCompteur[3]][0]));
-        resistanceColor5.setBackgroundColor(parseColor(listeCouleur[listeCompteur[3]][0]));
-        resistanceColor6.setBackgroundColor(parseColor(listeCouleur[listeCompteur[3]][0]));
+        resistanceColor5.setBackgroundColor(parseColor(listeCouleur[listeCompteur[4]][0]));
+        resistanceColor6.setBackgroundColor(parseColor(listeCouleur[listeCompteur[5]][0]));
 
 
-        // Initialisation de l'interface
+        // Initialisation de l'interface ----------------------------------------------------------------------------
+
         bande3.setVisibility(View.INVISIBLE);
         bande6.setVisibility(View.INVISIBLE);
         textView_TCR.setVisibility(View.INVISIBLE);
@@ -159,99 +165,10 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande5.setTranslationX(20);
         calcul_4();
 
-        // Gestion du nombre d'anneaux ----------------------------------------------------------------------------
 
-        TabLayout tt = (TabLayout) findViewById(R.id.tt);
-
-        //TabLayout.Tab tab = tt.getTabAt(NbBandeSelect-4);
-        //tab.select();
-
-        tt.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
-
-                switch (position){
-                    case 0: // 4 anneaux
-                        calcul_4();
-                        enleveTousLesCadres();
-                        NbBandeSelect =4;
-                        bande3.setVisibility(View.INVISIBLE);
-                        bande6.setVisibility(View.INVISIBLE);
-                        textView_TCR.setVisibility(View.INVISIBLE);
-                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
-
-                        resistanceColor1.setScaleX((float) 1.5);
-                        resistanceColor2.setScaleX((float) 1.5);
-                        resistanceColor4.setScaleX((float) 1.5);
-                        resistanceColor5.setScaleX((float) 1.5);
-
-                        bande1.setTranslationX(40);
-                        bande2.setTranslationX(80);
-                        bande4.setTranslationX(-20);
-                        bande5.setTranslationX(20);
-                        return;
-
-                    case 1: // 5 anneaux
-                        calcul_5();
-                        enleveTousLesCadres();
-                        NbBandeSelect =5;
-                        bande3.setVisibility(View.VISIBLE);
-                        bande6.setVisibility(View.INVISIBLE);
-                        textView_TCR.setVisibility(View.INVISIBLE);
-                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
-
-                        resistanceColor1.setScaleX((float) 1.3);
-                        resistanceColor2.setScaleX((float) 1.3);
-                        resistanceColor3.setScaleX((float) 1.3);
-                        resistanceColor4.setScaleX((float) 1.3);
-                        resistanceColor5.setScaleX((float) 1.3);
-
-                        bande1.setTranslationX(20);
-                        bande2.setTranslationX(40);
-                        bande3.setTranslationX(60);
-                        bande4.setTranslationX(80);
-                        bande5.setTranslationX(100);
-                        return;
-
-                    case 2: // 6 anneaux
-                        calcul_6();
-                        enleveTousLesCadres();
-                        NbBandeSelect =6;
-                        bande3.setVisibility(View.VISIBLE);
-                        bande6.setVisibility(View.VISIBLE);
-                        textView_TCR.setVisibility(View.VISIBLE);
-                        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
-
-                        resistanceColor1.setScaleX((float) 1.1);
-                        resistanceColor2.setScaleX((float) 1.1);
-                        resistanceColor3.setScaleX((float) 1.1);
-                        resistanceColor4.setScaleX((float) 1.1);
-                        resistanceColor5.setScaleX((float) 1.1);
-                        resistanceColor6.setScaleX((float) 1.1);
-
-                        bande1.setTranslationX(0);
-                        bande2.setTranslationX(-10);
-                        bande3.setTranslationX(-20);
-                        bande4.setTranslationX(-30);
-                        bande5.setTranslationX(-40);
-                        bande6.setTranslationX(-50);
-                        return;
-
-                    default:
-                        return;
-                }
-            }
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
-
-
-        // Reliage des boutons à une fonction ----------------------------------------------------------------------------
+        // ========================================================================================================================
+        //                              Reliage des boutons à une fonction
+        // ========================================================================================================================
 
         buttonCroix.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -318,16 +235,111 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
             @Override
             public void onClick(View v){ clicButtonFlecheB6(); }});
 
+
+        // ========================================================================================================================
+        //                              Gestion du nombre d'anneaux (TabLayout)
+        // ========================================================================================================================
+
+        TabLayout tt = (TabLayout) findViewById(R.id.tt);
+
+        TabLayout.Tab tab = tt.getTabAt(NbBandeSelect-4);
+        tab.select();
+        if(NbBandeSelect == 4){TabSelect_4anneaux();}
+        if(NbBandeSelect == 5){TabSelect_5anneaux();}
+        if(NbBandeSelect == 6){TabSelect_6anneaux();}
+
+        tt.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                switch (position){
+                    case 0: TabSelect_4anneaux(); return;
+                    case 1: TabSelect_5anneaux(); return;
+                    case 2: TabSelect_6anneaux(); return;
+                    default: return; }
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) { }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) { }
+        });
         }
 
+    public void TabSelect_4anneaux(){
+        calcul_4();
+        enleveTousLesCadres();
+        NbBandeSelect =4;
+        bande3.setVisibility(View.INVISIBLE);
+        bande6.setVisibility(View.INVISIBLE);
+        textView_TCR.setVisibility(View.INVISIBLE);
+        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
 
-    // Cadre d'information -----------------------------------------------------------------------------------
+        resistanceColor1.setScaleX((float) 1.5);
+        resistanceColor2.setScaleX((float) 1.5);
+        resistanceColor4.setScaleX((float) 1.5);
+        resistanceColor5.setScaleX((float) 1.5);
 
-    public void clicBoutonInfo(){ layoutPopup.setVisibility(View.VISIBLE); }
-    public void clicButtonCroix(){layoutPopup.setVisibility(View.INVISIBLE); }
+        bande1.setTranslationX(40);
+        bande2.setTranslationX(80);
+        bande4.setTranslationX(-20);
+        bande5.setTranslationX(20);
+    }
+    public void TabSelect_5anneaux() {
+        calcul_5();
+        enleveTousLesCadres();
+        NbBandeSelect = 5;
+        bande3.setVisibility(View.VISIBLE);
+        bande6.setVisibility(View.INVISIBLE);
+        textView_TCR.setVisibility(View.INVISIBLE);
+        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
+
+        resistanceColor1.setScaleX((float) 1.3);
+        resistanceColor2.setScaleX((float) 1.3);
+        resistanceColor3.setScaleX((float) 1.3);
+        resistanceColor4.setScaleX((float) 1.3);
+        resistanceColor5.setScaleX((float) 1.3);
+
+        bande1.setTranslationX(20);
+        bande2.setTranslationX(40);
+        bande3.setTranslationX(60);
+        bande4.setTranslationX(80);
+        bande5.setTranslationX(100);
+    }
+    public void TabSelect_6anneaux() {
+        calcul_6();
+        enleveTousLesCadres();
+        NbBandeSelect =6;
+        bande3.setVisibility(View.VISIBLE);
+        bande6.setVisibility(View.VISIBLE);
+        textView_TCR.setVisibility(View.VISIBLE);
+        layoutPaletteCouleur.setVisibility(View.INVISIBLE);
+
+        resistanceColor1.setScaleX((float) 1.1);
+        resistanceColor2.setScaleX((float) 1.1);
+        resistanceColor3.setScaleX((float) 1.1);
+        resistanceColor4.setScaleX((float) 1.1);
+        resistanceColor5.setScaleX((float) 1.1);
+        resistanceColor6.setScaleX((float) 1.1);
+
+        bande1.setTranslationX(0);
+        bande2.setTranslationX(-10);
+        bande3.setTranslationX(-20);
+        bande4.setTranslationX(-30);
+        bande5.setTranslationX(-40);
+        bande6.setTranslationX(-50);
+    }
+
+    // ========================================================================================================================
+    //                              Cadre d'information
+    // ========================================================================================================================
+
+    public void clicBoutonInfo() { layoutPopup.setVisibility(View.VISIBLE);   }
+    public void clicButtonCroix(){ layoutPopup.setVisibility(View.INVISIBLE); }
 
 
-    // Calcul des valeurs de la resistance --------------------------------------------------------------------
+    // ========================================================================================================================
+    //                              Calcul des valeurs de la resistance
+    // ========================================================================================================================
 
     public void calcul_4(){
         a = listeCouleur[listeCompteur[0]][1];
@@ -345,11 +357,11 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         }
         else if(ab >= 1000000){
             ab = ab/1000000;
-            ab = (float) Math.round(ab * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            ab = (float) Math.round(ab * 100) / 100;
             textView.setText(String.valueOf(ab) + " MΩ  ± " + String.valueOf(d) +" %");
         }
         else {
-            ab = (float) Math.round(ab * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            ab = (float) Math.round(ab * 100) / 100;
             textView.setText(String.valueOf(ab) + " Ω  ± " + String.valueOf(d) + " %");
         }
     }
@@ -364,16 +376,16 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         abc = (float) (abc * Math.pow(10,Float.parseFloat(d)));
         if(1000 <= abc && abc < 1000000){
             abc = abc/1000;
-            abc = (float) Math.round(abc * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            abc = (float) Math.round(abc * 100) / 100;
             textView.setText(String.valueOf(abc) + " KΩ  ± " + String.valueOf(e) +" %");
         }
         else if(abc >= 1000000){
             abc = abc/1000000;
-            abc = (float) Math.round(abc * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            abc = (float) Math.round(abc * 100) / 100;
             textView.setText(String.valueOf(abc) + " MΩ  ± " + String.valueOf(e) +" %");
         }
         else {
-            abc = (float) Math.round(abc * 100) / 100; // arrondi à 2 chiffres apres la virgules
+            abc = (float) Math.round(abc * 100) / 100;
             textView.setText(String.valueOf(abc) + " Ω  ± " + String.valueOf(e) + " %");
         }
     }
@@ -384,6 +396,10 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         textView_TCR.setText("TCR : " + String.valueOf(a) + " pppm/KΩ");
     }
 
+
+    // ========================================================================================================================
+    //                              Gestion de l'appui sur les flèches
+    // ========================================================================================================================
 
     public void clicFlecheHaut(int numBande, int numRangerListeCouleur, ImageView r){
         layoutPaletteCouleur.setVisibility(View.INVISIBLE);
@@ -405,12 +421,7 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
     }
     public void clicFlecheBas(int numBande, int numRangerListeCouleur, ImageView r){
         layoutPaletteCouleur.setVisibility(View.INVISIBLE);
-        bande1.setBackgroundResource(R.drawable.outils_vide);
-        bande2.setBackgroundResource(R.drawable.outils_vide);
-        bande3.setBackgroundResource(R.drawable.outils_vide);
-        bande4.setBackgroundResource(R.drawable.outils_vide);
-        bande5.setBackgroundResource(R.drawable.outils_vide);
-        bande6.setBackgroundResource(R.drawable.outils_vide);
+        enleveTousLesCadres();
 
         listeCompteur[numBande] -=1;
         if (listeCompteur[numBande] < 0){ listeCompteur[numBande] = indiceListe; }
@@ -467,7 +478,10 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
     }
 
 
-    // Gére la palette de couleur lors du clic sur la bande -----------------------------------------------------------------
+
+    // ========================================================================================================================
+    //                              Gestion de la palette de couleur
+    // ========================================================================================================================
 
 
     public void enleveTousLesCadres(){
@@ -478,7 +492,6 @@ public class Outils_resistance extends Activity implements View.OnClickListener 
         bande5.setBackgroundResource(R.drawable.outils_vide);
         bande6.setBackgroundResource(R.drawable.outils_vide);
     }
-
 
     public void apparitionDelaPalette(int numBande, int numRangerListeCouleur, ImageView r){
         layoutPaletteCouleur.setVisibility(View.VISIBLE);
