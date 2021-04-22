@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4FCFE"
-    tools:context=".pages.achat_version2">
+    tools:context=".CORBEILLE.achat_version2">
 
 
     <ScrollView

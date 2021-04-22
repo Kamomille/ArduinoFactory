@@ -1,11 +1,10 @@
 
-package com.example.androidstudio.pages;
+package com.example.androidstudio.CORBEILLE;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,7 +17,6 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
 

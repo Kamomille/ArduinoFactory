@@ -1,21 +1,16 @@
 package com.example.androidstudio;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.service.notification.StatusBarNotification;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.androidstudio.pages.Page_Achat;
 import com.example.androidstudio.achat.Main;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Cours;
@@ -23,10 +18,6 @@ import com.example.androidstudio.pages.Page_Favoris;
 import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;
-import com.example.androidstudio.pages.achat_version2;
-import com.example.androidstudio.ui.dashboard.DashboardFragment;
-import com.example.androidstudio.ui.home.HomeFragment;
-import com.example.androidstudio.ui.notifications.NotificationsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -35,14 +26,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 

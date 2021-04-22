@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4FCFE"
-    tools:context=".pages.Page_Achat">
+    tools:context=".CORBEILLE.Page_Achat">
 
      <!-- Scrollview permet de faire défiler la page-->
     <ScrollView

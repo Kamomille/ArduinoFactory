@@ -1,12 +1,10 @@
-package com.example.androidstudio.pages;
+package com.example.androidstudio.CORBEILLE;
 
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,7 +14,6 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
 
@@ -127,7 +124,7 @@ public class Page_Achat extends AppCompatActivity {
         // Adapter va permettre d'adapter la liste affiché en fontion de ce que l'utilisateur tape
         // Imaginons que l'utilisateur et ch dans la searchview et la liste contient voiture, chien et cheval
         // Alors l'adapter va afficher chien et cheval.
-        adapter = new ArrayAdapter(com.example.androidstudio.pages.Page_Achat.this,android.R.layout.simple_list_item_1,list);
+        adapter = new ArrayAdapter(Page_Achat.this,android.R.layout.simple_list_item_1,list);
         // On adapte la nouvelle liste.
         listView.setAdapter(adapter);
 
@@ -136,7 +133,7 @@ public class Page_Achat extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // Text qui affiche sur quoi l'utilisateur à cliqué dans la liste view.
-                Toast.makeText(com.example.androidstudio.pages.Page_Achat.this, "Selected -> " + version[i], Toast.LENGTH_SHORT).show();
+                Toast.makeText(Page_Achat.this, "Selected -> " + version[i], Toast.LENGTH_SHORT).show();
 
                 // Tout les if corresponds au résultat que l'on obtient par rapport à ce que l'utilisateur à cliqué
                 // Si l'utilisateur clique sur carte arduino il va lancer la fonction Carte Arduino.
