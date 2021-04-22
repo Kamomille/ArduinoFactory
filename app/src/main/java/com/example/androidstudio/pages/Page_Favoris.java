@@ -37,6 +37,7 @@ public class Page_Favoris extends AppCompatActivity {
             }
         }));
 
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.nav_view);
 

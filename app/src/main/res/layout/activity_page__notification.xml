@@ -25,6 +25,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:backgroundTint="#0B789C"
         app:cornerRadius="50sp" />
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Show"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:backgroundTint="#0B789C"
+        app:cornerRadius="50sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -50,5 +59,6 @@
             android:orientation="vertical"></LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
