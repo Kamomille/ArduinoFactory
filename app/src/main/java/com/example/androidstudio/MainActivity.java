@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.androidstudio.pages.Page_Achat;
+import com.example.androidstudio.achat.Main;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Cours;
 import com.example.androidstudio.pages.Page_Favoris;
@@ -67,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.nav_view);
+
+        // cacher la barre du haut
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
 
         // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
 
@@ -142,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivtity_achat(){
-        Intent intent = new Intent(this, achat_version2.class);
+        Intent intent = new Intent(this, Main.class);
         startActivity(intent);
     }
     public void openActivtity_contacter(){
