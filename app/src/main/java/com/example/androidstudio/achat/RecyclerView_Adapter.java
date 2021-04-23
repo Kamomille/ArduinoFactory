@@ -1,50 +1,63 @@
 package com.example.androidstudio.achat;
 
-import android.app.Application;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.androidstudio.R;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
 
+public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adapter.ViewHolder> {
 
-public class RecyclerView_Adapter extends RecyclerView.Adapter<View_Holder> {
+    private ArrayList<Data> data;
+    private Context context;
 
-    List<Data> list = Collections.emptyList();
-    Context context;
+    public RecyclerView_Adapter(ArrayList<Data> courseModalArrayList, Context context) {
+        this.data = courseModalArrayList;
+        this.context = context;
+    }
 
-    public RecyclerView_Adapter(List<Data> data, Application application) {
-        this.list = data;
-        this.context = application;
+    public void filterList(ArrayList<Data> filterllist) {
+        data = filterllist;
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public View_Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //Inflate the layout, initialize the View Holder
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
-        View_Holder holder = new View_Holder(v);
-        return holder;
+    public RecyclerView_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull View_Holder holder, int position) {
-
-        //Use the provided View Holder on the onCreateViewHolder method to populate the current row on the RecyclerView
-        holder.name.setText(list.get(position).name);
-        holder.imageView.setImageResource(list.get(position).imageId);
-
+    public void onBindViewHolder(@NonNull RecyclerView_Adapter.ViewHolder holder, int position) {
+        Data modal = data.get(position);
+        holder.name.setText(modal.getName());
+        holder.image.setImageResource(modal.getImageId());
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return data.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView name;
+        private ImageView image;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = itemView.findViewById(R.id.name);
+            image = itemView.findViewById(R.id.image);
+        }
     }
 }

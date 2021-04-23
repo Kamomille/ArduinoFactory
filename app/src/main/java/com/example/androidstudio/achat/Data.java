@@ -4,11 +4,19 @@ package com.example.androidstudio.achat;
 public class Data {
 
     public String name;
+    public int imageId;
+    public String lienAmazon;
+
+
+    public Data(String name, int imageId, String lienAmazon) {
+        this.name = name;
+        this.imageId = imageId;
+        this.lienAmazon = lienAmazon;
+    }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -16,15 +24,15 @@ public class Data {
     public int getImageId() {
         return imageId;
     }
-
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
 
-    public int imageId;
-
-    Data(String name, int imageId) {
-        this.name = name;
-        this.imageId = imageId;
+    public String getLien() {
+        return lienAmazon;
     }
+    public void setLien(String lienAmazon) {
+        this.lienAmazon = lienAmazon;
+    }
+
 }

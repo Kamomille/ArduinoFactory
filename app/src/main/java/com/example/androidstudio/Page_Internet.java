@@ -39,96 +39,10 @@ public class Page_Internet extends AppCompatActivity {
         Intent intent = this.getIntent();
         if (intent != null) {
             Bundle data = getIntent().getExtras();
-            // Ici on récupère le bon url suivant si on a cliqué sur bouton poussoir grâce aux mots clé associé
-            // à l'url dans achat.
+
+            // Ici on récupère le bon url suivant si on a cliqué sur bouton poussoir grâce aux mots clé associé à l'url
             if (data.containsKey("url_achat")) {
                 url = data.getString("url_achat");
-            }
-
-            if (data.containsKey("bp")) {
-                url = data.getString("bp");
-            }
-
-            if (data.containsKey("cd")) {
-                url = data.getString("cd");
-            }
-            if (data.containsKey("af")) {
-                url = data.getString("af");
-            }
-            if (data.containsKey("e")) {
-                url = data.getString("e");
-            }
-            if (data.containsKey("m")) {
-                url = data.getString("m");
-            }
-            if (data.containsKey("r")) {
-                url = data.getString("r");
-            }
-            if (data.containsKey("ca")) {
-                url = data.getString("ca");
-            }
-            if (data.containsKey("cn")) {
-                url = data.getString("cn");
-            }
-            if (data.containsKey("cm")) {
-                url = data.getString("cm");
-            }
-            if (data.containsKey("dc")) {
-                url = data.getString("dc");
-            }
-            if (data.containsKey("se")) {
-                url = data.getString("se");
-            }
-            if (data.containsKey("le")) {
-                url = data.getString("le");
-            }
-            if (data.containsKey("ms")) {
-                url = data.getString("ms");
-            }
-            if (data.containsKey("et")) {
-                url = data.getString("et");
-            }
-            if (data.containsKey("d")) {
-                url = data.getString("d");
-            }
-            if (data.containsKey("ks")) {
-                url = data.getString("ks");
-            }
-            if (data.containsKey("be")) {
-                url = data.getString("be");
-            }
-            if (data.containsKey("pr")) {
-                url = data.getString("pr");
-            }
-            if (data.containsKey("mw")) {
-                url = data.getString("mw");
-            }
-            if (data.containsKey("mb")) {
-                url = data.getString("mb");
-            }
-            if (data.containsKey("j")) {
-                url = data.getString("j");
-            }
-            if (data.containsKey("cs")) {
-                url = data.getString("cs");
-            }
-            if (data.containsKey("b")) {
-                url = data.getString("b");
-            }
-            if (data.containsKey("sh")) {
-                url = data.getString("sh");
-            }
-            if (data.containsKey("ph")) {
-                url = data.getString("ph");
-            }
-            if (data.containsKey("hu")) {
-                url = data.getString("hu");
-            }
-            if (data.containsKey("ra")) {
-                url = data.getString("ra");
-            }
-            if (data.containsKey("kr")) {
-                url = data.getString("kr");
             }
             if (data.containsKey("li")) {
                 url = data.getString("li");
