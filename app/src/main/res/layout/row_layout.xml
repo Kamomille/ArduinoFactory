@@ -8,31 +8,34 @@
     android:elevation="8dp"
     app:cardCornerRadius="8dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:orientation="vertical">
 
         <ImageView
             android:id = "@+id/image"
-            android:layout_width = "300px"
+            android:layout_width = "match_parent"
             android:layout_height = "300px"
-            android:layout_marginLeft = "10dp"
-            android:layout_marginTop = "10dp"
-            android:layout_marginBottom= "10dp"
+            android:layout_marginTop = "5dp"
+            android:layout_gravity="center"
             android:src = "@color/design_default_color_secondary" />
 
         <TextView
             android:id = "@+id/name"
-            android:layout_width = "250dp"
-            android:layout_height = "55dp"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
             android:layout_toRightOf = "@+id/image"
-            android:layout_marginLeft = "15dp"
-            android:layout_marginTop = "35dp"
+            android:layout_marginBottom = "10dp"
+            android:layout_gravity="center"
             android:text = "abcd"
-            android:textColor = "#000"
-            android:textSize = "25sp" />
+            android:textColor = "#0B789C"
+            android:textSize = "20sp" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
