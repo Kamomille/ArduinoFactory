@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.androidstudio.achat.Main;
+import com.example.androidstudio.achat.Achat_Main;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Cours;
 import com.example.androidstudio.pages.Page_Favoris;
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivtity_achat(){
-        Intent intent = new Intent(this, Main.class);
+        Intent intent = new Intent(this, Achat_Main.class);
         startActivity(intent);
     }
     public void openActivtity_contacter(){

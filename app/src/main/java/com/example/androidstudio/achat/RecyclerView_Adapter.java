@@ -17,15 +17,15 @@ import java.util.ArrayList;
 
 public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adapter.ViewHolder> {
 
-    private ArrayList<Data> data;
+    private ArrayList<Achat_Data> data;
     private Context context;
 
-    public RecyclerView_Adapter(ArrayList<Data> courseModalArrayList, Context context) {
+    public RecyclerView_Adapter(ArrayList<Achat_Data> courseModalArrayList, Context context) {
         this.data = courseModalArrayList;
         this.context = context;
     }
 
-    public void filterList(ArrayList<Data> filterllist) {
+    public void filterList(ArrayList<Achat_Data> filterllist) {
         data = filterllist;
         notifyDataSetChanged();
     }
@@ -39,7 +39,7 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView_Adapter.ViewHolder holder, int position) {
-        Data modal = data.get(position);
+        Achat_Data modal = data.get(position);
         holder.name.setText(modal.getName());
         holder.image.setImageResource(modal.getImageId());
     }

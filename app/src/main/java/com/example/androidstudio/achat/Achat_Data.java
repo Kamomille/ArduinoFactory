@@ -1,14 +1,14 @@
 package com.example.androidstudio.achat;
 
 
-public class Data {
+public class Achat_Data {
 
     public String name;
     public int imageId;
     public String lienAmazon;
 
 
-    public Data(String name, int imageId, String lienAmazon) {
+    public Achat_Data(String name, int imageId, String lienAmazon) {
         this.name = name;
         this.imageId = imageId;
         this.lienAmazon = lienAmazon;

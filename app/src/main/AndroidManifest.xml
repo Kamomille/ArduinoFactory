@@ -54,7 +54,7 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
 
-        <activity android:name=".achat.Main" android:label="Achat" >
+        <activity android:name=".achat.Achat_Main" android:label="Achat" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
 
