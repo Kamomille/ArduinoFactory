@@ -4,6 +4,11 @@
 
         <EditTextPreference
             app:key="signature"
+            app:title="Votre prénom"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="signature"
             app:title="Votre nom"
             app:useSimpleSummaryProvider="true" />
 

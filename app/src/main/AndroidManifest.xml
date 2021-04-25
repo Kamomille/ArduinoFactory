@@ -23,8 +23,10 @@
         <activity android:name=".pages.Page_Notification" android:label="Nouveauté" android:value=".MainActivity" />
         <activity android:name=".pages.Page_Favoris" android:label="Favoris" android:value=".MainActivity" />
 
+
         <activity android:name=".pages.Page_Parametre" android:label="Paramètre" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
 
         <activity android:name=".outils.Outils_telecommande" android:label="Télécommande" android:screenOrientation="portrait" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Outils" /> </activity>
@@ -35,11 +37,16 @@
         <activity android:name=".pages.Page_Outils" android:label="Outils" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
+
         <activity android:name=".CORBEILLE.Page_Achat" android:label="Achat" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
         <activity android:name=".CORBEILLE.achat_version2" android:label="Achat" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
+        <activity android:name=".achat.Achat_Main" android:label="Achat" android:configChanges="orientation|screenSize">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
+
 
         <activity android:name=".contact.Contactez_nous" android:label="Contactez-nous" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".pages.Page_Contact" /> </activity>
@@ -50,12 +57,10 @@
         <activity android:name=".pages.Page_Contact" android:label="Contact">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
+
         <activity android:name=".pages.Page_Cours" android:label="Cours" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
-
-        <activity android:name=".achat.Achat_Main" android:label="Achat" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" /> </activity>
 
 
         <activity

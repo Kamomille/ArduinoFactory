@@ -24,6 +24,7 @@ public class Achat_Main extends AppCompatActivity {
 
     private RecyclerView_Adapter adapter;
     private ArrayList<Achat_Data> data;
+    private ArrayList<Achat_Data> filteredlist_onClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +82,7 @@ public class Achat_Main extends AppCompatActivity {
         else {
             adapter.filterList(filteredlist);
         }
+        filteredlist_onClick = filteredlist;
     }
 
     private void buildRecyclerView() {
@@ -115,6 +117,8 @@ public class Achat_Main extends AppCompatActivity {
         data.add(new Achat_Data("Module wifi",     R.drawable.achat_module_wifi,     "https://amzn.to/3vDmPNY"));
         data.add(new Achat_Data("Module bluetooth",R.drawable.achat_module_bluetooth,"https://amzn.to/3tKZCI9"));
 
+        filteredlist_onClick = data;
+
         adapter = new RecyclerView_Adapter(data, Achat_Main.this);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -128,7 +132,7 @@ public class Achat_Main extends AppCompatActivity {
     public void onClick(View v, int position){
 
         Intent intent_achat= new Intent(this, Page_Internet.class);
-        intent_achat.putExtra("url_achat",data.get(position).getLien());
+        intent_achat.putExtra("url_achat",filteredlist_onClick.get(position).getLien());
         startActivity(intent_achat);
     }
 
