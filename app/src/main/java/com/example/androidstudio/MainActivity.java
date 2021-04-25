@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -31,15 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonOutils, buttonCours, buttonAchat, buttonContact;
     private ImageButton buttonParametre, imageOutils, imageCours, imageAchat, imageContact;
-    private static final String Notification_Titre = "Nouveau Cours sur Arduino Factory";
-    private static final String Notification_Contenu = "Nouveau cours sur le Servomoteur";
+
 
     // Pour gérer les fragment (dasboard, home, notif) -------------------------------------------------------N
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        NotificationChannel();
-        CreateNotification();
+
         buttonOutils= findViewById(R.id.buttonOutils);
         buttonCours= findViewById(R.id.buttonCours);
         buttonAchat= findViewById(R.id.buttonAchat);
@@ -99,33 +100,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Page_Outils.class);
         startActivity(intent);
     }
-    private void CreateNotification() {
-        Intent intent = new Intent(this, Page_Cours.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "letunnel")
-                .setSmallIcon(R.drawable.ic_notifications_black_24dp)
-                .setContentTitle(Notification_Titre)
-                .setContentText(Notification_Contenu)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(pendingIntent)
-                .setAutoCancel(true);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(100,builder.build());
 
-    }
-    private void NotificationChannel() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            CharSequence name = "studentChannel";
-            String description = "Channel for student notification";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("letunnel",name,importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
     public void openActivtity_cours(){
         Intent intent = new Intent(this, Page_Cours.class);
         startActivity(intent);
@@ -151,3 +127,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     }
+

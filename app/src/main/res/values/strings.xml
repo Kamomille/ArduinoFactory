@@ -21,9 +21,4 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_notification">Ajouter une notification</string>
-    <string name="delete_notification">Supprimer une notification</string>
-    <string name="notification_ID">Notification </string>
-    <string name="channel_name">Notification sur un nouveau cours</string>
-    <string name="channel_description">Cours Fritzing</string>
 </resources>
