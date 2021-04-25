@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="#F4FCFE">
 
-
     <ImageView
         android:id="@+id/imagefond"
         android:layout_width="737dp"
@@ -23,18 +22,18 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/fond" />
 
+
     <ImageView
-        android:id="@+id/imagelogo"
-        android:layout_width="121dp"
-        android:layout_height="66dp"
+        android:id="@+id/logo_blanc_sans_fond"
+        android:layout_width="151dp"
+        android:layout_height="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
-        app:srcCompat="@drawable/logo" />
-
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/logo_blanc_sans_fond" />
 
     <ImageButton
         android:id="@+id/buttonParametre"
@@ -50,129 +49,6 @@
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/engrenage" />
 
-    <ImageButton
-        android:id="@+id/imageCours"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:background="#00F4FCFE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
-        app:srcCompat="@drawable/livres"
-        android:onClick="onClickCours"/>
-
-    <Button
-        android:id="@+id/buttonCours"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Cours"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:backgroundTint="#E8053768"
-        app:cornerRadius="50dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574"
-        android:onClick="onClickCours"/>
-
-    <ImageButton
-        android:id="@+id/imageContacter"
-        android:layout_width="110dp"
-        android:layout_height="115dp"
-        android:background="#00F4FCFE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761"
-        app:srcCompat="@drawable/contacter"
-        android:onClick="onClickContacter"/>
-
-    <Button
-        android:id="@+id/buttonContacter"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Contacter"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:backgroundTint="#E8053768"
-        app:cornerRadius="50dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857"
-        android:onClick="onClickContacter"/>
-
-    <ImageButton
-        android:id="@+id/imageOutils"
-        android:layout_width="113dp"
-        android:layout_height="109dp"
-        android:background="#00F4FCFE"
-        app:layout_constraintBottom_toBottomOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477"
-        app:srcCompat="@drawable/outil"
-        android:onClick="onClickOutils"/>
-
-    <Button
-        android:id="@+id/buttonOutils"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Outils"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:backgroundTint="#E8053768"
-        app:cornerRadius="50dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574"
-        android:onClick="onClickOutils"/>
-
-    <ImageButton
-        android:id="@+id/imageAchat"
-        android:layout_width="106dp"
-        android:layout_height="108dp"
-        android:background="#00F4FCFE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764"
-        app:srcCompat="@drawable/panier"
-        android:onClick="onClickAchat"/>
-
-    <Button
-        android:id="@+id/buttonAchat"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Achat"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:backgroundTint="#E8053768"
-        app:cornerRadius="50dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857"
-        android:onClick="onClickAchat"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -186,20 +62,158 @@
 
         app:menu="@menu/bottom_nav_menu">
 
-        <fragment
-            android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="24dp"
-            android:layout_height="29dp"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/mobile_navigation" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"></LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginRight="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.141"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.461">
+                <ImageButton
+                    android:id="@+id/imageCours"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:background="#00F4FCFE"
+                    android:onClick="onClickCours"
+                    app:srcCompat="@drawable/livres" />
+                <Button
+                    android:id="@+id/buttonCours"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onClickCours"
+                    android:text="Cours"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
+                    app:backgroundTint="#E8053768"
+                    app:cornerRadius="50dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.858"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.458">
+                <ImageButton
+                    android:id="@+id/imageOutils"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:background="#00F4FCFE"
+                    android:onClick="onClickOutils"
+                    app:srcCompat="@drawable/outil" />
+                <Button
+                    android:id="@+id/buttonOutils"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onClickOutils"
+                    android:text="Outils"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
+                    app:backgroundTint="#E8053768"
+                    app:cornerRadius="50dip" />
+            </LinearLayout>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.141"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.797">
+                <ImageButton
+                    android:id="@+id/imageAchat"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:background="#00F4FCFE"
+                    android:onClick="onClickAchat"
+                    app:srcCompat="@drawable/panier" />
+                <Button
+                    android:id="@+id/buttonAchat"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onClickAchat"
+                    android:text="Achat"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
+                    app:backgroundTint="#E8053768"
+                    app:cornerRadius="50dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imageContacter"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:background="#00F4FCFE"
+                    android:onClick="onClickContacter"
+                    app:srcCompat="@drawable/contacter" />
+                <Button
+                    android:id="@+id/buttonContacter"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:onClick="onClickContacter"
+                    android:text="Contacter"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
+                    app:backgroundTint="#E8053768"
+                    app:cornerRadius="50dip" />
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
