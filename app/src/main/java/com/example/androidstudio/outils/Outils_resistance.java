@@ -8,11 +8,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.androidstudio.R;
 import com.google.android.material.tabs.TabLayout;
 import static android.graphics.Color.parseColor;
 
-public class Outils_resistance extends Activity implements View.OnClickListener {
+public class Outils_resistance extends AppCompatActivity implements View.OnClickListener {
 
     // ========================================================================================================================
     //                              Déclaration et initialisation

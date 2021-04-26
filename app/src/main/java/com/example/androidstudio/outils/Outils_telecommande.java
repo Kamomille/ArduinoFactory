@@ -2,6 +2,7 @@ package com.example.androidstudio.outils;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
@@ -13,6 +14,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,10 +27,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
+import com.example.androidstudio.pages.Page_Favoris;
 import com.example.androidstudio.pages.Page_Outils;
 
 import java.io.IOException;
@@ -547,4 +554,53 @@ public class Outils_telecommande extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // ========================================================================================================================
+    //                              Menu
+    // ========================================================================================================================
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_telecommande, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        //3 - Handle actions on menu items
+        switch (item.getItemId()) {
+            case R.id.nav_deconnection:
+                Toast.makeText(this, "Bluetooth decconnecté", Toast.LENGTH_LONG).show();
+                mybluetooth.disconnect();
+                openActivtity_outils();
+                return true;
+            case R.id.nav_telecommande:
+                Toast.makeText(this, "nav_telecommande", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.nav_tuto:
+                Toast.makeText(this, "nav_tuto", Toast.LENGTH_LONG).show();
+
+
+                //setContentView(R.layout.activity_a_propos);
+
+                //Intent intent_achat= new Intent(this, Page_Favoris.class);;
+                //startActivity(intent_achat);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+

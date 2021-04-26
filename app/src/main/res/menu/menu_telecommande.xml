@@ -7,10 +7,11 @@
     android:orientation="vertical">
 
     <item
-        android:id="@+id/actionSearch"
-        android:icon="@drawable/achat_loupe"
-        android:title="Search"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="ifRoom|collapseActionView" />
+        android:title="Déconnection"
+        android:id="@+id/nav_deconnection"/>
+    <item android:title="Changer de télécommande"
+        android:id="@+id/nav_telecommande"/>
+    <item android:title="Tutoriel"
+        android:id="@+id/nav_tuto"/>
 
 </menu>

@@ -20,8 +20,8 @@ import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
+//import com.google.firebase.messaging.FirebaseMessagingService;
+//import com.google.firebase.messaging.RemoteMessage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
