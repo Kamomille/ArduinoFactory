@@ -17,8 +17,6 @@ import com.example.androidstudio.R;
 import static android.content.ContentValues.TAG;
 
 public class Page_Parametre extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

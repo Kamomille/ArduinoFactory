@@ -1,15 +1,22 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="Profil">
+    <PreferenceCategory app:title="Réseau">
 
+        <Preference
+            android:key="@string/myCoolButton"
+            android:title="Notez l'application"
+            android:summary="Google play"
+            ></Preference>
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Profil">
         <EditTextPreference
-            app:key="@string/Prénom"
+            app:key="Prénom"
             app:title="Votre prénom"
             app:useSimpleSummaryProvider="true" />
-
         <EditTextPreference
-            app:key="@string/Nom"
+            app:key="Nom"
             app:title="Votre nom"
             app:useSimpleSummaryProvider="true" />
 
@@ -21,12 +28,5 @@
             app:key="@string/Sync"
             app:title="Activer toutes les notification" />
 
-    </PreferenceCategory>
-    <PreferenceCategory app:title="Réseau">
-        <Preference
-            android:title="Notez l'application"
-            android:key="@string/myCoolButton"
-            android:summary="Google play"
-            />
     </PreferenceCategory>
 </PreferenceScreen>
