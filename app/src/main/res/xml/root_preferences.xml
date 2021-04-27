@@ -4,12 +4,12 @@
     <PreferenceCategory app:title="Profil">
 
         <EditTextPreference
-            app:key="signature"
+            app:key="@string/Prénom"
             app:title="Votre prénom"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:key="signature"
+            app:key="@string/Nom"
             app:title="Votre nom"
             app:useSimpleSummaryProvider="true" />
 
@@ -18,7 +18,7 @@
     <PreferenceCategory app:title="Notification">
 
         <SwitchPreferenceCompat
-            app:key="sync"
+            app:key="@string/Sync"
             app:title="Activer toutes les notification" />
 
     </PreferenceCategory>
