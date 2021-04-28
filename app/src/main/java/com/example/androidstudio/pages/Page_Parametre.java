@@ -47,8 +47,8 @@ public class Page_Parametre extends AppCompatActivity {
             button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity(), Page_Internet.class);
-                    intent.putExtra("af","https://play.google.com/store");
+                    Intent intent = new Intent(getActivity() , Page_Internet.class);
+                    intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
                     startActivity(intent);
                     return true;
                 }

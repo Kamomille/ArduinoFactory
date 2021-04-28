@@ -44,6 +44,9 @@ public class Page_Internet extends AppCompatActivity {
             if (data.containsKey("url_achat")) {
                 url = data.getString("url_achat");
             }
+            if (data.containsKey("af")) {
+                url = data.getString("af");
+            }
             if (data.containsKey("li")) {
                 url = data.getString("li");
             }

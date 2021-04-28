@@ -5,9 +5,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_page__parametre">Page_Parametre</string>
     <string name="myCoolButton">Page_Parametre</string>
-    <string name="Prénom">Page_Parametre</string>
-    <string name="Nom">Page_Parametre</string>
     <string name="Sync">Page_Parametre</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

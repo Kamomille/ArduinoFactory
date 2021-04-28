@@ -1,15 +1,6 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="Réseau">
-
-        <Preference
-            android:key="@string/myCoolButton"
-            android:title="Notez l'application"
-            android:summary="Google play"
-            ></Preference>
-
-    </PreferenceCategory>
     <PreferenceCategory app:title="Profil">
         <EditTextPreference
             app:key="Prénom"
@@ -25,8 +16,17 @@
     <PreferenceCategory app:title="Notification">
 
         <SwitchPreferenceCompat
-            app:key="@string/Sync"
+            app:key="Sync"
             app:title="Activer toutes les notification" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Réseau">
+
+        <Preference
+            android:key="@string/myCoolButton"
+            android:title="Notez l'application"
+            android:summary="Google play"
+            ></Preference>
 
     </PreferenceCategory>
 </PreferenceScreen>

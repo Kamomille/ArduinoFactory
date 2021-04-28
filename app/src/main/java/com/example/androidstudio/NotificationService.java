@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.IBinder;
@@ -24,9 +25,12 @@ public class NotificationService extends FirebaseMessagingService {
     private final String NOTIFICATION_TAG = "FIREBASEOC";
     private  final String Notification_Titre = "Nouveau Cours sur Arduino Factory";
     private final String Notification_Contenu = "Nouveau cours sur le Servomoteur";
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+
+
         // ...
 
         // TODO(developer): Handle FCM messages here.
