@@ -42,7 +42,6 @@ public class Page_Notification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivtity_Notifbouton();
-
             }
         }));
 
@@ -61,8 +60,8 @@ public class Page_Notification extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
+        bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
 
         // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
@@ -90,12 +89,14 @@ public class Page_Notification extends AppCompatActivity {
     }
     // Permet de retourner à la page menu
     public void openActivitity_MainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
+        this.startActivity(new Intent(this, MainActivity.class));
+        this.overridePendingTransition(0, 0);
     }
     public void openActivitity_Favoris(){
-        Intent intent = new Intent(this, Page_Favoris.class);
-        startActivity(intent);
+        finish();
+        this.startActivity(new Intent(this, Page_Favoris.class));
+        this.overridePendingTransition(0, 0);
     }
     public void openActivtity_Notifbouton(){
         Texteview_Notification.setText("Vous êtes dans le fragment Notif");

@@ -1,4 +1,4 @@
-package com.example.androidstudio.ui.home;
+package com.example.androidstudio.CORBEILLE.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

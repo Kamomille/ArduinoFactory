@@ -1,4 +1,4 @@
-package com.example.androidstudio.ui.notifications;
+package com.example.androidstudio.CORBEILLE.ui.notifications;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

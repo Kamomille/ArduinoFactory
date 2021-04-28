@@ -64,9 +64,9 @@
         app:layout_constraintVertical_bias="0.438" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/layout_5anneaux"
         android:layout_width="370dp"
-        android:layout_height="225dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="horizontal"
         android:visibility="visible"
@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463"
+        app:layout_constraintVertical_bias="0.43"
         tools:visibility="visible">
 
         <LinearLayout

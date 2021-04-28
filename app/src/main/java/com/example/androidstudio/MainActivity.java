@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
         imageOutils= findViewById(R.id.imageAchat);
         imageOutils= findViewById(R.id.imageContacter);
         setContentView(R.layout.activity_main);
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
 
         // cacher la barre du haut
         ActionBar actionBar = getSupportActionBar();
@@ -119,12 +118,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openFavoris() {
-        Intent intent = new Intent(this, Page_Favoris.class);
-        startActivity(intent);
+        finish();
+        this.startActivity(new Intent(this, Page_Favoris.class));
+        this.overridePendingTransition(0, 0);
     }
     public void openNotification(){
-        Intent intent = new Intent(this, Page_Notification.class);
-        startActivity(intent);
+        finish();
+        this.startActivity(new Intent(this, Page_Notification.class));
+        this.overridePendingTransition(0, 0);
     }
     }
 
