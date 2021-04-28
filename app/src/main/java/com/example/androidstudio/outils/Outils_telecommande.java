@@ -639,7 +639,9 @@ public class Outils_telecommande extends AppCompatActivity {
                 return true;
 
             case R.id.nav_tuto: // ------------------------------------------------------------------------------------------
-                Toast.makeText(this, "tuto", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, Outils_telecommande_tuto.class);
+                startActivity(intent);
+
                 return true;
 
             default:
