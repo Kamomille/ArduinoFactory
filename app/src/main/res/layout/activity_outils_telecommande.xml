@@ -32,12 +32,6 @@
             android:textColor="#0B789C"
             android:textSize="25sp" />
         <!-- Permet d'afficher la barre en dessous de Bluetooth-->
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/barre" />
 
         <ListView
             android:id="@+id/LV_DEVLIST"
@@ -47,8 +41,8 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="200dp"
-            android:background="@android:color/holo_orange_dark"
-            android:divider="@android:color/holo_blue_dark"
+            android:background="#DAE3F3"
+            android:divider="#A3B9E1"
             android:dividerHeight="5dp" />
     </LinearLayout>
 
@@ -66,10 +60,12 @@
         android:orientation="vertical" >
 
             <LinearLayout
+                android:id="@+id/layout_telecommande"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/telecommande_fond_noir"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -319,7 +315,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
-                                app:srcCompat="@drawable/telecommande_moins" />
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/telecommande_moins2" />
                         </LinearLayout>
                     </LinearLayout>
 

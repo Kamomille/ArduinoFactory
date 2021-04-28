@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Couleur pour la télécommande -->
+    <color name="rouge">#FF3300</color>
+    <color name="violet">#7030A0</color>
+    <color name="bleu">#0070C0</color>
+    <color name="orange">#FFC000</color>
+    <color name="rose">#FF99FF</color>
+    <color name="bleu_clair">#00B0F0</color>
+    <color name="jaune">#FFFF00</color>
+    <color name="vert_clair">#CCFF66</color>
+    <color name="vert">#00B050</color>
+
+
 </resources>

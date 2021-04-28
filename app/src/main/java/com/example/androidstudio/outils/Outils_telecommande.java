@@ -1,20 +1,22 @@
 package com.example.androidstudio.outils;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.Fragment;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
-import android.view.LayoutInflater;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,17 +24,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
-import com.example.androidstudio.pages.Page_Favoris;
 import com.example.androidstudio.pages.Page_Outils;
 
 import java.io.IOException;
@@ -41,7 +39,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 public class Outils_telecommande extends AppCompatActivity {
     private TextView tv_status;
@@ -58,6 +55,9 @@ public class Outils_telecommande extends AppCompatActivity {
     private Handler my_handler;
     private final static int STATUS = 1;
     int Etat_volplus = 0,Etat_function = 0,Etat_back = 0,Etat_pause = 0,Etat_next = 0,Etat_descendre = 0,Etat_volmoins = 0,Etat_monter = 0,Etat_bouton_0 = 0,Etat_eq = 0,Etat_rept = 0,Etat_bouton_1 = 0,Etat_bouton_2 = 0,Etat_bouton_3 = 0,Etat_bouton_4 = 0,Etat_bouton_5 = 0,Etat_bouton_6 = 0,Etat_bouton_7 = 0,Etat_bouton_8 = 0,Etat_bouton_9 = 0;
+
+    int telecommandeSelect = 2;
+    int numView = 1;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -490,6 +490,7 @@ public class Outils_telecommande extends AppCompatActivity {
                     ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
                     //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
                     viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
+                    numView =2;
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
 
@@ -565,28 +566,82 @@ public class Outils_telecommande extends AppCompatActivity {
         inflater.inflate(R.menu.menu_telecommande, menu);
         return true;
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         //3 - Handle actions on menu items
         switch (item.getItemId()) {
-            case R.id.nav_deconnection:
-                Toast.makeText(this, "Bluetooth decconnecté", Toast.LENGTH_LONG).show();
-                mybluetooth.disconnect();
-                openActivtity_outils();
+            case R.id.nav_deconnection: // ------------------------------------------------------------------------------------------
+                if (numView == 1) {
+                    Toast.makeText(this, "Connecter vous d'abord au capteur bluetooth", Toast.LENGTH_LONG).show();
+                }
+                if (numView == 2) {
+                    Toast.makeText(this, "Bluetooth decconnecté", Toast.LENGTH_LONG).show();
+                    mybluetooth.disconnect();
+                    finish();
+                    //openActivtity_outils();
+                }
                 return true;
-            case R.id.nav_telecommande:
-                Toast.makeText(this, "nav_telecommande", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.nav_tuto:
-                Toast.makeText(this, "nav_tuto", Toast.LENGTH_LONG).show();
+
+            case R.id.nav_telecommande: // ------------------------------------------------------------------------------------------
 
 
-                //setContentView(R.layout.activity_a_propos);
+                int[] listeButtonCouleur = {R.color.white, R.color.rouge, R.color.violet, R.color.bleu, R.color.orange, R.color.rose, R.color.bleu_clair, R.color.jaune, R.color.vert_clair, R.color.vert};
 
-                //Intent intent_achat= new Intent(this, Page_Favoris.class);;
-                //startActivity(intent_achat);
+                Button[] listeButton = {Bouton_0, Bouton_1, Bouton_2, Bouton_3, Bouton_4, Bouton_5, Bouton_6, Bouton_7, Bouton_8, Bouton_9};
+                ImageButton[] listeImageButton = {bouton_volplus,bouton_function,bouton_back,bouton_pause,bouton_next,bouton_descendre,bouton_volmoins,bouton_monter,bouton_eq,bouton_rept};
+
+                int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
+                int[] listeDrawable_2 = {R.drawable.telecommande_plus, R.drawable.telecommande_soleil_haut, R.drawable.telecommande_power,         R.drawable.telecommande_moins2, R.drawable.telecommande_soleil_bas,    R.drawable.telecommande_speed,     R.drawable.telecommande_flash,  R.drawable.telecommande_fade,  R.drawable.outils_vide,     R.drawable.telecommande_multicouleur};
+
+                Resources res = getResources();
+                Drawable drawable;
+
+                if (numView == 1) {
+                    Toast.makeText(this, "Connecter vous d'abord au capteur bluetooth", Toast.LENGTH_LONG).show();
+                }
+
+
+                if (numView == 2) {
+
+
+                    if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
+
+                        for (int i = 0; i < listeButton.length; i += 1) {
+                            listeButton[i].setBackgroundTintList(getResources().getColorStateList(R.color.white));
+                            listeButton[i].setText(String.valueOf(i));
+                        }
+                        for (int i = 0; i < listeImageButton.length; i += 1) {
+                            drawable = ResourcesCompat.getDrawable(res, listeDrawable_1[i], null);
+                            listeImageButton[i].setImageDrawable(drawable);
+                        }
+                        telecommandeSelect -= 1;
+                    }
+                    if (telecommandeSelect == 2) { // ------------ Telecommande couleur ------------
+
+                        for (int i = 0; i < listeButton.length; i += 1) {
+                            listeButton[i].setBackgroundTintList(getResources().getColorStateList(listeButtonCouleur[i]));
+                            listeButton[i].setText("");
+                        }
+                        for (int i = 0; i < listeImageButton.length; i += 1) {
+                            drawable = ResourcesCompat.getDrawable(res, listeDrawable_2[i], null);
+                            listeImageButton[i].setImageDrawable(drawable);
+                        }
+                        telecommandeSelect -= 1;
+                    }
+                    if (telecommandeSelect == 0) { telecommandeSelect = 2; }
+
+
+
+                }
                 return true;
+
+            case R.id.nav_tuto: // ------------------------------------------------------------------------------------------
+                Toast.makeText(this, "tuto", Toast.LENGTH_LONG).show();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
