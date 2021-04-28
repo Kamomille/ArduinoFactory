@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidstudio">
+    package="com.example.androidstudio" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -17,7 +17,11 @@
         android:label="Arduino Factory"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidStudio">
+        android:theme="@style/Theme.AndroidStudio" >
+        <activity
+            android:name=".outils.Outils_telecommande_tuto"
+            android:label="@string/title_activity_outils_telecommande_tuto" >
+        </activity>
         <activity android:name=".Page_Internet" />
         <activity
             android:name=".pages.Page_Notification"
@@ -29,7 +33,7 @@
             android:value=".MainActivity" />
         <activity
             android:name=".pages.Page_Parametre"
-            android:label="Paramètre">
+            android:label="Paramètre" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -37,35 +41,35 @@
         <activity
             android:name=".outils.Outils_telecommande"
             android:label="Télécommande"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".pages.Page_Outils" />
         </activity>
         <activity
             android:name=".outils.Outils_resistance"
-            android:label="Résistance">
+            android:label="Résistance" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".pages.Page_Outils" />
         </activity>
         <activity
             android:name=".pages.Page_Outils"
-            android:label="Outils">
+            android:label="Outils" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".CORBEILLE.Page_Achat"
-            android:label="Achat">
+            android:label="Achat" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".CORBEILLE.achat_version2"
-            android:label="Achat">
+            android:label="Achat" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -73,42 +77,42 @@
         <activity
             android:name=".achat.Achat_Main"
             android:configChanges="orientation|screenSize"
-            android:label="Achat">
+            android:label="Achat" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".contact.Contactez_nous"
-            android:label="Contactez-nous">
+            android:label="Contactez-nous" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".pages.Page_Contact" />
         </activity>
         <activity
             android:name=".contact.A_propos"
-            android:label="A propos">
+            android:label="A propos" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".pages.Page_Contact" />
         </activity>
         <activity
             android:name=".pages.Page_Contact"
-            android:label="Contact">
+            android:label="Contact" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".pages.Page_Cours"
-            android:label="Cours">
+            android:label="Cours" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="Arduino Factory">
+            android:label="Arduino Factory" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -116,7 +120,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".NotificationService">
+        <service android:name=".NotificationService" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
