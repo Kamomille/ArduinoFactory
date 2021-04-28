@@ -58,6 +58,7 @@ public class Outils_telecommande extends AppCompatActivity {
 
     int telecommandeSelect = 2;
     int numView = 1;
+    private int stateHeart = 1;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -571,7 +572,6 @@ public class Outils_telecommande extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        //3 - Handle actions on menu items
         switch (item.getItemId()) {
             case R.id.nav_deconnection: // ------------------------------------------------------------------------------------------
                 if (numView == 1) {
@@ -641,7 +641,23 @@ public class Outils_telecommande extends AppCompatActivity {
             case R.id.nav_tuto: // ------------------------------------------------------------------------------------------
                 Intent intent = new Intent(this, Outils_telecommande_tuto.class);
                 startActivity(intent);
+                return true;
 
+            case R.id.coeur_vide: // ------------------------------------------------------------------------------------------
+
+                Resources res2 = getResources();
+
+                if (stateHeart == 1) {
+                    Drawable drawable2 = ResourcesCompat.getDrawable(res2, R.drawable.coeur_plein, null);
+                    item.setIcon(drawable2);
+                    stateHeart -= 1;
+                }
+                if(stateHeart == 2){
+                    Drawable drawable2 = ResourcesCompat.getDrawable(res2, R.drawable.coeur_vide, null);
+                    item.setIcon(drawable2);
+                    stateHeart -= 1;
+                }
+                if (stateHeart == 0) { stateHeart = 2; }
                 return true;
 
             default:
