@@ -9,21 +9,6 @@
 
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="311dp"
-        android:layout_height="50dp"
-        android:gravity="center_horizontal"
-        android:text=" Calcul Résistance"
-        android:textAlignment="center"
-        android:textColor="#0B789C"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
-
-    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.727" />
-
     <TextView
         android:id="@+id/textView_TCR"
         android:layout_width="wrap_content"
@@ -49,59 +33,241 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.78" />
-
-
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="375dp"
-        android:layout_height="149dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/outils_resistance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438" />
+        app:layout_constraintVertical_bias="0.44" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_4anneaux"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44">
+
+        <LinearLayout
+            android:id="@+id/bande1_4"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH1_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor1_4"
+                android:layout_width="35dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB1_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande2_4"
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH2_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor2_4"
+                android:layout_width="35dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB2_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande3_4"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH3_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor3_4"
+                android:layout_width="35dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB3_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande4_4"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH4_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor4_4"
+                android:layout_width="35dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB4_4"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
 
     <LinearLayout
         android:id="@+id/layout_5anneaux"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
         android:orientation="horizontal"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43"
-        tools:visibility="visible">
+        app:layout_constraintVertical_bias="0.43">
 
         <LinearLayout
-            android:id="@+id/bande1"
+            android:id="@+id/bande1_5"
             android:layout_width="45dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/flecheH1"
+                android:id="@+id/flecheH1_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor1"
-
-                android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:id="@+id/resistanceColor1_5"
+                android:layout_width="30dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-
                 android:background="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -112,32 +278,35 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB1"
+                android:id="@+id/flecheB1_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bande2"
+            android:id="@+id/bande2_5"
             android:layout_width="46dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/flecheH2"
+                android:id="@+id/flecheH2_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor2"
-                android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:id="@+id/resistanceColor2_5"
+                android:layout_width="30dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
@@ -151,32 +320,35 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB2"
+                android:id="@+id/flecheB2_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bande3"
+            android:id="@+id/bande3_5"
             android:layout_width="44dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/flecheH3"
+                android:id="@+id/flecheH3_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor3"
-                android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:id="@+id/resistanceColor3_5"
+                android:layout_width="30dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
@@ -184,32 +356,35 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB3"
+                android:id="@+id/flecheB3_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bande4"
+            android:id="@+id/bande4_5"
             android:layout_width="44dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/flecheH4"
+                android:id="@+id/flecheH4_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor4"
-                android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:id="@+id/resistanceColor4_5"
+                android:layout_width="30dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
@@ -217,32 +392,35 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB4"
+                android:id="@+id/flecheB4_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bande5"
+            android:id="@+id/bande5_5"
             android:layout_width="44dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/flecheH5"
+                android:id="@+id/flecheH5_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor5"
-                android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:id="@+id/resistanceColor5_5"
+                android:layout_width="30dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
@@ -250,32 +428,147 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB5"
+                android:id="@+id/flecheB5_5"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_6anneaux"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43">
+
+        <LinearLayout
+            android:id="@+id/bande1_6"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/flecheH1_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor1_6"
+                android:layout_width="25dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB1_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/bande6"
-            android:layout_width="44dp"
+            android:id="@+id/bande2_6"
+            android:layout_width="46dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/flecheH6"
+                android:id="@+id/flecheH2_6"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
             <ImageButton
-                android:id="@+id/resistanceColor6"
+                android:id="@+id/resistanceColor2_6"
                 android:layout_width="25dp"
-                android:layout_height="90dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.251"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB2_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande3_6"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH3_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor3_6"
+                android:layout_width="25dp"
+                android:layout_height="88dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
@@ -283,14 +576,133 @@
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
-                android:id="@+id/flecheB6"
+                android:id="@+id/flecheB3_6"
                 android:layout_width="44dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande4_6"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH4_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor4_6"
+                android:layout_width="25dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB4_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande5_6"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH5_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor5_6"
+                android:layout_width="25dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB5_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche_bas" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bande6_6"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/flecheH6_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/outils_fleche" />
+
+            <ImageButton
+                android:id="@+id/resistanceColor6_6"
+                android:layout_width="25dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#000000"
+                app:srcCompat="@drawable/outils_vide" />
+
+            <ImageButton
+                android:id="@+id/flecheB6_6"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
 
     <ImageButton
         android:id="@+id/boutonInfo"
@@ -317,7 +729,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197"
+        app:layout_constraintVertical_bias="0.13"
         app:tabIndicatorColor="#0B789C"
         app:tabSelectedTextColor="#0B789C"
         app:tabTextColor="#B3B3B3">
@@ -532,4 +944,3 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

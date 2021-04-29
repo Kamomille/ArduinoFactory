@@ -60,28 +60,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etape 2 : cabler le module"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="#0B789C"
-                android:textStyle="bold"
-                android:textSize="20dp" />
-
-
-            <ImageView
-                android:id="@+id/image_cablage"
-                android:layout_width="wrap_content"
-                android:layout_height="225dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/telecommande_tuto_cablage" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Etape 3 : téléverser le code dans la carte Arduino"
+                android:text="Etape 2 : téléverser le code dans la carte Arduino"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
@@ -106,6 +86,26 @@
                 app:cornerRadius="50dp"
                 app:strokeColor="#FFFFFF"
                 app:strokeWidth="1dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etape 3 : câbler le module"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#0B789C"
+                android:textStyle="bold"
+                android:textSize="20dp" />
+
+
+            <ImageView
+                android:id="@+id/image_cablage"
+                android:layout_width="wrap_content"
+                android:layout_height="225dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/telecommande_tuto_cablage" />
 
             <Space
                 android:layout_width="match_parent"
