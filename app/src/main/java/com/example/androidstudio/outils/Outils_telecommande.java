@@ -488,10 +488,16 @@ public class Outils_telecommande extends AppCompatActivity {
                     //ceci est un commantaire
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
-                    //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
-                    viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
-                    numView =2;
+                    runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
+                            //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                            viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
+                            numView =2;
+                        }
+                    });
                 } else {
                     my_handler.obtainMessage(STATUS, -1, -1, "Echec Connexion").sendToTarget();
 
