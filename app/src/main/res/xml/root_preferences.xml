@@ -1,32 +1,39 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="Profil">
-        <EditTextPreference
-            app:key="Prénom"
-            app:title="Votre prénom"
-            app:useSimpleSummaryProvider="true" />
-        <EditTextPreference
-            app:key="Nom"
-            app:title="Votre nom"
-            app:useSimpleSummaryProvider="true" />
+        <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android">
 
-    </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_title_category"
+                android:title="Profil">
+                <EditTextPreference
+                    android:key="setting_title_text"
+                    android:title="Prénom"
+                    android:summary=""
+                    android:dialogTitle="Entrez votre Prénom :"
+                    android:dialogMessage=""/>
+                <EditTextPreference
+                    android:key="setting_title_text"
+                    android:title="Nom"
+                    android:summary=""
+                    android:dialogTitle="Entrez notre Nom :"
+                    android:dialogMessage=""/>
 
-    <PreferenceCategory app:title="Notification">
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_title_category"
+                android:title="Notification">
+                <SwitchPreference
+                    android:key="Sync"
+                    android:title="Activer toutes les notification" />
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_title_category"
+                android:title="Réseau">
+                <Preference
+                    android:key="@string/myCoolButton"
+                    android:title="Notez l'application"
+                    android:summary="Google play"
+                    ></Preference>
 
-        <SwitchPreferenceCompat
-            app:key="Sync"
-            app:title="Activer toutes les notification" />
-
-    </PreferenceCategory>
-    <PreferenceCategory app:title="Réseau">
-
-        <Preference
-            android:key="myCoolButton"
-            android:title="Notez l'application"
-            android:summary="Google play"
-            ></Preference>
-
-    </PreferenceCategory>
-</PreferenceScreen>
+            </PreferenceCategory>
+        </PreferenceScreen>

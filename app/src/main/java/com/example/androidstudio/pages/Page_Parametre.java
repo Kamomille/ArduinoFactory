@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.util.Log;
 import android.view.MenuItem;
 
@@ -17,6 +19,50 @@ import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
 
 import static android.content.ContentValues.TAG;
+/*
+public class Page_Parametre extends PreferenceActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment.MyPreferenceFragment()).commit();
+
+    }
+
+    public static class SettingsFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            setPreferencesFromResource(R.xml.root_preferences, rootKey);
+            Preference button = findPreference(getString(R.string.myCoolButton));
+            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    //Intent intent = new Intent(getActivity() , Page_Internet.class);
+                    //intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
+                    //startActivity(intent);
+                    return true;
+                }
+            });
+        }
+    }
+}
+/*
+    public static class MyPreferenceFragment extends PreferenceFragment
+    {
+        @Override
+        public void onCreate(final Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.root_preferences);
+
+
+        }
+
+    }
+
+}
+*/
+
 
 public class Page_Parametre extends AppCompatActivity {
     @Override
@@ -40,8 +86,6 @@ public class Page_Parametre extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
         return true;
     }
-    SharedPreferences prefs = this.getSharedPreferences(
-            "com.example.app", Context.MODE_PRIVATE);
     public static class SettingsFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -50,9 +94,9 @@ public class Page_Parametre extends AppCompatActivity {
             button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    //Intent intent = new Intent(getActivity() , Page_Internet.class);
-                    //intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
-                    //startActivity(intent);
+                    Intent intent = new Intent(getActivity() , Page_Internet.class);
+                    intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
+                    startActivity(intent);
                    return true;
                 }
             });

@@ -14,6 +14,8 @@ import com.example.androidstudio.outils.Outils_resistance;
 import com.example.androidstudio.R;
 import com.example.androidstudio.outils.Outils_telecommande;
 
+import java.io.IOException;
+
 public class Page_Outils extends AppCompatActivity {
 
     private LinearLayout outil_resistance, outil_telecommande;
@@ -36,14 +38,15 @@ public class Page_Outils extends AppCompatActivity {
             @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
     }
 
+
     public void openActivtity_outilsResistance(){
         Intent intent = new Intent(this, Outils_resistance.class);
         startActivity(intent);
     }
     public void openActivtity_outilsTelecommande(){
         Intent intent = new Intent(this, Outils_telecommande.class);
+        intent.putExtra("af","1");
         startActivity(intent);
     }
-
 
 }
