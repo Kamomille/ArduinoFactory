@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.androidstudio.R;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,11 +21,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
-public class Page_Cours extends AppCompatActivity {
+public class Cours extends AppCompatActivity {
 
-    Button newbutton;
-    LinearLayout layout;
-    LinearLayout layoutN;
+    TextView TextDef;
+    TextView TextDes;
+    LinearLayout layoutDef;
+    LinearLayout layoutDes;
+    LinearLayout layoutSchema;
     FirebaseFirestore db ;
     DocumentReference document;
     String field;
@@ -39,7 +43,11 @@ public class Page_Cours extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        layout = findViewById(R.id.layout);
+        TextDef = findViewById(R.id.textViewDef);
+        TextDes = findViewById(R.id.textViewDes);
+        layoutDef = findViewById(R.id.Def);
+        layoutDes = findViewById(R.id.Des);
+        layoutSchema = findViewById(R.id.Schema);
 
         db = FirebaseFirestore.getInstance();
 
@@ -54,7 +62,11 @@ public class Page_Cours extends AppCompatActivity {
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
 
                             for (DocumentSnapshot d : list) {
-                                addButton(d.getId());
+                                if (d.getId()=="Bouton poussoir"){
+                                    TextDef.setText(d.getString("Définition"));
+                                    TextDef.setText(d.getString("Description"));
+                                }
+
 
                             }
                         }
@@ -63,44 +75,5 @@ public class Page_Cours extends AppCompatActivity {
 
     }
 
-    public void onClick(View view){
-
-        View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
-        int index = layout.indexOfChild(view);
-
-        if(stock==null){
-            layout.addView(layout2,index+1);
-            stock=view;
-        }
-        else if (stock==view) {
-            layout.removeViewAt(index + 1);
-            stock = null;
-        }
-        else {
-            layout.addView(layout2,index+1);
-            int indexstock = layout.indexOfChild(stock);
-            layout.removeViewAt(indexstock+1);
-            stock=view;
-        }
-
-    }
-
-    public void onClick_cours (View view){
-        openActivtity_cours();
-    }
-
-    public void openActivtity_cours(){
-        Intent intent = new Intent(this, Cours.class);
-        startActivity(intent);
-    }
-
-
-    public void addButton(String Text){
-        LinearLayout layout = findViewById(R.id.layout);
-        newbutton = new Button(this);
-        newbutton.setText(Text);
-        newbutton.setOnClickListener(this::onClick);
-        layout.addView(newbutton,0);
-
-    }
 }
+

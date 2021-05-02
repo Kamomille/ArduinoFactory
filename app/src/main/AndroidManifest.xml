@@ -115,6 +115,13 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".pages.Cours"
+            android:label="Cours">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="Arduino Factory">
             <intent-filter>

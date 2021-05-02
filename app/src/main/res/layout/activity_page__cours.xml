@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F4FCFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133"
+        app:tabIndicatorColor="#0B789C"
+        app:tabSelectedTextColor="#0B789C"
+        app:tabTextColor="#B3B3B3">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Définition" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shéma de câblage" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:id="@+id/Def"
+        android:layout_width="408dp"
+        android:layout_height="557dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tt"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewDef"
+            android:layout_width="297dp"
+            android:layout_height="233dp"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imageViewDef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/achat_bouton" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Des"
+        android:layout_width="375dp"
+        android:layout_height="569dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tt"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewDes"
+            android:layout_width="297dp"
+            android:layout_height="233dp"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imageViewDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/achat_bouton" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Schema"
+        android:layout_width="378dp"
+        android:layout_height="574dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tt"
+        tools:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/imageViewSchema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/achat_bouton" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
