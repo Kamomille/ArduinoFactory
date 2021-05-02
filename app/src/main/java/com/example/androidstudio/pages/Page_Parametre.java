@@ -1,6 +1,8 @@
 package com.example.androidstudio.pages;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -38,7 +40,8 @@ public class Page_Parametre extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
         return true;
     }
-
+    SharedPreferences prefs = this.getSharedPreferences(
+            "com.example.app", Context.MODE_PRIVATE);
     public static class SettingsFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -47,10 +50,10 @@ public class Page_Parametre extends AppCompatActivity {
             button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity() , Page_Internet.class);
-                    intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
-                    startActivity(intent);
-                    return true;
+                    //Intent intent = new Intent(getActivity() , Page_Internet.class);
+                    //intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
+                    //startActivity(intent);
+                   return true;
                 }
             });
         }

@@ -23,7 +23,7 @@
     <PreferenceCategory app:title="Réseau">
 
         <Preference
-            android:key="@string/myCoolButton"
+            android:key="myCoolButton"
             android:title="Notez l'application"
             android:summary="Google play"
             ></Preference>
