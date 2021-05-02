@@ -48,10 +48,10 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     private int stateHeart = 1;
 
     private String[][] listeCouleur = {
-    //                       CS   multi  tol    TCR
-    //si 4 bandes :         1et2   3     4
-    //si 5 bandes :         1,2,3  4     5
-    //si 6 bandes :         1,2,3  4     5       6
+            //                       CS   multi  tol    TCR
+            //si 4 bandes :         1et2   3     4
+            //si 5 bandes :         1,2,3  4     5
+            //si 6 bandes :         1,2,3  4     5       6
             {"#000000",    "0",  "0",   "20", "1000"}, //noir 0
             {"#CC6633",    "1",  "1",    "1",  "100"}, //marron 1
             {"#FE0000",    "2",  "2",    "2",   "50"}, //rouge 2
@@ -280,7 +280,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             @Override
             public void onTabReselected(TabLayout.Tab tab) { }
         });
-        }
+    }
 
     public void TabSelect_4anneaux(){
         calcul_4();
@@ -519,7 +519,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             l =listeCouleur[i][numRangerListeCouleur];
             if (l.equals("1000")){
                 liste_CarreCouleur[i].setVisibility(View.INVISIBLE);
-             }
+            }
         }
     }
 
@@ -632,7 +632,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
                     stateHeart -= 1;
                 }
                 if (stateHeart == 0) { stateHeart = 2; }
-                        return true;
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -641,8 +641,4 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
 
 
 }
-
-
-
-
 

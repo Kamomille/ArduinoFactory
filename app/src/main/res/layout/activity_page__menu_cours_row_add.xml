@@ -20,10 +20,12 @@
             android:layout_marginLeft="50dp"
             android:backgroundTint="#967EC1"
             android:onClick="onClick_cours"
-            android:text="Button"
+            android:text="Définition"
             android:textColorHighlight="#FFFFFF"
             app:backgroundTint="#E6FFFFFF"
-            app:cornerRadius="6dp" />
+            app:cornerRadius="6dp"
+
+            />
 
         <Button
             android:id="@+id/button101"
@@ -31,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:backgroundTint="#967EC1"
-            android:text="Button"
+            android:text="Description"
             android:textColorHighlight="#FFFFFF"
             app:backgroundTint="#E6FFFFFF"
             app:cornerRadius="6dp"
@@ -43,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:backgroundTint="#967EC1"
-            android:text="Button"
+            android:text="Schéma de cablâge"
             android:textColorHighlight="#FFFFFF"
             app:backgroundTint="#E6FFFFFF"
             app:cornerRadius="6dp"

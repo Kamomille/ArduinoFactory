@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-
+        <activity android:name=".cours.pour_cedric"></activity>
         <activity android:name=".Page_Internet" />
         <activity
             android:name=".pages.Page_Notification"
@@ -109,6 +109,13 @@
         </activity>
         <activity
             android:name=".pages.Page_Cours"
+            android:label="Cours">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".pages.Cours"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
