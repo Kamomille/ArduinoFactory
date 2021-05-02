@@ -14,7 +14,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,11 +46,22 @@ dependencies {
     api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     api'androidx.preference:preference:1.1.1'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.2'
+    implementation 'com.google.firebase:firebase-firestore:22.1.2'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     api 'androidx.recyclerview:recyclerview:1.1.0'
     api 'com.google.firebase:firebase-auth:20.0.1'
 
+
+}
+allprojects {
+    repositories {
+        // Check that you have the following line (if not, add it):
+        google()  // Google's Maven repository
+
+    }
 }

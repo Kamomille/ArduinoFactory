@@ -127,5 +127,6 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(new Intent(this, Page_Notification.class));
         this.overridePendingTransition(0, 0);
     }
+
     }
 
