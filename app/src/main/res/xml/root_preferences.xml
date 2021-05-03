@@ -3,37 +3,50 @@
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <PreferenceCategory
-                android:key="setting_title_title_category"
+                android:key="setting1"
                 android:title="Profil">
                 <EditTextPreference
-                    android:key="setting_title_text"
-                    android:title="Prénom"
-                    android:summary=""
-                    android:dialogTitle="Entrez votre Prénom :"
-                    android:dialogMessage=""/>
+                    app:key="Prénom"
+                    app:title="Votre Prénom :"
+                    app:useSimpleSummaryProvider="true" />
                 <EditTextPreference
-                    android:key="setting_title_text"
-                    android:title="Nom"
-                    android:summary=""
-                    android:dialogTitle="Entrez notre Nom :"
-                    android:dialogMessage=""/>
+                    app:key="Nom"
+                    app:title="Votre Nom :"
+                    app:useSimpleSummaryProvider="true" />
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_t"
+                android:title="Luminosité">
+                <SeekBarPreference
+                    android:id="@+id/preference_delay_seek_bar"
+                    android:title="Value"
+                    android:defaultValue="1"
+                    android:max="60"/>
 
             </PreferenceCategory>
             <PreferenceCategory
-                android:key="setting_title_title_category"
-                android:title="Notification">
-                <SwitchPreference
-                    android:key="Sync"
-                    android:title="Activer toutes les notification" />
-            </PreferenceCategory>
-            <PreferenceCategory
-                android:key="setting_title_title_category"
+                android:key="setting_title_title"
                 android:title="Réseau">
                 <Preference
                     android:key="@string/myCoolButton"
                     android:title="Notez l'application"
                     android:summary="Google play"
                     ></Preference>
-
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_title_category"
+                android:title="Vos données personnels">
+                <EditTextPreference
+                    app:key="prive"
+                    app:title="L'appplication s'engage à respecter votre vie privée en respectant la loi RGPD sur la protection des données.  "
+                    app:useSimpleSummaryProvider="false" />
+            </PreferenceCategory>
+            <PreferenceCategory
+                android:key="setting_title_title_category"
+                android:title="Version">
+                <EditTextPreference
+                    app:key="Version"
+                    app:title="Version 1.0 "
+                    app:useSimpleSummaryProvider="false" />
             </PreferenceCategory>
         </PreferenceScreen>

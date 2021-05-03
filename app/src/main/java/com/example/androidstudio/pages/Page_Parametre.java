@@ -11,64 +11,33 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.EditTextPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SeekBarPreference;
+import androidx.preference.SwitchPreference;
 
 import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.Page_Internet;
 import com.example.androidstudio.R;
 
 import static android.content.ContentValues.TAG;
-/*
-public class Page_Parametre extends PreferenceActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment.MyPreferenceFragment()).commit();
-
-    }
-
-    public static class SettingsFragment extends PreferenceFragmentCompat {
-        @Override
-        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey);
-            Preference button = findPreference(getString(R.string.myCoolButton));
-            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    //Intent intent = new Intent(getActivity() , Page_Internet.class);
-                    //intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
-                    //startActivity(intent);
-                    return true;
-                }
-            });
-        }
-    }
-}
-/*
-    public static class MyPreferenceFragment extends PreferenceFragment
-    {
-        @Override
-        public void onCreate(final Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.root_preferences);
-
-
-        }
-
-    }
-
-}
-*/
-
-
 public class Page_Parametre extends AppCompatActivity {
+    EditTextPreference PrenomPreference =null;
+    EditTextPreference NomPreference=null;
+    SharedPreferences prefs;
+    String prenom1 ="la";
+    private String prenom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("firstname", prenom);
+        editor.apply();
         setContentView(R.layout.settings_activity);
+
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -87,6 +56,8 @@ public class Page_Parametre extends AppCompatActivity {
         return true;
     }
     public static class SettingsFragment extends PreferenceFragmentCompat {
+
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
@@ -99,9 +70,9 @@ public class Page_Parametre extends AppCompatActivity {
                     startActivity(intent);
                    return true;
                 }
+
             });
         }
-
 
     }
         }
