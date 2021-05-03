@@ -15,17 +15,7 @@
                     app:useSimpleSummaryProvider="true" />
             </PreferenceCategory>
             <PreferenceCategory
-                android:key="setting_title_t"
-                android:title="Luminosité">
-                <SeekBarPreference
-                    android:id="@+id/preference_delay_seek_bar"
-                    android:title="Value"
-                    android:defaultValue="1"
-                    android:max="60"/>
-
-            </PreferenceCategory>
-            <PreferenceCategory
-                android:key="setting_title_title"
+                android:key="reseau"
                 android:title="Réseau">
                 <Preference
                     android:key="@string/myCoolButton"
@@ -34,7 +24,7 @@
                     ></Preference>
             </PreferenceCategory>
             <PreferenceCategory
-                android:key="setting_title_title_category"
+                android:key="Priv"
                 android:title="Vos données personnels">
                 <EditTextPreference
                     app:key="prive"
@@ -42,7 +32,7 @@
                     app:useSimpleSummaryProvider="false" />
             </PreferenceCategory>
             <PreferenceCategory
-                android:key="setting_title_title_category"
+                android:key="Vers"
                 android:title="Version">
                 <EditTextPreference
                     app:key="Version"
