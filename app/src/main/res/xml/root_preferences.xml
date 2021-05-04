@@ -7,16 +7,16 @@
                 android:title="Profil">
                 <EditTextPreference
                     app:key="Prénom"
-                    app:title="Votre Prénom :"
+                    app:title="Votre Prénom"
                     app:useSimpleSummaryProvider="true" />
                 <EditTextPreference
                     app:key="Nom"
-                    app:title="Votre Nom :"
+                    app:title="Votre Nom"
                     app:useSimpleSummaryProvider="true" />
             </PreferenceCategory>
             <PreferenceCategory
                 android:key="reseau"
-                android:title="Réseau">
+                android:title="Soutenez-nous">
                 <Preference
                     android:key="@string/myCoolButton"
                     android:title="Notez l'application"
@@ -24,18 +24,10 @@
                     ></Preference>
             </PreferenceCategory>
             <PreferenceCategory
-                android:key="Priv"
-                android:title="Vos données personnels">
-                <EditTextPreference
-                    app:key="prive"
-                    app:title="L'appplication s'engage à respecter votre vie privée en respectant la loi RGPD sur la protection des données.  "
-                    app:useSimpleSummaryProvider="false" />
-            </PreferenceCategory>
-            <PreferenceCategory
                 android:key="Vers"
-                android:title="Version">
+                android:title="Information sur l'application">
                 <EditTextPreference
-                    app:key="Version"
+                    app:key="Version application"
                     app:title="Version 1.0 "
                     app:useSimpleSummaryProvider="false" />
             </PreferenceCategory>
