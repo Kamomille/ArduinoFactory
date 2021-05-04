@@ -158,41 +158,33 @@ public class MainActivity extends AppCompatActivity {
         playSound();
         openActivtity_parametre();
     }
+
     public void openActivtity_outils(){
-        playSound();
         Intent intent = new Intent(this, Page_Outils.class);
         startActivity(intent);
     }
-
-
     public void openActivtity_cours(){
-        playSound();
         Intent intent = new Intent(this, Page_Cours.class);
         startActivity(intent);
     }
     public void openActivtity_achat(){
-        playSound();
         Intent intent = new Intent(this, Achat_Main.class);
         startActivity(intent);
     }
     public void openActivtity_contacter(){
-        playSound();
         Intent intent = new Intent(this, Page_Contact.class);
         startActivity(intent);
     }
     public void openActivtity_parametre() {
-        playSound();
         Intent intent = new Intent(this, Page_Parametre.class);
         startActivity(intent);
     }
     public void openFavoris() {
-        playSound();
         finish();
         this.startActivity(new Intent(this, Page_Favoris.class));
         this.overridePendingTransition(0, 0);
     }
     public void openNotification(){
-        playSound();
         finish();
         this.startActivity(new Intent(this, Page_Notification.class));
         this.overridePendingTransition(0, 0);
