@@ -88,8 +88,8 @@ public class Outils_telecommande extends AppCompatActivity {
         bouton_deconnecter.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mybluetooth.disconnect();
-                openActivtity_outils();
+                //mybluetooth.disconnect();
+                //openActivtity_outils();
 
             }
         }));
