@@ -1,6 +1,7 @@
 package com.example.androidstudio.pages;
 
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,17 +10,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.androidstudio.R;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
-public class Page_Cours extends AppCompatActivity {
+public class Page_Menu_Cours extends AppCompatActivity {
+
+    TextView TextDef;
+    TextView TextDes;
 
     Button newbutton;
     LinearLayout layout;
@@ -28,6 +36,7 @@ public class Page_Cours extends AppCompatActivity {
     DocumentReference document;
     String field;
     View stock;
+    Button stockbutton;
 
 
     @Override
@@ -40,9 +49,10 @@ public class Page_Cours extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         layout = findViewById(R.id.layout);
+        TextDef = findViewById(R.id.TextDef);
+        TextDes = findViewById(R.id.TextDes);
 
         db = FirebaseFirestore.getInstance();
-
         document=db.collection("Cours").document("coffret");
         db.collection("Cours").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -71,6 +81,7 @@ public class Page_Cours extends AppCompatActivity {
         if(stock==null){
             layout.addView(layout2,index+1);
             stock=view;
+            stockbutton= (Button) view;
         }
         else if (stock==view) {
             layout.removeViewAt(index + 1);
@@ -81,16 +92,21 @@ public class Page_Cours extends AppCompatActivity {
             int indexstock = layout.indexOfChild(stock);
             layout.removeViewAt(indexstock+1);
             stock=view;
+            stockbutton= (Button) view;
         }
 
     }
 
     public void onClick_cours (View view){
-        openActivtity_cours();
+        openActivtity_cours(view);
     }
 
-    public void openActivtity_cours(){
+    public void openActivtity_cours(View view){
+        document=db.collection("cours").document("Bouton poussoir");
+        document=db.collection("Cours").document("coffret");
+
         Intent intent = new Intent(this, Cours.class);
+        intent.putExtra("page",stockbutton.getText().toString());
         startActivity(intent);
     }
 

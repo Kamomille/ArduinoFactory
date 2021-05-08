@@ -108,7 +108,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".pages.Page_Cours"
+            android:name=".pages.Page_Menu_Cours"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
