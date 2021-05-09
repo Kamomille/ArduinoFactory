@@ -1,15 +1,11 @@
 package com.example.androidstudio;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +13,7 @@ import android.widget.ImageButton;
 
 import com.example.androidstudio.achat.Achat_Main;
 import com.example.androidstudio.pages.Page_Contact;
-import com.example.androidstudio.pages.Page_Cours;
+import com.example.androidstudio.pages.Page_Menu_Cours;
 import com.example.androidstudio.pages.Page_Favoris;
 import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
@@ -29,8 +25,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -164,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivtity_cours(){
-        Intent intent = new Intent(this, Page_Cours.class);
+        Intent intent = new Intent(this, Page_Menu_Cours.class);
         startActivity(intent);
     }
     public void openActivtity_achat(){

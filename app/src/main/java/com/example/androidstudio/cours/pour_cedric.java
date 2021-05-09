@@ -14,7 +14,7 @@ public class pour_cedric extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pour_cedric);
+        setContentView(R.layout.activity_page__cours);
 
         LinearLayout layout_schema = (LinearLayout) findViewById(R.id.layout_schema);
         LinearLayout layout_des = (LinearLayout) findViewById(R.id.layout_des);
