@@ -39,7 +39,7 @@ public class NotificationService extends FirebaseMessagingService {
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
-            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            Log.d(TAG, "Message Notification Body le message : " + remoteMessage.getNotification().getBody());
 
 
             SharedPreferences.Editor editor = getSharedPreferences("notif", MODE_PRIVATE).edit();
