@@ -88,8 +88,8 @@ public class Outils_telecommande extends AppCompatActivity {
         bouton_deconnecter.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mybluetooth.disconnect();
-                openActivtity_outils();
+                //mybluetooth.disconnect();
+                //openActivtity_outils();
 
             }
         }));
@@ -503,7 +503,7 @@ public class Outils_telecommande extends AppCompatActivity {
                             ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
                             //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
                             viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
-                            //numView =2;
+                            numView =2;
                         }
                     });
 
@@ -561,8 +561,6 @@ public class Outils_telecommande extends AppCompatActivity {
         void disconnect() {
             try {
                 my_bt_soket.close();
-                //my_bt_adapter.disable();
-                //my_bt_adapter.enable();
             } catch (IOException e) {
                 my_handler.obtainMessage(STATUS, -1, -1, "Echec Déconnexion").sendToTarget();
             }
@@ -595,7 +593,7 @@ public class Outils_telecommande extends AppCompatActivity {
                     Toast.makeText(this, "Connecter vous d'abord au capteur bluetooth", Toast.LENGTH_LONG).show();
                 }
                 if (numView == 2) {
-                    Toast.makeText(this, "Bluetooth decconnecté", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Bluetooth deconnecté", Toast.LENGTH_LONG).show();
                     mybluetooth.disconnect();
                     finish();
                     //openActivtity_outils();
@@ -622,7 +620,6 @@ public class Outils_telecommande extends AppCompatActivity {
 
 
                 if (numView == 2) {
-
 
                     if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
 

@@ -104,7 +104,7 @@ public class Achat_Main extends AppCompatActivity {
         data.add(new Achat_Data("Carte méga",      R.drawable.achat_carte_mega,      "https://amzn.to/2OL1SjC"));
         data.add(new Achat_Data("Carte nano",      R.drawable.achat_carte_nano,      "https://amzn.to/30YsU9A"));
         data.add(new Achat_Data("Carte raspberry", R.drawable.achat_raspberry,       "https://amzn.to/3907o95"));
-        data.add(new Achat_Data("Kit rapsberry",   R.drawable.achat_kit_raspberry,   "https://amzn.to/2OVNSUj"));
+        data.add(new Achat_Data("Kit raspberry",   R.drawable.achat_kit_raspberry,   "https://amzn.to/2OVNSUj"));
         data.add(new Achat_Data("Machine à souder",R.drawable.achat_machine_soudure, "https://amzn.to/38TxeLW"));
         data.add(new Achat_Data("Etain",           R.drawable.achat_etain,           "https://amzn.to/3vJkGjI"));
         data.add(new Achat_Data("Kit soudure",     R.drawable.achat_kit_soudure,     "https://amzn.to/310olvr"));
