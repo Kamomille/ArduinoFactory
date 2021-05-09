@@ -22,16 +22,19 @@
         app:tabTextColor="#B3B3B3">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Def"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Definition" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Des" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Cablage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Schéma" />

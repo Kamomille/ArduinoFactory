@@ -1,7 +1,6 @@
 package com.example.androidstudio.pages;
 
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +13,9 @@ import android.widget.TextView;
 
 import com.example.androidstudio.R;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
@@ -31,12 +27,13 @@ public class Page_Menu_Cours extends AppCompatActivity {
 
     Button newbutton;
     LinearLayout layout;
-    LinearLayout layoutN;
+    LinearLayout layout2;
     FirebaseFirestore db ;
     DocumentReference document;
-    String field;
     View stock;
     Button stockbutton;
+    int typePage;
+    int index;
 
 
     @Override
@@ -49,6 +46,7 @@ public class Page_Menu_Cours extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         layout = findViewById(R.id.layout);
+        layout2 = findViewById(R.id.layout_cours_choix);
         TextDef = findViewById(R.id.TextDef);
         TextDes = findViewById(R.id.TextDes);
 
@@ -76,7 +74,7 @@ public class Page_Menu_Cours extends AppCompatActivity {
     public void onClick(View view){
 
         View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
-        int index = layout.indexOfChild(view);
+        index = layout.indexOfChild(view);
 
         if(stock==null){
             layout.addView(layout2,index+1);
@@ -105,8 +103,12 @@ public class Page_Menu_Cours extends AppCompatActivity {
         document=db.collection("cours").document("Bouton poussoir");
         document=db.collection("Cours").document("coffret");
 
+        layout2=(LinearLayout) view.getParent();
+        typePage=layout2.indexOfChild(view);
+
         Intent intent = new Intent(this, Cours.class);
         intent.putExtra("page",stockbutton.getText().toString());
+        intent.putExtra("typePage",typePage);
         startActivity(intent);
     }
 
@@ -119,4 +121,5 @@ public class Page_Menu_Cours extends AppCompatActivity {
         layout.addView(newbutton,0);
 
     }
+
 }
