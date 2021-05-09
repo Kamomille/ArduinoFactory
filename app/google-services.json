@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058792894365",
+    "project_id": "arduinofactory-aba68",
+    "storage_bucket": "arduinofactory-aba68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058792894365:android:e93b3591743c9fd4ad8974",
+        "android_client_info": {
+          "package_name": "com.example.androidstudio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058792894365-ncffainebdd0khuqsp3d4cpnsb7f1vv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASt9VbXSOnFdyVlJaSSGbez3QvvLUQpnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058792894365-ncffainebdd0khuqsp3d4cpnsb7f1vv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
