@@ -42,9 +42,8 @@ public class NotificationService extends FirebaseMessagingService {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
 
 
-            // ICI
             SharedPreferences.Editor editor = getSharedPreferences("notif", MODE_PRIVATE).edit();
-            editor.putString("notif1", String.valueOf(remoteMessage.getData())).apply();
+            editor.putString("notif1", remoteMessage.getNotification().getBody()).apply();
         }
 
         CreateNotification();
