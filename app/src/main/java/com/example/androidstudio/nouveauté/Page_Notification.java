@@ -1,14 +1,18 @@
-package com.example.androidstudio.pages;
+package com.example.androidstudio.nouveauté;
 
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,12 +22,22 @@ import android.widget.TextView;
 
 import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
+import com.example.androidstudio.achat.RecyclerItemClickListener;
+import com.example.androidstudio.favoris.Favoris_Data;
+import com.example.androidstudio.favoris.Favoris_RecyclerViewAdapter;
 import com.example.androidstudio.favoris.Page_Favoris;
+import com.example.androidstudio.outils.Outils_resistance;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class Page_Notification extends AppCompatActivity {
     private Button Notification;
     private TextView Texteview_Notification;
+
+    private RecyclerView recyclerView;
+    private Favoris_RecyclerViewAdapter adapter;
+    private ArrayList<Favoris_Data> data;
 
 
     @Override
@@ -58,8 +72,29 @@ public class Page_Notification extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
         bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
+        // ========================================================================================================================
+        //                              recycler view
+        // ========================================================================================================================
 
-        // Pour gérer la navigation avec les fragments (dasboard, home, notif) -----------------------------------------------
+
+        recyclerView = findViewById(R.id.recyclerView);
+        buildRecyclerView();
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        onClick(view, position);
+                    }
+                    @Override public void onLongItemClick(View view, int position) {
+                    }
+                }));
+
+        // ========================================================================================================================
+        //                       Gestion barre de navigation
+        // ========================================================================================================================
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -107,4 +142,34 @@ public class Page_Notification extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+
+    // ========================================================================================================================
+    //                                      recycler view
+    // ========================================================================================================================
+
+
+    private void buildRecyclerView() {
+
+        data = new ArrayList<>();
+
+        SharedPreferences prefs = getSharedPreferences("notif", MODE_PRIVATE);
+        String notif1 = prefs.getString("notif1", "Pas de valeur défini");
+
+        data.add(new Favoris_Data(notif1,  R.drawable.outils_menu_resistance));
+
+
+        adapter = new Favoris_RecyclerViewAdapter(data, Page_Notification.this);
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(manager);
+
+        recyclerView.setAdapter(adapter);
     }
+
+    public void onClick(View v, int position){
+
+    }
+}

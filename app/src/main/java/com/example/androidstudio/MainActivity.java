@@ -15,7 +15,7 @@ import com.example.androidstudio.achat.Achat_Main;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Menu_Cours;
 import com.example.androidstudio.favoris.Page_Favoris;
-import com.example.androidstudio.pages.Page_Notification;
+import com.example.androidstudio.nouveauté.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

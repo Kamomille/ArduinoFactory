@@ -21,7 +21,7 @@
         <activity android:name=".cours.pour_cedric"></activity>
         <activity android:name=".Page_Internet" />
         <activity
-            android:name=".pages.Page_Notification"
+            android:name=".nouveauté.Page_Notification"
             android:label="Nouveauté"
             android:value=".MainActivity" />
         <activity
