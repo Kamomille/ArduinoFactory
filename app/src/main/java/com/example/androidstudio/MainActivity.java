@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import com.example.androidstudio.achat.Achat_Main;
 import com.example.androidstudio.pages.Page_Contact;
 import com.example.androidstudio.pages.Page_Menu_Cours;
-import com.example.androidstudio.pages.Page_Favoris;
+import com.example.androidstudio.favoris.Page_Favoris;
 import com.example.androidstudio.pages.Page_Notification;
 import com.example.androidstudio.pages.Page_Outils;
 import com.example.androidstudio.pages.Page_Parametre;

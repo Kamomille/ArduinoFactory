@@ -1,6 +1,7 @@
 package com.example.androidstudio.outils;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -90,10 +91,6 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_resistance);
 
-        // bouton retour
-        ActionBar actionBar=getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
 
         if (savedInstanceState != null) {
             listeCompteur = savedInstanceState.getIntArray(BUNDLE_STATE_listeCompteur);
@@ -102,6 +99,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             listeCompteur = new int[]{2, 2, 2, 2, 2, 2};
             NbBandeSelect = 4;
         }
+
 
         // ========================================================================================================================
         //                              ID -> relier xml au code java
@@ -612,6 +610,23 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.coeur, menu);
+        final Menu m = menu;
+        final MenuItem item = menu.findItem(R.id.coeur_vide);
+
+        SharedPreferences prefs = getSharedPreferences("coeur", MODE_PRIVATE);
+        String coeur = prefs.getString("coeur_resistance", "Pas de favoris défini");
+
+        if (coeur.equals("")){
+            SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
+            editor.putString("coeur_resistance", "vide").apply();
+        }
+
+        Drawable drawable;
+        Resources res = getResources();
+        if (coeur.equals("plein")){ drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);}
+        else { drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null); }
+        item.setIcon(drawable);
+
         return true;
     }
     @Override
@@ -621,17 +636,25 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
 
                 Resources res = getResources();
 
-                if (stateHeart == 1) {
+                SharedPreferences prefs = getSharedPreferences("coeur", MODE_PRIVATE);
+                String coeur = prefs.getString("coeur_resistance", "No favorite defined");
+
+                if (coeur.equals("vide")) {
                     Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
                     item.setIcon(drawable);
                     stateHeart -= 1;
+
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
+                    editor.putString("coeur_resistance", "plein").apply();
                 }
-                if(stateHeart == 2){
+                else {
                     Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
                     item.setIcon(drawable);
                     stateHeart -= 1;
+
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
+                    editor.putString("coeur_resistance", "vide").apply();
                 }
-                if (stateHeart == 0) { stateHeart = 2; }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

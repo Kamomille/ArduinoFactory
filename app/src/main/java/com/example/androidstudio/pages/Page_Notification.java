@@ -2,14 +2,9 @@ package com.example.androidstudio.pages;
 
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -20,10 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.androidstudio.MainActivity;
 import com.example.androidstudio.R;
+import com.example.androidstudio.favoris.Page_Favoris;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Page_Notification extends AppCompatActivity {

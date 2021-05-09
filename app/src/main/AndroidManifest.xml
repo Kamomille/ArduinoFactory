@@ -25,7 +25,7 @@
             android:label="Nouveauté"
             android:value=".MainActivity" />
         <activity
-            android:name=".pages.Page_Favoris"
+            android:name=".favoris.Page_Favoris"
             android:label="Favoris"
             android:value=".MainActivity" />
         <activity
