@@ -50,7 +50,6 @@ public class Cours extends AppCompatActivity {
     String extraText;
     int id;
     int position;
-    boolean init=true;
 
 
 

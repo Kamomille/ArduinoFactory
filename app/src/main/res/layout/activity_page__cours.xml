@@ -25,13 +25,13 @@
             android:id="@+id/Def"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Definition" />
+            android:text="Définition" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Des" />
+            android:text="Description" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Cablage"
@@ -45,6 +45,7 @@
         android:layout_width="309dp"
         android:layout_height="415dp"
         android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="225dp"
             android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/telecommande_tuto_cablage" />
     </LinearLayout>
 
@@ -73,6 +75,7 @@
         android:layout_height="415dp"
         android:orientation="vertical"
         android:visibility="invisible"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="225dp"
             android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/telecommande_tuto_cablage" />
 
     </LinearLayout>
