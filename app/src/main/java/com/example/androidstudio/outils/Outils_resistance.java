@@ -613,17 +613,17 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         final Menu m = menu;
         final MenuItem item = menu.findItem(R.id.coeur_vide);
 
-        SharedPreferences prefs = getSharedPreferences("coeur", MODE_PRIVATE);
-        String coeur = prefs.getString("coeur_resistance", "Pas de favoris défini");
+        SharedPreferences prefs = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
+        String coeur_resistance = prefs.getString("coeur_resistance", "Pas de favoris défini");
 
-        if (coeur.equals("")){
+        if (coeur_resistance.equals("")){
             SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
             editor.putString("coeur_resistance", "vide").apply();
         }
 
         Drawable drawable;
         Resources res = getResources();
-        if (coeur.equals("plein")){ drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);}
+        if (coeur_resistance.equals("plein")){ drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);}
         else { drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null); }
         item.setIcon(drawable);
 
@@ -636,7 +636,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
 
                 Resources res = getResources();
 
-                SharedPreferences prefs = getSharedPreferences("coeur", MODE_PRIVATE);
+                SharedPreferences prefs = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
                 String coeur = prefs.getString("coeur_resistance", "No favorite defined");
 
                 if (coeur.equals("vide")) {
@@ -644,7 +644,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
                     item.setIcon(drawable);
                     stateHeart -= 1;
 
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
                     editor.putString("coeur_resistance", "plein").apply();
                 }
                 else {
@@ -652,7 +652,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
                     item.setIcon(drawable);
                     stateHeart -= 1;
 
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
                     editor.putString("coeur_resistance", "vide").apply();
                 }
                 return true;

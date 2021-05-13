@@ -12,6 +12,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -580,12 +581,31 @@ public class Outils_telecommande extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_telecommande, menu);
+        final Menu m = menu;
+        final MenuItem item = menu.findItem(R.id.coeur_vide);
+
+        SharedPreferences prefs = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
+        String coeur = prefs.getString("coeur_telecommande", "Pas de favoris défini");
+
+        if (coeur.equals("")){
+            SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
+            editor.putString("coeur_telecommande", "vide").apply();
+        }
+
+        Drawable drawable;
+        Resources res = getResources();
+        if (coeur.equals("plein")){ drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);}
+        else { drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null); }
+        item.setIcon(drawable);
+
         return true;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Resources res = getResources();
 
         switch (item.getItemId()) {
             case R.id.nav_deconnection: // ------------------------------------------------------------------------------------------
@@ -596,12 +616,10 @@ public class Outils_telecommande extends AppCompatActivity {
                     Toast.makeText(this, "Bluetooth deconnecté", Toast.LENGTH_LONG).show();
                     mybluetooth.disconnect();
                     finish();
-                    //openActivtity_outils();
                 }
                 return true;
 
             case R.id.nav_telecommande: // ------------------------------------------------------------------------------------------
-
 
                 int[] listeButtonCouleur = {R.color.white, R.color.rouge, R.color.violet, R.color.bleu, R.color.orange, R.color.rose, R.color.bleu_clair, R.color.jaune, R.color.vert_clair, R.color.vert};
 
@@ -611,7 +629,6 @@ public class Outils_telecommande extends AppCompatActivity {
                 int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
                 int[] listeDrawable_2 = {R.drawable.telecommande_plus, R.drawable.telecommande_soleil_haut, R.drawable.telecommande_power,         R.drawable.telecommande_moins2, R.drawable.telecommande_soleil_bas,    R.drawable.telecommande_speed,     R.drawable.telecommande_flash,  R.drawable.telecommande_fade,  R.drawable.outils_vide,     R.drawable.telecommande_multicouleur};
 
-                Resources res = getResources();
                 Drawable drawable;
 
                 if (numView == 1) {
@@ -620,9 +637,7 @@ public class Outils_telecommande extends AppCompatActivity {
 
 
                 if (numView == 2) {
-
                     if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
-
                         for (int i = 0; i < listeButton.length; i += 1) {
                             listeButton[i].setBackgroundTintList(getResources().getColorStateList(R.color.white));
                             listeButton[i].setText(String.valueOf(i));
@@ -634,7 +649,6 @@ public class Outils_telecommande extends AppCompatActivity {
                         telecommandeSelect -= 1;
                     }
                     if (telecommandeSelect == 2) { // ------------ Telecommande couleur ------------
-
                         for (int i = 0; i < listeButton.length; i += 1) {
                             listeButton[i].setBackgroundTintList(getResources().getColorStateList(listeButtonCouleur[i]));
                             listeButton[i].setText("");
@@ -646,9 +660,6 @@ public class Outils_telecommande extends AppCompatActivity {
                         telecommandeSelect -= 1;
                     }
                     if (telecommandeSelect == 0) { telecommandeSelect = 2; }
-
-
-
                 }
                 return true;
 
@@ -659,19 +670,25 @@ public class Outils_telecommande extends AppCompatActivity {
 
             case R.id.coeur_vide: // ------------------------------------------------------------------------------------------
 
-                Resources res2 = getResources();
+                SharedPreferences prefs = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
+                String coeur_telecommande = prefs.getString("coeur_telecommande", "No favorite defined");
 
-                if (stateHeart == 1) {
-                    Drawable drawable2 = ResourcesCompat.getDrawable(res2, R.drawable.coeur_plein, null);
+                if (coeur_telecommande.equals("vide")) {
+                    Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
                     item.setIcon(drawable2);
                     stateHeart -= 1;
+
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
+                    editor.putString("coeur_telecommande", "plein").apply();
                 }
-                if(stateHeart == 2){
-                    Drawable drawable2 = ResourcesCompat.getDrawable(res2, R.drawable.coeur_vide, null);
+                else {
+                    Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
                     item.setIcon(drawable2);
                     stateHeart -= 1;
+
+                    SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
+                    editor.putString("coeur_telecommande", "vide").apply();
                 }
-                if (stateHeart == 0) { stateHeart = 2; }
                 return true;
 
             default:

@@ -156,7 +156,7 @@ public class Page_Notification extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("notif", MODE_PRIVATE);
         String notif1 = prefs.getString("notif1", "Pas de valeur défini");
 
-        data.add(new Favoris_Data(notif1,  R.drawable.outils_vide));
+        data.add(new Favoris_Data(notif1,  R.drawable.outils_vide, "test"));
 
 
         adapter = new Favoris_RecyclerViewAdapter(data, Page_Notification.this);
