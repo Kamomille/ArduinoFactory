@@ -11,35 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/textView_Notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Page pour les notifications -> EN CONSTRUCTION"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/Notification1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="Notification"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:backgroundTint="#0B789C"
-        app:cornerRadius="50sp" />
-    <Button
-        android:id="@+id/show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="Show"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:backgroundTint="#0B789C"
-        app:cornerRadius="50sp" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"

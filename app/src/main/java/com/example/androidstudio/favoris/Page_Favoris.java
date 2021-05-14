@@ -36,8 +36,6 @@ public class Page_Favoris extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__favoris);
 
-        Texteview_Favoris = (TextView) findViewById(R.id.textView_Favoris);
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
 

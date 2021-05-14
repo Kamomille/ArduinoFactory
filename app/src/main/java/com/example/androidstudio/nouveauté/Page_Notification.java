@@ -27,6 +27,8 @@ import com.example.androidstudio.favoris.Favoris_Data;
 import com.example.androidstudio.favoris.Favoris_RecyclerViewAdapter;
 import com.example.androidstudio.favoris.Page_Favoris;
 import com.example.androidstudio.outils.Outils_resistance;
+import com.example.androidstudio.outils.Outils_telecommande;
+import com.example.androidstudio.pages.Page_Menu_Cours;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -44,15 +46,16 @@ public class Page_Notification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__notification);
+
+        /*
         createNotificationChannel();
-        Texteview_Notification = (TextView) findViewById(R.id.textView_Notification);
-        Notification= findViewById(R.id.Notification1);
         Notification.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivtity_Notifbouton();
             }
         }));
+
 
         Button buttonShowNotification = findViewById(R.id.show);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "lemubitA")
@@ -67,7 +70,7 @@ public class Page_Notification extends AppCompatActivity {
                 notificationManager.notify(100,builder.build());
 
             }
-        });
+        });*/
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
         bottomNavigationView.getMenu().getItem(2).setChecked(true);
@@ -153,11 +156,16 @@ public class Page_Notification extends AppCompatActivity {
 
         data = new ArrayList<>();
 
+        data.add(new Favoris_Data("Outils resistance",   R.drawable.outils_menu_resistance, "Outils_resistance"));
+        data.add(new Favoris_Data("Outils télécommande",   R.drawable.outils_menu_telecommande, "Outils_telecommande"));
+        data.add(new Favoris_Data("Cours",   R.drawable.livres, "Cours"));
+
+        /* // TEST joiture entre notif et page nouveauté
         SharedPreferences prefs = getSharedPreferences("notif", MODE_PRIVATE);
         String notif1 = prefs.getString("notif1", "Pas de valeur défini");
 
         data.add(new Favoris_Data(notif1,  R.drawable.outils_vide, "test"));
-
+        */
 
         adapter = new Favoris_RecyclerViewAdapter(data, Page_Notification.this);
 
@@ -170,6 +178,18 @@ public class Page_Notification extends AppCompatActivity {
     }
 
     public void onClick(View v, int position){
+
+        String name_class = data.get(position).getNameClass();
+
+        if (name_class.equals("Outils_resistance")){
+            this.startActivity(new Intent(this, Outils_resistance.class));
+        }
+        if (name_class.equals("Outils_telecommande")){
+            this.startActivity(new Intent(this, Outils_telecommande.class));
+        }
+        if (name_class.equals("Cours")){
+            this.startActivity(new Intent(this, Page_Menu_Cours.class));
+        }
 
     }
 }
