@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidstudio">
+    package="com.ArduinoFactory.androidstudio">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -18,116 +18,116 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name=".cours.pour_cedric"></activity>
-        <activity android:name=".Page_Internet">
+        <activity android:name="com.ArduinoFactory.androidstudio.cours.pour_cedric"></activity>
+        <activity android:name="com.ArduinoFactory.androidstudio.Page_Internet">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".nouveauté.Page_Notification"
+            android:name="com.ArduinoFactory.androidstudio.nouveauté.Page_Notification"
             android:label="Nouveauté"
             android:value=".MainActivity" />
         <activity
-            android:name=".favoris.Page_Favoris"
+            android:name="com.ArduinoFactory.androidstudio.favoris.Page_Favoris"
             android:label="Favoris"
             android:value=".MainActivity" />
         <activity
-            android:name=".pages.Page_Parametre"
+            android:name="com.ArduinoFactory.androidstudio.pages.Page_Parametre"
             android:label="Paramètre">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".outils.Outils_telecommande"
+            android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande"
             android:label="Télécommande"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
         </activity>
         <activity
-            android:name=".outils.Outils_telecommande_tuto"
+            android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande_tuto"
             android:label="Télécommande">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
         </activity>
         <activity
-            android:name=".outils.Outils_resistance"
+            android:name="com.ArduinoFactory.androidstudio.outils.Outils_resistance"
             android:label="Résistance">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
         </activity>
         <activity
-            android:name=".pages.Page_Outils"
+            android:name="com.ArduinoFactory.androidstudio.pages.Page_Outils"
             android:label="Outils">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".CORBEILLE.Page_Achat"
+            android:name="com.ArduinoFactory.androidstudio.CORBEILLE.Page_Achat"
             android:label="Achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".CORBEILLE.achat_version2"
+            android:name="com.ArduinoFactory.androidstudio.CORBEILLE.achat_version2"
             android:label="Achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".achat.Achat_Main"
+            android:name="com.ArduinoFactory.androidstudio.achat.Achat_Main"
             android:configChanges="orientation|screenSize"
             android:label="Achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".contact.Contactez_nous"
+            android:name="com.ArduinoFactory.androidstudio.contact.Contactez_nous"
             android:label="Contactez-nous">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Contact" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Contact" />
         </activity>
         <activity
-            android:name=".contact.A_propos"
+            android:name="com.ArduinoFactory.androidstudio.contact.A_propos"
             android:label="A propos">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Contact" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Contact" />
         </activity>
         <activity
-            android:name=".pages.Page_Contact"
+            android:name="com.ArduinoFactory.androidstudio.pages.Page_Contact"
             android:label="Contact">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".pages.Page_Menu_Cours"
+            android:name="com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name=".pages.Cours"
+            android:name="com.ArduinoFactory.androidstudio.pages.Cours"
             android:label="Cours"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.Page_Menu_Cours" />
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.ArduinoFactory.androidstudio.MainActivity"
             android:label="Arduino Factory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -136,7 +136,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".NotificationService">
+        <service android:name="com.ArduinoFactory.androidstudio.NotificationService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
