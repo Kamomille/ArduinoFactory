@@ -1,7 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AndroidStudio" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.AndroidStudio" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
+
+
         <item name="colorPrimary">#0B789C</item>
         <item name="colorPrimaryVariant">#085972</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -11,6 +13,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#085972</item>
+
         <!-- Customize your theme here. -->
     </style>
 </resources>

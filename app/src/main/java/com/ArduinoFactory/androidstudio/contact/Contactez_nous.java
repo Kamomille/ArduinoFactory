@@ -74,7 +74,8 @@ public class Contactez_nous extends AppCompatActivity {
                 }
                 Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
                 sendEmail.setType("plain/text");
-                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"arduinofactory@yahoo.com"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, "arduinofactory@yahoo.com");
+                sendEmail.putExtra(Intent.EXTRA_REFERRER, "arduinofactory@yahoo.com");
                 sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
                         "Prénom:"+first_name+'\n'+"Nom:"+name+'\n'+"Email :"+email+'\n'+"Objet:"+'\n'+subject+'\n'+"Message:"+'\n'+message);
