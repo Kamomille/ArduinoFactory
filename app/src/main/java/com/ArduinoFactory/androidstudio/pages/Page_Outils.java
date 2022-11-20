@@ -3,6 +3,7 @@ package com.ArduinoFactory.androidstudio.pages;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -12,13 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants;
 import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
 import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
 
 public class Page_Outils extends AppCompatActivity {
 
-    private LinearLayout outil_resistance, outil_telecommande;
+    private LinearLayout outil_resistance, outil_telecommande, outil_ia;
     private SoundPool soundPool;
     private AudioManager audioManager;
     // Maximumn sound stream.
@@ -29,6 +31,7 @@ public class Page_Outils extends AppCompatActivity {
     private int soundIdBouton;
     private float volume;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +94,10 @@ public class Page_Outils extends AppCompatActivity {
        outil_telecommande = (LinearLayout) findViewById(R.id.outil_telecommande);
         outil_telecommande.setOnClickListener(new View.OnClickListener(){
             @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
+
+        outil_ia = (LinearLayout) findViewById(R.id.outil_ia);
+        outil_ia.setOnClickListener(new View.OnClickListener(){
+            @Override public void onClick(View v){ openActivtity_outilsIA(); } } );
     }
 
 
@@ -103,6 +110,11 @@ public class Page_Outils extends AppCompatActivity {
         playSound();
         Intent intent = new Intent(this, Outils_telecommande.class);
         intent.putExtra("af","1");
+        startActivity(intent);
+    }
+    public void openActivtity_outilsIA(){
+        playSound();
+        Intent intent = new Intent(this, Outils_reconnaissance_composants.class);
         startActivity(intent);
     }
     public void playSound()  {

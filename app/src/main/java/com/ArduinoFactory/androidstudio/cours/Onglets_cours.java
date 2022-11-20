@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import com.ArduinoFactory.androidstudio.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class pour_cedric extends AppCompatActivity {
+public class Onglets_cours extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

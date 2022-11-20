@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ArduinoFactory.androidstudio"
     android:versionCode="2">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <meta-data
         android:name="android.support.PARENT_ACTIVITY"
@@ -19,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name="com.ArduinoFactory.androidstudio.cours.pour_cedric"></activity>
+        <activity android:name="com.ArduinoFactory.androidstudio.cours.Onglets_cours"></activity>
         <activity android:name="com.ArduinoFactory.androidstudio.Page_Internet">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,22 +64,15 @@
                 android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
         </activity>
         <activity
+            android:name="com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants"
+            android:label="Reconnaissance composants (IA)">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
+        </activity>
+        <activity
             android:name="com.ArduinoFactory.androidstudio.pages.Page_Outils"
             android:label="Outils">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
-        </activity>
-        <activity
-            android:name="com.ArduinoFactory.androidstudio.CORBEILLE.Page_Achat"
-            android:label="Achat">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
-        </activity>
-        <activity
-            android:name="com.ArduinoFactory.androidstudio.CORBEILLE.achat_version2"
-            android:label="Achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.MainActivity" />
@@ -129,7 +123,8 @@
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.MainActivity"
-            android:label="Arduino Factory">
+            android:label="Arduino Factory"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -137,7 +132,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.ArduinoFactory.androidstudio.NotificationService">
+        <service android:name="com.ArduinoFactory.androidstudio.NotificationService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

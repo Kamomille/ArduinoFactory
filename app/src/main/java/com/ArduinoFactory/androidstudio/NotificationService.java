@@ -18,11 +18,6 @@ import com.google.firebase.messaging.RemoteMessage;
 import static android.content.ContentValues.TAG;
 
 public class NotificationService extends FirebaseMessagingService {
-    private final String NOTIFICATION_TAG = "FIREBASEOC";
-    private  final String Notification_Titre = "Nouveau Cours sur Arduino Factory";
-    private final String Notification_Contenu = "Nouveau cours sur le Servomoteur";
-    public static final String MY_PREFS_NAME = "MyPrefsFile";
-
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
