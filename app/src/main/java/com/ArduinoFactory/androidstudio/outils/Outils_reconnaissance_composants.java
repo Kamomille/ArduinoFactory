@@ -33,10 +33,11 @@ import com.ArduinoFactory.androidstudio.ml.Model;
 
 public class Outils_reconnaissance_composants extends AppCompatActivity {
 
+    String[] classes = {"7_segments", "capteur_humidite", "ecran_lcd", "led", "resistance", "servo_moteur"};
     Button camera, gallery;
     ImageView imageView;
     TextView result, confidence;
-    int imageSize = 32;
+    int imageSize = 64;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -80,8 +81,8 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
         try {
             Model model = Model.newInstance(getApplicationContext());
 
-            // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 32, 32, 3}, DataType.FLOAT32);
+            // Creates inputs for reference
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, imageSize, imageSize, 3}, DataType.FLOAT32);
             ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * imageSize * imageSize * 3);
             byteBuffer.order(ByteOrder.nativeOrder());
 
@@ -101,12 +102,12 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
 
             inputFeature0.loadBuffer(byteBuffer);
 
-            // Runs model inference and gets result.
+            // Runs model inference and gets result
             Model.Outputs outputs = model.process(inputFeature0);
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
             float[] confidences = outputFeature0.getFloatArray();
-            // find the index of the class with the biggest confidence.
+            // find the index of the class with the biggest confidence
             int maxPos = 0;
             float maxConfidence = 0;
             float sumConfidence = 0;
@@ -119,7 +120,6 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
                     maxPos = i;
                 }
             }
-            String[] classes = {"7_segments", "capteur_humidite", "ecran_lcd", "led", "resistance", "servo_moteur"};
             result.setText(classes[maxPos]);
 
             String s = "";
@@ -134,6 +134,7 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
 
             // Releases model resources if no longer used.
             model.close();
+
         } catch (IOException e) {
             // TODO Handle the exception
         }

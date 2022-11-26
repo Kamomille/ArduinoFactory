@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="155dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/design_layout"
             android:clickable="true"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="155dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/design_layout"
             android:clickable="true"
@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="155dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/design_layout"
             android:clickable="true"
@@ -126,7 +126,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center"
-                    android:text="Reconnaissance composants"
+                    android:text="Intelligence Artificielle"
                     android:textColor="#0B789C"
                     android:textSize="30dp" />
 
@@ -135,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
-                    android:text="Notre IA reconnait les composants pour vous aidez"
+                    android:text="Notre IA reconnait vos composants composants Arduino"
                     android:textSize="15dp" />
             </LinearLayout>
 
