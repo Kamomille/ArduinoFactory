@@ -45,7 +45,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Prénom :"
+                    android:text="@string/contactez_nous_prenom"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#0B789C  "
                     android:textSize="20sp" />
@@ -74,7 +74,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Nom :"
+                    android:text="@string/contactez_nous_nom"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#0B789C  "
                     android:textSize="20sp" />
@@ -102,7 +102,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Mail : "
+                    android:text="@string/contactez_nous_mail"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#0B789C  "
                     android:textSize="20sp" />
@@ -130,7 +130,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:text="Objet :"
+                    android:text="@string/contactez_nous_obj"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#0B789C"
                     android:textSize="20sp" />
@@ -158,7 +158,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Message : "
+                    android:text="@string/contactez_nous_message"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#0B789C"
                     android:textSize="20sp" />
@@ -177,7 +177,7 @@
             android:id="@+id/post_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Envoyer"
+            android:text="@string/contactez_nous_envoyer"
                 android:layout_gravity="end"
                 android:layout_marginBottom="40dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"

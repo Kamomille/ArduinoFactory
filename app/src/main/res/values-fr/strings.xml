@@ -5,4 +5,15 @@
     <string name="title_dashboard">Favoris</string>
     <string name="outils_ia_classification">Classé comme:</string>
     <string name="outils_ia_confidences">Confiance:</string>
+    <string name="page_a_propos_title">Qui sommes nous ?</string>
+    <string name="page_a_propos_qui">Nous sommes 4 étudiants de l\'école d\'ingénieur Esme Sudria :</string>
+    <string name="page_a_propos_title_2">Rejoignez-nous</string>
+    <string name="page_a_propos_title_3">Remerciement</string>
+    <string name="page_a_propos_merci">Merci à notre professeur Yves Benabou pour son aide</string>
+    <string name="contactez_nous_prenom">Prénom :</string>
+    <string name="contactez_nous_nom">Nom :</string>
+    <string name="contactez_nous_mail">Mail :</string>
+    <string name="contactez_nous_obj">Objet :</string>
+    <string name="contactez_nous_message">Message :</string>
+    <string name="contactez_nous_envoyer">Envoyer</string>
 </resources>

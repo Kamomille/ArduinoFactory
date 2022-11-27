@@ -29,7 +29,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:fontFamily="sans-serif"
-            android:text="Qui sommes nous ?"
+            android:text="@string/page_a_propos_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="25sp" />
 
@@ -39,7 +39,7 @@
             android:layout_height="42dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Nous sommes 4 étudiants de l'école d'ingénieur Esme Sudria : "
+            android:text="@string/page_a_propos_qui"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp" />
 
@@ -97,7 +97,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Rejoignez nous"
+            android:text="@string/page_a_propos_title_2"
             android:fontFamily="sans-serif"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="25sp" />
@@ -148,7 +148,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Remerciement"
+            android:text="@string/page_a_propos_title_3"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="25sp" />
 
@@ -158,7 +158,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Merci à notre professeur Yves Benabou pour son aide"
+            android:text="@string/page_a_propos_merci"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

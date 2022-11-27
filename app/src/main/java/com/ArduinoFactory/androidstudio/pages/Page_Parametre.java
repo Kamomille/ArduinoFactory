@@ -28,7 +28,7 @@ public class Page_Parametre extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("firstname", prenom);
         editor.apply();
-        setContentView(R.layout.settings_activity);
+        setContentView(R.layout.activity_page__parametre);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()

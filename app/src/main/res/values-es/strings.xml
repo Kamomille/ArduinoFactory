@@ -5,4 +5,15 @@
     <string name="title_home">Bienvenida</string>
     <string name="outils_ia_classification">Clasificado como:</string>
     <string name="outils_ia_confidences">Confianza:</string>
+    <string name="page_a_propos_merci">Gracias a nuestro profesor Yves Benabou por su ayuda</string>
+    <string name="page_a_propos_title_3">Gracias</string>
+    <string name="page_a_propos_title_2">Únete a nosotros</string>
+    <string name="page_a_propos_qui">Somos 4 alumnos de la escuela de ingeniería Esme Sudria:</string>
+    <string name="page_a_propos_title">Quiénes somos ?</string>
+    <string name="contactez_nous_prenom">Nombre :</string>
+    <string name="contactez_nous_nom">Apellido :</string>
+    <string name="contactez_nous_mail">Mail :</string>
+    <string name="contactez_nous_obj">Objeto :</string>
+    <string name="contactez_nous_message">Mensaje :</string>
+    <string name="contactez_nous_envoyer">Enviar</string>
 </resources>

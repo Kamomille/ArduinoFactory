@@ -5,4 +5,15 @@
     <string name="title_notifications">Notifications</string>
     <string name="outils_ia_classification">Classified as:</string>
     <string name="outils_ia_confidences">Confidences:</string>
+    <string name="page_a_propos_merci">Thanks to our teacher Yves Benabou for his help</string>
+    <string name="page_a_propos_title_3">Thanks</string>
+    <string name="page_a_propos_title_2">Join us</string>
+    <string name="page_a_propos_qui">We are 4 students from the Esme Sudria engineering school:</string>
+    <string name="page_a_propos_title">Who are we ?</string>
+    <string name="contactez_nous_nom">Name:</string>
+    <string name="contactez_nous_prenom">First name:</string>
+    <string name="contactez_nous_mail">Mail :</string>
+    <string name="contactez_nous_obj">Object :</string>
+    <string name="contactez_nous_message">Message :</string>
+    <string name="contactez_nous_envoyer">Send</string>
 </resources>
