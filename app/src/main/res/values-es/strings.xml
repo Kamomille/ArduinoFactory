@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_dashboard">Favorito</string>
+    <string name="title_notifications">Notificación</string>
+    <string name="title_home">Bienvenida</string>
+    <string name="outils_ia_classification">Clasificado como:</string>
+    <string name="outils_ia_confidences">Confianza:</string>
+</resources>

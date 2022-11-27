@@ -33,11 +33,12 @@
 
         <TextView
             android:id="@+id/classified"
-            android:layout_width="122dp"
-            android:layout_height="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
-            android:text="Classified as:"
+            android:text="@string/outils_ia_classification"
+            android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
@@ -55,11 +56,12 @@
 
         <TextView
             android:id="@+id/confidencesText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/result"
             android:layout_centerHorizontal="true"
-            android:text="Confidences:"
+            android:text="@string/outils_ia_confidences"
+            android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
