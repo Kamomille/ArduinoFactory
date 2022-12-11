@@ -121,6 +121,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.MainActivity"
             android:label="Arduino Factory"

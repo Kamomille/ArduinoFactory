@@ -1,13 +1,27 @@
 package com.ArduinoFactory.androidstudio.cours;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.ArduinoFactory.androidstudio.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
+import com.ArduinoFactory.androidstudio.achat.Achat_Data;
+import com.ArduinoFactory.androidstudio.achat.RecyclerItemClickListener;
+import com.ArduinoFactory.androidstudio.achat.RecyclerView_Adapter;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
 
 public class Onglets_cours extends AppCompatActivity {
 
