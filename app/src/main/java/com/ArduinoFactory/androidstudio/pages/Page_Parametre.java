@@ -58,7 +58,7 @@ public class Page_Parametre extends AppCompatActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Intent intent = new Intent(getActivity() , Page_Internet.class);
-                    intent.putExtra("af","https://play.google.com/store?hl=fr&gl=US");
+                    intent.putExtra("af","https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&gl=US");
                     startActivity(intent);
                    return true;
                 }

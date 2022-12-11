@@ -8,7 +8,6 @@
     <string name="mail" translatable="false">Page_Parametre</string>
     <string name="propos" translatable="false">Page_Parametre</string>
 
-
     <!-- Preference Titles -->
     <string name="messages_header" translatable="false">Messages</string>
     <string name="sync_header" translatable="false">Sync</string>
@@ -27,6 +26,17 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_activity_outils_telecommande_tuto" translatable="false">MainActivity</string>
 
+
+    <!-- ======================================================================================= -->
+    <!--                             Textes sur les pages de l'app                               -->
+    <!-- ======================================================================================= -->
+
+    <!-- Page Accueil -->
+    <string name="page_accueil_cours">Cours</string>
+    <string name="page_accueil_outils">Outils</string>
+    <string name="page_accueil_achat">Achats</string>
+    <string name="page_accueil_contact">Contact</string>
+
     <!-- Page a propos -->
     <string name="page_a_propos_title">Qui sommes nous ?</string>
     <string name="page_a_propos_qui">Nous sommes 4 étudiants de l\'école d\'ingénieur Esme Sudria :</string>
@@ -41,6 +51,25 @@
     <string name="contactez_nous_obj">Objet :</string>
     <string name="contactez_nous_message">Message :</string>
     <string name="contactez_nous_envoyer">Envoyer</string>
+
+
+    <!-- ============================== Outils ================================================= -->
+
+    <!-- Page Outils -->
+    <string name="page_outils_title_1">Outils résistance</string>
+    <string name="page_outils_title_2">Outils télécommande</string>
+    <string name="page_outils_title_3">Intelligence Artificielle</string>
+    <string name="page_outils_resistance">Ne vous embêtez plus à calculer la valeur d\'une résistance</string>
+    <string name="page_outils_telecommande">Optez pour une télécommande intégrée dans votre téléphone</string>
+    <string name="page_outils_ia">Notre IA reconnait vos composants Arduino</string>
+
+
+    <!-- Page Outils résistance -->
+    <string name="resistance_tool_title">Calcul Résistance</string>
+    <string name="resistance_4_anneaux">4 anneaux</string>
+    <string name="resistance_5_anneaux">5 anneaux</string>
+    <string name="resistance_6_anneaux">6 anneaux</string>
+    <string name="resistance_help">Dans quel sens se trouve la résistance ? En général, la résistance a un anneau doré ou argenté, qu\'il faut placer à droite. Sinon, c\'est l\'anneau le plus large qu\'il faut placer à droite.</string>
 
     <!-- IA -->
     <string name="outils_ia_classification">Classified as:</string>

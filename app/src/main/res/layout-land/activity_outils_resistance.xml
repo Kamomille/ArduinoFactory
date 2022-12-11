@@ -13,7 +13,7 @@
         android:layout_width="311dp"
         android:layout_height="50dp"
         android:gravity="center_horizontal"
-        android:text=" Calcul Résistance"
+        android:text="@string/resistance_tool_title"
         android:textAlignment="center"
         android:textColor="#0B789C"
         android:textSize="30sp"
@@ -326,17 +326,17 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4 anneaux" />
+            android:text="@string/resistance_4_anneaux" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5 anneaux" />
+            android:text="@string/resistance_5_anneaux" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6 anneaux" />
+            android:text="@string/resistance_6_anneaux" />
     </com.google.android.material.tabs.TabLayout>
 
     <LinearLayout
@@ -528,7 +528,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Dans quel sens se trouve la résistance ? En général, la résistance a un anneau doré ou argenté, qu'il faut placer à droite. Sinon, c'est l'anneau le plus large qu'il faut placer à droite."
+            android:text="@string/resistance_help"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
     </LinearLayout>
