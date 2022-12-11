@@ -50,7 +50,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
-                        android:text="Outils résistance"
+                        android:text="@string/page_outils_title_1"
                         android:textColor="#0B789C"
                         android:textSize="30dp" />
 
@@ -61,7 +61,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Ne vous embêtez plus à calculer la valeur d'une résistance"
+                        android:text="@string/page_outils_resistance"
                         android:textSize="15dp" />
                 </LinearLayout>
 
@@ -95,7 +95,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
-                        android:text="Outils télécommande"
+                        android:text="@string/page_outils_title_2"
                         android:textColor="#0B789C"
                         android:textSize="30dp" />
 
@@ -106,7 +106,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Optez pour une télécommande intégrée dans votre téléphone"
+                        android:text="@string/page_outils_telecommande"
                         android:textSize="15dp" />
                 </LinearLayout>
 
@@ -143,7 +143,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
-                        android:text="Intelligence Artificielle"
+                        android:text="@string/page_outils_title_3"
                         android:textColor="#0B789C"
                         android:textSize="30dp" />
 
@@ -152,7 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:gravity="center"
-                        android:text="Notre IA reconnait vos composants composants Arduino"
+                        android:text="@string/page_outils_ia"
                         android:textSize="15dp" />
                 </LinearLayout>
 

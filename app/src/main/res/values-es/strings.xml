@@ -16,4 +16,19 @@
     <string name="contactez_nous_obj">Objeto :</string>
     <string name="contactez_nous_message">Mensaje :</string>
     <string name="contactez_nous_envoyer">Enviar</string>
+    <string name="page_outils_title_1">Instrumentos resistencia</string>
+    <string name="page_outils_title_2">Herramientas de control remoto</string>
+    <string name="page_outils_title_3">Inteligencia artificial</string>
+    <string name="page_outils_resistance">Olvídese de la molestia de calcular el valor de una resistencia</string>
+    <string name="page_outils_telecommande">Opta por un control remoto integrado en tu teléfono</string>
+    <string name="page_outils_ia">Nuestra IA reconoce tus componentes Arduino</string>
+    <string name="page_accueil_cours">Clase</string>
+    <string name="page_accueil_outils">Instrumentos</string>
+    <string name="page_accueil_achat">Compras</string>
+    <string name="page_accueil_contact">Contactar</string>
+    <string name="resistance_tool_title">Resistencia de cálculo</string>
+    <string name="resistance_4_anneaux">4 anillos</string>
+    <string name="resistance_5_anneaux">5 anillos</string>
+    <string name="resistance_6_anneaux">6 anillos</string>
+    <string name="resistance_help">¿En qué dirección es la resistencia?          Por lo general, la resistencia tiene un anillo de oro o plata, que debe colocarse a la derecha.          De lo contrario, el anillo más grande debe colocarse a la derecha.</string>
 </resources>
