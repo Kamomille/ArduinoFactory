@@ -16,4 +16,19 @@
     <string name="contactez_nous_obj">Objet :</string>
     <string name="contactez_nous_message">Message :</string>
     <string name="contactez_nous_envoyer">Envoyer</string>
+    <string name="page_outils_title_1">Outils résistance</string>
+    <string name="page_outils_title_2">Outils télécommande</string>
+    <string name="page_outils_title_3">Intelligence Artificielle</string>
+    <string name="page_outils_resistance">Ne vous embêtez plus à calculer la valeur d\'une résistance</string>
+    <string name="page_outils_telecommande">Optez pour une télécommande intégrée dans votre téléphone</string>
+    <string name="page_outils_ia">Notre IA reconnait vos composants composants Arduino</string>
+    <string name="page_accueil_cours">Cours</string>
+    <string name="page_accueil_outils">Outils</string>
+    <string name="page_accueil_achat">Achats</string>
+    <string name="page_accueil_contact">Contact</string>
+    <string name="resistance_tool_title">Calculation Resistance</string>
+    <string name="resistance_4_anneaux">4 anneaux</string>
+    <string name="resistance_5_anneaux">5 anneaux</string>
+    <string name="resistance_6_anneaux">6 anneaux</string>
+    <string name="resistance_help">Dans quel sens se trouve la résistance ?</string>
 </resources>
