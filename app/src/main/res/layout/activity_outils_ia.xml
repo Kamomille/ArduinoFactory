@@ -7,50 +7,42 @@
     android:background="#F4FCFE"
     tools:context=".outils.Outils_reconnaissance_composants">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="344dp"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923"
-        tools:layout_editor_absoluteX="2dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/classified"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/imageView"
+            android:layout_height="320dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/outils_ia_classification"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            app:srcCompat="@drawable/ia_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.005"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/classified"
             android:layout_centerHorizontal="true"
-            android:textColor="#C30000"
-            android:textSize="27sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/bleu_arduino_factory"
+            android:background="#C7F9F3"
+            android:textSize="30dp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
 
@@ -58,46 +50,105 @@
             android:id="@+id/confidencesText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/result"
             android:layout_centerHorizontal="true"
-            android:text="@string/outils_ia_confidences"
             android:gravity="center"
+            android:text="@string/outils_ia_confidences"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/confidence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/confidencesText"
-            android:layout_centerHorizontal="true"
-            android:textColor="#000"
-            android:textSize="18sp"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/button"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/button2"
-            android:layout_centerInParent="true"
-            android:text="Appareil photo"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:text="Galerie"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:id="@+id/layout_bar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"/>
+        </ScrollView>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/roundedbutton_blue_stroke"
+                android:orientation="vertical"
+                android:scaleType="fitCenter">
+
+                <ImageButton
+                    android:id="@+id/button_aide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ia_point_interrogation" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/roundedbutton_blue"
+                android:orientation="vertical"
+                android:scaleType="fitCenter">
+
+                <ImageButton
+                    android:id="@+id/button_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ia_appareil_photo" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/roundedbutton_blue_stroke"
+                android:orientation="vertical"
+                android:scaleType="fitCenter">
+
+                <ImageButton
+                    android:id="@+id/button_gallerie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ia_gallerie" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,5 +1,7 @@
 package com.ArduinoFactory.androidstudio.outils;
 
+import static com.google.common.primitives.Floats.min;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,9 +12,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -24,6 +30,10 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 import com.ArduinoFactory.androidstudio.R;
@@ -33,10 +43,11 @@ import com.ArduinoFactory.androidstudio.ml.Model;
 
 public class Outils_reconnaissance_composants extends AppCompatActivity {
 
-    String[] classes = {"7_segments", "capteur_humidite", "ecran_lcd", "led", "resistance", "servo_moteur"};
-    Button camera, gallery;
+    String[] classes = {"7 segments", "Capteur d'humidité", "Ecran Lcd", "Led", "Résistance", "Servo Moteur"};
+    ImageButton camera, gallery, button_aide;
     ImageView imageView;
-    TextView result, confidence;
+    TextView result;
+    LinearLayout layout_bar;
     int imageSize = 64;
 
     @SuppressLint("MissingInflatedId")
@@ -45,13 +56,16 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outils_ia);
 
-        camera = findViewById(R.id.button);
-        gallery = findViewById(R.id.button2);
+        camera = findViewById(R.id.button_photo);
+        gallery = findViewById(R.id.button_gallerie);
 
         result = findViewById(R.id.result);
-        confidence = findViewById(R.id.confidence);
         imageView = findViewById(R.id.imageView);
 
+        layout_bar = (LinearLayout) findViewById(R.id.layout_bar);
+
+        //button_aide.setOnClickListener(new View.OnClickListener(){
+        //    @Override public void onClick(View v){ openActivtity_helpIA(); } } );
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,12 +116,14 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
 
             inputFeature0.loadBuffer(byteBuffer);
 
-            // Runs model inference and gets result
+            // Runs model inference and gets result ------------------------------------------------
             Model.Outputs outputs = model.process(inputFeature0);
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
             float[] confidences = outputFeature0.getFloatArray();
-            // find the index of the class with the biggest confidence
+
+            // Find the index of the class with the biggest confidence -----------------------------
+
             int maxPos = 0;
             float maxConfidence = 0;
             float sumConfidence = 0;
@@ -122,17 +138,41 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
             }
             result.setText(classes[maxPos]);
 
-            String s = "";
-            float x;
-            for(int i = 0; i < confidences.length; i++){
-                if (confidences[i] > 0){
-                    x = (confidences[i]*100)/ sumConfidence;
-                    s += String.format("%.1f%% : %s\n", x, classes[i]);
+            // Sort by confidence ----------------------------------------------------------------
+
+            float[][] int1 = new float[confidences.length][2];
+
+            for (int i = 0; i < confidences.length; i++) {
+                int1[i][0] = i;
+                if (confidences[i] > 0) {
+                    int1[i][1] = (confidences[i]*100)/ sumConfidence;
+                }
+                else{
+                    int1[i][1] = 0;
                 }
             }
-            confidence.setText(s);
+            Arrays.sort(int1, (b, a) -> Float.compare(a[1], b[1])); // for descending order
 
-            // Releases model resources if no longer used.
+
+            // ProgressBar Display ----------------------------------------------------------------
+
+            layout_bar.removeAllViews();
+
+            for(int i = 0; i < confidences.length; i++){
+                if (int1[i][1] > 0){
+                    View progressBarView = getLayoutInflater().inflate(R.layout.ia_progress_bar,null, false);
+                    ProgressBar progressBar = progressBarView.findViewById(R.id.progress_bar);
+                    TextView name_component = progressBarView.findViewById(R.id.textView_name_component);
+                    TextView percentage = progressBarView.findViewById(R.id.textView_percentage);
+
+                    progressBar.setProgress((int) int1[i][1]);
+                    name_component.setText(classes[(int) int1[i][0]]);
+                    percentage.setText(String.format("%.1f%%", int1[i][1]));
+                    layout_bar.addView(progressBarView);
+                }
+            }
+
+            // Releases model resources if no longer used ------------------------------------------
             model.close();
 
         } catch (IOException e) {
@@ -167,6 +207,14 @@ public class Outils_reconnaissance_composants extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    /*
+    public void openActivtity_helpIA(){
+        Intent intent = new Intent(this, Outils_ia_page_aide.class);
+        startActivity(intent);
+    }
+
+     */
 
 
 }
