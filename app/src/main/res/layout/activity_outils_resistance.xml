@@ -526,7 +526,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_gravity="center"
-            android:text="@string/resistance_help"
+            android:text= "@string/resistance_help"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
     </LinearLayout>

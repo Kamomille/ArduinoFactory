@@ -400,18 +400,18 @@ public class Outils_telecommande extends AppCompatActivity {
 
         // =============== afficher la liste des équipements associé dans la liste =================
         Set<BluetoothDevice> pairedDevices = my_bt_adapter.getBondedDevices();
-        if (pairedDevices.isEmpty()) tv_status.setText("Liste Vide");
+        if (pairedDevices.isEmpty()) tv_status.setText("Empty list"); // Liste Vide
 
         ArrayList pairedlist = new ArrayList();
         for (BluetoothDevice bt : pairedDevices)
             pairedlist.add(bt.getName() + "\n" + bt.getAddress());
         ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
         lv_devlist.setAdapter(my_list_adapter);
-        tv_status.setText("Choisir un device dans la liste");
+        tv_status.setText("Choose a device from the list"); // Choisir un device dans la liste
         lv_devlist.setOnItemClickListener(devlist_listener);
         if (pairedDevices.isEmpty()) {
-            tv_status.setText("Liste Vide");
-            pairedlist.add("Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth");
+            tv_status.setText("Empty list"); // Liste Vide
+            pairedlist.add("Go to your phone's bluetooth settings and pair the bluetooth sensor"); // Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth
             ArrayAdapter my_list_adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
             lv_devlist.setAdapter(my_list_adapter2);
             lv_devlist.setSelector(android.R.color.transparent);
@@ -592,10 +592,10 @@ public class Outils_telecommande extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.nav_deconnection: // ------------------------------------------------------------------------------------------
                 if (numView == 1) {
-                    Toast.makeText(this, "Connecter vous d'abord au capteur bluetooth", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
                 }
                 if (numView == 2) {
-                    Toast.makeText(this, "Bluetooth deconnecté", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Bluetooth disconnected", Toast.LENGTH_LONG).show(); // Bluetooth deconnecté
                     mybluetooth.disconnect();
                     finish();
                 }
@@ -614,7 +614,7 @@ public class Outils_telecommande extends AppCompatActivity {
                 Drawable drawable;
 
                 if (numView == 1) {
-                    Toast.makeText(this, "Connecter vous d'abord au capteur bluetooth", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
                 }
 
 

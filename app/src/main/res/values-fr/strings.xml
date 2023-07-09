@@ -26,9 +26,19 @@
     <string name="page_accueil_outils">Outils</string>
     <string name="page_accueil_achat">Achats</string>
     <string name="page_accueil_contact">Contact</string>
-    <string name="resistance_tool_title">Calculation Resistance</string>
+    <string name="resistance_tool_title">Calcul Résistance</string>
     <string name="resistance_4_anneaux">4 anneaux</string>
     <string name="resistance_5_anneaux">5 anneaux</string>
     <string name="resistance_6_anneaux">6 anneaux</string>
-    <string name="resistance_help">Dans quel sens se trouve la résistance ?</string>
+    <string name="resistance_help">Dans quel sens se trouve la résistance ?      L\'anneau le plus proche du bord de la résistance est le premier anneau, et le dernier anneau est le plus proche du centre.</string>
+    <string name="telecommande_tuto_step_1">Etape 1 : acheter un module bluetooth</string>
+    <string name="telecommande_tuto_step_2">Etape 2 : téléverser le code dans la carte Arduino</string>
+    <string name="telecommande_tuto_step_3">Etape 3 : câbler le module</string>
+    <string name="telecommande_tuto_step_4">Etape 4 : connecter le module</string>
+    <string name="telecommande_tuto_step_5">Etape 5 : accéder à la télécommande</string>
+    <string name="telecommande_tuto_step_1_buy">Acheter ce module</string>
+    <string name="telecommande_tuto_step_2_copyPaste">Copier le code dans sur Arduino, ajouter les fonctions que vous souhaitez pour faire marcher les composants de botre choix</string>
+    <string name="telecommande_tuto_step_2_seeCode">Voir le code à téléverser</string>
+    <string name="telecommande_tuto_step_4_bluetooth">Activer le bluetooth de votre téléphone, appairer le capteur dans les paramètres de celui-ci</string>
+    <string name="telecommande_tuto_step_5_bluetooth">Dans l\'outils télécommande sélectionner le module dans la liste des devices bluetooth qui s\'affiche</string>
 </resources>

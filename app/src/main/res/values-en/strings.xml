@@ -26,9 +26,19 @@
     <string name="page_accueil_outils">Tools</string>
     <string name="page_accueil_achat">Purchases</string>
     <string name="page_accueil_contact">Contact</string>
-    <string name="resistance_tool_title">Calcul Résistance</string>
-    <string name="resistance_help">Which direction is the resistance?</string>
+    <string name="resistance_tool_title">Calculation Resistance</string>
     <string name="resistance_4_anneaux">4 rings</string>
     <string name="resistance_5_anneaux">5 rings</string>
     <string name="resistance_6_anneaux">6 rings</string>
+    <string name="resistance_help">Which direction is the resistance?   The ring closest to the edge of the resistor is the first ring, and the last ring is closest to the center.</string>
+    <string name="telecommande_tuto_step_1">Step 1: buy a bluetooth module</string>
+    <string name="telecommande_tuto_step_2">Step 2: upload the code to the Arduino board</string>
+    <string name="telecommande_tuto_step_3">Step 3: wire the module</string>
+    <string name="telecommande_tuto_step_4">Step 4: connect the module</string>
+    <string name="telecommande_tuto_step_5">Step 5: access the remote control</string>
+    <string name="telecommande_tuto_step_1_buy">Buy this unit</string>
+    <string name="telecommande_tuto_step_2_copyPaste">Copy the code to Arduino, add the functions you want to operate the components of your choice</string>
+    <string name="telecommande_tuto_step_2_seeCode">See the code to upload</string>
+    <string name="telecommande_tuto_step_4_bluetooth">Activate your phone\'s bluetooth, pair the sensor in its settings</string>
+    <string name="telecommande_tuto_step_5_bluetooth">In the remote control tools select the module in the list of bluetooth devices that is displayed</string>
 </resources>
