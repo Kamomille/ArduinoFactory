@@ -1,7 +1,6 @@
-# ARDUINO FACTORY
+# Arduino Factory
 
-# Apprendre l'Arduino avec reconnaissance de composants
-Arduino Factory est application Android développée pour aider les utilisateurs à apprendre les 
+Arduino Factory est application Android développée pour aider les utilisateurs à apprendre les
 concepts de base de l'Arduino.
 
 Avec notre application, vous serez en mesure de :
@@ -14,15 +13,16 @@ Avec notre application, vous serez en mesure de :
 | ![Titre image 1](git_assets/1.jpg) | ![Titre image 2](git_assets/2.jpg) | ![Titre image 3](git_assets/3.jpg) | ![Titre image 4](git_assets/4.jpg) | ![Titre image 5](git_assets/5.jpg) |
 
 
-
 ## Installation
-Vous pouvez télecharger notre application sur votre appareil Android depuis 
+Vous pouvez télecharger notre application sur votre appareil Android depuis
 [le Google Play Store](https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&gl=US).
 
+<a href='https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&gl=US).'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="50px"/></a>
+
 ## Assistance
-Si vous rencontrez des problèmes ou avez des questions, 
+Si vous rencontrez des problèmes ou avez des questions,
 n'hésitez pas à consulter [notre site web](http://arduinofactory.fr/)
-ou veuillez nous contacter à l'adresse [arduinofactory@yahoo.com](arduinofactory@yahoo.com)
+ou veuillez nous contacter à l'adresse arduinofactory@yahoo.com
 
 
 ## Equipe

@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etape 1 : acheter un module bluetooth"
+                android:text="@string/telecommande_tuto_step_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#00000000"
-                android:text="Acheter ce module"
+                android:text="@string/telecommande_tuto_step_1_buy"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
                 android:textSize="15dp"
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Etape 2 : téléverser le code dans la carte Arduino"
+                android:text="@string/telecommande_tuto_step_2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Copier le code dans sur Arduino, rajouter les fonctions que vous souhaitez pour faire marcher les composants de botre choix"
+                android:text="@string/telecommande_tuto_step_2_copyPaste"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
                 android:textSize="15dp" />
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#00000000"
-                android:text="Voir le code à téléverser"
+                android:text="@string/telecommande_tuto_step_2_seeCode"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
                 android:textSize="15dp"
@@ -93,7 +93,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etape 3 : câbler le module"
+                android:text="@string/telecommande_tuto_step_3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Etape 4 : connecter le module"
+                android:text="@string/telecommande_tuto_step_4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activer le bluetooth de votre téléphone, appareiller le capteur dans les paramètres de celui-ci"
+                android:text="@string/telecommande_tuto_step_4_bluetooth"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
                 android:textSize="15dp" />
@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Etape 5 : accéder à la télécommande"
+                android:text="@string/telecommande_tuto_step_5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textStyle="bold"
                 android:textColor="#0B789C"
@@ -143,7 +143,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dans l'outils télécommande sélectionner le module dans la liste des devices bluetooth qui s'affiche"
+                android:text="@string/telecommande_tuto_step_5_bluetooth"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
                 android:textSize="15dp" />
