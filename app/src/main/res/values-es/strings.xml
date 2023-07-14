@@ -41,4 +41,7 @@
     <string name="telecommande_tuto_step_2_seeCode">Ver el código para subir</string>
     <string name="telecommande_tuto_step_4_bluetooth">Activa el bluetooth de tu teléfono, empareja el sensor en sus ajustes</string>
     <string name="telecommande_tuto_step_5_bluetooth">En las herramientas de control remoto, seleccione el módulo en la lista de dispositivos bluetooth que se muestra</string>
+    <string name="page_contact_site_internet">Nuestra pagina web</string>
+    <string name="page_contact_contactez_nous">Contactenos</string>
+    <string name="page_contact_a_propos">A proposito</string>
 </resources>

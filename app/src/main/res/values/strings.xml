@@ -37,6 +37,13 @@
     <string name="page_accueil_achat">Purchases</string>
     <string name="page_accueil_contact">Contact</string>
 
+
+    <!-- Page contact -->
+    <string name="page_contact_site_internet">Our web site</string>
+    <string name="page_contact_contactez_nous">Contact us</string>
+    <string name="page_contact_a_propos">About</string>
+
+
     <!-- Page a propos -->
     <string name="page_a_propos_title">Who are we ?</string>
     <string name="page_a_propos_qui">We are 4 students from the Esme Sudria engineering school:</string>

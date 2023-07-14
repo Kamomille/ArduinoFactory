@@ -41,4 +41,7 @@
     <string name="telecommande_tuto_step_2_seeCode">See the code to upload</string>
     <string name="telecommande_tuto_step_4_bluetooth">Activate your phone\'s bluetooth, pair the sensor in its settings</string>
     <string name="telecommande_tuto_step_5_bluetooth">In the remote control tools select the module in the list of bluetooth devices that is displayed</string>
+    <string name="page_contact_site_internet">Our web site</string>
+    <string name="page_contact_contactez_nous">Contact us</string>
+    <string name="page_contact_a_propos">About</string>
 </resources>

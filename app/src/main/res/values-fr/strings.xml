@@ -41,4 +41,7 @@
     <string name="telecommande_tuto_step_2_seeCode">Voir le code à téléverser</string>
     <string name="telecommande_tuto_step_4_bluetooth">Activer le bluetooth de votre téléphone, appairer le capteur dans les paramètres de celui-ci</string>
     <string name="telecommande_tuto_step_5_bluetooth">Dans l\'outils télécommande sélectionner le module dans la liste des devices bluetooth qui s\'affiche</string>
+    <string name="page_contact_site_internet">Notre site internet</string>
+    <string name="page_contact_contactez_nous">Contactez-nous</string>
+    <string name="page_contact_a_propos">A propos</string>
 </resources>

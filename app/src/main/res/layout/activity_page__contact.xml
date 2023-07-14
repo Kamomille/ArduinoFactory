@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Notre site internet"
+            android:text="@string/page_contact_site_internet"
             android:textColor="#FFFFFF"
             android:textSize="30dp" />
     </LinearLayout>
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Contactez-nous"
+            android:text="@string/page_contact_contactez_nous"
             android:textColor="#FFFFFF"
             android:textSize="30dp" />
     </LinearLayout>
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:text="A propos"
+                android:text="@string/page_contact_a_propos"
                 android:textColor="#FFFFFF"
                 android:textSize="30dp" />
         </LinearLayout>
