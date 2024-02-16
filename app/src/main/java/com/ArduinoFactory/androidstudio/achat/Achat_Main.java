@@ -97,23 +97,23 @@ public class Achat_Main extends AppCompatActivity {
         data.add(new Achat_Data("Joystick",        R.drawable.achat_joystick,        "https://amzn.to/3lAU3ZD"));
         data.add(new Achat_Data("Capteur de son",  R.drawable.achat_capteur_son,     "https://amzn.to/3c1Ur0m"));
         data.add(new Achat_Data("Buzzer",          R.drawable.achat_buzzer,          "https://amzn.to/3sa2iyr"));
-        data.add(new Achat_Data("Shock",           R.drawable.achat_shock,           "https://amzn.to/3d7lK8X"));
+        data.add(new Achat_Data("Capteur Inclinaison",           R.drawable.achat_shock,           "https://amzn.to/3ON8JF8"));
         data.add(new Achat_Data("Photorésistance", R.drawable.achat_photoresistance, "https://amzn.to/3raz1lU"));
         data.add(new Achat_Data("Humidité",        R.drawable.achat_humidite,        "https://amzn.to/2PgFrCD"));
         data.add(new Achat_Data("Motorshield",     R.drawable.achat_motorshield,     "https://amzn.to/3bWX3wx"));
         data.add(new Achat_Data("Carte méga",      R.drawable.achat_carte_mega,      "https://amzn.to/2OL1SjC"));
         data.add(new Achat_Data("Carte nano",      R.drawable.achat_carte_nano,      "https://amzn.to/30YsU9A"));
-        data.add(new Achat_Data("Carte raspberry", R.drawable.achat_raspberry,       "https://amzn.to/3907o95"));
-        data.add(new Achat_Data("Kit raspberry",   R.drawable.achat_kit_raspberry,   "https://amzn.to/2OVNSUj"));
+        data.add(new Achat_Data("Carte raspberry", R.drawable.achat_raspberry,       "https://amzn.to/2OVNSUj"));
+        data.add(new Achat_Data("Kit raspberry",   R.drawable.achat_kit_raspberry,   "https://amzn.to/3OMBYrA"));
         data.add(new Achat_Data("Machine à souder",R.drawable.achat_machine_soudure, "https://amzn.to/38TxeLW"));
         data.add(new Achat_Data("Etain",           R.drawable.achat_etain,           "https://amzn.to/3vJkGjI"));
-        data.add(new Achat_Data("Kit soudure",     R.drawable.achat_kit_soudure,     "https://amzn.to/310olvr"));
+        data.add(new Achat_Data("Kit soudure",     R.drawable.achat_kit_soudure,     "https://amzn.to/3T1bGmT"));
         data.add(new Achat_Data("Dénudeur de fil", R.drawable.achat_pince_soudure,   "https://amzn.to/3c2NT1C"));
         data.add(new Achat_Data("Moteur dc",       R.drawable.achat_moteur_dc,       "https://amzn.to/3r21pXx"));
         data.add(new Achat_Data("Servomoteur",     R.drawable.achat_servomoteur,     "https://amzn.to/3lw1l0R"));
         data.add(new Achat_Data("Led",             R.drawable.achat_led,             "https://amzn.to/3c2W0Lz"));
         data.add(new Achat_Data("Breadboard",      R.drawable.achat_breadboard,      "https://amzn.to/3c1Jdc8"));
-        data.add(new Achat_Data("Prototype",       R.drawable.prototype,             "https://amzn.to/38VLPpY"));
+        data.add(new Achat_Data("Prototype",       R.drawable.prototype,             "https://amzn.to/3I7RF8N"));
         data.add(new Achat_Data("Module wifi",     R.drawable.achat_module_wifi,     "https://amzn.to/3vDmPNY"));
         data.add(new Achat_Data("Module bluetooth",R.drawable.achat_module_bluetooth,"https://amzn.to/3tKZCI9"));
 

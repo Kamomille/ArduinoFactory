@@ -1,8 +1,12 @@
 package com.ArduinoFactory.androidstudio.outils;
 
+import static java.lang.Thread.sleep;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.Manifest;
@@ -19,6 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,6 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.ArduinoFactory.androidstudio.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.pages.Page_Outils;
 
@@ -53,17 +59,16 @@ public class Outils_telecommande extends AppCompatActivity {
     private OutputStream my_bt_out_stream = null;
     private InputStream my_bt_inp_stream = null;
     private String dev_address;
-    //List<Character> chars = Arrays.asList('T', 'e', 'c', 'h', 'i', 'e');
+    private static final int REQUEST_BLUETOOTH_PERMISSION = 123;
     private int Etat = 0;
     ArrayList pairedlist = new ArrayList();
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
     int Etat_volplus = 0, Etat_function = 0, Etat_back = 0, Etat_pause = 0, Etat_next = 0, Etat_descendre = 0, Etat_volmoins = 0, Etat_monter = 0, Etat_bouton_0 = 0, Etat_eq = 0, Etat_rept = 0, Etat_bouton_1 = 0, Etat_bouton_2 = 0, Etat_bouton_3 = 0, Etat_bouton_4 = 0, Etat_bouton_5 = 0, Etat_bouton_6 = 0, Etat_bouton_7 = 0, Etat_bouton_8 = 0, Etat_bouton_9 = 0;
-
     int telecommandeSelect = 2;
     int numView = 1;
-    private int stateHeart = 1;
+    int stateHeart=1;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -87,7 +92,7 @@ public class Outils_telecommande extends AppCompatActivity {
         //Button[] listeButton = {Bouton_0, Bouton_1, Bouton_2, Bouton_3, Bouton_4, Bouton_5, Bouton_6, Bouton_7, Bouton_8, Bouton_9};
         //ImageButton[] listeImageButton = {bouton_deconnecter, bouton_volplus, bouton_function, bouton_back, bouton_pause, bouton_next, bouton_descendre, bouton_volmoins, bouton_monter, bouton_eq, bouton_rept};
 
-       // int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
+        // int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
         //int[] listeDrawable_2 = {R.drawable.telecommande_plus, R.drawable.telecommande_soleil_haut, R.drawable.telecommande_power,         R.drawable.telecommande_moins2, R.drawable.telecommande_soleil_bas,    R.drawable.telecommande_speed,     R.drawable.telecommande_flash,  R.drawable.telecommande_fade,  R.drawable.outils_vide,     R.drawable.telecommande_multicouleur};
 
 
@@ -373,187 +378,172 @@ public class Outils_telecommande extends AppCompatActivity {
                 }
             }
         };
+        // Remplacez VOTRE_CODE_DE_PERMISSION par REQUEST_BLUETOOTH_PERMISSION
+            // ===========  affecter un identificateur au module bluetooth ============================
+            my_bt_adapter = BluetoothAdapter.getDefaultAdapter();
 
-
-        // ===========  affecter un identificateur au module bluetooth ============================
-        my_bt_adapter = BluetoothAdapter.getDefaultAdapter();
-        if (my_bt_adapter == null) {
-            tv_status.setText("Pas d'interface Bluetooth");
-        }
-
-        // ============== démarrer le bluetooth s'il ne l'est pas =============================
-        if (!my_bt_adapter.isEnabled()) {
-            Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
+            if (my_bt_adapter == null) {
+                tv_status.setText("Pas d'interface Bluetooth");
             }
-            startActivityForResult(turnOn, 0);
+
+            // ============== démarrer le bluetooth s'il ne l'est pas =============================
+        try {
+            if (!my_bt_adapter.isEnabled()) {
+                Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(turnOn, 0);
+                finish();
+            }
         }
-        while (!my_bt_adapter.isEnabled()) ; // attendre que le démarrage soit effectif
+        catch (ArithmeticException e) {
+            Intent intent = new Intent(this, Page_Outils.class);
+            startActivity(intent);
 
-        // =============== afficher la liste des équipements associé dans la liste =================
-        Set<BluetoothDevice> pairedDevices = my_bt_adapter.getBondedDevices();
-        if (pairedDevices.isEmpty()) tv_status.setText("Empty list"); // Liste Vide
+        }
+            // =============== afficher la liste des équipements associé dans la liste =================
+            Set<BluetoothDevice> pairedDevices = my_bt_adapter.getBondedDevices();
+            if (pairedDevices.isEmpty()) tv_status.setText("Empty list"); // Liste Vide
 
-        ArrayList pairedlist = new ArrayList();
-        for (BluetoothDevice bt : pairedDevices)
-            pairedlist.add(bt.getName() + "\n" + bt.getAddress());
-        ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
-        lv_devlist.setAdapter(my_list_adapter);
-        tv_status.setText("Choose a device from the list"); // Choisir un device dans la liste
-        lv_devlist.setOnItemClickListener(devlist_listener);
-        if (pairedDevices.isEmpty()) {
-            tv_status.setText("Empty list"); // Liste Vide
-            pairedlist.add("Go to your phone's bluetooth settings and pair the bluetooth sensor"); // Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth
-            ArrayAdapter my_list_adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
-            lv_devlist.setAdapter(my_list_adapter2);
-            lv_devlist.setSelector(android.R.color.transparent);
-            lv_devlist.setOnItemClickListener(null);
+            ArrayList pairedlist = new ArrayList();
+            for (BluetoothDevice bt : pairedDevices)
+               pairedlist.add(bt.getName() + "\n" + bt.getAddress());
+            ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
+            lv_devlist.setAdapter(my_list_adapter);
+            tv_status.setText("Choose a device from the list"); // Choisir un device dans la liste
+            lv_devlist.setOnItemClickListener(devlist_listener);
+            //if (pairedDevices.isEmpty()) {
+              // tv_status.setText("Empty list"); // Liste Vide
+            //  pairedlist.add("Go to your phone's bluetooth settings and pair the bluetooth sensor"); // Aller dans les paramètres bluetooth de votre téléphone et appareiller le capteur bluetooth
+            //  ArrayAdapter my_list_adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
+            // lv_devlist.setAdapter(my_list_adapter2);
+            // lv_devlist.setSelector(android.R.color.transparent);
+            // lv_devlist.setOnItemClickListener(null);
+            //};
+
+        }
+
+
+
+        //======= Listner de la liste =====================================================
+        private AdapterView.OnItemClickListener devlist_listener = new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView av, View v, int arg2, long arg3) {
+                String devchoisi = ((TextView) v).getText().toString();
+                dev_address = devchoisi.substring(devchoisi.length() - 17);
+                tv_status.setText("Connexion en cours");
+                // démarrer le Thread qui gère la connexion
+                mybluetooth = new Outils_telecommande.MyBluetoothClass();
+                mybluetooth.start();
+            }
         };
 
-    }
+        // définition de la classe BluetoothClass pour (connexion , lecture , écriture, déconnexion)
+        class MyBluetoothClass extends Thread {
+            @SuppressLint("MissingPermission")
+            public void run() {
+                boolean SOCKET_OK, CONX_OK, OUTS_OK, INPS_OK;
 
-    //======= Listner de la liste =====================================================
-    private AdapterView.OnItemClickListener devlist_listener = new AdapterView.OnItemClickListener() {
-        public void onItemClick(AdapterView av, View v, int arg2, long arg3) {
-            String devchoisi = ((TextView) v).getText().toString();
-            dev_address = devchoisi.substring(devchoisi.length() - 17);
-            tv_status.setText("Connexion en cours");
-            // démarrer le Thread qui gère la connexion
-            mybluetooth = new Outils_telecommande.MyBluetoothClass();
-            mybluetooth.start();
-        }
-    };
-
-    // définition de la classe BluetoothClass pour (connexion , lecture , écriture, déconnexion)
-    class MyBluetoothClass extends Thread {
-        @SuppressLint("MissingPermission")
-        public void run() {
-            boolean SOCKET_OK, CONX_OK, OUTS_OK, INPS_OK;
-
-            // créer un objet bluetooth pour notre HC05
-            BluetoothDevice HC05 = my_bt_adapter.getRemoteDevice(dev_address);
-            //Créer un soket (pipeline) pour communiquer avec notre HC05
-            SOCKET_OK = true;
-            try {
-                my_bt_soket = HC05.createInsecureRfcommSocketToServiceRecord(myUUID);
-            } catch (IOException e) {
-                //dev_address=null;
-                SOCKET_OK = false;
-            }
-            if (SOCKET_OK) {
-                // connecter le soket
-                CONX_OK = true;
+                // créer un objet bluetooth pour notre HC05
+                BluetoothDevice HC05 = my_bt_adapter.getRemoteDevice(dev_address);
+                //Créer un soket (pipeline) pour communiquer avec notre HC05
+                SOCKET_OK = true;
                 try {
-                    //SystemClock.sleep(500);
-                    //my_bt_soket = HC05.createInsecureRfcommSocketToServiceRecord(myUUID2);
-                    my_bt_soket.connect();
+                    my_bt_soket = HC05.createInsecureRfcommSocketToServiceRecord(myUUID);
                 } catch (IOException e) {
-                    CONX_OK = false;
+                    //dev_address=null;
+                    SOCKET_OK = false;
                 }
-                if (CONX_OK) {
-                    OUTS_OK = true;
+                if (SOCKET_OK) {
+                    // connecter le soket
+                    CONX_OK = true;
                     try {
-                        my_bt_out_stream = my_bt_soket.getOutputStream();
+                        //SystemClock.sleep(500);
+                        //my_bt_soket = HC05.createInsecureRfcommSocketToServiceRecord(myUUID2);
+                        my_bt_soket.connect();
                     } catch (IOException e) {
-                        my_handler.obtainMessage(STATUS, -1, -1, "Echec création OUTPUT stream").sendToTarget();
-                        OUTS_OK = false;
+                        CONX_OK = false;
                     }
-                    INPS_OK = true;
-                    try {
-                        my_bt_inp_stream = my_bt_soket.getInputStream();
-                    } catch (IOException e) {
-                        my_handler.obtainMessage(STATUS, -1, -1, "Echec création INPUT STREAM").sendToTarget();
-                        INPS_OK = false;
-                    }
-                    //ceci est un commantaire
-                    if (OUTS_OK && INPS_OK)
-                        my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    runOnUiThread(new Runnable() {
-
-                        @Override
-                        public void run() {
-                            ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
-                            //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
-                            viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
-                            numView =2;
+                    if (CONX_OK) {
+                        OUTS_OK = true;
+                        try {
+                            my_bt_out_stream = my_bt_soket.getOutputStream();
+                        } catch (IOException e) {
+                            my_handler.obtainMessage(STATUS, -1, -1, "Echec création OUTPUT stream").sendToTarget();
+                            OUTS_OK = false;
                         }
-                    });
+                        INPS_OK = true;
+                        try {
+                            my_bt_inp_stream = my_bt_soket.getInputStream();
+                        } catch (IOException e) {
+                            my_handler.obtainMessage(STATUS, -1, -1, "Echec création INPUT STREAM").sendToTarget();
+                            INPS_OK = false;
+                        }
+                        if (OUTS_OK && INPS_OK)
+                            my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
+                        runOnUiThread(new Runnable() {
 
+                            @Override
+                            public void run() {
+                                ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
+                                //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                                viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
+                                numView = 2;
+                            }
+                        });
+
+                    } else {
+                        my_handler.obtainMessage(STATUS, -1, -1, "Rebrancher le capteur et Réessayer").sendToTarget();
+                    }
                 } else {
-                    my_handler.obtainMessage(STATUS, -1, -1, "Rebrancher le capteur et Réessayer").sendToTarget();
+                    my_handler.obtainMessage(STATUS, -1, -1, "Echec création Soket COMM").sendToTarget();
                 }
-            } else {
-                my_handler.obtainMessage(STATUS, -1, -1, "Echec création Soket COMM").sendToTarget();
+
+            }
+
+
+            void writebyte(byte b) {
+                try {
+                    my_bt_out_stream.write(b);
+                } catch (IOException e) {
+                    my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans writebyte").sendToTarget();
+                }
+            }
+
+            int readbyte() {
+                try {
+                    return my_bt_inp_stream.read();
+                } catch (IOException e) {
+                    my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans readbyte").sendToTarget();
+                    return -1;
+                }
+            }
+
+            int available() {
+                try {
+                    return my_bt_inp_stream.available();
+                } catch (IOException e) {
+                    my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans available").sendToTarget();
+                    return -1;
+                }
+            }
+
+            int readbytes(byte[] inpbuff) {
+                try {
+                    return my_bt_inp_stream.read(inpbuff);
+                } catch (IOException e) {
+                    my_handler.obtainMessage(STATUS, -1, -1, "Erreur de lecture").sendToTarget();
+                    return 0;
+                }
+            }
+
+            void disconnect() {
+                try {
+                    my_bt_soket.close();
+                } catch (IOException e) {
+                    my_handler.obtainMessage(STATUS, -1, -1, "Echec Déconnexion").sendToTarget();
+                }
             }
 
         }
 
-
-        void writebyte(byte b) {
-            try {
-                my_bt_out_stream.write(b);
-            } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans writebyte").sendToTarget();
-            }
-        }
-
-        int readbyte() {
-            //int b = 0;
-            try {
-                //b = my_bt_inp_stream.read();
-                //return b;
-                return my_bt_inp_stream.read();
-            } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans readbyte").sendToTarget();
-                return -1;
-            }
-        }
-
-        int available() {
-           // int b = 0;
-            try {
-             //   b = my_bt_inp_stream.available();
-               // return b;
-                return my_bt_inp_stream.available();
-            } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans available").sendToTarget();
-                return -1;
-            }
-        }
-
-        int readbytes(byte[] inpbuff) {
-            //int b = 0;
-            try {
-               // b = my_bt_inp_stream.read(inpbuff);
-               // return b;
-                return my_bt_inp_stream.read(inpbuff);
-            } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Erreur de lecture").sendToTarget();
-                return 0;
-            }
-        }
-
-        void disconnect() {
-            try {
-                my_bt_soket.close();
-            } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Echec Déconnexion").sendToTarget();
-            }
-        }
-
-    }
-    public void openActivtity_outils(){
-        Intent intent = new Intent(this, Page_Outils.class);
-        startActivity(intent);
-    }
     // ========================================================================================================================
     //                              Menu
     // ========================================================================================================================
@@ -581,6 +571,23 @@ public class Outils_telecommande extends AppCompatActivity {
         item.setIcon(drawable);
 
         return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull  int[] grantResults) {
+        if (requestCode == REQUEST_BLUETOOTH_PERMISSION) {
+            // Vérifie si la permission a été accordée
+            //if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (requestCode == RESULT_OK) {
+            //if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                // La permission BLUETOOTH_CONNECT a été accordée, vous pouvez maintenant effectuer des actions liées au Bluetooth
+            } else {
+                Intent intent = new Intent(this, Page_Outils.class);
+                startActivity(intent);
+            }
+        }
+        // Gérer d'autres demandes de permissions si nécessaire
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

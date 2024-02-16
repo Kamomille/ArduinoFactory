@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -44,6 +45,7 @@ public class Contactez_nous extends AppCompatActivity {
                 String email     = your_email.getText().toString();
                 String subject   = your_subject.getText().toString();
                 String message   = your_message.getText().toString();
+                String email_recoit ="arduinofactory@yahoo.com";
                 // Si le champs du prénom est est vide après avoir appuyé sur le bouton on lui indique
                 if (TextUtils.isEmpty(first_name)){
                     your_first_name.setError("Entrer votre prénom");
@@ -74,7 +76,9 @@ public class Contactez_nous extends AppCompatActivity {
                 }
                 Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
                 sendEmail.setType("plain/text");
-                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, "arduinofactory@yahoo.com");
+                sendEmail.setData(Uri.parse("mailto:arduinofactory@yahoo.com"));
+                //sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, email_recoit );
+                //sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, "arduinofactory@yahoo.com");
                 sendEmail.putExtra(Intent.EXTRA_REFERRER, "arduinofactory@yahoo.com");
                 sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
