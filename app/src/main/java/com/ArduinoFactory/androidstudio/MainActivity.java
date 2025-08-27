@@ -116,15 +116,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         Fragment selectedFragment = null;
-                        switch (item.getItemId()) {
-                            case R.id.navigation_home:
-                                break;
-                            case R.id.navigation_dashboard:
-                                openFavoris();
-                                break;
-                            case R.id.navigation_notifications:
-                                openNotification();
-                                break;
+                        if (item.getItemId() == R.id.navigation_dashboard) {
+                            openFavoris();
+                        }
+                        if (item.getItemId() == R.id.navigation_notifications) {
+                            openNotification();
                         }
                         //getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_container,selectedFragment);
                         return false;

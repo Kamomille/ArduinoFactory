@@ -387,12 +387,22 @@ public class Outils_telecommande extends AppCompatActivity {
             }
 
             // ============== démarrer le bluetooth s'il ne l'est pas =============================
+
         try {
-            if (!my_bt_adapter.isEnabled()) {
-                Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(turnOn, 0);
-                finish();
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 1);
+            } else {
+                // Permission déjà accordée : tu peux utiliser Bluetooth
+                if (!my_bt_adapter.isEnabled()) {
+                    Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                    startActivityForResult(turnOn, 0);
+                    finish();
+                }
             }
+            
         }
         catch (ArithmeticException e) {
             Intent intent = new Intent(this, Page_Outils.class);
@@ -595,94 +605,91 @@ public class Outils_telecommande extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         Resources res = getResources();
-
-        switch (item.getItemId()) {
-            case R.id.nav_deconnection: // ------------------------------------------------------------------------------------------
-                if (numView == 1) {
-                    Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
-                }
-                if (numView == 2) {
-                    Toast.makeText(this, "Bluetooth disconnected", Toast.LENGTH_LONG).show(); // Bluetooth deconnecté
-                    mybluetooth.disconnect();
-                    finish();
-                }
-                return true;
-
-            case R.id.nav_telecommande: // ------------------------------------------------------------------------------------------
-
-                int[] listeButtonCouleur = {R.color.white, R.color.rouge, R.color.violet, R.color.bleu, R.color.orange, R.color.rose, R.color.bleu_clair, R.color.jaune, R.color.vert_clair, R.color.vert};
-
-                Button[] listeButton = {Bouton_0, Bouton_1, Bouton_2, Bouton_3, Bouton_4, Bouton_5, Bouton_6, Bouton_7, Bouton_8, Bouton_9};
-                ImageButton[] listeImageButton = {bouton_volplus,bouton_function,bouton_back,bouton_pause,bouton_next,bouton_descendre,bouton_volmoins,bouton_monter,bouton_eq,bouton_rept};
-
-                int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
-                int[] listeDrawable_2 = {R.drawable.telecommande_plus, R.drawable.telecommande_soleil_haut, R.drawable.telecommande_power,         R.drawable.telecommande_moins2, R.drawable.telecommande_soleil_bas,    R.drawable.telecommande_speed,     R.drawable.telecommande_flash,  R.drawable.telecommande_fade,  R.drawable.outils_vide,     R.drawable.telecommande_multicouleur};
-
-                Drawable drawable;
-
-                if (numView == 1) {
-                    Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
-                }
-
-
-                if (numView == 2) {
-                    if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
-                        for (int i = 0; i < listeButton.length; i += 1) {
-                            listeButton[i].setBackgroundTintList(getResources().getColorStateList(R.color.white));
-                            listeButton[i].setText(String.valueOf(i));
-                        }
-                        for (int i = 0; i < listeImageButton.length; i += 1) {
-                            drawable = ResourcesCompat.getDrawable(res, listeDrawable_1[i], null);
-                            listeImageButton[i].setImageDrawable(drawable);
-                        }
-                        telecommandeSelect -= 1;
-                    }
-                    if (telecommandeSelect == 2) { // ------------ Telecommande couleur ------------
-                        for (int i = 0; i < listeButton.length; i += 1) {
-                            listeButton[i].setBackgroundTintList(getResources().getColorStateList(listeButtonCouleur[i]));
-                            listeButton[i].setText("");
-                        }
-                        for (int i = 0; i < listeImageButton.length; i += 1) {
-                            drawable = ResourcesCompat.getDrawable(res, listeDrawable_2[i], null);
-                            listeImageButton[i].setImageDrawable(drawable);
-                        }
-                        telecommandeSelect -= 1;
-                    }
-                    if (telecommandeSelect == 0) { telecommandeSelect = 2; }
-                }
-                return true;
-
-            case R.id.nav_tuto: // ------------------------------------------------------------------------------------------
-                Intent intent = new Intent(this, Outils_telecommande_tuto.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.coeur_vide: // ------------------------------------------------------------------------------------------
-
-                SharedPreferences prefs = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
-                String coeur_telecommande = prefs.getString("coeur_telecommande", "No favorite defined");
-
-                if (coeur_telecommande.equals("vide")) {
-                    Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
-                    item.setIcon(drawable2);
-                    stateHeart -= 1;
-
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
-                    editor.putString("coeur_telecommande", "plein").apply();
-                }
-                else {
-                    Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
-                    item.setIcon(drawable2);
-                    stateHeart -= 1;
-
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
-                    editor.putString("coeur_telecommande", "vide").apply();
-                }
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() ==R.id.nav_deconnection ){
+            if (numView == 1) {
+                Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
+            }
+            if (numView == 2) {
+                Toast.makeText(this, "Bluetooth disconnected", Toast.LENGTH_LONG).show(); // Bluetooth deconnecté
+                mybluetooth.disconnect();
+                finish();
+            }
+            return true;
         }
+        if (item.getItemId()== R.id.nav_telecommande) {
+            int[] listeButtonCouleur = {R.color.white, R.color.rouge, R.color.violet, R.color.bleu, R.color.orange, R.color.rose, R.color.bleu_clair, R.color.jaune, R.color.vert_clair, R.color.vert};
+
+            Button[] listeButton = {Bouton_0, Bouton_1, Bouton_2, Bouton_3, Bouton_4, Bouton_5, Bouton_6, Bouton_7, Bouton_8, Bouton_9};
+            ImageButton[] listeImageButton = {bouton_volplus,bouton_function,bouton_back,bouton_pause,bouton_next,bouton_descendre,bouton_volmoins,bouton_monter,bouton_eq,bouton_rept};
+
+            int[] listeDrawable_1 = {R.drawable.telecommande_plus, R.drawable.telecommande_func_stop,   R.drawable.telecommande_fleche_gauche, R.drawable.telecommande_pause,  R.drawable.telecommande_fleche_droite, R.drawable.telecommande_descendre, R.drawable.telecommande_moins2, R.drawable.telecommande_monter, R.drawable.telecommande_eq, R.drawable.telecommande_st_rept};
+            int[] listeDrawable_2 = {R.drawable.telecommande_plus, R.drawable.telecommande_soleil_haut, R.drawable.telecommande_power,         R.drawable.telecommande_moins2, R.drawable.telecommande_soleil_bas,    R.drawable.telecommande_speed,     R.drawable.telecommande_flash,  R.drawable.telecommande_fade,  R.drawable.outils_vide,     R.drawable.telecommande_multicouleur};
+
+            Drawable drawable;
+
+            if (numView == 1) {
+                Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
+            }
+
+
+            if (numView == 2) {
+                if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
+                    for (int i = 0; i < listeButton.length; i += 1) {
+                        listeButton[i].setBackgroundTintList(getResources().getColorStateList(R.color.white));
+                        listeButton[i].setText(String.valueOf(i));
+                    }
+                    for (int i = 0; i < listeImageButton.length; i += 1) {
+                        drawable = ResourcesCompat.getDrawable(res, listeDrawable_1[i], null);
+                        listeImageButton[i].setImageDrawable(drawable);
+                    }
+                    telecommandeSelect -= 1;
+                }
+                if (telecommandeSelect == 2) { // ------------ Telecommande couleur ------------
+                    for (int i = 0; i < listeButton.length; i += 1) {
+                        listeButton[i].setBackgroundTintList(getResources().getColorStateList(listeButtonCouleur[i]));
+                        listeButton[i].setText("");
+                    }
+                    for (int i = 0; i < listeImageButton.length; i += 1) {
+                        drawable = ResourcesCompat.getDrawable(res, listeDrawable_2[i], null);
+                        listeImageButton[i].setImageDrawable(drawable);
+                    }
+                    telecommandeSelect -= 1;
+                }
+                if (telecommandeSelect == 0) { telecommandeSelect = 2; }
+            }
+            return true;
+        }
+
+        if (item.getItemId() == R.id.nav_tuto ) {
+            Intent intent = new Intent(this, Outils_telecommande_tuto.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (item.getItemId() == R.id.coeur_vide){
+            SharedPreferences prefs = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
+            String coeur_telecommande = prefs.getString("coeur_telecommande", "No favorite defined");
+
+            if (coeur_telecommande.equals("vide")) {
+                Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
+                item.setIcon(drawable2);
+                stateHeart -= 1;
+
+                SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
+                editor.putString("coeur_telecommande", "plein").apply();
+            }
+            else {
+                Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
+                item.setIcon(drawable2);
+                stateHeart -= 1;
+
+                SharedPreferences.Editor editor = getSharedPreferences("coeur_telecommande", MODE_PRIVATE).edit();
+                editor.putString("coeur_telecommande", "vide").apply();
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
 

@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 35
+    buildToolsVersion "35.0.0"
 
     defaultConfig {
         applicationId "com.ArduinoFactory.androidstudio"
-        minSdkVersion 19
-        targetSdkVersion 32
+        minSdk 35
+        targetSdk 35
         versionCode 3
         versionName "3.0"
         multiDexEnabled true

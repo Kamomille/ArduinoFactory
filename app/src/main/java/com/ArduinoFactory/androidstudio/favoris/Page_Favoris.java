@@ -69,17 +69,13 @@ public class Page_Favoris extends AppCompatActivity {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.navigation_home:
-                                openActivitity_MainActivity();
-                                break;
-                            case R.id.navigation_dashboard:
-
-                                break;
-                            case R.id.navigation_notifications:
-                                openActivitity_Notification();
-                                break;
+                        if (item.getItemId() == R.id.navigation_home) {
+                            openActivitity_MainActivity();
                         }
+                        if (item.getItemId() ==R.id.navigation_notifications) {
+                            openActivitity_Notification();
+                        }
+
                         return false;
                     }
                 });

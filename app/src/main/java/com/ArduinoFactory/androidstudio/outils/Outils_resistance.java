@@ -629,35 +629,32 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.coeur_vide:
+        if (item.getItemId() == R.id.coeur_vide) {
+            Resources res = getResources();
 
-                Resources res = getResources();
+            SharedPreferences prefs = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
+            String coeur = prefs.getString("coeur_resistance", "No favorite defined");
 
-                SharedPreferences prefs = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
-                String coeur = prefs.getString("coeur_resistance", "No favorite defined");
+            if (coeur.equals("vide")) {
+                Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
+                item.setIcon(drawable);
+                stateHeart -= 1;
 
-                if (coeur.equals("vide")) {
-                    Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
-                    item.setIcon(drawable);
-                    stateHeart -= 1;
+                SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
+                editor.putString("coeur_resistance", "plein").apply();
+            }
+            else {
+                Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
+                item.setIcon(drawable);
+                stateHeart -= 1;
 
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
-                    editor.putString("coeur_resistance", "plein").apply();
-                }
-                else {
-                    Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
-                    item.setIcon(drawable);
-                    stateHeart -= 1;
+                SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
+                editor.putString("coeur_resistance", "vide").apply();
+            }
+            return true;
 
-                    SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
-                    editor.putString("coeur_resistance", "vide").apply();
-                }
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
         }
-
+        return super.onOptionsItemSelected(item);
     }
 
 

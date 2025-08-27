@@ -100,16 +100,11 @@ public class Page_Notification extends AppCompatActivity {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.navigation_home:
-                                openActivitity_MainActivity();
-                                break;
-                            case R.id.navigation_dashboard:
-                                openActivitity_Favoris();
-
-                                break;
-                            case R.id.navigation_notifications:
-                                break;
+                        if (item.getItemId() == R.id.navigation_home){
+                            openActivitity_MainActivity();
+                        }
+                        if (item.getItemId() == R.id.navigation_dashboard){
+                            openActivitity_Favoris();
                         }
                         return false;
                     }
