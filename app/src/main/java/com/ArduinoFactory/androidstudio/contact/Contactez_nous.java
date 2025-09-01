@@ -1,111 +1,99 @@
 package com.ArduinoFactory.androidstudio.contact;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.ArduinoFactory.androidstudio.R;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Contactez_nous extends AppCompatActivity {
 
+    @SuppressLint("IntentReset")
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactez_nous);
 
-        // bouton retour
-        ActionBar actionBar=getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
+        EditText your_first_name = findViewById(R.id.your_first_name);
+        EditText your_name = findViewById(R.id.your_name);
+        EditText your_email = findViewById(R.id.your_email);
+        EditText your_subject = findViewById(R.id.your_subject);
+        EditText your_message = findViewById(R.id.your_message);
+        Button emailButton = findViewById(R.id.post_message);
 
-        // champs de texte dans le formulaire de contact
-        final EditText your_first_name  = (EditText) findViewById(R.id.your_first_name);
-        final EditText your_name        = (EditText) findViewById(R.id.your_name);
-        final EditText your_email       = (EditText) findViewById(R.id.your_email);
-        final EditText your_subject     = (EditText) findViewById(R.id.your_subject);
-        final EditText your_message     = (EditText) findViewById(R.id.your_message);
-        Button email = (Button) findViewById(R.id.post_message);
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Permet d'obtenir le texte tapé
-                String first_name      = your_first_name.getText().toString();
-                String name      = your_name.getText().toString();
-                String email     = your_email.getText().toString();
-                String subject   = your_subject.getText().toString();
-                String message   = your_message.getText().toString();
-                String email_recoit ="arduinofactory@yahoo.com";
-                // Si le champs du prénom est est vide après avoir appuyé sur le bouton on lui indique
-                if (TextUtils.isEmpty(first_name)){
-                    your_first_name.setError("Entrer votre prénom");
-                    your_first_name.requestFocus();
-                    return;
-                }
-                // Si le champs du nom est est vide après avoir appuyé sur le bouton on lui indique
-                if (TextUtils.isEmpty(name)){
-                    your_name.setError("Entrer votre nom");
-                    your_name.requestFocus();
-                    return;
-                }
-                Boolean onError = false;
-                if (!isValidEmail(email)) {
-                    onError = true;
-                    your_email.setError("Email invalide ");
-                    return;
-                }
-                if (TextUtils.isEmpty(subject)){
-                    your_subject.setError("Entrer votre objet");
-                    your_subject.requestFocus();
-                    return;
-                }
-                if (TextUtils.isEmpty(message)){
-                    your_message.setError("Entrer votre Message");
-                    your_message.requestFocus();
-                    return;
-                }
-                Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
-                sendEmail.setType("plain/text");
-                sendEmail.setData(Uri.parse("mailto:arduinofactory@yahoo.com"));
-                //sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, email_recoit );
-                //sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, "arduinofactory@yahoo.com");
-                sendEmail.putExtra(Intent.EXTRA_REFERRER, "arduinofactory@yahoo.com");
-                sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
-                sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
-                        "Prénom:"+first_name+'\n'+"Nom:"+name+'\n'+"Email :"+email+'\n'+"Objet:"+'\n'+subject+'\n'+"Message:"+'\n'+message);
-                startActivity(Intent.createChooser(sendEmail, "Envoie de l'email..."));
+        emailButton.setOnClickListener(v -> {
+            String first_name = your_first_name.getText().toString().trim();
+            String name = your_name.getText().toString().trim();
+            String email = your_email.getText().toString().trim();
+            String subject = your_subject.getText().toString().trim();
+            String message = your_message.getText().toString().trim();
+
+            if (TextUtils.isEmpty(first_name)) {
+                your_first_name.setError(getString(R.string.hint_prenom));
+                your_first_name.requestFocus();
+                return;
             }
+
+            if (TextUtils.isEmpty(name)) {
+                your_name.setError(getString(R.string.hint_nom));
+                your_name.requestFocus();
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                your_email.setError(getString(R.string.hint_email));
+                your_email.requestFocus();
+                return;
+            }
+
+            if (TextUtils.isEmpty(subject)) {
+                your_subject.setError(getString(R.string.hint_objet));
+                your_subject.requestFocus();
+                return;
+            }
+
+            if (TextUtils.isEmpty(message)) {
+                your_message.setError(getString(R.string.hint_message));
+                your_message.requestFocus();
+                return;
+            }
+
+            Intent sendEmail = new Intent(Intent.ACTION_SENDTO);
+            sendEmail.setData(Uri.parse("mailto:arduinofactory@yahoo.com")); // 👈 bon format
+            sendEmail.putExtra(Intent.EXTRA_SUBJECT, subject);
+            sendEmail.putExtra(Intent.EXTRA_TEXT,
+                    getString(R.string.email_prenom_label) + " " + first_name + '\n' +
+                            getString(R.string.email_nom_label) + " " + name + '\n' +
+                            getString(R.string.email_email_label) + " " + email + '\n' +
+                            getString(R.string.email_subject_label) + " " + subject + '\n' +
+                            getString(R.string.email_message_label) + " " + message
+            );
+
+        // Vérifie qu'une app de messagerie est dispo
+            if (sendEmail.resolveActivity(getPackageManager()) != null) {
+                startActivity(Intent.createChooser(sendEmail, getString(R.string.send_email_chooser_title)));
+            }
+
+            startActivity(Intent.createChooser(sendEmail, getString(R.string.send_email_chooser_title)));
         });
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
+
     private boolean isValidEmail(String email) {
-        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
+        String EMAIL_PATTERN = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        return Pattern.matches(EMAIL_PATTERN, email);
     }
-
 }
-

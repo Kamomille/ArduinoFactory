@@ -112,4 +112,20 @@
     <string name="prototype">Prototipo</string>
     <string name="module_wifi">Módulo WiFi</string>
     <string name="module_bluetooth">Módulo Bluetooth</string>
+
+    !-- Page contactez-nous -->
+    <string name="hint_prenom">Ingrese su nombre</string>
+    <string name="hint_nom">Introduce tu nombre</string>
+    <string name="hint_email">Correo electrónico no válido</string>
+    <string name="hint_objet">Introduzca su objeto</string>
+    <string name="hint_message">Ingrese su mensaje</string>
+
+    <string name="send_email_chooser_title">Enviando correo electrónico...</string>
+
+    <string name="email_subject_label">Objeto :</string>
+    <string name="email_message_label">Mensaje :</string>
+    <string name="email_prenom_label">Nombre de pila :: </string>
+    <string name="email_nom_label">Nombre :</string>
+    <string name="email_email_label">Correo electrónico :</string>
+
 </resources>

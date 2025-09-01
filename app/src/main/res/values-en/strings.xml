@@ -116,4 +116,19 @@
     <string name="module_wifi">WiFi module</string>
     <string name="module_bluetooth">Bluetooth module</string>
 
+    !-- Page contactez-nous -->
+    <string name="hint_prenom">Enter your first name</string>
+    <string name="hint_nom">Enter your name</string>
+    <string name="hint_email">Invalid email</string>
+    <string name="hint_objet">Enter your object</string>
+    <string name="hint_message">Enter your message</string>
+
+    <string name="send_email_chooser_title">Sending email...</string>
+
+    <string name="email_subject_label">Object:</string>
+    <string name="email_message_label">Message:</string>
+    <string name="email_prenom_label">First name:</string>
+    <string name="email_nom_label">Name:</string>
+    <string name="email_email_label">Email:</string>
+
 </resources>
