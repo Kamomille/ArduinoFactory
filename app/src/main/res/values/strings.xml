@@ -72,7 +72,7 @@
 
 
     <!-- Page Outils résistance -->
-    <string name="resistance_tool_title">Calculation Resistance</string>
+    <string name="resistance_tool_title">Resistance calculator</string>
     <string name="resistance_4_anneaux">4 rings</string>
     <string name="resistance_5_anneaux">5 rings</string>
     <string name="resistance_6_anneaux">6 rings</string>
@@ -94,5 +94,17 @@
     <!-- IA -->
     <string name="outils_ia_classification">Classified as:</string>
     <string name="outils_ia_confidences">Confidences:</string>
+
+    <!-- Page A Propos -->
+    <!-- Lien -->
+    <string name="lien_url">https://arduinofactory.fr/</string>
+    <string name="lien_youtube">https://www.youtube.com/channel/UCXKbpmuVZV6h8B0Frr0dtxA</string>
+    <string name="lien_instagram">https://www.instagram.com/arduino.factory/?hl=fr</string>
+
+    <!-- Noms -->
+    <string name="nom1">• Camille Bayon de Noyer</string>
+    <string name="nom2">• Cedric Chhunon</string>
+    <string name="nom3">• Pierre Huruguen</string>
+    <string name="nom4">• Julien Gouban</string>
 
 </resources>

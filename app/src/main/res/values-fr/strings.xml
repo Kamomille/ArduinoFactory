@@ -44,4 +44,18 @@
     <string name="page_contact_site_internet">Notre site internet</string>
     <string name="page_contact_contactez_nous">Contactez-nous</string>
     <string name="page_contact_a_propos">A propos</string>
+
+    <!-- Page A Propos -->
+    <!-- Lien -->
+    <string name="lien_url">https://arduinofactory.fr/</string>
+    <string name="lien_youtube">https://www.youtube.com/channel/UCXKbpmuVZV6h8B0Frr0dtxA</string>
+    <string name="lien_instagram">https://www.instagram.com/arduino.factory/?hl=fr</string>
+
+    <!-- Noms -->
+    <string name="nom1">• Camille Bayon de Noyer</string>
+    <string name="nom2">• Cedric Chhunon</string>
+    <string name="nom3">• Pierre Huruguen</string>
+    <string name="nom4">• Julien Gouban</string>
+
+
 </resources>

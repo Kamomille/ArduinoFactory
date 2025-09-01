@@ -150,7 +150,7 @@ public class Page_Notification extends AppCompatActivity {
 
         data.add(new Favoris_Data("Outils resistance",   R.drawable.outils_menu_resistance, "Outils_resistance"));
         data.add(new Favoris_Data("Outils télécommande",   R.drawable.outils_menu_telecommande, "Outils_telecommande"));
-        data.add(new Favoris_Data("Cours",   R.drawable.livres, "Cours"));
+        data.add(new Favoris_Data("page_accueil_cours",   R.drawable.livres, "page_accueil_cours"));
 
         /* // TEST joiture entre notif et page nouveauté
         SharedPreferences prefs = getSharedPreferences("notif", MODE_PRIVATE);
