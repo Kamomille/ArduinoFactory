@@ -57,5 +57,62 @@
     <string name="nom3">• Pierre Huruguen</string>
     <string name="nom4">• Julien Gouban</string>
 
+    <!-- Page Achat -->
+    <string name="lien_kit_elegoo">https://amzn.to/38Rlsl1</string>
+    <string name="lien_carte_arduino">https://amzn.to/3typI0J</string>
+    <string name="lien_capteur_distance">https://amzn.to/3ty0oI3</string>
+    <string name="lien_bouton_poussoir">https://amzn.to/3cEPaLa</string>
+    <string name="lien_resistance">https://amzn.to/38UpVn3</string>
+    <string name="lien_joystick">https://amzn.to/3lAU3ZD</string>
+    <string name="lien_capteur_son">https://amzn.to/3c1Ur0m</string>
+    <string name="lien_buzzer">https://amzn.to/3sa2iyr</string>
+    <string name="lien_capteur_inclinaison">https://amzn.to/3ON8JF8</string>
+    <string name="lien_photoresistance">https://amzn.to/3raz1lU</string>
+    <string name="lien_humidite">https://amzn.to/2PgFrCD</string>
+    <string name="lien_motorshield">https://amzn.to/3bWX3wx</string>
+    <string name="lien_carte_mega">https://amzn.to/2OL1SjC</string>
+    <string name="lien_carte_nano">https://amzn.to/30YsU9A</string>
+    <string name="lien_carte_raspberry">https://amzn.to/2OVNSUj</string>
+    <string name="lien_kit_raspberry">https://amzn.to/3OMBYrA</string>
+    <string name="lien_machine_souder">https://amzn.to/41vRuP1</string>
+    <string name="lien_etain">https://amzn.to/3vJkGjI</string>
+    <string name="lien_kit_soudure">https://amzn.to/3T1bGmT</string>
+    <string name="lien_denudeur_fil">https://amzn.to/3c2NT1C</string>
+    <string name="lien_moteur_dc">https://amzn.to/3r21pXx</string>
+    <string name="lien_servomoteur">https://amzn.to/3lw1l0R</string>
+    <string name="lien_led">https://amzn.to/3c2W0Lz</string>
+    <string name="lien_breadboard">https://amzn.to/3c1Jdc8</string>
+    <string name="lien_prototype">https://amzn.to/3I7RF8N</string>
+    <string name="lien_module_wifi">https://amzn.to/3vDmPNY</string>
+    <string name="lien_module_bluetooth">https://amzn.to/3tKZCI9</string>
+
+    <string name="kit_elegoo">Kit Elegoo</string>
+    <string name="carte_arduino">Carte Arduino</string>
+    <string name="capteur_distance">Capteur distance</string>
+    <string name="bouton_poussoir">Bouton poussoir</string>
+    <string name="resistance">Résistance</string>
+    <string name="joystick">Joystick</string>
+    <string name="capteur_son">Capteur de son</string>
+    <string name="buzzer">Buzzer</string>
+    <string name="capteur_inclinaison">Capteur Inclinaison</string>
+    <string name="photoresistance">Photorésistance</string>
+    <string name="humidite">Humidité</string>
+    <string name="motorshield">Motorshield</string>
+    <string name="carte_mega">Carte méga</string>
+    <string name="carte_nano">Carte nano</string>
+    <string name="carte_raspberry">Carte raspberry</string>
+    <string name="kit_raspberry">Kit raspberry</string>
+    <string name="machine_souder">Machine à souder</string>
+    <string name="etain">Étain</string>
+    <string name="kit_soudure">Kit soudure</string>
+    <string name="denudeur_fil">Dénudeur de fil</string>
+    <string name="moteur_dc">Moteur DC</string>
+    <string name="servomoteur">Servomoteur</string>
+    <string name="led">LED</string>
+    <string name="breadboard">Breadboard</string>
+    <string name="prototype">Prototype</string>
+    <string name="module_wifi">Module WiFi</string>
+    <string name="module_bluetooth">Module Bluetooth</string>
+
 
 </resources>

@@ -22,7 +22,7 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
 
     public RecyclerView_Adapter(ArrayList<Achat_Data> courseModalArrayList, Context context) {
         this.data = courseModalArrayList;
-        this.context = context;
+
     }
 
     public void filterList(ArrayList<Achat_Data> filterllist) {
@@ -51,8 +51,8 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name;
-        private ImageView image;
+        private final TextView name;
+        private final ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
