@@ -29,8 +29,10 @@ import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonOutils, buttonCours, buttonAchat, buttonContact;
-    private ImageButton buttonParametre, imageOutils, imageCours, imageAchat, imageContact;
+    private ImageButton buttonParametre;
+    private ImageButton imageCours;
+    private ImageButton imageAchat;
+    private ImageButton imageContact;
     private SoundPool soundPool;
     private AudioManager audioManager;
     // Maximumn sound stream.
@@ -47,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        buttonOutils = findViewById(R.id.buttonOutils);
-        buttonCours = findViewById(R.id.buttonCours);
-        buttonAchat = findViewById(R.id.buttonAchat);
-        buttonContact = findViewById(R.id.buttonContacter);
-        imageOutils = findViewById(R.id.imageOutils);
+        Button buttonOutils = findViewById(R.id.buttonOutils);
+        Button buttonCours = findViewById(R.id.buttonCours);
+        Button buttonAchat = findViewById(R.id.buttonAchat);
+        Button buttonContact = findViewById(R.id.buttonContacter);
+        ImageButton imageOutils = findViewById(R.id.imageOutils);
         imageOutils = findViewById(R.id.imageCours);
         imageOutils = findViewById(R.id.imageAchat);
         imageOutils = findViewById(R.id.imageContacter);

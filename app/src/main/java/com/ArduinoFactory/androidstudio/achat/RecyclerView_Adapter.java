@@ -1,6 +1,5 @@
 package com.ArduinoFactory.androidstudio.achat;
 
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.ArduinoFactory.androidstudio.R;
 
@@ -21,12 +20,37 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
 
     public RecyclerView_Adapter(ArrayList<Achat_Data> courseModalArrayList) {
         this.data = courseModalArrayList;
-
     }
 
-    public void filterList(ArrayList<Achat_Data> filterllist) {
-        data = filterllist;
-        notifyDataSetChanged();
+    public void filterList(ArrayList<Achat_Data> filteredList) {
+        updateList(filteredList);
+    }
+
+    public void updateList(ArrayList<Achat_Data> newList) {
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new DiffUtil.Callback() {
+            @Override
+            public int getOldListSize() {
+                return data.size();
+            }
+
+            @Override
+            public int getNewListSize() {
+                return newList.size();
+            }
+
+            @Override
+            public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+                return data.get(oldItemPosition).getName().equals(newList.get(newItemPosition).getName());
+            }
+
+            @Override
+            public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+                return data.get(oldItemPosition).equals(newList.get(newItemPosition));
+            }
+        });
+
+        data = newList;
+        diffResult.dispatchUpdatesTo(this);
     }
 
     @NonNull
@@ -49,7 +73,6 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView name;
         private final ImageView image;
 
