@@ -1,6 +1,5 @@
 package com.ArduinoFactory.androidstudio.favoris;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +18,9 @@ import java.util.ArrayList;
 public class Favoris_RecyclerViewAdapter extends RecyclerView.Adapter<com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter.ViewHolder> {
 
     private final ArrayList<Favoris_Data> data;
-    private final Context context;
 
-    public Favoris_RecyclerViewAdapter(ArrayList<Favoris_Data> courseModalArrayList, Context context) {
+    public Favoris_RecyclerViewAdapter(ArrayList<Favoris_Data> courseModalArrayList) {
         this.data = courseModalArrayList;
-        this.context = context;
     }
 
 
@@ -31,7 +28,7 @@ public class Favoris_RecyclerViewAdapter extends RecyclerView.Adapter<com.Arduin
     @Override
     public com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
-        return new com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -46,7 +43,7 @@ public class Favoris_RecyclerViewAdapter extends RecyclerView.Adapter<com.Arduin
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView name;
         private final ImageView image;

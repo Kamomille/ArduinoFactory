@@ -121,7 +121,7 @@ public class Achat_Main extends AppCompatActivity {
 
         filteredlist_onClick = data;
 
-        adapter = new RecyclerView_Adapter(data, Achat_Main.this);
+        adapter = new RecyclerView_Adapter(data);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);

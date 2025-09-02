@@ -53,9 +53,8 @@ public class Page_Favoris extends AppCompatActivity {
                 })
         );
 
-        // ✅ Remplace setOnItemSelectedListener par la bonne méthode
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            int id = item.getItemId(); // ✅ Cette méthode existe bien ici
+            int id = item.getItemId();
             if (id == R.id.navigation_home) {
                 openActivitity_MainActivity();
                 return true;
@@ -70,13 +69,11 @@ public class Page_Favoris extends AppCompatActivity {
     public void openActivitity_MainActivity() {
         finish();
         startActivity(new Intent(this, MainActivity.class));
-
     }
 
     public void openActivitity_Notification() {
         finish();
         startActivity(new Intent(this, Page_Notification.class));
-
     }
 
     private void buildRecyclerView() {
@@ -85,17 +82,17 @@ public class Page_Favoris extends AppCompatActivity {
         SharedPreferences prefs1 = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
         SharedPreferences prefs2 = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
 
-        String coeur_resistance = prefs1.getString("coeur_resistance", "Pas de favoris défini");
-        String coeur_telecommande = prefs2.getString("coeur_telecommande", "Pas de favoris défini");
+        String coeur_resistance = prefs1.getString("coeur_resistance", getString(R.string.pas_de_favoris));
+        String coeur_telecommande = prefs2.getString("coeur_telecommande", getString(R.string.pas_de_favoris));
 
         if (coeur_resistance.equals("plein")) {
-            data.add(new Favoris_Data("Outils resistance", R.drawable.outils_menu_resistance, "Outils_resistance"));
+            data.add(new Favoris_Data(getString(R.string.outil_resistance), R.drawable.outils_menu_resistance, "Outils_resistance"));
         }
         if (coeur_telecommande.equals("plein")) {
-            data.add(new Favoris_Data("Outils télécommande", R.drawable.outils_menu_telecommande, "Outils_telecommande"));
+            data.add(new Favoris_Data(getString(R.string.outil_telecommande), R.drawable.outils_menu_telecommande, "Outils_telecommande"));
         }
 
-        Favoris_RecyclerViewAdapter adapter = new Favoris_RecyclerViewAdapter(data, this);
+        Favoris_RecyclerViewAdapter adapter = new Favoris_RecyclerViewAdapter(data);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);

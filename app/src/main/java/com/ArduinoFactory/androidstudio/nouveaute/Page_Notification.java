@@ -1,21 +1,14 @@
 package com.ArduinoFactory.androidstudio.nouveaute;
 
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
+import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.ArduinoFactory.androidstudio.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
@@ -31,52 +24,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class Page_Notification extends AppCompatActivity {
-    private Button Notification;
-    private TextView Texteview_Notification;
 
     private RecyclerView recyclerView;
-    private Favoris_RecyclerViewAdapter adapter;
     private ArrayList<Favoris_Data> data;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__notification);
 
-        /*
-        createNotificationChannel();
-        Notification.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivtity_Notifbouton();
-            }
-        }));
-
-
-        Button buttonShowNotification = findViewById(R.id.show);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "lemubitA")
-                .setSmallIcon(R.drawable.accueil)
-                .setContentTitle("Nouveau Cours")
-                .setContentText("Un nouveau cours sur le servomoteur dans votre application")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        buttonShowNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                notificationManager.notify(100,builder.build());
-
-            }
-        });*/
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
-        // ========================================================================================================================
-        //                              recycler view
-        // ========================================================================================================================
-
-
+        // RecyclerView setup
         recyclerView = findViewById(R.id.recyclerView);
         buildRecyclerView();
 
@@ -84,104 +44,73 @@ public class Page_Notification extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        onClick(view, position);
-                    }
-                    @Override public void onLongItemClick(View view, int position) {
-                    }
-                }));
-
-        // ========================================================================================================================
-        //                       Gestion barre de navigation
-        // ========================================================================================================================
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if (item.getItemId() == R.id.navigation_home){
-                            openActivitity_MainActivity();
-                        }
-                        if (item.getItemId() == R.id.navigation_dashboard){
-                            openActivitity_Favoris();
-                        }
-                        return false;
+                    public void onItemClick(View view, int position) {
+                        onClick(position);
                     }
-                });
 
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        // Non utilisé
+                    }
+                })
+        );
 
+        // Gestion de la barre de navigation
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.navigation_home) {
+                openActivitity_MainActivity();
+                return true;
+            } else if (item.getItemId() == R.id.navigation_dashboard) {
+                openActivitity_Favoris();
+                return true;
+            }
+            return false;
+        });
     }
-    // Permet de retourner à la page menu
-    public void openActivitity_MainActivity(){
+
+    public void openActivitity_MainActivity() {
         finish();
-        this.startActivity(new Intent(this, MainActivity.class));
-        this.overridePendingTransition(0, 0);
+        Intent intent = new Intent(this, MainActivity.class);
+        ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+        startActivity(intent, options.toBundle());
     }
-    public void openActivitity_Favoris(){
+
+    public void openActivitity_Favoris() {
         finish();
-        this.startActivity(new Intent(this, Page_Favoris.class));
-        this.overridePendingTransition(0, 0);
+        Intent intent = new Intent(this, Page_Favoris.class);
+        ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+        startActivity(intent, options.toBundle());
     }
-    public void openActivtity_Notifbouton(){
-        Texteview_Notification.setText("Vous êtes dans le fragment Notif");
-    }
-    private void createNotificationChannel() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            CharSequence name = "studentChannel";
-            String description = "Channel for student notification";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("lemubitA",name,importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
-
-
-    // ========================================================================================================================
-    //                                      recycler view
-    // ========================================================================================================================
-
 
     private void buildRecyclerView() {
-
         data = new ArrayList<>();
 
-        data.add(new Favoris_Data("Outils resistance",   R.drawable.outils_menu_resistance, "Outils_resistance"));
-        data.add(new Favoris_Data("Outils télécommande",   R.drawable.outils_menu_telecommande, "Outils_telecommande"));
-        data.add(new Favoris_Data("page_accueil_cours",   R.drawable.livres, "page_accueil_cours"));
+        data.add(new Favoris_Data(getString(R.string.outil_resistance), R.drawable.outils_menu_resistance, "Outils_resistance"));
+        data.add(new Favoris_Data(getString(R.string.outil_telecommande), R.drawable.outils_menu_telecommande, "Outils_telecommande"));
+        data.add(new Favoris_Data(getString(R.string.cours), R.drawable.livres, "page_accueil_cours"));
 
-        /* // TEST joiture entre notif et page nouveauté
-        SharedPreferences prefs = getSharedPreferences("notif", MODE_PRIVATE);
-        String notif1 = prefs.getString("notif1", "Pas de valeur défini");
+        Favoris_RecyclerViewAdapter adapter = new Favoris_RecyclerViewAdapter(data);
 
-        data.add(new Favoris_Data(notif1,  R.drawable.outils_vide, "test"));
-        */
-
-        adapter = new Favoris_RecyclerViewAdapter(data, Page_Notification.this);
-
-        LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
-
-        recyclerView.setLayoutManager(manager);
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
 
-    public void onClick(View v, int position){
-
+    public void onClick(int position) {
         String name_class = data.get(position).getNameClass();
 
-        if (name_class.equals("Outils_resistance")){
-            this.startActivity(new Intent(this, Outils_resistance.class));
+        switch (name_class) {
+            case "Outils_resistance":
+                startActivity(new Intent(this, Outils_resistance.class));
+                break;
+            case "Outils_telecommande":
+                startActivity(new Intent(this, Outils_telecommande.class));
+                break;
+            case "page_accueil_cours":
+                startActivity(new Intent(this, Page_Menu_Cours.class));
+                break;
         }
-        if (name_class.equals("Outils_telecommande")){
-            this.startActivity(new Intent(this, Outils_telecommande.class));
-        }
-        if (name_class.equals("Cours")){
-            this.startActivity(new Intent(this, Page_Menu_Cours.class));
-        }
-
     }
 }

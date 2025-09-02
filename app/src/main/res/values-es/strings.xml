@@ -139,4 +139,13 @@
         <item>Servomotor</item>
     </string-array>
 
+    <!-- Page notificationet page favoris -->
+
+    <string name="outil_resistance">Herramientas de resistencia</string>
+    <string name="outil_telecommande">Herramientas de control remoto</string>
+    <string name="cours">Curso</string>
+    <string name="pas_de_favoris">No hay favoritos establecidos</string>
+
+
+
 </resources>

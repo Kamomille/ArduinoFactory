@@ -1,6 +1,6 @@
 package com.ArduinoFactory.androidstudio.achat;
 
-import android.content.Context;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +18,8 @@ import java.util.ArrayList;
 public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adapter.ViewHolder> {
 
     private ArrayList<Achat_Data> data;
-    private Context context;
 
-    public RecyclerView_Adapter(ArrayList<Achat_Data> courseModalArrayList, Context context) {
+    public RecyclerView_Adapter(ArrayList<Achat_Data> courseModalArrayList) {
         this.data = courseModalArrayList;
 
     }
@@ -49,7 +48,7 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<RecyclerView_Adap
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView name;
         private final ImageView image;

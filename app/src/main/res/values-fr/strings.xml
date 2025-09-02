@@ -140,5 +140,13 @@
         <item>Servo Moteur</item>
     </string-array>
 
+    <!-- Page notification et page favoris -->
+
+    <string name="outil_resistance">Outils resistance</string>
+    <string name="outil_telecommande">Outils télécommande</string>
+    <string name="cours">Cours</string>
+    <string name="pas_de_favoris">Pas de favoris défini</string>
+
+
 
 </resources>
