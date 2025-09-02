@@ -18,8 +18,8 @@ import java.util.ArrayList;
 
 public class Favoris_RecyclerViewAdapter extends RecyclerView.Adapter<com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter.ViewHolder> {
 
-    private ArrayList<Favoris_Data> data;
-    private Context context;
+    private final ArrayList<Favoris_Data> data;
+    private final Context context;
 
     public Favoris_RecyclerViewAdapter(ArrayList<Favoris_Data> courseModalArrayList, Context context) {
         this.data = courseModalArrayList;
@@ -48,8 +48,8 @@ public class Favoris_RecyclerViewAdapter extends RecyclerView.Adapter<com.Arduin
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name;
-        private ImageView image;
+        private final TextView name;
+        private final ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

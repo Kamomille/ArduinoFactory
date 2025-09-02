@@ -1,6 +1,5 @@
 package com.ArduinoFactory.androidstudio.favoris;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.ArduinoFactory.androidstudio.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
@@ -24,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class Page_Favoris extends AppCompatActivity {
-    private TextView Texteview_Favoris;
 
     private RecyclerView recyclerView;
     private Favoris_RecyclerViewAdapter adapter;
@@ -35,14 +31,8 @@ public class Page_Favoris extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__favoris);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
-
-
-        // ========================================================================================================================
-        //                              recycler view
-        // ========================================================================================================================
-
 
         recyclerView = findViewById(R.id.recyclerView);
         buildRecyclerView();
@@ -51,71 +41,62 @@ public class Page_Favoris extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        onClick(view, position);
-                    }
-                    @Override public void onLongItemClick(View view, int position) {
-                    }
-                }));
-
-
-        // ========================================================================================================================
-        //                       Gestion barre de navigation
-        // ========================================================================================================================
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if (item.getItemId() == R.id.navigation_home) {
-                            openActivitity_MainActivity();
-                        }
-                        if (item.getItemId() ==R.id.navigation_notifications) {
-                            openActivitity_Notification();
-                        }
-
-                        return false;
+                    public void onItemClick(View view, int position) {
+                        onClick(position);
                     }
-                });
 
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        // Rien à faire ici
+                    }
+                })
+        );
+
+        // ✅ Remplace setOnItemSelectedListener par la bonne méthode
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int id = item.getItemId(); // ✅ Cette méthode existe bien ici
+            if (id == R.id.navigation_home) {
+                openActivitity_MainActivity();
+                return true;
+            } else if (id == R.id.navigation_notifications) {
+                openActivitity_Notification();
+                return true;
+            }
+            return false;
+        });
     }
-    // Permet de retourner à la page menu
-    public void openActivitity_MainActivity(){
+
+    public void openActivitity_MainActivity() {
         finish();
-        this.startActivity(new Intent(this, MainActivity.class));
-        this.overridePendingTransition(0, 0);
+        startActivity(new Intent(this, MainActivity.class));
+
     }
-    public void openActivitity_Notification(){
+
+    public void openActivitity_Notification() {
         finish();
-        this.startActivity(new Intent(this, Page_Notification.class));
-        this.overridePendingTransition(0, 0);
+        startActivity(new Intent(this, Page_Notification.class));
+
     }
-
-
-    // ========================================================================================================================
-    //                                      recycler view
-    // ========================================================================================================================
-
 
     private void buildRecyclerView() {
-
         data = new ArrayList<>();
 
         SharedPreferences prefs1 = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
         SharedPreferences prefs2 = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
+
         String coeur_resistance = prefs1.getString("coeur_resistance", "Pas de favoris défini");
         String coeur_telecommande = prefs2.getString("coeur_telecommande", "Pas de favoris défini");
 
-        if (coeur_resistance.equals("plein")){
-            data.add(new Favoris_Data("Outils resistance",   R.drawable.outils_menu_resistance, "Outils_resistance"));
+        if (coeur_resistance.equals("plein")) {
+            data.add(new Favoris_Data("Outils resistance", R.drawable.outils_menu_resistance, "Outils_resistance"));
         }
-        if (coeur_telecommande.equals("plein")){
-            data.add(new Favoris_Data("Outils télécommande",   R.drawable.outils_menu_telecommande, "Outils_telecommande"));
+        if (coeur_telecommande.equals("plein")) {
+            data.add(new Favoris_Data("Outils télécommande", R.drawable.outils_menu_telecommande, "Outils_telecommande"));
         }
 
-        adapter = new Favoris_RecyclerViewAdapter(data, Page_Favoris.this);
+        adapter = new Favoris_RecyclerViewAdapter(data, this);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
@@ -123,15 +104,13 @@ public class Page_Favoris extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    public void onClick(View v, int position){
+    public void onClick(int position) {
         String name_class = data.get(position).getNameClass();
 
-        if (name_class.equals("Outils_resistance")){
-            this.startActivity(new Intent(this, Outils_resistance.class));
+        if (name_class.equals("Outils_resistance")) {
+            startActivity(new Intent(this, Outils_resistance.class));
+        } else if (name_class.equals("Outils_telecommande")) {
+            startActivity(new Intent(this, Outils_telecommande.class));
         }
-        if (name_class.equals("Outils_telecommande")){
-            this.startActivity(new Intent(this, Outils_telecommande.class));
-        }
-
     }
 }

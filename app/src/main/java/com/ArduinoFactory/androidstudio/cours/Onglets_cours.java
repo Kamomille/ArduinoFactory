@@ -1,11 +1,9 @@
 package com.ArduinoFactory.androidstudio.cours;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
-
 import com.ArduinoFactory.androidstudio.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -16,11 +14,11 @@ public class Onglets_cours extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__cours);
 
-        LinearLayout layout_schema = (LinearLayout) findViewById(R.id.layout_schema);
-        LinearLayout layout_des = (LinearLayout) findViewById(R.id.layout_des);
-        LinearLayout layout_def = (LinearLayout) findViewById(R.id.layout_def);
+        LinearLayout layout_schema = findViewById(R.id.layout_schema);
+        LinearLayout layout_des = findViewById(R.id.layout_des);
+        LinearLayout layout_def = findViewById(R.id.layout_def);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
 
         layout_def.setVisibility(View.VISIBLE);
         layout_des.setVisibility(View.INVISIBLE);
@@ -32,30 +30,33 @@ public class Onglets_cours extends AppCompatActivity {
                 int position = tabLayout.getPosition();
                 switch (position){
                     case 0:
-                        // l'utilisateur clique sur definition
+                        // l'utilisateur clique sur définition
                         layout_def.setVisibility(View.VISIBLE);
                         layout_des.setVisibility(View.INVISIBLE);
                         layout_schema.setVisibility(View.INVISIBLE);
-                        return;
+                        break;
                     case 1:
-                        // l'utilisateur clique sur definition
+                        // l'utilisateur clique sur description
                         layout_def.setVisibility(View.INVISIBLE);
                         layout_des.setVisibility(View.VISIBLE);
                         layout_schema.setVisibility(View.INVISIBLE);
-                        return;
+                        break;
                     case 2:
-                        // l'utilisateur clique sur definition
+                        // l'utilisateur clique sur schéma
                         layout_def.setVisibility(View.INVISIBLE);
                         layout_des.setVisibility(View.INVISIBLE);
                         layout_schema.setVisibility(View.VISIBLE);
-                        return;
-                    default: return; }
+                        break;
+                    default:
+                        break;
+                }
             }
+
             @Override
-            public void onTabUnselected(TabLayout.Tab tabLayout) { }
+            public void onTabUnselected(TabLayout.Tab tabLayout) {}
+
             @Override
-            public void onTabReselected(TabLayout.Tab tabLayout) { }
+            public void onTabReselected(TabLayout.Tab tabLayout) {}
         });
     }
-
 }
