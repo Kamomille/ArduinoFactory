@@ -131,4 +131,15 @@
     <string name="email_nom_label">Name:</string>
     <string name="email_email_label">Email:</string>
 
+    <!-- ... Liste composants IA reconnaissable ... -->
+
+    <string-array name="classes_array">
+        <item>7 segments</item>
+        <item>Humidity sensor</item>
+        <item>Lcd screen</item>
+        <item>Led</item>
+        <item>Resistance</item>
+        <item>Servomotor</item>
+    </string-array>
+
 </resources>

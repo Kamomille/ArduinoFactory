@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:versionCode="2">
 
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
@@ -7,7 +8,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
 
     <meta-data
         android:name="android.support.PARENT_ACTIVITY"
@@ -27,7 +31,7 @@
                 android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.nouveauté.Page_Notification"
+            android:name="com.ArduinoFactory.androidstudio.nouveaute.Page_Notification"
             android:label="Nouveauté"
             android:value=".MainActivity" />
         <activity

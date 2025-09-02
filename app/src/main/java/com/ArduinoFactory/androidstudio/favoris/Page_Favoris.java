@@ -14,7 +14,7 @@ import com.ArduinoFactory.androidstudio.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.achat.RecyclerItemClickListener;
 import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
-import com.ArduinoFactory.androidstudio.nouveauté.Page_Notification;
+import com.ArduinoFactory.androidstudio.nouveaute.Page_Notification;
 import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,7 +23,6 @@ import java.util.ArrayList;
 public class Page_Favoris extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private Favoris_RecyclerViewAdapter adapter;
     private ArrayList<Favoris_Data> data;
 
     @Override
@@ -96,7 +95,7 @@ public class Page_Favoris extends AppCompatActivity {
             data.add(new Favoris_Data("Outils télécommande", R.drawable.outils_menu_telecommande, "Outils_telecommande"));
         }
 
-        adapter = new Favoris_RecyclerViewAdapter(data, this);
+        Favoris_RecyclerViewAdapter adapter = new Favoris_RecyclerViewAdapter(data, this);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);

@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio.nouveauté;
+package com.ArduinoFactory.androidstudio.nouveaute;
 
 
 import androidx.annotation.NonNull;
