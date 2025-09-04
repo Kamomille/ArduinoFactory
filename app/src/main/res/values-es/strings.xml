@@ -147,5 +147,18 @@
     <string name="pas_de_favoris">No hay favoritos establecidos</string>
 
 
+    <!-- Page tutoriel telecommande -->
+    <string name="url_amazon_telecommande">https://amzn.to/3tKZCI9</string>
+    <string name="url_code_telecommande">https://arduinofactory.com/bluetooth-remote-control-code/</string>
+
+
+    <!-- Page resistance -->
+    <string name="premier_chiffre_significatif">1º dígito significativo</string>
+    <string name="deuxieme_chiffre_significatif">2do dígito significativo</string>
+    <string name="troisieme_chiffre_significatif">3º dígito significativo</string>
+    <string name="mutiplicateur">multiplicador</string>
+    <string name="tolerance">Tolerancia</string>
+    <string name="TCR">TCR</string>
+
 
 </resources>

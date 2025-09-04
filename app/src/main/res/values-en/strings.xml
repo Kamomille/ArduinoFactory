@@ -150,6 +150,18 @@
     <string name="pas_de_favoris">No favorites set</string>
 
 
+    <!-- Page tutoriel telecommande -->
+    <string name="url_amazon_telecommande">https://amzn.to/3tKZCI9</string>
+    <string name="url_code_telecommande">https://arduinofactory.com/bluetooth-remote-control-code/</string>
+
+
+    <!-- Page resistance -->
+    <string name="premier_chiffre_significatif">1st significant digit</string>
+    <string name="deuxieme_chiffre_significatif">2nd significant digit</string>
+    <string name="troisieme_chiffre_significatif">3rd significant digit</string>
+    <string name="mutiplicateur">multiplier</string>
+    <string name="tolerance">Tolerance</string>
+    <string name="TCR">TCR</string>
 
 
 </resources>

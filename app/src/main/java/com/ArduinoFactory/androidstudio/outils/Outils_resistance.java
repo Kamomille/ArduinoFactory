@@ -1,5 +1,6 @@
 package com.ArduinoFactory.androidstudio.outils;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -27,26 +28,21 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     //                              Déclaration et initialisation
     // ========================================================================================================================
 
-    Button liste_CarreCouleur[] = new Button[12];
+    Button[] liste_CarreCouleur = new Button[12];
 
-    private ImageButton buttonCroix, boutonInfo;
     private LinearLayout layoutPopup, layoutPaletteCouleur;
     private ImageButton resistanceColor1,resistanceColor2,resistanceColor3,resistanceColor4, resistanceColor5,resistanceColor6;
     private LinearLayout bande1, bande2, bande3, bande4, bande5, bande6;
-    private ImageButton button_flecheH1, button_flecheB1;
-    private ImageButton button_flecheH2, button_flecheB2;
-    private ImageButton button_flecheH3, button_flecheB3;
-    private ImageButton button_flecheH4, button_flecheB4;
-    private ImageButton button_flecheH5, button_flecheB5;
-    private ImageButton button_flecheH6, button_flecheB6;
     private TextView textView, textView_TCR, nomBande;
-    private int indiceListe = 11;
+    private final int indiceListe = 11;
     private int NbBandeSelect = 4, NbBandeclick =0;
-    private String a,b,c,d,e,l;
+    private String a;
+    private String b;
+    private String c;
+    private String d;
+    private String l;
 
-    private int stateHeart = 1;
-
-    private String[][] listeCouleur = {
+    private final String[][] listeCouleur = {
             //                       CS   multi  tol    TCR
             //si 4 bandes :         1et2   3     4
             //si 5 bandes :         1,2,3  4     5
@@ -103,56 +99,56 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         //                              ID -> relier xml au code java
         // ========================================================================================================================
 
-        textView = (TextView)findViewById(R.id.textView);
-        layoutPopup = (LinearLayout) findViewById(R.id.layoutPopup);
-        layoutPaletteCouleur = (LinearLayout) findViewById(R.id.layoutPaletteCouleur);
-        textView_TCR = (TextView)findViewById(R.id.textView_TCR);
-        nomBande = (TextView)findViewById(R.id.nomBande);
-        buttonCroix = (ImageButton) findViewById(R.id.buttonCroix);
-        boutonInfo = (ImageButton) findViewById(R.id.boutonInfo);
+        textView = findViewById(R.id.textView);
+        layoutPopup = findViewById(R.id.layoutPopup);
+        layoutPaletteCouleur = findViewById(R.id.layoutPaletteCouleur);
+        textView_TCR = findViewById(R.id.textView_TCR);
+        nomBande = findViewById(R.id.nomBande);
+        ImageButton buttonCroix = findViewById(R.id.buttonCroix);
+        ImageButton boutonInfo = findViewById(R.id.boutonInfo);
 
 
-        liste_CarreCouleur[0] = (Button) findViewById(R.id.carreCouleur_1);
-        liste_CarreCouleur[1] = (Button) findViewById(R.id.carreCouleur_2);
-        liste_CarreCouleur[2] = (Button) findViewById(R.id.carreCouleur_3);
-        liste_CarreCouleur[3] = (Button) findViewById(R.id.carreCouleur_4);
-        liste_CarreCouleur[4] = (Button) findViewById(R.id.carreCouleur_5);
-        liste_CarreCouleur[5] = (Button) findViewById(R.id.carreCouleur_6);
-        liste_CarreCouleur[6] = (Button) findViewById(R.id.carreCouleur_7);
-        liste_CarreCouleur[7] = (Button) findViewById(R.id.carreCouleur_8);
-        liste_CarreCouleur[8] = (Button) findViewById(R.id.carreCouleur_9);
-        liste_CarreCouleur[9] = (Button) findViewById(R.id.carreCouleur_10);
-        liste_CarreCouleur[10] = (Button) findViewById(R.id.carreCouleur_11);
-        liste_CarreCouleur[11] = (Button) findViewById(R.id.carreCouleur_12);
+        liste_CarreCouleur[0] = findViewById(R.id.carreCouleur_1);
+        liste_CarreCouleur[1] = findViewById(R.id.carreCouleur_2);
+        liste_CarreCouleur[2] = findViewById(R.id.carreCouleur_3);
+        liste_CarreCouleur[3] = findViewById(R.id.carreCouleur_4);
+        liste_CarreCouleur[4] = findViewById(R.id.carreCouleur_5);
+        liste_CarreCouleur[5] = findViewById(R.id.carreCouleur_6);
+        liste_CarreCouleur[6] = findViewById(R.id.carreCouleur_7);
+        liste_CarreCouleur[7] = findViewById(R.id.carreCouleur_8);
+        liste_CarreCouleur[8] = findViewById(R.id.carreCouleur_9);
+        liste_CarreCouleur[9] = findViewById(R.id.carreCouleur_10);
+        liste_CarreCouleur[10] = findViewById(R.id.carreCouleur_11);
+        liste_CarreCouleur[11] = findViewById(R.id.carreCouleur_12);
         for(int i=0; i<12; i++){ liste_CarreCouleur[i].setOnClickListener(this); }
 
-        bande1 = (LinearLayout) findViewById(R.id.bande1);
-        bande2 = (LinearLayout) findViewById(R.id.bande2);
-        bande3 = (LinearLayout) findViewById(R.id.bande3);
-        bande4 = (LinearLayout) findViewById(R.id.bande4);
-        bande5 = (LinearLayout) findViewById(R.id.bande5);
-        bande6 = (LinearLayout) findViewById(R.id.bande6);
+        bande1 = findViewById(R.id.bande1);
+        bande2 = findViewById(R.id.bande2);
+        bande3 = findViewById(R.id.bande3);
+        bande4 = findViewById(R.id.bande4);
+        bande5 = findViewById(R.id.bande5);
+        bande6 = findViewById(R.id.bande6);
 
-        button_flecheH1 = (ImageButton)findViewById(R.id.flecheH1);
-        button_flecheB1 = (ImageButton)findViewById(R.id.flecheB1);
-        button_flecheH2 = (ImageButton)findViewById(R.id.flecheH2);
-        button_flecheB2 = (ImageButton)findViewById(R.id.flecheB2);
-        button_flecheH3 = (ImageButton)findViewById(R.id.flecheH3);
-        button_flecheB3 = (ImageButton)findViewById(R.id.flecheB3);
-        button_flecheH4 = (ImageButton)findViewById(R.id.flecheH4);
-        button_flecheB4 = (ImageButton)findViewById(R.id.flecheB4);
-        button_flecheH5 = (ImageButton)findViewById(R.id.flecheH5);
-        button_flecheB5 = (ImageButton)findViewById(R.id.flecheB5);
-        button_flecheH6 = (ImageButton)findViewById(R.id.flecheH6);
-        button_flecheB6 = (ImageButton)findViewById(R.id.flecheB6);
+        ImageButton button_flecheH1 = findViewById(R.id.flecheH1);
+        ImageButton button_flecheB1 = findViewById(R.id.flecheB1);
+        ImageButton button_flecheH2 = findViewById(R.id.flecheH2);
+        ImageButton button_flecheB2 = findViewById(R.id.flecheB2);
+        ImageButton button_flecheH3 = findViewById(R.id.flecheH3);
+        ImageButton button_flecheB3 = findViewById(R.id.flecheB3);
+        ImageButton button_flecheH4 = findViewById(R.id.flecheH4);
+        ImageButton button_flecheB4 = findViewById(R.id.flecheB4);
+        ImageButton button_flecheH5 = findViewById(R.id.flecheH5);
+        ImageButton button_flecheB5 = findViewById(R.id.flecheB5);
+        ImageButton button_flecheH6 = findViewById(R.id.flecheH6);
+        ImageButton button_flecheB6 = findViewById(R.id.flecheB6);
 
 
-        resistanceColor1 = (ImageButton)findViewById(R.id.resistanceColor1);
-        resistanceColor2 = (ImageButton)findViewById(R.id.resistanceColor2);
-        resistanceColor3 = (ImageButton)findViewById(R.id.resistanceColor3);
-        resistanceColor4 = (ImageButton)findViewById(R.id.resistanceColor4);
-        resistanceColor5 = (ImageButton)findViewById(R.id.resistanceColor5);
-        resistanceColor6 = (ImageButton)findViewById(R.id.resistanceColor6);
+        resistanceColor1 = findViewById(R.id.resistanceColor1);
+        resistanceColor2 = findViewById(R.id.resistanceColor2);
+        resistanceColor3 = findViewById(R.id.resistanceColor3);
+        resistanceColor4 = findViewById(R.id.resistanceColor4);
+        resistanceColor5 = findViewById(R.id.resistanceColor5);
+        resistanceColor6 = findViewById(R.id.resistanceColor6);
 
 
         resistanceColor1.setBackgroundColor(parseColor(listeCouleur[listeCompteur[0]][0]));
@@ -183,79 +179,40 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         //                              Reliage des boutons à une fonction
         // ========================================================================================================================
 
-        buttonCroix.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonCroix(); }});
-        boutonInfo.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicBoutonInfo(); }});
+        buttonCroix.setOnClickListener(v -> clicButtonCroix());
+        boutonInfo.setOnClickListener(v -> clicBoutonInfo());
 
 
-        resistanceColor1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor1(); }});
-        resistanceColor2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor2(); }});
-        resistanceColor3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor3(); }});
-        resistanceColor4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor4(); }});
-        resistanceColor5.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor5(); }});
-        resistanceColor6.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicResistanceColor6(); }});
+        resistanceColor1.setOnClickListener(v -> clicResistanceColor1());
+        resistanceColor2.setOnClickListener(v -> clicResistanceColor2());
+        resistanceColor3.setOnClickListener(v -> clicResistanceColor3());
+        resistanceColor4.setOnClickListener(v -> clicResistanceColor4());
+        resistanceColor5.setOnClickListener(v -> clicResistanceColor5());
+        resistanceColor6.setOnClickListener(v -> clicResistanceColor6());
 
 
-        button_flecheH1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH1(); }});
-        button_flecheB1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB1(); }});
-        button_flecheH2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH2(); }});
-        button_flecheB2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB2(); }});
-        button_flecheH3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH3(); }});
-        button_flecheB3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB3(); }});
-        button_flecheH4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH4(); }});
-        button_flecheB4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB4(); }});
-        button_flecheH5.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH5(); }});
-        button_flecheB5.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB5(); }});
-        button_flecheH6.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheH6(); }});
-        button_flecheB6.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){ clicButtonFlecheB6(); }});
+        button_flecheH1.setOnClickListener(v -> clicButtonFlecheH1());
+        button_flecheB1.setOnClickListener(v -> clicButtonFlecheB1());
+        button_flecheH2.setOnClickListener(v -> clicButtonFlecheH2());
+        button_flecheB2.setOnClickListener(v -> clicButtonFlecheB2());
+        button_flecheH3.setOnClickListener(v -> clicButtonFlecheH3());
+        button_flecheB3.setOnClickListener(v -> clicButtonFlecheB3());
+        button_flecheH4.setOnClickListener(v -> clicButtonFlecheH4());
+        button_flecheB4.setOnClickListener(v -> clicButtonFlecheB4());
+        button_flecheH5.setOnClickListener(v -> clicButtonFlecheH5());
+        button_flecheB5.setOnClickListener(v -> clicButtonFlecheB5());
+        button_flecheH6.setOnClickListener(v -> clicButtonFlecheH6());
+        button_flecheB6.setOnClickListener(v -> clicButtonFlecheB6());
 
 
         // ========================================================================================================================
         //                              Gestion du nombre d'anneaux (TabLayout)
         // ========================================================================================================================
 
-        TabLayout tt = (TabLayout) findViewById(R.id.tt);
+        TabLayout tt = findViewById(R.id.tt);
 
         TabLayout.Tab tab = tt.getTabAt(NbBandeSelect-4);
+        assert tab != null;
         tab.select();
         if(NbBandeSelect == 4){TabSelect_4anneaux();}
         if(NbBandeSelect == 5){TabSelect_5anneaux();}
@@ -269,7 +226,8 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
                     case 0: TabSelect_4anneaux(); return;
                     case 1: TabSelect_5anneaux(); return;
                     case 2: TabSelect_6anneaux(); return;
-                    default: return; }
+                    default:
+                }
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) { }
@@ -354,6 +312,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     //                              Calcul des valeurs de la resistance
     // ========================================================================================================================
 
+    @SuppressLint("SetTextI18n")
     public void calcul_4(){
         a = listeCouleur[listeCompteur[0]][1];
         b = listeCouleur[listeCompteur[1]][1];
@@ -366,47 +325,49 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             ab = ab/1000;
             ab = (float) Math.round(ab * 100) / 100; // arrondi à 2 chiffres apres la virgules
             // + "  A"+a+"   B"+b+"     C"+c
-            textView.setText(String.valueOf(ab) + " KΩ  ± " + String.valueOf(d) +" %");
+            textView.setText(ab + " KΩ  ± " + d +" %");
         }
         else if(ab >= 1000000){
             ab = ab/1000000;
             ab = (float) Math.round(ab * 100) / 100;
-            textView.setText(String.valueOf(ab) + " MΩ  ± " + String.valueOf(d) +" %");
+            textView.setText(ab + " MΩ  ± " + d +" %");
         }
         else {
             ab = (float) Math.round(ab * 100) / 100;
-            textView.setText(String.valueOf(ab) + " Ω  ± " + String.valueOf(d) + " %");
+            textView.setText(ab + " Ω  ± " + d + " %");
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void calcul_5(){
         a = listeCouleur[listeCompteur[0]][1];
         b = listeCouleur[listeCompteur[1]][1];
         c = listeCouleur[listeCompteur[2]][1];
         d = listeCouleur[listeCompteur[3]][2];
-        e = listeCouleur[listeCompteur[4]][3];
+        String e = listeCouleur[listeCompteur[4]][3];
         float abc = Float.parseFloat(a + b + c);
         abc = (float) (abc * Math.pow(10,Float.parseFloat(d)));
         if(1000 <= abc && abc < 1000000){
             abc = abc/1000;
             abc = (float) Math.round(abc * 100) / 100;
-            textView.setText(String.valueOf(abc) + " KΩ  ± " + String.valueOf(e) +" %");
+            textView.setText(abc + " KΩ  ± " + e +" %");
         }
         else if(abc >= 1000000){
             abc = abc/1000000;
             abc = (float) Math.round(abc * 100) / 100;
-            textView.setText(String.valueOf(abc) + " MΩ  ± " + String.valueOf(e) +" %");
+            textView.setText(abc + " MΩ  ± " + e +" %");
         }
         else {
             abc = (float) Math.round(abc * 100) / 100;
-            textView.setText(String.valueOf(abc) + " Ω  ± " + String.valueOf(e) + " %");
+            textView.setText(abc + " Ω  ± " + e + " %");
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void calcul_6(){
         calcul_5();
         a = listeCouleur[listeCompteur[5]][4];
-        textView_TCR.setText("TCR : " + String.valueOf(a) + " pppm/KΩ");
+        textView_TCR.setText("TCR : " + a + " pppm/KΩ");
     }
 
 
@@ -418,14 +379,13 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         layoutPaletteCouleur.setVisibility(View.INVISIBLE);
         enleveTousLesCadres();
 
-        listeCompteur[numBande] += 1;
-        if (listeCompteur[numBande] > indiceListe){ listeCompteur[numBande] = 0; }
-        l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
-        while (l.equals("1000")){
+        do {
             listeCompteur[numBande] += 1;
-            if (listeCompteur[numBande] > indiceListe){ listeCompteur[numBande] = 0;}
-            l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
-        }
+            if (listeCompteur[numBande] > indiceListe) {
+                listeCompteur[numBande] = 0;
+            }
+            l = listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
+        } while (l.equals("1000"));
         r.setBackgroundColor(parseColor(listeCouleur[listeCompteur[numBande]][0]));
         if (NbBandeSelect == 4){ calcul_4(); }
         if (NbBandeSelect == 5){ calcul_5(); }
@@ -436,14 +396,13 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         layoutPaletteCouleur.setVisibility(View.INVISIBLE);
         enleveTousLesCadres();
 
-        listeCompteur[numBande] -=1;
-        if (listeCompteur[numBande] < 0){ listeCompteur[numBande] = indiceListe; }
-        l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
-        while (l.equals("1000")){
+        do {
             listeCompteur[numBande] -= 1;
-            if (listeCompteur[numBande] < 0){ listeCompteur[numBande] = indiceListe; }
-            l =listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
-        }
+            if (listeCompteur[numBande] < 0) {
+                listeCompteur[numBande] = indiceListe;
+            }
+            l = listeCouleur[listeCompteur[numBande]][numRangerListeCouleur];
+        } while (l.equals("1000"));
         r.setBackgroundColor(parseColor(listeCouleur[listeCompteur[numBande]][0]));
         if (NbBandeSelect == 4){ calcul_4(); }
         if (NbBandeSelect == 5){ calcul_5(); }
@@ -506,7 +465,7 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
         bande6.setBackgroundResource(R.drawable.outils_vide);
     }
 
-    public void apparitionDelaPalette(int numBande, int numRangerListeCouleur, ImageView r){
+    public void apparitionDelaPalette(int numRangerListeCouleur){
         layoutPaletteCouleur.setVisibility(View.VISIBLE);
         for (int i=0; i<listeCouleur.length; i+=1){
             liste_CarreCouleur[i].setVisibility(View.VISIBLE);
@@ -521,47 +480,47 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
 
     public void clicResistanceColor1(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(0, 1, resistanceColor1); }
+        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(1); }
         NbBandeclick=0;
         bande1.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("1er chiffre significatif");
+        nomBande.setText(getString(R.string.premier_chiffre_significatif));
     }
     public void clicResistanceColor2(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(1, 1, resistanceColor2); }
+        if (NbBandeSelect == 4 || NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(1); }
         NbBandeclick=1;
         bande2.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("2eme chiffre significatif");
+        nomBande.setText(getString(R.string.deuxieme_chiffre_significatif));
     }
     public void clicResistanceColor3(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 5 || NbBandeSelect == 6){ apparitionDelaPalette(2, 1, resistanceColor3); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){ apparitionDelaPalette(1); }
         NbBandeclick=2;
         bande3.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("3eme chiffre significatif");
+        nomBande.setText(getString(R.string.troisieme_chiffre_significatif));
     }
     public void clicResistanceColor4(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 4){apparitionDelaPalette(2, 2, resistanceColor4); }
-        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(3, 2, resistanceColor4); }
+        if (NbBandeSelect == 4){apparitionDelaPalette(2); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(2); }
         NbBandeclick=3;
         bande4.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("multiplicateur");
+        nomBande.setText(getString(R.string.mutiplicateur));
     }
     public void clicResistanceColor5(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 4){apparitionDelaPalette(3, 3, resistanceColor5); }
-        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(4, 3, resistanceColor5); }
+        if (NbBandeSelect == 4){apparitionDelaPalette(3); }
+        if (NbBandeSelect == 5 || NbBandeSelect == 6){apparitionDelaPalette(3); }
         NbBandeclick=4;
         bande5.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("tolérance");
+        nomBande.setText(getString(R.string.tolerance));
     }
     public void clicResistanceColor6(){
         enleveTousLesCadres();
-        if (NbBandeSelect == 6){apparitionDelaPalette(5, 4, resistanceColor6); }
+        if (NbBandeSelect == 6){apparitionDelaPalette(4); }
         NbBandeclick=5;
         bande6.setBackgroundResource(R.drawable.cadre);
-        nomBande.setText("TCR");
+        nomBande.setText(getString(R.string.TCR));
     }
 
 
@@ -608,13 +567,12 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.coeur, menu);
-        final Menu m = menu;
         final MenuItem item = menu.findItem(R.id.coeur_vide);
 
         SharedPreferences prefs = getSharedPreferences("coeur_resistance", MODE_PRIVATE);
         String coeur_resistance = prefs.getString("coeur_resistance", "Pas de favoris défini");
 
-        if (coeur_resistance.equals("")){
+        if (coeur_resistance.isEmpty()){
             SharedPreferences.Editor editor = getSharedPreferences("coeur", MODE_PRIVATE).edit();
             editor.putString("coeur_resistance", "vide").apply();
         }
@@ -638,7 +596,6 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             if (coeur.equals("vide")) {
                 Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_plein, null);
                 item.setIcon(drawable);
-                stateHeart -= 1;
 
                 SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
                 editor.putString("coeur_resistance", "plein").apply();
@@ -646,7 +603,6 @@ public class Outils_resistance extends AppCompatActivity implements View.OnClick
             else {
                 Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.coeur_vide, null);
                 item.setIcon(drawable);
-                stateHeart -= 1;
 
                 SharedPreferences.Editor editor = getSharedPreferences("coeur_resistance", MODE_PRIVATE).edit();
                 editor.putString("coeur_resistance", "vide").apply();
