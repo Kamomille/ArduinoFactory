@@ -1,7 +1,6 @@
 package com.ArduinoFactory.androidstudio.outils;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -11,15 +10,17 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -38,7 +39,7 @@ import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.pages.Page_Outils;
 
 import java.io.IOException;
-import java.io.InputStream;
+//import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
@@ -63,8 +64,6 @@ public class Outils_telecommande extends AppCompatActivity {
     private OutputStream my_bt_out_stream = null;
     private String dev_address;
     private static final int REQUEST_BLUETOOTH_PERMISSION = 123;
-    private final int Etat = 0;
-    ArrayList pairedlist = new ArrayList();
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private Handler my_handler;
     private final static int STATUS = 1;
@@ -282,7 +281,7 @@ public class Outils_telecommande extends AppCompatActivity {
         }));
         Bouton_9 = findViewById(R.id.bouton_9);
         Bouton_9.setOnClickListener((v -> {
-            byte bouton_9_valeur = 'A';
+            byte bouton_9_valeur;
             if (Etat_bouton_9 == 0) {
                 bouton_9_valeur = 'm';
                 Etat_bouton_9 = 1;
@@ -294,21 +293,24 @@ public class Outils_telecommande extends AppCompatActivity {
         }));
 
         //=== Définir le handler  ==================================================================
-        my_handler = new Handler() {
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case STATUS:
-                        tv_status.setText((String) (msg.obj));
-                        break;
+        my_handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                if (msg.what == STATUS) {
+                    tv_status.setText((String) msg.obj);
                 }
             }
         };
+
         // Remplacez VOTRE_CODE_DE_PERMISSION par REQUEST_BLUETOOTH_PERMISSION
         // ===========  affecter un identificateur au module bluetooth ============================
-        my_bt_adapter = BluetoothAdapter.getDefaultAdapter();
+        BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        my_bt_adapter = bluetoothManager.getAdapter();
+
+        //my_bt_adapter = BluetoothAdapter.getDefaultAdapter();
 
         if (my_bt_adapter == null) {
-            tv_status.setText("Pas d'interface Bluetooth");
+            tv_status.setText(getString(R.string.interface_bluetooth));
         }
 
         // ============== démarrer le bluetooth s'il ne l'est pas =============================
@@ -336,15 +338,19 @@ public class Outils_telecommande extends AppCompatActivity {
         }
         // =============== afficher la liste des équipements associé dans la liste =================
         Set<BluetoothDevice> pairedDevices = my_bt_adapter.getBondedDevices();
-        if (pairedDevices.isEmpty()) tv_status.setText("Empty list"); // Liste Vide
+        if (pairedDevices.isEmpty()) tv_status.setText(getString(R.string.liste));// Liste Vide
 
-        ArrayList pairedlist = new ArrayList();
+
+        ArrayList<String> pairedlist = new ArrayList<>();
         for (BluetoothDevice bt : pairedDevices)
             pairedlist.add(bt.getName() + "\n" + bt.getAddress());
-        ArrayAdapter my_list_adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pairedlist);
+
+        ArrayAdapter<String> my_list_adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pairedlist);
+
         lv_devlist.setAdapter(my_list_adapter);
-        tv_status.setText("Choose a device from the list"); // Choisir un device dans la liste
+        tv_status.setText(getString(R.string.Appareil)); // Choisir un device dans la liste
         lv_devlist.setOnItemClickListener(devlist_listener);
+
 
 
     }
@@ -352,11 +358,11 @@ public class Outils_telecommande extends AppCompatActivity {
 
 
     //======= Listner de la liste =====================================================
-    private AdapterView.OnItemClickListener devlist_listener = new AdapterView.OnItemClickListener() {
+    private final AdapterView.OnItemClickListener devlist_listener = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView av, View v, int arg2, long arg3) {
             String devchoisi = ((TextView) v).getText().toString();
             dev_address = devchoisi.substring(devchoisi.length() - 17);
-            tv_status.setText("Connexion en cours");
+            tv_status.setText(getString(R.string.connexion)); // texte connexion en cours
             // démarrer le Thread qui gère la connexion
             mybluetooth = new Outils_telecommande.MyBluetoothClass();
             mybluetooth.start();
@@ -397,26 +403,23 @@ public class Outils_telecommande extends AppCompatActivity {
                     }
                     INPS_OK = true;
                     try {
-                        InputStream my_bt_inp_stream = my_bt_soket.getInputStream();
+                         my_bt_soket.getInputStream();
                     } catch (IOException e) {
                         my_handler.obtainMessage(STATUS, -1, -1, "Echec création INPUT STREAM").sendToTarget();
                         INPS_OK = false;
                     }
+
                     if (OUTS_OK && INPS_OK)
                         my_handler.obtainMessage(STATUS, -1, -1, "Connecté").sendToTarget();
-                    runOnUiThread(new Runnable() {
-
-                        @Override
-                        public void run() {
-                            ViewFlipper viewFlipper2 = (ViewFlipper) findViewById(R.id.outil_telecommande);
-                            //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
-                            viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
-                            numView = 2;
-                        }
+                    runOnUiThread(() -> {
+                        ViewFlipper viewFlipper2 = findViewById(R.id.outil_telecommande);
+                        //viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.outil_telecommande_manette)));
+                        viewFlipper2.setDisplayedChild(viewFlipper2.indexOfChild(findViewById(R.id.relativelayout2)));
+                        numView = 2;
                     });
 
                 } else {
-                    my_handler.obtainMessage(STATUS, -1, -1, "Rebrancher le capteur et Réessayer").sendToTarget();
+                    my_handler.obtainMessage(STATUS, -1, -1, getString(R.string.rebrancher_capteur)).sendToTarget();
                 }
             } else {
                 my_handler.obtainMessage(STATUS, -1, -1, "Echec création Soket COMM").sendToTarget();
@@ -429,7 +432,7 @@ public class Outils_telecommande extends AppCompatActivity {
             try {
                 my_bt_out_stream.write(b);
             } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Erreur dans writebyte").sendToTarget();
+                my_handler.obtainMessage(STATUS, -1, -1, getString(R.string.erreur_write)).sendToTarget();
             }
         }
 
@@ -437,7 +440,7 @@ public class Outils_telecommande extends AppCompatActivity {
             try {
                 my_bt_soket.close();
             } catch (IOException e) {
-                my_handler.obtainMessage(STATUS, -1, -1, "Echec Déconnexion").sendToTarget();
+                my_handler.obtainMessage(STATUS, -1, -1, getString(R.string.echec_deconnexion)).sendToTarget();
             }
         }
 
@@ -452,7 +455,6 @@ public class Outils_telecommande extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_telecommande, menu);
-        final Menu m = menu;
         final MenuItem item = menu.findItem(R.id.coeur_vide);
 
         SharedPreferences prefs = getSharedPreferences("coeur_telecommande", MODE_PRIVATE);
@@ -476,31 +478,24 @@ public class Outils_telecommande extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull  int[] grantResults) {
         if (requestCode == REQUEST_BLUETOOTH_PERMISSION) {
             // Vérifie si la permission a été accordée
-            //if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            if (requestCode == RESULT_OK) {
-                //if (grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                // La permission BLUETOOTH_CONNECT a été accordée, vous pouvez maintenant effectuer des actions liées au Bluetooth
-            } else {
-                Intent intent = new Intent(this, Page_Outils.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(this, Page_Outils.class);
+            startActivity(intent);
         }
         // Gérer d'autres demandes de permissions si nécessaire
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @SuppressLint("UseCompatLoadingForColorStateLists")
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         Resources res = getResources();
         if (item.getItemId() ==R.id.nav_deconnection ){
             if (numView == 1) {
-                Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
+                Toast.makeText(this, getString(R.string.connexion_capteur_bluetooth), Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
             }
             if (numView == 2) {
-                Toast.makeText(this, "Bluetooth disconnected", Toast.LENGTH_LONG).show(); // Bluetooth deconnecté
+                Toast.makeText(this, getString(R.string.deconnexion_capteur_bluetooth), Toast.LENGTH_LONG).show(); // Bluetooth deconnecté
                 mybluetooth.disconnect();
                 finish();
             }
@@ -518,16 +513,17 @@ public class Outils_telecommande extends AppCompatActivity {
             Drawable drawable;
 
             if (numView == 1) {
-                Toast.makeText(this, "First connect to the bluetooth sensor", Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
+                Toast.makeText(this, getString(R.string.premiere_connexion_capteur_bluetooth), Toast.LENGTH_LONG).show(); // Connecter vous d'abord au capteur bluetooth
             }
 
 
             if (numView == 2) {
                 if (telecommandeSelect == 1) { // ------------ Telecommande classique ------------
                     for (int i = 0; i < listeButton.length; i += 1) {
-                        listeButton[i].setBackgroundTintList(getResources().getColorStateList(R.color.white));
+                        listeButton[i].setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.white));
                         listeButton[i].setText(String.valueOf(i));
                     }
+
                     for (int i = 0; i < listeImageButton.length; i += 1) {
                         drawable = ResourcesCompat.getDrawable(res, listeDrawable_1[i], null);
                         listeImageButton[i].setImageDrawable(drawable);
@@ -536,9 +532,10 @@ public class Outils_telecommande extends AppCompatActivity {
                 }
                 if (telecommandeSelect == 2) { // ------------ Telecommande couleur ------------
                     for (int i = 0; i < listeButton.length; i += 1) {
-                        listeButton[i].setBackgroundTintList(getResources().getColorStateList(listeButtonCouleur[i]));
+                        listeButton[i].setBackgroundTintList(ContextCompat.getColorStateList(this, listeButtonCouleur[i]));
                         listeButton[i].setText("");
                     }
+
                     for (int i = 0; i < listeImageButton.length; i += 1) {
                         drawable = ResourcesCompat.getDrawable(res, listeDrawable_2[i], null);
                         listeImageButton[i].setImageDrawable(drawable);

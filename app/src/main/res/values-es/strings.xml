@@ -160,5 +160,16 @@
     <string name="tolerance">Tolerancia</string>
     <string name="TCR">TCR</string>
 
+    <!-- Page telecommande bluetooth -->
+    <string name="interface_bluetooth">Sin interfaz Bluetooth</string>
+    <string name="liste">Lista vacía</string>
+    <string name="Appareil">Elija un dispositivo de la lista</string>
+    <string name="connexion">Iniciar sesión</string>
+    <string name="connexion_capteur_bluetooth">Conectar el sensor Bluetooth</string>
+    <string name="deconnexion_capteur_bluetooth">Desconexión del sensor Bluetooth</string>
+    <string name="premiere_connexion_capteur_bluetooth">Conectarse al sensor Bluetooth</string>
+    <string name="rebrancher_capteur">Vuelva a conectar el sensor e inténtelo de nuevo.</string>
+    <string name="erreur_write">Error en writebyte</string>
+    <string name="echec_deconnexion">Error de desconexion</string>
 
 </resources>

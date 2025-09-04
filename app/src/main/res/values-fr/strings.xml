@@ -159,5 +159,15 @@
     <string name="tolerance">Tolérance</string>
     <string name="TCR">TCR</string>
 
-
+    <!-- Page telecommande bluetooth -->
+    <string name="interface_bluetooth">Aucune interface Bluetooth</string>
+    <string name="liste">Liste vide</string>
+    <string name="Appareil">Choisissez un appareil dans la liste</string>
+    <string name="connexion">Connexion en cours</string>
+    <string name="connexion_capteur_bluetooth">Connectez le capteur bluetooth</string>
+    <string name="deconnexion_capteur_bluetooth">Deconnexion capteur bluetooth</string>
+    <string name="premiere_connexion_capteur_bluetooth">Connectez-vous au capteur Bluetooth</string>
+    <string name="rebrancher_capteur">Rebrancher le capteur et Réessayer</string>
+    <string name="erreur_write">Erreur dans writebyte</string>
+    <string name="echec_deconnexion">Echec Déconnexion</string>
 </resources>
