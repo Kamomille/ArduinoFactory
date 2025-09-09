@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Camille Bayon de Noyer"
+            android:text="@string/nom1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp"
             tools:ignore="InvalidId" />
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Cedric Chhunon"
+            android:text="@string/nom2"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp"
             tools:ignore="InvalidId" />
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Pierre Huruguen"
+            android:text="@string/nom3"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp"
             tools:ignore="InvalidId" />
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Julien Gouban"
+            android:text="@string/nom4"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp"
             tools:ignore="InvalidId" />
@@ -109,7 +109,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:clickable="true"
-            android:text="Arduino Factory"
+            android:text="@string/lien_arduino_xml"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#0B789C  "
             android:textSize="15sp" />
@@ -121,7 +121,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:clickable="true"
-            android:text="Youtube"
+            android:text="@string/lien_youtube_xml"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#0B789C  "
             android:textSize="15sp" />
@@ -133,7 +133,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:clickable="true"
-            android:text="Instragram"
+            android:text="@string/lien_instagram_xml"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#0B789C  "
             android:textSize="15sp" />

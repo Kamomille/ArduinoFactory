@@ -53,8 +53,10 @@
                     android:id="@+id/your_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:autofillHints="no"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    tools:ignore="LabelFor" />
             </LinearLayout>
 
 
@@ -82,8 +84,10 @@
                     android:id="@+id/your_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:autofillHints="no"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    tools:ignore="LabelFor" />
             </LinearLayout>
 
             <LinearLayout
@@ -110,8 +114,10 @@
                     android:id="@+id/your_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:autofillHints="no"
                     android:ems="10"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    tools:ignore="LabelFor" />
             </LinearLayout>
 
             <LinearLayout
@@ -138,9 +144,11 @@
                     android:id="@+id/your_subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:autofillHints="no"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+                    android:inputType="textMultiLine"
+                    tools:ignore="LabelFor" />
             </LinearLayout>
 
             <LinearLayout
@@ -170,7 +178,9 @@
                     android:background="@drawable/cadre_gris"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    tools:ignore="LabelFor" />
             </LinearLayout>
 
             <Button

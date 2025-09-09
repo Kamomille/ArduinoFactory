@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 public class Contactez_nous extends AppCompatActivity {
 
-    @SuppressLint("IntentReset")
+    @SuppressLint({"IntentReset", "QueryPermissionsNeeded"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

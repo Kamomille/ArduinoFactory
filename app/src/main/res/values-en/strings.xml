@@ -175,5 +175,18 @@
     <string name="erreur_write">Error in writebyte</string>
     <string name="echec_deconnexion">Failed to disconnect</string>
 
+    <!-- Page A propos XML -->
+    <string name="lien_arduino_xml">Arduino Factory</string>
+    <string name="lien_youtube_xml">YouTube</string>
+    <string name="lien_instagram_xml">Instagram</string>
+
+    <!-- Page Accueil XML -->
+    <string name="image_fond_description">Image de fond</string>
+    <string name="logo_description">Logo de application</string>
+    <string name="button_settings_description">Bouton paramètres</string>
+    <string name="image_cours_description">Icône cours</string>
+    <string name="image_outils_description">Icône outils</string>
+    <string name="image_achat_description">Icône achat</string>
+    <string name="image_contacter_description">Icône contacter</string>
 
 </resources>

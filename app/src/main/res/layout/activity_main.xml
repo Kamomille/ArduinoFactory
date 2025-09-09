@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,6 +12,7 @@
         android:layout_height="281dp"
         android:layout_marginBottom="508dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/image_fond_description"
         android:cropToPadding="false"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,6 +27,7 @@
         android:id="@+id/logo_blanc_sans_fond"
         android:layout_width="151dp"
         android:layout_height="85dp"
+        android:contentDescription="@string/image_fond_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
@@ -40,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/image_outils_description"
         android:onClick="onClickParametre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,10 +64,7 @@
 
         app:menu="@menu/bottom_nav_menu">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -90,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_marginRight="12dp"
+                android:layout_marginEnd="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.141"
@@ -102,6 +101,7 @@
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:background="#00F4FCFE"
+                    android:contentDescription="@string/image_cours_description"
                     android:onClick="onClickCours"
                     app:srcCompat="@drawable/livres" />
                 <Button
@@ -132,6 +132,7 @@
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:background="#00F4FCFE"
+                    android:contentDescription="@string/image_outils_description"
                     android:onClick="onClickOutils"
                     app:srcCompat="@drawable/outil" />
                 <Button
@@ -160,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginRight="12dp"
+                android:layout_marginEnd="12dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -173,6 +174,7 @@
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:background="#00F4FCFE"
+                    android:contentDescription="@string/image_achat_description"
                     android:onClick="onClickAchat"
                     app:srcCompat="@drawable/panier" />
                 <Button
@@ -197,6 +199,7 @@
                     android:layout_width="105dp"
                     android:layout_height="105dp"
                     android:background="#00F4FCFE"
+                    android:contentDescription="@string/image_contacter_description"
                     android:onClick="onClickContacter"
                     app:srcCompat="@drawable/contacter" />
                 <Button
