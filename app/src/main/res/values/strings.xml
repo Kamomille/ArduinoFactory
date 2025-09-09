@@ -239,6 +239,11 @@
     <string name="image_achat_description">Icône achat</string>
     <string name="image_contacter_description">Icône contacter</string>
 
+    <!-- Page Resistance XML -->
+    <string name="resistance_image">Image de resistance</string>
+    <string name="resistance_texte">Texte de resistance</string>
+    <string name="resistance_ohm">.... Ohm</string>
+
 
 
 

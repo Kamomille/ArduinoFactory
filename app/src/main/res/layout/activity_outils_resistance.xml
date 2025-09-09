@@ -27,9 +27,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=".... Ohm"
+        android:text="@string/resistance_ohm"
         android:textColor="#0B789C"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -41,9 +41,9 @@
         android:id="@+id/textView_TCR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TCR"
+        android:text="@string/TCR"
         android:textColor="#0B789C"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +55,7 @@
         android:id="@+id/imageView2"
         android:layout_width="375dp"
         android:layout_height="149dp"
+        android:contentDescription="@string/resistance_image"
         android:src="@drawable/outils_resistance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +91,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_4_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -103,6 +105,7 @@
                 android:layout_marginBottom="30dp"
 
                 android:background="#000000"
+                android:contentDescription="@string/resistance_5_anneaux"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.234"
@@ -116,6 +119,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_5_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -131,6 +135,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_texte"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -142,6 +147,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_image"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.234"
@@ -155,6 +161,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_6_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -170,6 +177,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_texte"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -181,6 +189,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_help"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -188,6 +197,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_tool_title"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -203,6 +213,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_texte"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -214,6 +225,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_6_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -221,6 +233,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_image"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -236,6 +249,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_help"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -247,6 +261,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_4_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -254,6 +269,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/image_cours_description"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -269,6 +285,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_image"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -280,6 +297,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/image_fond_description"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -287,6 +305,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#00000000"
+                android:contentDescription="@string/resistance_texte"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -297,6 +316,7 @@
         android:layout_width="62dp"
         android:layout_height="53dp"
         android:background="#00000000"
+        android:contentDescription="@string/resistance_4_anneaux"
         android:scaleType="fitCenter"
         android:src="@drawable/outils_info"
         app:backgroundTint="#00000000"
@@ -359,15 +379,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:gravity="center"
-            android:text="1er chiffre significatif"
+            android:text="@string/premier_chiffre_significatif"
             android:textColor="#0B789C"
             android:background="#D9E8EC"
-            android:textSize="15dp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.082" />
+            app:layout_constraintVertical_bias="0.082"
+            tools:ignore="RtlHardcoded" />
 
         <LinearLayout
             android:layout_width="340dp"
@@ -516,6 +537,7 @@
             android:layout_height="34dp"
             android:layout_gravity="right"
             android:background="#00000000"
+            android:contentDescription="@string/image_fond_description"
             android:scaleType="fitCenter"
             android:src="@drawable/outils_croix" />
 
