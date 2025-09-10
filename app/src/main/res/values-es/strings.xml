@@ -191,4 +191,9 @@
     <string name="resistance_texte">Texte de resistance</string>
     <string name="resistance_ohm">.... Ohm</string>
 
+    <!-- Page Cours XML -->
+    <string name="cours_image">Cours image fond</string>
+    <string name="cours_image_fonc">Cours image</string>
+
+
 </resources>

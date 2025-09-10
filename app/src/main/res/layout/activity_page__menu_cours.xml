@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible">
+        tools:visibility="visible"
+        tools:ignore="UnknownIdInLayout">
 
         <LinearLayout
             android:id="@+id/layout"
@@ -27,6 +28,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/cours_image"
                 app:srcCompat="@android:drawable/arrow_up_float" />
         </LinearLayout>
     </ScrollView>

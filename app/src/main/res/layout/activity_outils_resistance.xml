@@ -391,6 +391,7 @@
             tools:ignore="RtlHardcoded" />
 
         <LinearLayout
+            style="?android:attr/buttonBarStyle"
             android:layout_width="340dp"
             android:layout_height="65dp"
             android:background="#D9E8EC"
@@ -399,6 +400,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -408,6 +410,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -417,6 +420,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_3"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -426,6 +430,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -435,6 +440,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_5"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -444,6 +450,7 @@
 
             <Button
                 android:id="@+id/carreCouleur_6"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="10dp"
@@ -539,7 +546,8 @@
             android:background="#00000000"
             android:contentDescription="@string/image_fond_description"
             android:scaleType="fitCenter"
-            android:src="@drawable/outils_croix" />
+            android:src="@drawable/outils_croix"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/textResistance"
