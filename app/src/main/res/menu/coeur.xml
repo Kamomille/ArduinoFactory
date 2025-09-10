@@ -4,7 +4,7 @@
     <item
         android:id="@+id/coeur_vide"
         android:orderInCategory="100"
-        android:title="HOME"
+        android:title="@string/title_home"
         android:icon="@drawable/coeur_vide"
         app:showAsAction="always" />
 </menu>

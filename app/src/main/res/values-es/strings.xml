@@ -3,6 +3,7 @@
     <string name="title_dashboard">Favorito</string>
     <string name="title_notifications">Notificación</string>
     <string name="title_home">Bienvenida</string>
+    <string name="title_news">Novedad</string>
     <string name="outils_ia_classification">Clasificado como:</string>
     <string name="outils_ia_confidences">Confianza:</string>
     <string name="page_a_propos_merci">Gracias a nuestro profesor Yves Benabou por su ayuda</string>
@@ -215,5 +216,21 @@
     <string name="telecommande_7">7</string>
     <string name="telecommande_8">8</string>
     <string name="telecommande_9">9</string>
+
+    <!-- Page cours XML -->
+    <string name="cours_definition">Definición</string>
+    <string name="cours_schema">Esquema</string>
+    <string name="cours_description">Descripción</string>
+    <string name="cours_textvie">des des blabla bla bafrgtuyhfiqzeguihugyftyugyiugyuftyugihugyuftydrttyfuygiho gy fyfiyu yfyhkjvhv</string>
+    <string name="cours_schema_cablage">Esquema de cableado</string>
+
+    <!-- Page barre menu XML -->
+    <string name="search">Búsqueda</string>
+
+    <!-- Page barre menu telecommande XML -->
+    <string name="telecommande_home">Inicio</string>
+    <string name="telecommande_deconnection">Desconexión</string>
+    <string name="telecommande_changement">Cambiar el mando a distancia</string>
+    <string name="telecommande_tutoriel">Tutorial</string>
 
 </resources>

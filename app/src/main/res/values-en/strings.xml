@@ -2,6 +2,7 @@
 <resources>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Favorite</string>
+    <string name="title_news">New</string>
     <string name="title_notifications">Notifications</string>
     <string name="outils_ia_classification">Classified as:</string>
     <string name="outils_ia_confidences">Confidences:</string>
@@ -218,5 +219,21 @@
     <string name="telecommande_7">7</string>
     <string name="telecommande_8">8</string>
     <string name="telecommande_9">9</string>
+
+    <!-- Page cours XML -->
+    <string name="cours_definition">Definition</string>
+    <string name="cours_schema">Schematic</string>
+    <string name="cours_description">Description</string>
+    <string name="cours_textvie">des des blabla bla bafrgtuyhfiqzeguihugyftyugyiugyuftyugihugyuftydrttyfuygiho gy fyfiyu yfyhkjvhv</string>
+    <string name="cours_schema_cablage">Wiring diagram</string>
+
+    <!-- Page barre menu XML -->
+    <string name="search">Search</string>
+
+    <!-- Page barre menu telecommande XML -->
+    <string name="telecommande_home">Home</string>
+    <string name="telecommande_deconnection">Disconnect</string>
+    <string name="telecommande_changement">Change remote control</string>
+    <string name="telecommande_tutoriel">Tutorial</string>
 
 </resources>

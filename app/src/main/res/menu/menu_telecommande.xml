@@ -9,16 +9,16 @@
     <item
         android:id="@+id/coeur_vide"
         android:orderInCategory="100"
-        android:title="HOME"
+        android:title="@string/telecommande_image"
         android:icon="@drawable/coeur_vide"
         app:showAsAction="always" />
 
     <item
-        android:title="Déconnection"
+        android:title="@string/telecommande_deconnection"
         android:id="@+id/nav_deconnection"/>
-    <item android:title="Changer de télécommande"
+    <item android:title="@string/telecommande_changement"
         android:id="@+id/nav_telecommande"/>
-    <item android:title="Tutoriel"
+    <item android:title="@string/telecommande_tutoriel"
         android:id="@+id/nav_tuto"/>
 
 </menu>

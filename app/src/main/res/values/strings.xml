@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">Arduino Factory</string>
     <string name="title_home">Accueil</string>
-    <string name="title_dashboard">Favorite</string>
+    <string name="title_dashboard">Favoris</string>
+    <string name="title_news">Nouveauté</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_page__parametre" translatable="false">Page_Parametre</string>
     <string name="myCoolButton" translatable="false">Page_Parametre</string>
@@ -268,6 +269,23 @@
     <string name="telecommande_7">7</string>
     <string name="telecommande_8">8</string>
     <string name="telecommande_9">9</string>
+
+    <!-- Page cours XML -->
+    <string name="cours_definition">Définition</string>
+    <string name="cours_schema">Schéma</string>
+    <string name="cours_description">Description</string>
+    <string name="cours_textvie">des des blabla bla bafrgtuyhfiqzeguihugyftyugyiugyuftyugihugyuftydrttyfuygiho gy fyfiyu yfyhkjvhv</string>
+    <string name="cours_schema_cablage">Schéma de cablâge</string>
+
+    <!-- Page barre menu XML -->
+    <string name="search">Recherche</string>
+
+    <!-- Page barre menu telecommande XML -->
+    <string name="telecommande_home">Accueil</string>
+    <string name="telecommande_deconnection">Déconnection</string>
+    <string name="telecommande_changement">Changer de telécommande</string>
+    <string name="telecommande_tutoriel">Tutoriel</string>
+
 
 
 </resources>
