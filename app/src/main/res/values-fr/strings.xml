@@ -202,4 +202,18 @@
     <string name="IA_texte2">7_segments, capteur_humidite, ecran_lcd, led, resistance, servo_moteur</string>
     <string name="IA_texte3">Nous travaillons encore dessus pour vous fournir une version toujours plus performante.</string>
 
+    <!-- Page telecommande XML -->
+    <string name="telecommande_image">page sur le telecommande bluetooth</string>
+    <string name="telecommande_bluetooth">Bluetooth</string>
+    <string name="telecommande_0">0</string>
+    <string name="telecommande_1">1</string>
+    <string name="telecommande_2">2</string>
+    <string name="telecommande_3">3</string>
+    <string name="telecommande_4">4</string>
+    <string name="telecommande_5">5</string>
+    <string name="telecommande_6">6</string>
+    <string name="telecommande_7">7</string>
+    <string name="telecommande_8">8</string>
+    <string name="telecommande_9">9</string>
+
 </resources>

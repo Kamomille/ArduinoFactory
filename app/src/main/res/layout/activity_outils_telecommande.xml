@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:text="Bluetooth "
+            android:text="@string/telecommande_bluetooth"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#0B789C"
             android:textSize="25sp" />
@@ -39,7 +39,6 @@
             android:layout_width="400dp"
             android:layout_height="294dp"
             android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="200dp"
             android:background="#DAE3F3"
@@ -82,6 +81,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton_red"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/deconnecter"
@@ -108,6 +109,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_power" />
                         </LinearLayout>
@@ -126,7 +128,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/Volplus"
@@ -134,6 +137,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_plus" />
                         </LinearLayout>
@@ -151,7 +155,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/function"
@@ -159,6 +164,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_func_stop" />
                         </LinearLayout>
@@ -173,6 +179,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -191,7 +198,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/back"
@@ -199,6 +207,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_fleche_gauche" />
                         </LinearLayout>
@@ -216,7 +225,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/pause"
@@ -224,6 +234,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_pause" />
                         </LinearLayout>
@@ -241,7 +252,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/next"
@@ -249,6 +261,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_fleche_droite" />
                         </LinearLayout>
@@ -264,6 +277,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -283,7 +297,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/descendre"
@@ -291,6 +306,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_descendre" />
                         </LinearLayout>
@@ -308,7 +324,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/volumemoins"
@@ -316,6 +333,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_moins2" />
                         </LinearLayout>
@@ -334,7 +352,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/monter"
@@ -342,6 +361,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_monter" />
                         </LinearLayout>
@@ -357,6 +377,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -375,10 +396,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="0"
+                            android:text="@string/telecommande_0"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -394,7 +415,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/egaliser"
@@ -402,6 +424,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_eq" />
                         </LinearLayout>
@@ -419,7 +442,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
                             android:orientation="vertical"
-                            android:scaleType="fitCenter">
+                            android:scaleType="fitCenter"
+                            tools:ignore="UselessParent">
 
                             <ImageButton
                                 android:id="@+id/repeter"
@@ -427,6 +451,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal|center_vertical"
                                 android:backgroundTint="#00000000"
+                                android:contentDescription="@string/telecommande_image"
                                 android:scaleType="fitCenter"
                                 app:srcCompat="@drawable/telecommande_st_rept" />
                         </LinearLayout>
@@ -441,6 +466,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -459,10 +485,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="1"
+                            android:text="@string/telecommande_1"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -478,10 +504,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="2"
+                            android:text="@string/telecommande_2"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -497,10 +523,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="3"
+                            android:text="@string/telecommande_3"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -513,6 +539,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -531,10 +558,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="4"
+                            android:text="@string/telecommande_4"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -551,10 +578,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="5"
+                            android:text="@string/telecommande_5"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -570,10 +597,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="6"
+                            android:text="@string/telecommande_6"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -587,6 +614,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginBottom="30dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -605,10 +633,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="7"
+                            android:text="@string/telecommande_7"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -625,10 +653,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="8"
+                            android:text="@string/telecommande_8"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 
@@ -644,10 +672,10 @@
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/roundedbutton"
-                            android:text="9"
+                            android:text="@string/telecommande_9"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="#000000"
-                            android:textSize="25dp"
+                            android:textSize="25sp"
                             app:backgroundTint="#FFFFFF" />
                     </LinearLayout>
 

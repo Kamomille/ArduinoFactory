@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
@@ -38,7 +38,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/button_achat"
@@ -49,7 +49,7 @@
                 android:text="@string/telecommande_tuto_step_1_buy"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:cornerRadius="50dp"
                 app:strokeColor="#FFFFFF"
                 app:strokeWidth="1dp" />
@@ -65,14 +65,15 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/telecommande_tuto_step_2_copyPaste"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                tools:ignore="SpUsage" />
             <Button
                 android:id="@+id/button_code"
                 android:layout_width="wrap_content"
@@ -82,7 +83,7 @@
                 android:text="@string/telecommande_tuto_step_2_seeCode"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 app:cornerRadius="50dp"
                 app:strokeColor="#FFFFFF"
                 app:strokeWidth="1dp" />
@@ -97,13 +98,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
 
             <ImageView
                 android:id="@+id/image_cablage"
                 android:layout_width="wrap_content"
                 android:layout_height="225dp"
+                android:contentDescription="@string/telecommande_image"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/telecommande_tuto_cablage" />
 
@@ -118,14 +120,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#0B789C"
                 android:textStyle="bold"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/telecommande_tuto_step_4_bluetooth"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -139,14 +141,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textStyle="bold"
                 android:textColor="#0B789C"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/telecommande_tuto_step_5_bluetooth"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#000000"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
