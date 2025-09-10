@@ -195,4 +195,11 @@
     <string name="cours_image">Cours image fond</string>
     <string name="cours_image_fonc">Cours image</string>
 
+    <!-- Page IA XML -->
+    <string name="IA_image">page sur IA</string>
+    <string name="IA_aide">Aide</string>
+    <string name="IA_texte1">Notre IA reconnait les composants suivants:</string>
+    <string name="IA_texte2">7_segments, capteur_humidite, ecran_lcd, led, resistance, servo_moteur</string>
+    <string name="IA_texte3">Nous travaillons encore dessus pour vous fournir une version toujours plus performante.</string>
+
 </resources>

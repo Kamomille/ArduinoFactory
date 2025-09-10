@@ -22,7 +22,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_fond_description"
             app:srcCompat="@drawable/ia_photo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +36,11 @@
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/classified"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/bleu_arduino_factory"
             android:background="#C7F9F3"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
 
@@ -50,7 +48,6 @@
             android:id="@+id/confidencesText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="@string/outils_ia_confidences"
             android:textSize="20sp"
@@ -86,7 +83,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
 
 
             <LinearLayout
@@ -104,6 +102,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:backgroundTint="#00000000"
+                    android:contentDescription="@string/IA_image"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ia_point_interrogation" />
             </LinearLayout>
@@ -124,6 +123,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:backgroundTint="#00000000"
+                    android:contentDescription="@string/IA_image"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ia_appareil_photo" />
             </LinearLayout>
@@ -143,6 +143,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:backgroundTint="#00000000"
+                    android:contentDescription="@string/IA_image"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ia_gallerie" />
             </LinearLayout>

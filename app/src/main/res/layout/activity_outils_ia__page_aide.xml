@@ -22,12 +22,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/IA_image"
                 app:srcCompat="@drawable/ia_help" />
 
             <TextView
@@ -36,9 +38,10 @@
                 android:layout_height="42dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Aide"
+                android:text="@string/IA_aide"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                tools:ignore="DuplicateIds" />
 
         </LinearLayout>
 
@@ -52,9 +55,10 @@
             android:layout_height="42dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Notre IA reconnait les composants suivants:"
+            android:text="@string/IA_texte1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            tools:ignore="DuplicateIds" />
 
         <TextView
             android:id="@+id/nom1"
@@ -62,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="7_segments, capteur_humidite, ecran_lcd, led, resistance, servo_moteur"
+            android:text="@string/IA_texte2"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="15sp"
             tools:ignore="InvalidId" />
@@ -80,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Nous travaillons encore dessus pour vous fournir une version toujours plus performante."
+            android:text="@string/IA_texte3"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     </LinearLayout>
