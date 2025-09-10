@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -14,24 +15,25 @@
         android:layout_gravity="center"
         android:layout_marginLeft = "10dp"
         android:layout_marginRight = "10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id = "@+id/image"
             android:layout_width = "match_parent"
-            android:layout_height = "300px"
+            android:layout_height = "300dp"
             android:layout_marginTop = "5dp"
             android:layout_gravity="center"
+            android:contentDescription="@string/search"
             android:src = "@color/design_default_color_secondary" />
 
         <TextView
             android:id = "@+id/name"
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
-            android:layout_toRightOf = "@+id/image"
             android:layout_marginBottom = "10dp"
             android:layout_gravity="center"
-            android:text = "abcd"
+            android:text = "@string/TCR"
             android:textColor = "#0B789C"
             android:textSize = "20sp" />
 

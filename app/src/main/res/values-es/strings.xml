@@ -232,5 +232,16 @@
     <string name="telecommande_deconnection">Desconexión</string>
     <string name="telecommande_changement">Cambiar el mando a distancia</string>
     <string name="telecommande_tutoriel">Tutorial</string>
+    <string name="page_construction">Toutes les supers nouvauté  page en construction</string>
+    <string name="Texte">TextView</string>
+
+    <!-- Page Preferences XML -->
+    <string name="preference_prenom">Tu nombre</string>
+    <string name="preference_nom">Su nombre</string>
+    <string name="preference_soutien">Apóyenos</string>
+    <string name="preference_note">Valora nuestra aplicación</string>
+    <string name="preference_information">Información  aplicación</string>
+    <string name="preference_version">Versión Aplicación</string>
+
 
 </resources>

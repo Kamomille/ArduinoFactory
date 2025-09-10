@@ -235,5 +235,16 @@
     <string name="telecommande_deconnection">Disconnect</string>
     <string name="telecommande_changement">Change remote control</string>
     <string name="telecommande_tutoriel">Tutorial</string>
+    <string name="page_construction">Toutes les supers nouvauté  page en construction</string>
+    <string name="Texte">TextView</string>
+
+    <!-- Page Preferences XML -->
+    <string name="preference_prenom">Your First Name</string>
+    <string name="preference_nom">Your Last Name</string>
+    <string name="preference_soutien">Support us</string>
+    <string name="preference_note">Rate our application</string>
+    <string name="preference_information">App information</string>
+    <string name="preference_version">Application Version</string>
+
 
 </resources>

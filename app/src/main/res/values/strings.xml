@@ -285,6 +285,17 @@
     <string name="telecommande_deconnection">Déconnection</string>
     <string name="telecommande_changement">Changer de telécommande</string>
     <string name="telecommande_tutoriel">Tutoriel</string>
+    <string name="page_construction">Toutes les supers nouvauté  page en construction</string>
+    <string name="Texte">TextView</string>
+
+    <!-- Page Preferences XML -->
+    <string name="preference_prenom">Votre Prénom</string>
+    <string name="preference_nom">Votre Nom</string>
+    <string name="preference_soutien">Soutenez nous</string>
+    <string name="preference_note">Noter notre application</string>
+    <string name="preference_information">Information  application</string>
+    <string name="preference_version">Version Application</string>
+
 
 
 
