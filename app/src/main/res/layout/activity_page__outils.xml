@@ -43,7 +43,7 @@
                     android:gravity="center"
                     android:text="@string/page_outils_title_1"
                     android:textColor="#0B789C"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -52,13 +52,14 @@
                     android:layout_marginRight="5dp"
                     android:gravity="center"
                     android:text="@string/page_outils_resistance"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/resistance_image"
                 app:srcCompat="@drawable/outils_menu_resistance" />
         </LinearLayout>
 
@@ -87,22 +88,23 @@
                     android:gravity="center"
                     android:text="@string/page_outils_title_2"
                     android:textColor="#0B789C"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:gravity="center"
                     android:text="@string/page_outils_telecommande"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
+                android:contentDescription="@string/image_outils_description"
                 app:srcCompat="@drawable/outils_menu_telecommande" />
         </LinearLayout>
 
@@ -130,22 +132,23 @@
                     android:gravity="center"
                     android:text="@string/page_outils_title_3"
                     android:textColor="#0B789C"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:gravity="center"
                     android:text="@string/page_outils_ia"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
+                android:contentDescription="@string/cours"
                 app:srcCompat="@drawable/outils_ia" />
         </LinearLayout>
     </LinearLayout>

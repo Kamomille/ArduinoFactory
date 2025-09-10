@@ -403,7 +403,7 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#000000"
                 app:backgroundTint="#000000" />
@@ -413,7 +413,7 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#CC6633"
                 app:backgroundTint="#CC6633" />
@@ -423,7 +423,7 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FE0000"
                 app:backgroundTint="#FE0000" />
@@ -433,7 +433,7 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FE8000"
                 app:backgroundTint="#FE8000" />
@@ -443,7 +443,7 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FEFE00"
                 app:backgroundTint="#FEFE00" />
@@ -453,13 +453,14 @@
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#00EA00"
                 app:backgroundTint="#00EA00" />
         </LinearLayout>
 
         <LinearLayout
+            style="?android:attr/buttonBarStyle"
             android:layout_width="340dp"
             android:layout_height="65dp"
             android:background="#D9E8EC"
@@ -468,54 +469,60 @@
 
             <Button
                 android:id="@+id/carreCouleur_7"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#0000FE"
                 app:backgroundTint="#0000FE" />
 
             <Button
                 android:id="@+id/carreCouleur_8"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#8000FE"
                 app:backgroundTint="#8000FE" />
 
             <Button
                 android:id="@+id/carreCouleur_9"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#999999"
                 app:backgroundTint="#999999" />
 
             <Button
                 android:id="@+id/carreCouleur_10"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 app:backgroundTint="#FFFFFF" />
 
             <Button
                 android:id="@+id/carreCouleur_11"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#CCCCCC"
                 app:backgroundTint="#CCCCCC" />
 
             <Button
                 android:id="@+id/carreCouleur_12"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FFD700"
                 app:backgroundTint="#FFD700" />

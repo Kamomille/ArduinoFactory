@@ -28,9 +28,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=".... Ohm"
+        android:text="@string/resistance_ohm"
         android:textColor="#0B789C"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
@@ -42,9 +42,9 @@
         android:id="@+id/textView_TCR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TCR"
+        android:text="@string/TCR"
         android:textColor="#0B789C"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.21"
@@ -56,6 +56,7 @@
         android:id="@+id/imageView2"
         android:layout_width="365dp"
         android:layout_height="142dp"
+        android:contentDescription="@string/resistance_image"
         android:src="@drawable/outils_resistance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +82,7 @@
             android:id="@+id/bande1"
             android:layout_width="45dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:orientation="vertical">
 
             <ImageButton
@@ -89,6 +90,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -102,6 +104,7 @@
                 android:layout_marginBottom="30dp"
 
                 android:background="#000000"
+                android:contentDescription="@string/cours"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.234"
@@ -115,6 +118,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -130,6 +134,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_4_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -141,6 +146,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_6_anneaux"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.234"
@@ -154,6 +160,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_5_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -169,6 +176,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_5_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -180,6 +188,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_5_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -187,6 +196,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_6_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -202,6 +212,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_4_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -213,6 +224,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_4_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -220,6 +232,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_6_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -235,6 +248,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_image"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -246,6 +260,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_6_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -253,6 +268,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_4_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -268,6 +284,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche" />
 
@@ -279,6 +296,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="#000000"
+                android:contentDescription="@string/resistance_6_anneaux"
                 app:srcCompat="@drawable/outils_vide" />
 
             <ImageButton
@@ -286,6 +304,7 @@
                 android:layout_width="44dp"
                 android:layout_height="20dp"
                 android:background="#F4FCFE"
+                android:contentDescription="@string/resistance_6_anneaux"
                 android:scaleType="fitCenter"
                 android:src="@drawable/outils_fleche_bas" />
         </LinearLayout>
@@ -298,6 +317,7 @@
         android:layout_height="60dp"
         android:background="#00000000"
         android:clickable="true"
+        android:contentDescription="@string/resistance_6_anneaux"
         android:scaleType="fitCenter"
         android:src="@drawable/outils_info"
         app:backgroundTint="#00000000"
@@ -358,18 +378,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:gravity="center"
-            android:text="1er chiffre significatif"
+            android:text="@string/premier_chiffre_significatif"
             android:textColor="#0B789C"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:background="#D9E8EC"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.082" />
+            app:layout_constraintVertical_bias="0.082"
+            tools:ignore="RtlHardcoded" />
 
         <LinearLayout
 
+            style="?android:attr/buttonBarStyle"
             android:layout_width="340dp"
             android:layout_height="65dp"
             android:background="#D9E8EC"
@@ -378,60 +400,67 @@
 
             <Button
                 android:id="@+id/carreCouleur_1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#000000"
                 app:backgroundTint="#000000" />
 
             <Button
                 android:id="@+id/carreCouleur_2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#CC6633"
                 app:backgroundTint="#CC6633" />
 
             <Button
                 android:id="@+id/carreCouleur_3"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FE0000"
                 app:backgroundTint="#FE0000" />
 
             <Button
                 android:id="@+id/carreCouleur_4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FE8000"
                 app:backgroundTint="#FE8000" />
 
             <Button
                 android:id="@+id/carreCouleur_5"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FEFE00"
                 app:backgroundTint="#FEFE00" />
 
             <Button
                 android:id="@+id/carreCouleur_6"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#00EA00"
                 app:backgroundTint="#00EA00" />
         </LinearLayout>
 
         <LinearLayout
+            style="?android:attr/buttonBarStyle"
             android:layout_width="340dp"
             android:layout_height="65dp"
             android:background="#D9E8EC"
@@ -440,54 +469,60 @@
 
             <Button
                 android:id="@+id/carreCouleur_7"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#0000FE"
                 app:backgroundTint="#0000FE" />
 
             <Button
                 android:id="@+id/carreCouleur_8"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#8000FE"
                 app:backgroundTint="#8000FE" />
 
             <Button
                 android:id="@+id/carreCouleur_9"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#999999"
                 app:backgroundTint="#999999" />
 
             <Button
                 android:id="@+id/carreCouleur_10"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 app:backgroundTint="#FFFFFF" />
 
             <Button
                 android:id="@+id/carreCouleur_11"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#CCCCCC"
                 app:backgroundTint="#CCCCCC" />
 
             <Button
                 android:id="@+id/carreCouleur_12"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#FFD700"
                 app:backgroundTint="#FFD700" />
@@ -518,8 +553,10 @@
             android:layout_height="34dp"
             android:layout_gravity="right"
             android:background="#00000000"
+            android:contentDescription="@string/resistance_6_anneaux"
             android:scaleType="fitCenter"
-            android:src="@drawable/outils_croix" />
+            android:src="@drawable/outils_croix"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/textResistance"
