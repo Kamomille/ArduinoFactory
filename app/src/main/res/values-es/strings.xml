@@ -244,4 +244,21 @@
     <string name="preference_version">Versión Aplicación</string>
 
 
+        <!-- Liens du livre Arduino -->
+        <string name="lien_livre">https://payhip.com/b/TArm2</string>
+
+        <!-- Texte livre -->
+        <string name="livre_titre">📘 Nuestro libro para iniciarse en Arduino!</string>
+        <string name="livre">Hemos escrito un libro sobre Arduino para ayudarte a empezar en el mundo de la electrónica. En nuestro curso encontrarás lecciones, consejos y muchos proyectos sobre Arduino para aprender divirtiéndote.</string>
+        <string name="liendulivre"> 👉 Enlace del libro (ES)</string>
+        <!-- Join us -->
+        <string name="join_us">🤝 Unete a nosotros</string>
+        <string name="site_text">🌍 Nuestro sitio web</string>
+        <string name="youtube_text">▶️ YouTube</string>
+        <string name="instagram_text">📸 Instagram</string>
+
+
+
+
+
 </resources>

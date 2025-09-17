@@ -297,6 +297,26 @@
     <string name="preference_version">Version Application</string>
 
 
+    <string name="lien_livre">https://payhip.com/b/9Lx6b</string>
+
+    <!-- Texte livre -->
+    <string name="livre_titre">📘 Notre livre pour débuter sur Arduino !</string>
+
+    <string name="livre"> Nous avons écrit un livre sur Arduino pour vous aider à débuter dans le monde de l’électronique. Dans notre cours vous retrouverez des cours, des conseils et plein de projets sur Arduino pour apprendre en s’amusant.</string>
+
+    <string name="liendulivre"> 👉 Lien du livre (FR)</string>
+
+    <!-- Join us -->
+    <string name="join_us">🤝 Rejoignez-nous</string>
+    <string name="site_text">🌍 Notre site</string>
+    <string name="youtube_text">▶️ YouTube</string>
+    <string name="instagram_text">📸 Instagram</string>
+
+
+
+
+
+
 
 
 </resources>

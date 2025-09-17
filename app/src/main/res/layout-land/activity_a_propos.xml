@@ -1,160 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4FCFE"
-    tools:context=".contact.A_propos">
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="597dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
+        <!-- Section Book -->
         <TextView
-            android:id="@+id/qui"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/page_a_propos_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/page_a_propos_qui"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/nom1"
-            android:layout_width="match_parent"
+            android:id="@+id/livreTitre"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/nom1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
+            android:text="@string/livre_titre"
+            android:textSize="20sp"
+            android:paddingTop="24dp"
+            android:textStyle="bold"
+            android:paddingBottom="24dp" />
 
         <TextView
-            android:id="@+id/nom2"
-            android:layout_width="match_parent"
+            android:id="@+id/livreEn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/nom2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
+            android:text="@string/livre"
+            android:textSize="16sp"
+            android:paddingBottom="32dp"/>
 
         <TextView
-            android:id="@+id/nom3"
-            android:layout_width="match_parent"
+            android:id="@+id/lienduLivre"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/nom3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
+            android:text="@string/liendulivre"
+            android:textSize="16sp"
+            android:textColor="@color/purple_500"
+            android:paddingBottom="32dp" />
 
-        <TextView
-            android:id="@+id/nom4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/nom4"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="15sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
+        <!-- Section Join Us -->
         <TextView
             android:id="@+id/rejoignez"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/page_a_propos_title_2"
-            android:fontFamily="sans-serif"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="25sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join_us"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"/>
 
         <TextView
             android:id="@+id/lien"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:clickable="true"
-            android:text="@string/lien_arduino_xml"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#0B789C"
-            android:textSize="15sp" />
+            android:text="@string/site_text"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
         <TextView
             android:id="@+id/youtube"
-            android:layout_width="match_parent"
-            android:layout_height="21dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:clickable="true"
-            android:text="@string/lien_youtube_xml"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#0B789C"
-            android:textSize="15sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/youtube_text"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
 
         <TextView
             android:id="@+id/instragram"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:clickable="true"
-            android:text="@string/lien_instagram_xml"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#0B789C"
-            android:textSize="15sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <TextView
-            android:id="@+id/remerciement"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/page_a_propos_title_3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/page_a_propos_merci"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
+            android:text="@string/instagram_text"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"/>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
