@@ -1,4 +1,5 @@
-package com.ArduinoFactory.androidstudio.pages;
+
+package com.ArduinoFactory.androidstudio.cours;
 
 
 import androidx.annotation.Nullable;

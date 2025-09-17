@@ -1,8 +1,10 @@
-package com.ArduinoFactory.androidstudio.pages;
+
+package com.ArduinoFactory.androidstudio.outils;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -12,14 +14,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.ArduinoFactory.androidstudio.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
-import com.ArduinoFactory.androidstudio.contact.A_propos;
-import com.ArduinoFactory.androidstudio.contact.Contactez_nous;
 
-public class Page_Contact extends AppCompatActivity {
+public class Page_Outils extends AppCompatActivity {
 
-    private LinearLayout buttonSite, buttonContactezNous, buttonPropos;
+    private LinearLayout outil_resistance, outil_telecommande, outil_ia;
     private SoundPool soundPool;
     private AudioManager audioManager;
     // Maximumn sound stream.
@@ -30,14 +29,13 @@ public class Page_Contact extends AppCompatActivity {
     private int soundIdBouton;
     private float volume;
 
-    String Arduino_Factory_url="https://arduinofactory.fr/";
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page__contact);
+        setContentView(R.layout.activity_page__outils);
 
-        // bouton retour ----------------------
+        // bouton retour
         ActionBar actionBar=getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         // AudioManager audio settings for adjusting the volume
@@ -85,31 +83,36 @@ public class Page_Contact extends AppCompatActivity {
         // Load sound file (destroy.wav) into SoundPool.
         this.soundIdBouton = this.soundPool.load(this, R.raw.son_bouton, 1);
 
-    buttonSite = (LinearLayout) findViewById(R.id.buttonSite);
-    buttonSite.setOnClickListener(new View.OnClickListener(){
-        @Override public void onClick(View v){ openActivtity_site(); } } );
-    buttonContactezNous = (LinearLayout) findViewById(R.id.buttonContactezNous);
-    buttonContactezNous.setOnClickListener(new View.OnClickListener(){
-        @Override public void onClick(View v){ openActivtity_contactezNous(); } } );
-    buttonPropos = (LinearLayout) findViewById(R.id.buttonPropos);
-    buttonPropos.setOnClickListener(new View.OnClickListener(){
-        @Override public void onClick(View v){ openActivtity_propos(); } } );
 
+
+        outil_resistance = (LinearLayout) findViewById(R.id.outil_resistance);
+        outil_resistance.setOnClickListener(new View.OnClickListener(){
+            @Override public void onClick(View v){ openActivtity_outilsResistance(); } } );
+
+       outil_telecommande = (LinearLayout) findViewById(R.id.outil_telecommande);
+        outil_telecommande.setOnClickListener(new View.OnClickListener(){
+            @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
+
+        outil_ia = (LinearLayout) findViewById(R.id.outil_ia);
+        outil_ia.setOnClickListener(new View.OnClickListener(){
+            @Override public void onClick(View v){ openActivtity_outilsIA(); } } );
     }
-    public void openActivtity_site(){
+
+
+    public void openActivtity_outilsResistance(){
         playSound();
-        Intent intent = new Intent(this, Page_Internet.class);
-        intent.putExtra("af",Arduino_Factory_url);
+        Intent intent = new Intent(this, Outils_resistance.class);
         startActivity(intent);
     }
-    public void openActivtity_contactezNous(){
+    public void openActivtity_outilsTelecommande(){
         playSound();
-        Intent intent = new Intent(this, Contactez_nous.class);
+        Intent intent = new Intent(this, Outils_telecommande.class);
+        intent.putExtra("af","1");
         startActivity(intent);
     }
-    public void openActivtity_propos(){
+    public void openActivtity_outilsIA(){
         playSound();
-        Intent intent = new Intent(this, A_propos.class);
+        Intent intent = new Intent(this, Outils_reconnaissance_composants.class);
         startActivity(intent);
     }
     public void playSound()  {
@@ -120,6 +123,5 @@ public class Page_Contact extends AppCompatActivity {
             int streamId = this.soundPool.play(this.soundIdBouton,leftVolumn, rightVolumn, 1, 0, 1f);
         }
     }
-
 
 }

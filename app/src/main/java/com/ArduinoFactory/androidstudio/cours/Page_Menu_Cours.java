@@ -1,4 +1,5 @@
-package com.ArduinoFactory.androidstudio.pages;
+
+package com.ArduinoFactory.androidstudio.cours;
 
 
 import androidx.appcompat.app.ActionBar;
@@ -125,3 +126,4 @@ public class Page_Menu_Cours extends AppCompatActivity {
     }
 
 }
+

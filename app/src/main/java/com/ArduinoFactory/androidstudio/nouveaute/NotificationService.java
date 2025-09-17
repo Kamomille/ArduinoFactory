@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio;
+package com.ArduinoFactory.androidstudio.nouveaute;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours;
+import com.ArduinoFactory.androidstudio.R;
+import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

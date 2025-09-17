@@ -132,7 +132,7 @@ public class Achat_Main extends AppCompatActivity {
     public void onClick(int position) {
 
         Intent intent_achat = new Intent(this, Page_Internet.class);
-        intent_achat.putExtra("url_achat", filteredlist_onClick.get(position).getLien());
+        intent_achat.putExtra("url", filteredlist_onClick.get(position).getLien());
         startActivity(intent_achat);
     }
 

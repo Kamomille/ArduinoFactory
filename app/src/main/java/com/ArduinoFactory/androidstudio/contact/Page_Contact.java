@@ -1,28 +1,22 @@
-package com.ArduinoFactory.androidstudio.pages;
+package com.ArduinoFactory.androidstudio.contact;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
 
-import com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants;
-import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
+import com.ArduinoFactory.androidstudio.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
-import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
 
-public class Page_Outils extends AppCompatActivity {
+public class Page_Contact extends AppCompatActivity {
 
-    private LinearLayout outil_resistance, outil_telecommande, outil_ia;
     private SoundPool soundPool;
-    private AudioManager audioManager;
     // Maximumn sound stream.
     private static final int MAX_STREAMS = 100;
     // Stream type.
@@ -31,17 +25,19 @@ public class Page_Outils extends AppCompatActivity {
     private int soundIdBouton;
     private float volume;
 
-    @SuppressLint("MissingInflatedId")
+    String Arduino_Factory_url="https://arduinofactory.fr/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page__outils);
+        setContentView(R.layout.activity_page__contact);
 
-        // bouton retour
+        // bouton retour ----------------------
         ActionBar actionBar=getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         // AudioManager audio settings for adjusting the volume
-        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
         // Current volumn Index of particular stream type.
         float currentVolumeIndex = (float) audioManager.getStreamVolume(streamType);
@@ -75,46 +71,33 @@ public class Page_Outils extends AppCompatActivity {
         }
 
         // When Sound Pool load complete.
-        this.soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                loaded = true;
-            }
-        });
+        this.soundPool.setOnLoadCompleteListener((soundPool, sampleId, status) -> loaded = true);
 
         // Load sound file (destroy.wav) into SoundPool.
         this.soundIdBouton = this.soundPool.load(this, R.raw.son_bouton, 1);
 
+        LinearLayout buttonSite = findViewById(R.id.buttonSite);
+    buttonSite.setOnClickListener(v -> openActivtity_site());
+        LinearLayout buttonContactezNous = findViewById(R.id.buttonContactezNous);
+    buttonContactezNous.setOnClickListener(v -> openActivtity_contactezNous());
+        LinearLayout buttonPropos = findViewById(R.id.buttonPropos);
+    buttonPropos.setOnClickListener(v -> openActivtity_propos());
 
-
-        outil_resistance = (LinearLayout) findViewById(R.id.outil_resistance);
-        outil_resistance.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsResistance(); } } );
-
-       outil_telecommande = (LinearLayout) findViewById(R.id.outil_telecommande);
-        outil_telecommande.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
-
-        outil_ia = (LinearLayout) findViewById(R.id.outil_ia);
-        outil_ia.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsIA(); } } );
     }
-
-
-    public void openActivtity_outilsResistance(){
+    public void openActivtity_site(){
         playSound();
-        Intent intent = new Intent(this, Outils_resistance.class);
+        Intent intent = new Intent(this, Page_Internet.class);
+        intent.putExtra("url",Arduino_Factory_url);
         startActivity(intent);
     }
-    public void openActivtity_outilsTelecommande(){
+    public void openActivtity_contactezNous(){
         playSound();
-        Intent intent = new Intent(this, Outils_telecommande.class);
-        intent.putExtra("af","1");
+        Intent intent = new Intent(this, Contactez_nous.class);
         startActivity(intent);
     }
-    public void openActivtity_outilsIA(){
+    public void openActivtity_propos(){
         playSound();
-        Intent intent = new Intent(this, Outils_reconnaissance_composants.class);
+        Intent intent = new Intent(this, A_propos.class);
         startActivity(intent);
     }
     public void playSound()  {
@@ -125,5 +108,6 @@ public class Page_Outils extends AppCompatActivity {
             int streamId = this.soundPool.play(this.soundIdBouton,leftVolumn, rightVolumn, 1, 0, 1f);
         }
     }
+
 
 }

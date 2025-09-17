@@ -18,7 +18,7 @@ import com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter;
 import com.ArduinoFactory.androidstudio.favoris.Page_Favoris;
 import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
 import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
-import com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours;
+import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;

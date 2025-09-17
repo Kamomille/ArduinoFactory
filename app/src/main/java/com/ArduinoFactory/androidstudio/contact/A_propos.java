@@ -47,35 +47,20 @@ public class A_propos extends AppCompatActivity {
 
         TextView lien = findViewById(R.id.lien);
         lien.setPaintFlags(lien.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        lien.setOnClickListener(v -> openlien());
+        lien.setOnClickListener(v -> openUrl(getString(R.string.lien_url)));
 
         TextView youtube = findViewById(R.id.youtube);
         youtube.setPaintFlags(youtube.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        youtube.setOnClickListener(v -> openyoutube());
+        youtube.setOnClickListener(v -> openUrl(getString(R.string.lien_youtube)));
 
         TextView instagram = findViewById(R.id.instragram);
         instagram.setPaintFlags(instagram.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        instagram.setOnClickListener(v -> openinstagram());
+        instagram.setOnClickListener(v -> openUrl(getString(R.string.lien_instagram)));
     }
 
-    public void openlien() {
-        String lien_site = getString(R.string.lien_url);
-        Intent lien_intent = new Intent(this, Page_Internet.class);
-        lien_intent.putExtra("li", lien_site);
-        startActivity(lien_intent);
-    }
-
-    public void openyoutube() {
-        String lien_youtube = getString(R.string.lien_youtube);
-        Intent youtube_intent = new Intent(this, Page_Internet.class);
-        youtube_intent.putExtra("yt", lien_youtube);
-        startActivity(youtube_intent);
-    }
-
-    public void openinstagram() {
-        String lien_instagram = getString(R.string.lien_instagram);
-        Intent instagram_intent = new Intent(this, Page_Internet.class);
-        instagram_intent.putExtra("it", lien_instagram);
-        startActivity(instagram_intent);
+    private void openUrl(String url) {
+        Intent intent = new Intent(this, Page_Internet.class);
+        intent.putExtra("url", url);
+        startActivity(intent);
     }
 }

@@ -36,7 +36,6 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.ArduinoFactory.androidstudio.R;
-import com.ArduinoFactory.androidstudio.pages.Page_Outils;
 
 import java.io.IOException;
 //import java.io.InputStream;

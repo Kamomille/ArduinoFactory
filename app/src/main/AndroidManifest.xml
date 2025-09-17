@@ -39,7 +39,7 @@
             android:label="Favoris"
             android:value=".MainActivity" />
         <activity
-            android:name="com.ArduinoFactory.androidstudio.pages.Page_Parametre"
+            android:name="com.ArduinoFactory.androidstudio.nouveaute.Page_Parametre"
             android:label="Paramètre">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -51,31 +51,31 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande_tuto"
             android:label="Télécommande">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_resistance"
             android:label="Résistance">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants"
             android:label="Reconnaissance composants (IA)">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Outils" />
+                android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.pages.Page_Outils"
+            android:name="com.ArduinoFactory.androidstudio.outils.Page_Outils"
             android:label="Outils">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -94,36 +94,36 @@
             android:label="Contactez-nous">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Contact" />
+                android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.A_propos"
             android:label="A propos">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Contact" />
+                android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.pages.Page_Contact"
+            android:name="com.ArduinoFactory.androidstudio.contact.Page_Contact"
             android:label="Contact">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours"
+            android:name="com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.pages.Cours"
+            android:name="com.ArduinoFactory.androidstudio.cours.Cours"
             android:label="Cours"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.pages.Page_Menu_Cours" />
+                android:value="com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours" />
         </activity>
 
         <activity
@@ -137,7 +137,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.ArduinoFactory.androidstudio.NotificationService"
+        <service android:name="com.ArduinoFactory.androidstudio.nouveaute.NotificationService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
