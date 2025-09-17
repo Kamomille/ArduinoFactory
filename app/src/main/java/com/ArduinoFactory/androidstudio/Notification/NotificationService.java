@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio.nouveaute;
+package com.ArduinoFactory.androidstudio.Notification;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;

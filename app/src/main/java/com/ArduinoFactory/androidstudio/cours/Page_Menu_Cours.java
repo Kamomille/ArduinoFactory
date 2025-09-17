@@ -14,11 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ArduinoFactory.androidstudio.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
@@ -46,6 +44,7 @@ public class Page_Menu_Cours extends AppCompatActivity {
 
         // bouton retour
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         layout = findViewById(R.id.layout);
@@ -56,27 +55,24 @@ public class Page_Menu_Cours extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         document=db.collection("Cours").document("coffret");
         db.collection("Cours").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                .addOnSuccessListener(queryDocumentSnapshots -> {
 
-                        if (!queryDocumentSnapshots.isEmpty()) {
+                    if (!queryDocumentSnapshots.isEmpty()) {
 
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
 
-                            for (DocumentSnapshot d : list) {
-                                addButton(d.getId());
+                        for (DocumentSnapshot d : list) {
+                            addButton(d.getId());
 
-                            }
                         }
                     }
-                } );
+                });
 
     }
 
     public void onClick(View view){
 
-        View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
+        @SuppressLint("InflateParams") View layout2= getLayoutInflater().inflate(R.layout.activity_page__menu_cours_row_add,null, false);
         index = layout.indexOfChild(view);
 
         if(stock==null){

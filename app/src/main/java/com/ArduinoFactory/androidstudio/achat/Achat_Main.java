@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ArduinoFactory.androidstudio.Page_Internet;
+import com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
 
 import java.util.ArrayList;

@@ -9,7 +9,7 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.ArduinoFactory.androidstudio.Page_Internet;
+import com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
 
 public class Outils_telecommande_tuto extends AppCompatActivity {

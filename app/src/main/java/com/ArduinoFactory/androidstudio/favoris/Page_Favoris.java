@@ -10,11 +10,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.ArduinoFactory.androidstudio.MainActivity;
+import com.ArduinoFactory.androidstudio.page_principal.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.achat.RecyclerItemClickListener;
 import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
-import com.ArduinoFactory.androidstudio.nouveaute.Page_Notification;
+import com.ArduinoFactory.androidstudio.Notification.Page_Notification;
 import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

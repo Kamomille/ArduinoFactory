@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio.nouveaute;
+package com.ArduinoFactory.androidstudio.Notification;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.ArduinoFactory.androidstudio.MainActivity;
+import com.ArduinoFactory.androidstudio.page_principal.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.achat.RecyclerItemClickListener;
 import com.ArduinoFactory.androidstudio.favoris.Favoris_Data;

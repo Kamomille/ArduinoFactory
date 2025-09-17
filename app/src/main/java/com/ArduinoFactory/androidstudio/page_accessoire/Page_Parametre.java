@@ -1,18 +1,18 @@
-package com.ArduinoFactory.androidstudio.nouveaute;
+package com.ArduinoFactory.androidstudio.page_accessoire;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.EditTextPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.ArduinoFactory.androidstudio.MainActivity;
-import com.ArduinoFactory.androidstudio.Page_Internet;
+import com.ArduinoFactory.androidstudio.page_principal.MainActivity;
 import com.ArduinoFactory.androidstudio.R;
 
 public class Page_Parametre extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class Page_Parametre extends AppCompatActivity {
         }
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
@@ -54,15 +54,12 @@ public class Page_Parametre extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
             Preference button = findPreference(getString(R.string.myCoolButton));
-            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity() , Page_Internet.class);
-                    intent.putExtra("url","https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&gl=US");
-                    startActivity(intent);
-                   return true;
-                }
-
+            assert button != null;
+            button.setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(getActivity() , Page_Internet.class);
+                intent.putExtra("url","https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&gl=US");
+                startActivity(intent);
+               return true;
             });
         }
 

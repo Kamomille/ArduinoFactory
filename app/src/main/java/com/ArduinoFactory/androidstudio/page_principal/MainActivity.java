@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio;
+package com.ArduinoFactory.androidstudio.page_principal;
 
 import android.content.Intent;
 import android.media.AudioAttributes;
@@ -12,13 +12,14 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ArduinoFactory.androidstudio.R;
 import com.ArduinoFactory.androidstudio.achat.Achat_Main;
 import com.ArduinoFactory.androidstudio.favoris.Page_Favoris;
-import com.ArduinoFactory.androidstudio.nouveaute.Page_Notification;
+import com.ArduinoFactory.androidstudio.Notification.Page_Notification;
 import com.ArduinoFactory.androidstudio.contact.Page_Contact;
 import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
 import com.ArduinoFactory.androidstudio.outils.Page_Outils;
-import com.ArduinoFactory.androidstudio.nouveaute.Page_Parametre;
+import com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

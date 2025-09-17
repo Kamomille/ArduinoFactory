@@ -25,13 +25,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
         <activity android:name="com.ArduinoFactory.androidstudio.cours.Onglets_cours"></activity>
-        <activity android:name="com.ArduinoFactory.androidstudio.Page_Internet">
+        <activity android:name="com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.nouveaute.Page_Notification"
+            android:name="com.ArduinoFactory.androidstudio.Notification.Page_Notification"
             android:label="Nouveauté"
             android:value=".MainActivity" />
         <activity
@@ -39,11 +39,11 @@
             android:label="Favoris"
             android:value=".MainActivity" />
         <activity
-            android:name="com.ArduinoFactory.androidstudio.nouveaute.Page_Parametre"
+            android:name="com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre"
             android:label="Paramètre">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande"
@@ -79,7 +79,7 @@
             android:label="Outils">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.achat.Achat_Main"
@@ -87,7 +87,7 @@
             android:label="Achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.Contactez_nous"
@@ -108,14 +108,14 @@
             android:label="Contact">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.MainActivity" />
+                android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Cours"
@@ -127,7 +127,7 @@
         </activity>
 
         <activity
-            android:name="com.ArduinoFactory.androidstudio.MainActivity"
+            android:name="com.ArduinoFactory.androidstudio.page_principal.MainActivity"
             android:label="Arduino Factory"
             android:exported="true">
             <intent-filter>
@@ -137,7 +137,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.ArduinoFactory.androidstudio.nouveaute.NotificationService"
+        <service android:name="com.ArduinoFactory.androidstudio.Notification.NotificationService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

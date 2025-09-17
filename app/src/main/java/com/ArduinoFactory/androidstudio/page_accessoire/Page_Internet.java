@@ -1,4 +1,4 @@
-package com.ArduinoFactory.androidstudio;
+package com.ArduinoFactory.androidstudio.page_accessoire;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ArduinoFactory.androidstudio.R;
 
 public class Page_Internet extends AppCompatActivity {
 

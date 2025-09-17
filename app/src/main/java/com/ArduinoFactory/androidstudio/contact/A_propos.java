@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.ArduinoFactory.androidstudio.Page_Internet;
+import com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
 
 public class A_propos extends AppCompatActivity {

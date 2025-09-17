@@ -1,4 +1,3 @@
-
 package com.ArduinoFactory.androidstudio.outils;
 
 import androidx.appcompat.app.ActionBar;
@@ -9,21 +8,15 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import com.ArduinoFactory.androidstudio.R;
 
 public class Page_Outils extends AppCompatActivity {
 
-    private LinearLayout outil_resistance, outil_telecommande, outil_ia;
     private SoundPool soundPool;
-    private AudioManager audioManager;
-    // Maximumn sound stream.
     private static final int MAX_STREAMS = 100;
-    // Stream type.
     private static final int streamType = AudioManager.STREAM_MUSIC;
     private boolean loaded;
     private int soundIdBouton;
@@ -36,92 +29,65 @@ public class Page_Outils extends AppCompatActivity {
         setContentView(R.layout.activity_page__outils);
 
         // bouton retour
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
-        // AudioManager audio settings for adjusting the volume
-        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
-        // Current volumn Index of particular stream type.
+        // Gestion du volume
+        AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         float currentVolumeIndex = (float) audioManager.getStreamVolume(streamType);
-
-        // Get the maximum volume index for a particular stream type.
         float maxVolumeIndex = (float) audioManager.getStreamMaxVolume(streamType);
-
-        // Volumn (0 --> 1)
         this.volume = currentVolumeIndex / maxVolumeIndex;
-
-        // Suggests an audio stream whose volume should be changed by
-        // the hardware volume controls.
         this.setVolumeControlStream(streamType);
 
-        // For Android SDK >= 21
-        if (Build.VERSION.SDK_INT >= 21) {
-            AudioAttributes audioAttrib = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_GAME)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
+        // ✅ Utilisation de SoundPool.Builder (plus besoin de check SDK_INT)
+        AudioAttributes audioAttrib = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
 
-            SoundPool.Builder builder = new SoundPool.Builder();
-            builder.setAudioAttributes(audioAttrib).setMaxStreams(MAX_STREAMS);
+        this.soundPool = new SoundPool.Builder()
+                .setAudioAttributes(audioAttrib)
+                .setMaxStreams(MAX_STREAMS)
+                .build();
 
-            this.soundPool = builder.build();
-        }
-        // for Android SDK < 21
-        else {
-            // SoundPool(int maxStreams, int streamType, int srcQuality)
-            this.soundPool = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
-        }
-
-        // When Sound Pool load complete.
-        this.soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                loaded = true;
-            }
-        });
-
-        // Load sound file (destroy.wav) into SoundPool.
+        this.soundPool.setOnLoadCompleteListener((soundPool, sampleId, status) -> loaded = true);
         this.soundIdBouton = this.soundPool.load(this, R.raw.son_bouton, 1);
 
+        // Boutons
+        LinearLayout outil_resistance = findViewById(R.id.outil_resistance);
+        outil_resistance.setOnClickListener(v -> openActivtity_outilsResistance());
 
+        LinearLayout outil_telecommande = findViewById(R.id.outil_telecommande);
+        outil_telecommande.setOnClickListener(v -> openActivtity_outilsTelecommande());
 
-        outil_resistance = (LinearLayout) findViewById(R.id.outil_resistance);
-        outil_resistance.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsResistance(); } } );
-
-       outil_telecommande = (LinearLayout) findViewById(R.id.outil_telecommande);
-        outil_telecommande.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsTelecommande(); } } );
-
-        outil_ia = (LinearLayout) findViewById(R.id.outil_ia);
-        outil_ia.setOnClickListener(new View.OnClickListener(){
-            @Override public void onClick(View v){ openActivtity_outilsIA(); } } );
+        LinearLayout outil_ia = findViewById(R.id.outil_ia);
+        outil_ia.setOnClickListener(v -> openActivtity_outilsIA());
     }
 
-
-    public void openActivtity_outilsResistance(){
+    public void openActivtity_outilsResistance() {
         playSound();
-        Intent intent = new Intent(this, Outils_resistance.class);
-        startActivity(intent);
+        startActivity(new Intent(this, Outils_resistance.class));
     }
-    public void openActivtity_outilsTelecommande(){
+
+    public void openActivtity_outilsTelecommande() {
         playSound();
         Intent intent = new Intent(this, Outils_telecommande.class);
-        intent.putExtra("af","1");
+        intent.putExtra("af", "1");
         startActivity(intent);
-    }
-    public void openActivtity_outilsIA(){
-        playSound();
-        Intent intent = new Intent(this, Outils_reconnaissance_composants.class);
-        startActivity(intent);
-    }
-    public void playSound()  {
-        if(loaded)  {
-            float leftVolumn = volume;
-            float rightVolumn = volume;
-            // Play sound of gunfire. Returns the ID of the new stream.
-            int streamId = this.soundPool.play(this.soundIdBouton,leftVolumn, rightVolumn, 1, 0, 1f);
-        }
     }
 
+    public void openActivtity_outilsIA() {
+        playSound();
+        startActivity(new Intent(this, Outils_reconnaissance_composants.class));
+    }
+
+    public void playSound() {
+        if (loaded) {
+            float leftVolume = volume;
+            float rightVolume = volume;
+            // ✅ Plus besoin de variable streamId
+            this.soundPool.play(this.soundIdBouton, leftVolume, rightVolume, 1, 0, 1f);
+        }
+    }
 }
