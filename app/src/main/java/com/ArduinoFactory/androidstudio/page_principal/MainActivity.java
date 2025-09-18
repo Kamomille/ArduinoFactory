@@ -17,7 +17,7 @@ import com.ArduinoFactory.androidstudio.achat.Achat_Main;
 import com.ArduinoFactory.androidstudio.favoris.Page_Favoris;
 import com.ArduinoFactory.androidstudio.Notification.Page_Notification;
 import com.ArduinoFactory.androidstudio.contact.Page_Contact;
-import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
+import com.ArduinoFactory.androidstudio.cours.Cours_Main;
 import com.ArduinoFactory.androidstudio.outils.Page_Outils;
 import com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivtity_cours() {
-        startActivity(new Intent(this, Page_Menu_Cours.class));
+        startActivity(new Intent(this, Cours_Main.class));
     }
 
     public void openActivtity_achat() {

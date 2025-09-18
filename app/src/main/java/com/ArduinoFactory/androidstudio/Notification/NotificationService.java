@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.ArduinoFactory.androidstudio.R;
-import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
+import com.ArduinoFactory.androidstudio.cours.Cours_Main;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -40,7 +40,7 @@ public class NotificationService extends FirebaseMessagingService {
     }
 
     private void createNotification() {
-        Intent intent = new Intent(this, Page_Menu_Cours.class);
+        Intent intent = new Intent(this, Cours_Main.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         // ✅ Ajout du FLAG_IMMUTABLE ici

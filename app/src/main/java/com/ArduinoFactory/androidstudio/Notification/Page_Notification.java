@@ -18,7 +18,7 @@ import com.ArduinoFactory.androidstudio.favoris.Favoris_RecyclerViewAdapter;
 import com.ArduinoFactory.androidstudio.favoris.Page_Favoris;
 import com.ArduinoFactory.androidstudio.outils.Outils_resistance;
 import com.ArduinoFactory.androidstudio.outils.Outils_telecommande;
-import com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours;
+import com.ArduinoFactory.androidstudio.cours.Cours_Main;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -109,7 +109,7 @@ public class Page_Notification extends AppCompatActivity {
                 startActivity(new Intent(this, Outils_telecommande.class));
                 break;
             case "page_accueil_cours":
-                startActivity(new Intent(this, Page_Menu_Cours.class));
+                startActivity(new Intent(this, Cours_Main.class));
                 break;
         }
     }

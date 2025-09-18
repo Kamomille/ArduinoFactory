@@ -111,19 +111,19 @@
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours"
+            android:name="com.ArduinoFactory.androidstudio.cours.Cours_Main"
             android:label="Cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
         <activity
-            android:name="com.ArduinoFactory.androidstudio.cours.Cours"
+            android:name="com.ArduinoFactory.androidstudio.cours.Cours_Detail"
             android:label="Cours"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ArduinoFactory.androidstudio.cours.Page_Menu_Cours" />
+                android:value="com.ArduinoFactory.androidstudio.cours.Cours_Main" />
         </activity>
 
         <activity

@@ -22,7 +22,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class Cours extends AppCompatActivity {
+public class Cours_Detail extends AppCompatActivity {
 
     TabLayout.Tab initTab;
 
@@ -45,7 +45,7 @@ public class Cours extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page__cours);
+        setContentView(R.layout.activity_cours_detail);
 
         // bouton retour
         ActionBar actionBar = getSupportActionBar();
@@ -70,43 +70,11 @@ public class Cours extends AppCompatActivity {
         LinearLayout layout_des = findViewById(R.id.layout_des);
         LinearLayout layout_def = findViewById(R.id.layout_def);
 
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        layout_def.setVisibility(View.VISIBLE);
+        layout_des.setVisibility(View.VISIBLE);
+        layout_schema.setVisibility(View.VISIBLE);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tabLayout) {
-                position = tabLayout.getPosition();
 
-                switch (position) {
-                    case 0:
-                        layout_def.setVisibility(View.VISIBLE);
-                        layout_des.setVisibility(View.INVISIBLE);
-                        layout_schema.setVisibility(View.INVISIBLE);
-                        return;
-                    case 1:
-                        layout_def.setVisibility(View.INVISIBLE);
-                        layout_des.setVisibility(View.VISIBLE);
-                        layout_schema.setVisibility(View.INVISIBLE);
-                        return;
-                    case 2:
-                        layout_def.setVisibility(View.INVISIBLE);
-                        layout_des.setVisibility(View.INVISIBLE);
-                        layout_schema.setVisibility(View.VISIBLE);
-                        return;
-                    default:
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tabLayout) { }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tabLayout) { }
-        });
-
-        initTab = tabLayout.getTabAt(position);
-        assert initTab != null;
-        initTab.select();
 
         db.collection("Cours").document(extraText).addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @SuppressLint("DiscouragedApi")
@@ -119,17 +87,17 @@ public class Cours extends AppCompatActivity {
 
                 // ✅ Image Déf
                 id = resources.getIdentifier(value.getString("imageDef"), "drawable", getPackageName());
-                Drawable drawable = ContextCompat.getDrawable(Cours.this, id);
+                Drawable drawable = ContextCompat.getDrawable(Cours_Detail.this, id);
                 imageDef.setImageDrawable(drawable);
 
                 // ✅ Image Des
                 id = resources.getIdentifier(value.getString("imageDes"), "drawable", getPackageName());
-                drawable = ContextCompat.getDrawable(Cours.this, id);
+                drawable = ContextCompat.getDrawable(Cours_Detail.this, id);
                 imageDes.setImageDrawable(drawable);
 
                 // ✅ Image Câblage
                 id = resources.getIdentifier(value.getString("imageCablage"), "drawable", getPackageName());
-                drawable = ContextCompat.getDrawable(Cours.this, id);
+                drawable = ContextCompat.getDrawable(Cours_Detail.this, id);
                 imageCablage.setImageDrawable(drawable);
             }
         });

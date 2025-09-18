@@ -1,129 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".page_principal.MainActivity"
+    android:background="#F4FCFE"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".cours.Onglets_cours">
+    android:layout_margin="30dp"
+    android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <!-- RecyclerView sans aucun espace -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCours"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
-        app:tabIndicatorColor="#0B789C"
-        app:tabSelectedTextColor="#0B789C"
-        app:tabTextColor="#B3B3B3">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/Def"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cours_definition" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/Des"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cours_description" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/Cablage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cours_schema" />
-    </com.google.android.material.tabs.TabLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_def"
-        android:layout_width="309dp"
-        android:layout_height="415dp"
-        android:orientation="vertical"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617">
-
-        <TextView
-            android:id="@+id/TextDef"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#000000"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:id="@+id/imageDef"
-            android:layout_width="wrap_content"
-            android:layout_height="225dp"
-            android:contentDescription="@string/cours_schema"
-            android:scaleType="fitCenter"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/telecommande_tuto_cablage" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_des"
-        android:layout_width="309dp"
-        android:layout_height="415dp"
-        android:orientation="vertical"
-        android:visibility="invisible"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617"
-        tools:visibility="invisible">
-
-        <TextView
-            android:id="@+id/TextDes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cours_textvie"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#000000"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:id="@+id/imageDes"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:contentDescription="@string/cours_definition"
-            android:scaleType="fitCenter"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/telecommande_tuto_cablage" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_schema"
-        android:layout_width="309dp"
-        android:layout_height="415dp"
-        android:orientation="vertical"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617"
-        tools:visibility="invisible">
-
-        <ImageView
-            android:id="@+id/imageCablage"
-            android:layout_width="match_parent"
-            android:layout_height="225dp"
-            android:contentDescription="@string/cours_definition"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/telecommande_tuto_cablage" />
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+</RelativeLayout>
