@@ -258,6 +258,23 @@
         <string name="youtube_text">▶️ YouTube</string>
         <string name="instagram_text">📸 Instagram</string>
 
+    <string name="carte_arduino_cours">Carte Arduino</string>
+    <string name="kit_demarrage_cours">Kit de démarrage</string>
+    <string name="arduino_ide_cours">Arduino IDE</string>
+    <string name="schema_arduino_cours">Schema Arduino</string>
+    <string name="librairie_cours">Librairie</string>
+    <string name="led_cours">La LED</string>
+    <string name="resistance_cours">Resistance</string>
+    <string name="breadboard_cours">Breadboard</string>
+    <string name="bouton_poussoir_cours">Bouton poussoir</string>
+    <string name="capteur_distance_cours">Capteur distance</string>
+    <string name="moteur_dc_cours">Moteur courant continu</string>
+    <string name="moteur_pas_cours">Moteur pas à pas</string>
+    <string name="joystick_cours">Le Joystick</string>
+    <string name="ecran_lcd_cours">Ecran LCD</string>
+    <string name="buzzer_cours">Buzzer</string>
+    <string name="module_rtc_cours">Module RTC</string>
+
 
 
 </resources>

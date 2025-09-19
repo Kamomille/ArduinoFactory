@@ -45,24 +45,24 @@ public class Cours_Main extends AppCompatActivity {
 
     private void buildData() {
         data = new ArrayList<>();
-        // Ajouter ici tes composants et leurs images drawable
-        data.add(new CoursData("Carte Arduino", R.drawable.achat_carte_arduino));
-        data.add(new CoursData("Kit de démarrage", R.drawable.achat_kit));
-        data.add(new CoursData("Arduino IDE", R.drawable.arduino_ide));
-        data.add(new CoursData("Schema Arduino", R.drawable.schema_arduino));
-        data.add(new CoursData("Librairie", R.drawable.librairie_arduino));
-        data.add(new CoursData("La LED", R.drawable.achat_led));
-        data.add(new CoursData("Resistance", R.drawable.resistance));
-        data.add(new CoursData("Breadboard", R.drawable.breadboard_image));
-        data.add(new CoursData("Bouton poussoir", R.drawable.achat_bouton));
-        data.add(new CoursData("Capteur distance", R.drawable.achat_distance));
-        data.add(new CoursData("Moteur courant continu", R.drawable.achat_moteur_dc));
-        data.add(new CoursData("Moteur pas à pas", R.drawable.moteur_pas));
-        data.add(new CoursData("Le Joystick", R.drawable.joystick));
-        data.add(new CoursData("Ecran LCD", R.drawable.ecran_lcd));
-        data.add(new CoursData("Buzzer", R.drawable.achat_buzzer));
-        data.add(new CoursData("Module RTC", R.drawable.module_rtc));
-        // ... continue selon tes composants
+
+// Ajouter ici tes composants et leurs images drawable
+        data.add(new CoursData(getString(R.string.carte_arduino_cours), R.drawable.achat_carte_arduino));
+        data.add(new CoursData(getString(R.string.kit_demarrage_cours), R.drawable.achat_kit));
+        data.add(new CoursData(getString(R.string.arduino_ide_cours), R.drawable.arduino_ide));
+        data.add(new CoursData(getString(R.string.schema_arduino_cours), R.drawable.schema_arduino));
+        data.add(new CoursData(getString(R.string.librairie_cours), R.drawable.librairie_arduino));
+        data.add(new CoursData(getString(R.string.led_cours), R.drawable.achat_led));
+        data.add(new CoursData(getString(R.string.resistance_cours), R.drawable.resistance));
+        data.add(new CoursData(getString(R.string.breadboard_cours), R.drawable.breadboard_image));
+        data.add(new CoursData(getString(R.string.bouton_poussoir_cours), R.drawable.achat_bouton));
+        data.add(new CoursData(getString(R.string.capteur_distance_cours), R.drawable.achat_distance));
+        data.add(new CoursData(getString(R.string.moteur_dc_cours), R.drawable.achat_moteur_dc));
+        data.add(new CoursData(getString(R.string.moteur_pas_cours), R.drawable.moteur_pas));
+        data.add(new CoursData(getString(R.string.joystick_cours), R.drawable.joystick));
+        data.add(new CoursData(getString(R.string.ecran_lcd_cours), R.drawable.ecran_lcd));
+        data.add(new CoursData(getString(R.string.buzzer_cours), R.drawable.achat_buzzer));
+        data.add(new CoursData(getString(R.string.module_rtc_cours), R.drawable.module_rtc));
     }
 
     private void openCoursDetail(CoursData item) {
