@@ -7,14 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="60dp" >
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal">
 
         <!-- Layout Définition -->
         <LinearLayout
             android:id="@+id/layout_def"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
             <TextView
                 android:id="@+id/TextDef"
                 android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:paddingBottom="16dp">
             <TextView
                 android:id="@+id/TextDes"
                 android:layout_width="wrap_content"
@@ -52,13 +55,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:paddingBottom="16dp">
             <ImageView
                 android:id="@+id/imageCablage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitCenter"/>
+
         </LinearLayout>
 
+        <!-- Image visible en bas -->
+        <ImageView
+            android:id="@+id/imageBottom"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
+
 </ScrollView>

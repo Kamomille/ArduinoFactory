@@ -41,7 +41,7 @@ public class Cours_Detail extends AppCompatActivity {
     int id;
     int position;
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint({"CutPasteId", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
