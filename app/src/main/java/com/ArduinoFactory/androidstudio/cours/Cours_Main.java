@@ -5,18 +5,13 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ArduinoFactory.androidstudio.R;
-import com.ArduinoFactory.androidstudio.achat.Achat_Data;
-
 import java.util.ArrayList;
 
 public class Cours_Main extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private CoursAdapter adapter;
     private ArrayList<CoursData> data;
 
     @Override
@@ -28,18 +23,13 @@ public class Cours_Main extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
-        recyclerView = findViewById(R.id.recyclerViewCours);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewCours);
 
         // Grille 2 colonnes
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
-        /*
-        // Ajoute un petit espacement uniforme entre les items
-        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.recycler_spacing);
-        recyclerView.addItemDecoration(new SpacingItemDecoration(2, spacingInPixels, true));
-        */
         buildData();
-        adapter = new CoursAdapter(data, this::openCoursDetail);
+        CoursAdapter adapter = new CoursAdapter(data, this::openCoursDetail);
         recyclerView.setAdapter(adapter);
     }
 
