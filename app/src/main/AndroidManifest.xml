@@ -17,7 +17,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Arduino Factory"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
@@ -36,17 +36,17 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.Notification.Page_Notification"
-            android:label="Nouveauté"
+            android:label="@string/label_notification"
             android:value=".MainActivity" />
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.favoris.Page_Favoris"
-            android:label="Favoris"
+            android:label="@string/label_favoris"
             android:value=".MainActivity" />
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre"
-            android:label="Paramètre">
+            android:label="@string/label_parametre">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
@@ -54,7 +54,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande"
-            android:label="Télécommande"
+            android:label="@string/label_telecommande"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,7 +63,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande_tuto"
-            android:label="Télécommande">
+            android:label="@string/label_telecommande">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
@@ -71,7 +71,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_resistance"
-            android:label="Résistance">
+            android:label="@string/label_resistance">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
@@ -79,7 +79,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants"
-            android:label="Reconnaissance composants (IA)">
+            android:label="@string/label_reconnaissance">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
@@ -87,7 +87,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Page_Outils"
-            android:label="Outils">
+            android:label="@string/label_outils">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
@@ -96,7 +96,7 @@
         <activity
             android:name="com.ArduinoFactory.androidstudio.achat.Achat_Main"
             android:configChanges="orientation|screenSize"
-            android:label="Achat">
+            android:label="@string/label_achat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
@@ -104,7 +104,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.Contactez_nous"
-            android:label="Contactez-nous">
+            android:label="@string/label_contactez_nous">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
@@ -112,7 +112,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.A_propos"
-            android:label="A propos">
+            android:label="@string/label_a_propos">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
@@ -120,7 +120,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.Page_Contact"
-            android:label="Contact">
+            android:label="@string/label_contact">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
@@ -128,7 +128,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Cours_Main"
-            android:label="Cours">
+            android:label="@string/label_cours">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
@@ -136,7 +136,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Cours_Detail"
-            android:label="Cours"
+            android:label="@string/label_cours"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -145,7 +145,7 @@
 
         <activity
             android:name="com.ArduinoFactory.androidstudio.page_principal.MainActivity"
-            android:label="Arduino Factory"
+            android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -276,6 +276,24 @@
     <string name="myCoolButton">"Rate button"</string>
 
 
+    <string name="app_name">Arduino Factory</string>
+    <string name="label_notification">Novedades</string>
+    <string name="label_favoris">Favoritos</string>
+    <string name="label_parametre">Configuración</string>
+    <string name="label_telecommande">Control Remoto</string>
+    <string name="label_resistance">Resistencia</string>
+    <string name="label_reconnaissance">Reconocimiento de Componentes (IA)</string>
+    <string name="label_outils">Herramientas</string>
+    <string name="label_achat">Compra</string>
+    <string name="label_contactez_nous">Contáctanos</string>
+    <string name="label_a_propos">Acerca de</string>
+    <string name="label_contact">Contacto</string>
+    <string name="label_cours">Cursos</string>
+
+
+
+
+
 
 
 </resources>
