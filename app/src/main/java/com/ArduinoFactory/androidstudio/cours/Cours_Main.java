@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 public class Cours_Main extends AppCompatActivity {
@@ -18,6 +22,12 @@ public class Cours_Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__cours);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        AdView mAdView = findViewById(R.id.adView5);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         // Affiche le bouton retour dans la barre d’action
         ActionBar actionBar = getSupportActionBar();

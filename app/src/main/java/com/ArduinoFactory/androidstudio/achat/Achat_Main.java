@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 
@@ -32,6 +35,12 @@ public class Achat_Main extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         buildRecyclerView();
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        AdView mAdView = findViewById(R.id.adView4);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);

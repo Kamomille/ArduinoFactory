@@ -12,8 +12,8 @@ android {
         applicationId "com.ArduinoFactory.androidstudio"
         minSdk 35
         targetSdk 35
-        versionCode 3
-        versionName "3.0"
+        versionCode 4
+        versionName '4.0'
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,30 +37,31 @@ android {
 dependencies {
 
     //noinspection GradleCompatible
-    api 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
     //noinspection GradleCompatible
-    api 'com.android.support:design:26.1.0'
-    api 'androidx.appcompat:appcompat:1.2.0'
-    api 'com.google.android.material:material:1.3.0'
-    api 'androidx.constraintlayout:constraintlayout:2.0.4'
-    api 'androidx.vectordrawable:vectordrawable:1.1.0'
-    api 'androidx.navigation:navigation-fragment:2.3.4'
-    api 'androidx.navigation:navigation-ui:2.3.4'
-    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    api'androidx.preference:preference:1.1.1'
+    api 'com.android.support:design:28.0.0'
+    api 'androidx.appcompat:appcompat:1.7.1'
+    api 'com.google.android.material:material:1.13.0'
+    api 'androidx.constraintlayout:constraintlayout:2.2.1'
+    api 'androidx.vectordrawable:vectordrawable:1.2.0'
+    api 'androidx.navigation:navigation-fragment:2.9.4'
+    api 'androidx.navigation:navigation-ui:2.9.4'
+    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.4'
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4'
+    api'androidx.preference:preference:1.2.1'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.google.firebase:firebase-messaging:23.1.1'
-    implementation 'com.google.firebase:firebase-storage:20.1.0'
-    implementation 'com.google.firebase:firebase-firestore:24.4.1'
-    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
-    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    api 'androidx.recyclerview:recyclerview:1.1.0'
-    api 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-messaging:25.0.1'
+    implementation 'com.google.firebase:firebase-storage:22.0.1'
+    implementation 'com.google.firebase:firebase-firestore:26.0.1'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.5.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.5.0'
+    implementation 'com.google.android.gms:play-services-ads:24.6.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    api 'androidx.recyclerview:recyclerview:1.4.0'
+    api 'com.google.firebase:firebase-auth:24.0.1'
 
 
 }

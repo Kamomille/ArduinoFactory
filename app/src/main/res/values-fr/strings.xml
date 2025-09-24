@@ -274,6 +274,7 @@
     <string name="ecran_lcd_cours">Ecran LCD</string>
     <string name="buzzer_cours">Buzzer</string>
     <string name="module_rtc_cours">Module RTC</string>
+    <string name="myCoolButton">"Note"</string>
 
 
 

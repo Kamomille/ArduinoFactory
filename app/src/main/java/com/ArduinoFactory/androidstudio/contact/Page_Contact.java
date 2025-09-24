@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 
 import com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet;
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class Page_Contact extends AppCompatActivity {
 
@@ -30,6 +32,10 @@ public class Page_Contact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__contact);
+
+        AdView mAdView = findViewById(R.id.adView7);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         // bouton retour ----------------------
         ActionBar actionBar = getSupportActionBar();

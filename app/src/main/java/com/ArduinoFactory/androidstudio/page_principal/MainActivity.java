@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import com.ArduinoFactory.androidstudio.contact.Page_Contact;
 import com.ArduinoFactory.androidstudio.cours.Cours_Main;
 import com.ArduinoFactory.androidstudio.outils.Page_Outils;
 import com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre;
+//import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         // Cacher la barre du haut
         ActionBar actionBar = getSupportActionBar();
@@ -166,3 +171,4 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 }
+

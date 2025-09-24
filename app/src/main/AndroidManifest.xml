@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:versionCode="2">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -13,10 +14,6 @@
     <uses-permission android:name="android.permission.CAMERA"
         tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
 
-    <meta-data
-        android:name="android.support.PARENT_ACTIVITY"
-        android:value=".MainActivity" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,20 +21,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudio">
-        <activity android:name="com.ArduinoFactory.androidstudio.cours.Onglets_cours"></activity>
+
+        <!-- ✅ App ID AdMob correctement placé -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6767741813773671~8110561634" />
+
+        <!-- Activities -->
         <activity android:name="com.ArduinoFactory.androidstudio.page_accessoire.Page_Internet">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.Notification.Page_Notification"
             android:label="Nouveauté"
             android:value=".MainActivity" />
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.favoris.Page_Favoris"
             android:label="Favoris"
             android:value=".MainActivity" />
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.page_accessoire.Page_Parametre"
             android:label="Paramètre">
@@ -45,6 +51,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande"
             android:label="Télécommande"
@@ -53,6 +60,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_telecommande_tuto"
             android:label="Télécommande">
@@ -60,6 +68,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_resistance"
             android:label="Résistance">
@@ -67,6 +76,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Outils_reconnaissance_composants"
             android:label="Reconnaissance composants (IA)">
@@ -74,6 +84,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.outils.Page_Outils" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.outils.Page_Outils"
             android:label="Outils">
@@ -81,6 +92,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.achat.Achat_Main"
             android:configChanges="orientation|screenSize"
@@ -89,6 +101,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.Contactez_nous"
             android:label="Contactez-nous">
@@ -96,6 +109,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.A_propos"
             android:label="A propos">
@@ -103,6 +117,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.contact.Page_Contact" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.contact.Page_Contact"
             android:label="Contact">
@@ -110,6 +125,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Cours_Main"
             android:label="Cours">
@@ -117,6 +133,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ArduinoFactory.androidstudio.page_principal.MainActivity" />
         </activity>
+
         <activity
             android:name="com.ArduinoFactory.androidstudio.cours.Cours_Detail"
             android:label="Cours"
@@ -132,17 +149,19 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <service android:name="com.ArduinoFactory.androidstudio.Notification.NotificationService"
+        <!-- Firebase messaging service -->
+        <service
+            android:name="com.ArduinoFactory.androidstudio.Notification.NotificationService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>

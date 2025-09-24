@@ -200,14 +200,14 @@
     <string name="cours_image_fonc">Cours image</string>
 
     <!-- Page IA XML -->
-    <string name="IA_image">page sur IA</string>
-    <string name="IA_aide">Aide</string>
-    <string name="IA_texte1">Notre IA reconnait les composants suivants:</string>
-    <string name="IA_texte2">7_segments, capteur_humidite, ecran_lcd, led, resistance, servo_moteur</string>
-    <string name="IA_texte3">Nous travaillons encore dessus pour vous fournir une version toujours plus performante.</string>
+    <string name="IA_image">Page about AI</string>
+    <string name="IA_aide">Help</string>
+    <string name="IA_texte1">Our AI recognizes the following components:</string>
+    <string name="IA_texte2">7-segment display, humidity sensor, LCD screen, LED, resistor, servo_motor</string>
+    <string name="IA_texte3">We’re still working on it to provide you with an even better version..</string>
 
     <!-- Page telecommande XML -->
-    <string name="telecommande_image">page sur le telecommande bluetooth</string>
+    <string name="telecommande_image">Bluetooth remote page</string>
     <string name="telecommande_bluetooth">Bluetooth</string>
     <string name="telecommande_0">0</string>
     <string name="telecommande_1">1</string>
@@ -235,7 +235,7 @@
     <string name="telecommande_deconnection">Disconnect</string>
     <string name="telecommande_changement">Change remote control</string>
     <string name="telecommande_tutoriel">Tutorial</string>
-    <string name="page_construction">Toutes les supers nouvauté  page en construction</string>
+    <string name="page_construction">All the great new features – page under construction</string>
     <string name="Texte">TextView</string>
 
     <!-- Page Preferences XML -->
@@ -247,18 +247,18 @@
     <string name="preference_version">Application Version</string>
 
 
-        <!-- Liens du livre Arduino -->
-        <string name="lien_livre">https://payhip.com/b/TArm2</string>
+    <!-- Liens du livre Arduino -->
+    <string name="lien_livre">https://payhip.com/b/TArm2</string>
 
-        <!-- Texte livre -->
-        <string name="livre_titre">📘 Our book to start Arduino!</string>
-        <string name="livre">We wrote a book about Arduino to help you start in the world of electronics. In our course, you will find lessons, tips, and many projects on Arduino to learn while having fun.</string>
-        <string name="liendulivre"> 👉 Book link (EN)</string>
-        <!-- Join us -->
-        <string name="join_us">🤝 Join us</string>
-        <string name="site_text">🌍 Our Website</string>
-        <string name="youtube_text">▶️ YouTube</string>
-        <string name="instagram_text">📸 Instagram</string>
+    <!-- Texte livre -->
+    <string name="livre_titre">📘 Our book to start Arduino!</string>
+    <string name="livre">We wrote a book about Arduino to help you start in the world of electronics. In our course, you will find lessons, tips, and many projects on Arduino to learn while having fun.</string>
+    <string name="liendulivre"> 👉 Book link (EN)</string>
+    <!-- Join us -->
+    <string name="join_us">🤝 Join us</string>
+    <string name="site_text">🌍 Our Website</string>
+    <string name="youtube_text">▶️ YouTube</string>
+    <string name="instagram_text">📸 Instagram</string>
 
     <string name="carte_arduino_cours">"Arduino card"</string>
     <string name="kit_demarrage_cours">"Starter kit"</string>
@@ -277,7 +277,7 @@
     <string name="buzzer_cours">"The Buzzer"</string>
     <string name="module_rtc_cours">"RTC module"</string>
 
-
+    <string name="myCoolButton">"Rate button"</string>
 
 
 </resources>

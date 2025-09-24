@@ -5,8 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4FCFE"
+    android:layout_marginTop="80dp"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".contact.Page_Contact">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6767741813773671/7075330493"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
     android:layout_width="match_parent"

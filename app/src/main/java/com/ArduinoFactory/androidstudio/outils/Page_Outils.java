@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class Page_Outils extends AppCompatActivity {
 
@@ -27,6 +30,12 @@ public class Page_Outils extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page__outils);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        AdView mAdView = findViewById(R.id.adView6);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         // bouton retour
         ActionBar actionBar = getSupportActionBar();

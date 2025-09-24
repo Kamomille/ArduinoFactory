@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".page_principal.MainActivity"
     android:background="#F4FCFE"
+    android:layout_marginTop="100dp"
     android:layout_width="match_parent"
-    android:layout_margin="30dp"
     android:layout_height="match_parent">
 
-    <!-- RecyclerView sans aucun espace -->
+    <!-- Bannière AdMob en haut -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6767741813773671/7075330493" />
+
+    <!-- RecyclerView placé en dessous de la bannière -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCours"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/adView5"
         android:padding="0dp"
         android:clipToPadding="false"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical" />
 </RelativeLayout>

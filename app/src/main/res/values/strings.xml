@@ -1,104 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Arduino Factory</string>
-    <string name="title_home">Accueil</string>
-    <string name="title_dashboard">Favoris</string>
-    <string name="title_news">Nouveauté</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Favorite</string>
+    <string name="title_news">New</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_activity_page__parametre" translatable="false">Page_Parametre</string>
-    <string name="myCoolButton" translatable="false">Page_Parametre</string>
-    <string name="mail" translatable="false">Page_Parametre</string>
-    <string name="propos" translatable="false">Page_Parametre</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header" translatable="false">Messages</string>
-    <string name="sync_header" translatable="false">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title" translatable="false">Your signature</string>
-    <string name="reply_title" translatable="false">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title" translatable="false">Sync email periodically</string>
-    <string name="attachment_title" translatable="false">Download incoming attachments</string>
-    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="title_activity_outils_telecommande_tuto" translatable="false">MainActivity</string>
-
-
-    <!-- ======================================================================================= -->
-    <!--                             Textes sur les pages de l'app                               -->
-    <!-- ======================================================================================= -->
-
-    <!-- Page Accueil -->
-    <string name="page_accueil_cours">Course</string>
-    <string name="page_accueil_outils">Tools</string>
-    <string name="page_accueil_achat">Purchases</string>
-    <string name="page_accueil_contact">Contact</string>
-
-
-    <!-- Page contact -->
-    <string name="page_contact_site_internet">Our web site</string>
-    <string name="page_contact_contactez_nous">Contact us</string>
-    <string name="page_contact_a_propos">About</string>
-
-
-    <!-- Page a propos -->
-    <string name="page_a_propos_title">Who are we ?</string>
-    <string name="page_a_propos_qui">We are 4 students from the Esme Sudria engineering school:</string>
-    <string name="page_a_propos_title_2">Join us</string>
-    <string name="page_a_propos_title_3">Thanks</string>
+    <string name="outils_ia_classification">Classified as:</string>
+    <string name="outils_ia_confidences">Confidences:</string>
     <string name="page_a_propos_merci">Thanks to our teacher Yves Benabou for his help</string>
-
-    <!-- Page Contactez nous -->
-    <string name="contactez_nous_prenom">First name:</string>
+    <string name="page_a_propos_title_3">Thanks</string>
+    <string name="page_a_propos_title_2">Join us</string>
+    <string name="page_a_propos_qui">We are 4 students from the Esme Sudria engineering school:</string>
+    <string name="page_a_propos_title">Who are we?</string>
     <string name="contactez_nous_nom">Name:</string>
-    <string name="contactez_nous_mail">Mail :</string>
-    <string name="contactez_nous_obj">Object :</string>
+    <string name="contactez_nous_prenom">First name:</string>
+    <string name="contactez_nous_mail">Mail:</string>
+    <string name="contactez_nous_obj">Object:</string>
     <string name="contactez_nous_message">Message :</string>
     <string name="contactez_nous_envoyer">Send</string>
-
-
-    <!-- ============================== Outils ================================================= -->
-
-    <!-- Page Outils -->
     <string name="page_outils_title_1">Resistance tools</string>
     <string name="page_outils_title_2">Remote control tools</string>
     <string name="page_outils_title_3">Artificial intelligence</string>
     <string name="page_outils_resistance">Stop the hassle of calculating the value of a resistor</string>
     <string name="page_outils_telecommande">Use a remote built into your phone</string>
     <string name="page_outils_ia">Our AI recognizes your Arduino components</string>
-
-
-    <!-- Page Outils résistance -->
-    <string name="resistance_tool_title">Resistance calculator</string>
+    <string name="page_accueil_cours">Course</string>
+    <string name="page_accueil_outils">Tools</string>
+    <string name="page_accueil_achat">Purchases</string>
+    <string name="page_accueil_contact">Contact</string>
+    <string name="resistance_tool_title">Calculation Resistance</string>
     <string name="resistance_4_anneaux">4 rings</string>
     <string name="resistance_5_anneaux">5 rings</string>
     <string name="resistance_6_anneaux">6 rings</string>
-    <string name="resistance_help">Which direction is the resistance?    The ring closest to the edge of the resistor is the first ring, and the last ring is closest to the center.</string>
-
-    <!-- Page Outils télécommande -->
+    <string name="resistance_help">Which direction is the resistance?   The ring closest to the edge of the resistor is the first ring, and the last ring is closest to the center.</string>
     <string name="telecommande_tuto_step_1">Step 1: buy a bluetooth module</string>
     <string name="telecommande_tuto_step_2">Step 2: upload the code to the Arduino board</string>
     <string name="telecommande_tuto_step_3">Step 3: wire the module</string>
     <string name="telecommande_tuto_step_4">Step 4: connect the module</string>
     <string name="telecommande_tuto_step_5">Step 5: access the remote control</string>
-
     <string name="telecommande_tuto_step_1_buy">Buy this unit</string>
     <string name="telecommande_tuto_step_2_copyPaste">Copy the code to Arduino, add the functions you want to operate the components of your choice</string>
     <string name="telecommande_tuto_step_2_seeCode">See the code to upload</string>
     <string name="telecommande_tuto_step_4_bluetooth">Activate your phone\'s bluetooth, pair the sensor in its settings</string>
     <string name="telecommande_tuto_step_5_bluetooth">In the remote control tools select the module in the list of bluetooth devices that is displayed</string>
+    <string name="page_contact_site_internet">Our web site</string>
+    <string name="page_contact_contactez_nous">Contact us</string>
+    <string name="page_contact_a_propos">About</string>
 
-    <!-- IA -->
-    <string name="outils_ia_classification">Classified as:</string>
-    <string name="outils_ia_confidences">Confidences:</string>
 
     <!-- Page A Propos -->
     <!-- Lien -->
-    <string name="lien_url">https://arduinofactory.fr/</string>
+    <string name="lien_url">https://arduinofactory.com/</string>
     <string name="lien_youtube">https://www.youtube.com/channel/UCXKbpmuVZV6h8B0Frr0dtxA</string>
     <string name="lien_instagram">https://www.instagram.com/arduino.factory/?hl=fr</string>
 
@@ -107,6 +58,7 @@
     <string name="nom2">• Cedric Chhunon</string>
     <string name="nom3">• Pierre Huruguen</string>
     <string name="nom4">• Julien Gouban</string>
+
 
     <!-- Page Achat -->
     <string name="lien_kit_elegoo">https://amzn.to/38Rlsl1</string>
@@ -137,99 +89,97 @@
     <string name="lien_module_wifi">https://amzn.to/3vDmPNY</string>
     <string name="lien_module_bluetooth">https://amzn.to/3tKZCI9</string>
 
-
-    <string name="kit_elegoo">Kit Elegoo</string>
-    <string name="carte_arduino">Carte Arduino</string>
-    <string name="capteur_distance">Capteur distance</string>
-    <string name="bouton_poussoir">Bouton poussoir</string>
-    <string name="resistance">Résistance</string>
+    <string name="kit_elegoo">Elegoo Kit</string>
+    <string name="carte_arduino">Arduino board</string>
+    <string name="capteur_distance">Distance sensor</string>
+    <string name="bouton_poussoir">Push button</string>
+    <string name="resistance">Resistance</string>
     <string name="joystick">Joystick</string>
-    <string name="capteur_son">Capteur de son</string>
+    <string name="capteur_son">Sound sensor</string>
     <string name="buzzer">Buzzer</string>
-    <string name="capteur_inclinaison">Capteur Inclinaison</string>
-    <string name="photoresistance">Photorésistance</string>
-    <string name="humidite">Humidité</string>
+    <string name="capteur_inclinaison">Tilt Sensor</string>
+    <string name="photoresistance">Photoresistor</string>
+    <string name="humidite">Humidity</string>
     <string name="motorshield">Motorshield</string>
-    <string name="carte_mega">Carte méga</string>
-    <string name="carte_nano">Carte nano</string>
-    <string name="carte_raspberry">Carte raspberry</string>
-    <string name="kit_raspberry">Kit raspberry</string>
-    <string name="machine_souder">Machine à souder</string>
-    <string name="etain">Étain</string>
-    <string name="kit_soudure">Kit soudure</string>
-    <string name="denudeur_fil">Dénudeur de fil</string>
-    <string name="moteur_dc">Moteur DC</string>
-    <string name="servomoteur">Servomoteur</string>
+    <string name="carte_mega">Mega Board</string>
+    <string name="carte_nano">Nano Board</string>
+    <string name="carte_raspberry">Raspberry Board</string>
+    <string name="kit_raspberry">Raspberry kit</string>
+    <string name="machine_souder">Welding machine</string>
+    <string name="etain">Tin</string>
+    <string name="kit_soudure">Welding kit</string>
+    <string name="denudeur_fil">Wire stripper</string>
+    <string name="moteur_dc">DC motor</string>
+    <string name="servomoteur">Servomotor</string>
     <string name="led">LED</string>
     <string name="breadboard">Breadboard</string>
     <string name="prototype">Prototype</string>
-    <string name="module_wifi">Module WiFi</string>
-    <string name="module_bluetooth">Module Bluetooth</string>
+    <string name="module_wifi">WiFi module</string>
+    <string name="module_bluetooth">Bluetooth module</string>
 
-    <!-- Page contactez-nous -->
-    <string name="hint_prenom">Entrer votre prénom</string>
-    <string name="hint_nom">Entrer votre nom</string>
-    <string name="hint_email">Email invalide</string>
-    <string name="hint_objet">Entrer votre objet</string>
-    <string name="hint_message">Entrer votre message</string>
+    !-- Page contactez-nous -->
+    <string name="hint_prenom">Enter your first name</string>
+    <string name="hint_nom">Enter your name</string>
+    <string name="hint_email">Invalid email</string>
+    <string name="hint_objet">Enter your object</string>
+    <string name="hint_message">Enter your message</string>
 
-    <string name="send_email_chooser_title">Envoi de email...</string>
+    <string name="send_email_chooser_title">Sending email...</string>
 
-    <string name="email_subject_label">Objet :</string>
-    <string name="email_message_label">Message :</string>
-    <string name="email_prenom_label">Prénom :</string>
-    <string name="email_nom_label">Nom :</string>
-    <string name="email_email_label">Email :</string>
+    <string name="email_subject_label">Object:</string>
+    <string name="email_message_label">Message:</string>
+    <string name="email_prenom_label">First name:</string>
+    <string name="email_nom_label">Name:</string>
+    <string name="email_email_label">Email:</string>
 
+    <!-- ... Liste composants IA reconnaissable ... -->
 
-        <!-- ... Liste composants IA reconnaissable ... -->
+    <string-array name="classes_array">
+        <item>7 segments</item>
+        <item>Humidity sensor</item>
+        <item>Lcd screen</item>
+        <item>Led</item>
+        <item>Resistance</item>
+        <item>Servomotor</item>
+    </string-array>
 
-        <string-array name="classes_array">
-            <item>7 segments</item>
-            <item>Capteur humidité</item>
-            <item>Ecran Lcd</item>
-            <item>Led</item>
-            <item>Résistance</item>
-            <item>Servo Moteur</item>
-        </string-array>
+    <!-- Page notification et page favoris ... -->
 
-    <!-- Page notification et page favoris -->
-
-    <string name="outil_resistance">Outils resistance</string>
-    <string name="outil_telecommande">Outils télécommande</string>
-    <string name="cours">Cours</string>
-    <string name="pas_de_favoris">Pas de favoris défini</string>
+    <string name="outil_resistance">Resistance tools</string>
+    <string name="outil_telecommande">Remote control tools</string>
+    <string name="cours">Courses</string>
+    <string name="pas_de_favoris">No favorites set</string>
 
 
     <!-- Page tutoriel telecommande -->
     <string name="url_amazon_telecommande">https://amzn.to/3tKZCI9</string>
-    <string name="url_code_telecommande">https://arduinofactory.fr/code-telecommande-bluetooth/</string>
+    <string name="url_code_telecommande">https://arduinofactory.com/bluetooth-remote-control-code/</string>
+
 
     <!-- Page resistance -->
-    <string name="premier_chiffre_significatif">1er chiffre significatif</string>
-    <string name="deuxieme_chiffre_significatif">2eme chiffre significatif</string>
-    <string name="troisieme_chiffre_significatif">3eme chiffre significatif</string>
-    <string name="mutiplicateur">multiplicateur</string>
-    <string name="tolerance">Tolérance</string>
+    <string name="premier_chiffre_significatif">1st significant digit</string>
+    <string name="deuxieme_chiffre_significatif">2nd significant digit</string>
+    <string name="troisieme_chiffre_significatif">3rd significant digit</string>
+    <string name="mutiplicateur">multiplier</string>
+    <string name="tolerance">Tolerance</string>
     <string name="TCR">TCR</string>
 
     <!-- Page telecommande bluetooth -->
-    <string name="interface_bluetooth">Aucune interface Bluetooth</string>
-    <string name="liste">Liste vide</string>
-    <string name="Appareil">Choisissez un appareil dans la liste</string>
-    <string name="connexion">Connexion en cours</string> Connecté
-    <string name="connexion_capteur_bluetooth">Connectez le capteur bluetooth</string>
-    <string name="deconnexion_capteur_bluetooth">Deconnexion capteur bluetooth</string> Connectez-vous d'abord au capteur Bluetooth
-    <string name="premiere_connexion_capteur_bluetooth">Connectez-vous au capteur Bluetooth</string>
-    <string name="rebrancher_capteur">Rebrancher le capteur et Réessayer</string>
-    <string name="erreur_write">Erreur dans writebyte</string>
-    <string name="echec_deconnexion">Echec Déconnexion</string>
+    <string name="interface_bluetooth">No Bluetooth interface</string>
+    <string name="liste">Empty list</string>
+    <string name="Appareil">Choose a device from the list</string>
+    <string name="connexion">Connection in progress</string>
+    <string name="connexion_capteur_bluetooth">Connection of the Bluetooth sensor</string>
+    <string name="deconnexion_capteur_bluetooth">Bluetooth sensor disconnected</string>
+    <string name="premiere_connexion_capteur_bluetooth">Fisrt connect to the Bluetooth sensor</string>
+    <string name="rebrancher_capteur">Reconnect the sensor and try again</string>
+    <string name="erreur_write">Error in writebyte</string>
+    <string name="echec_deconnexion">Failed to disconnect</string>
 
     <!-- Page A propos XML -->
     <string name="lien_arduino_xml">Arduino Factory</string>
     <string name="lien_youtube_xml">YouTube</string>
     <string name="lien_instagram_xml">Instagram</string>
-
 
     <!-- Page Accueil XML -->
     <string name="image_fond_description">Image de fond</string>
@@ -250,14 +200,14 @@
     <string name="cours_image_fonc">Cours image</string>
 
     <!-- Page IA XML -->
-    <string name="IA_image">page sur IA</string>
-    <string name="IA_aide">Aide</string>
-    <string name="IA_texte1">Notre IA reconnait les composants suivants:</string>
-    <string name="IA_texte2">7_segments, capteur_humidite, ecran_lcd, led, resistance, servo_moteur</string>
-    <string name="IA_texte3">Nous travaillons encore dessus pour vous fournir une version toujours plus performante.</string>
+    <string name="IA_image">Page about AI</string>
+    <string name="IA_aide">Help</string>
+    <string name="IA_texte1">Our AI recognizes the following components:</string>
+    <string name="IA_texte2">7-segment display, humidity sensor, LCD screen, LED, resistor, servo_motor</string>
+    <string name="IA_texte3">We’re still working on it to provide you with an even better version..</string>
 
     <!-- Page telecommande XML -->
-    <string name="telecommande_image">page sur le telecommande bluetooth</string>
+    <string name="telecommande_image">Bluetooth remote page</string>
     <string name="telecommande_bluetooth">Bluetooth</string>
     <string name="telecommande_0">0</string>
     <string name="telecommande_1">1</string>
@@ -271,68 +221,63 @@
     <string name="telecommande_9">9</string>
 
     <!-- Page cours XML -->
-    <string name="cours_definition">Définition</string>
-    <string name="cours_schema">Schéma</string>
+    <string name="cours_definition">Definition</string>
+    <string name="cours_schema">Schematic</string>
     <string name="cours_description">Description</string>
     <string name="cours_textvie">des des blabla bla bafrgtuyhfiqzeguihugyftyugyiugyuftyugihugyuftydrttyfuygiho gy fyfiyu yfyhkjvhv</string>
-    <string name="cours_schema_cablage">Schéma de cablâge</string>
+    <string name="cours_schema_cablage">Wiring diagram</string>
 
     <!-- Page barre menu XML -->
-    <string name="search">Recherche</string>
+    <string name="search">Search</string>
 
     <!-- Page barre menu telecommande XML -->
-    <string name="telecommande_home">Accueil</string>
-    <string name="telecommande_deconnection">Déconnection</string>
-    <string name="telecommande_changement">Changer de telécommande</string>
-    <string name="telecommande_tutoriel">Tutoriel</string>
-    <string name="page_construction">Toutes les supers nouvauté  page en construction</string>
+    <string name="telecommande_home">Home</string>
+    <string name="telecommande_deconnection">Disconnect</string>
+    <string name="telecommande_changement">Change remote control</string>
+    <string name="telecommande_tutoriel">Tutorial</string>
+    <string name="page_construction">All the great new features – page under construction</string>
     <string name="Texte">TextView</string>
 
     <!-- Page Preferences XML -->
-    <string name="preference_prenom">Votre Prénom</string>
-    <string name="preference_nom">Votre Nom</string>
-    <string name="preference_soutien">Soutenez nous</string>
-    <string name="preference_note">Noter notre application</string>
-    <string name="preference_information">Information  application</string>
-    <string name="preference_version">Version Application</string>
+    <string name="preference_prenom">Your First Name</string>
+    <string name="preference_nom">Your Last Name</string>
+    <string name="preference_soutien">Support us</string>
+    <string name="preference_note">Rate our application</string>
+    <string name="preference_information">App information</string>
+    <string name="preference_version">Application Version</string>
 
 
-    <string name="lien_livre">https://payhip.com/b/9Lx6b</string>
+    <!-- Liens du livre Arduino -->
+    <string name="lien_livre">https://payhip.com/b/TArm2</string>
 
     <!-- Texte livre -->
-    <string name="livre_titre">📘 Notre livre pour débuter sur Arduino !</string>
-
-    <string name="livre"> Nous avons écrit un livre sur Arduino pour vous aider à débuter dans le monde de l’électronique. Dans notre cours vous retrouverez des cours, des conseils et plein de projets sur Arduino pour apprendre en s’amusant.</string>
-
-    <string name="liendulivre"> 👉 Lien du livre (FR)</string>
-
+    <string name="livre_titre">📘 Our book to start Arduino!</string>
+    <string name="livre">We wrote a book about Arduino to help you start in the world of electronics. In our course, you will find lessons, tips, and many projects on Arduino to learn while having fun.</string>
+    <string name="liendulivre"> 👉 Book link (EN)</string>
     <!-- Join us -->
-    <string name="join_us">🤝 Rejoignez-nous</string>
-    <string name="site_text">🌍 Notre site</string>
+    <string name="join_us">🤝 Join us</string>
+    <string name="site_text">🌍 Our Website</string>
     <string name="youtube_text">▶️ YouTube</string>
     <string name="instagram_text">📸 Instagram</string>
 
-    <string name="carte_arduino_cours">Carte Arduino</string>
-    <string name="kit_demarrage_cours">Kit de démarrage</string>
-    <string name="arduino_ide_cours">Arduino IDE</string>
-    <string name="schema_arduino_cours">Schema Arduino</string>
-    <string name="librairie_cours">Librairie</string>
-    <string name="led_cours">La LED</string>
-    <string name="resistance_cours">Resistance</string>
-    <string name="breadboard_cours">Breadboard</string>
-    <string name="bouton_poussoir_cours">Bouton poussoir</string>
-    <string name="capteur_distance_cours">Capteur distance</string>
-    <string name="moteur_dc_cours">Moteur courant continu</string>
-    <string name="moteur_pas_cours">Moteur pas à pas</string>
-    <string name="joystick_cours">Le Joystick</string>
-    <string name="ecran_lcd_cours">Ecran LCD</string>
-    <string name="buzzer_cours">Buzzer</string>
-    <string name="module_rtc_cours">Module RTC</string>
+    <string name="carte_arduino_cours">"Arduino card"</string>
+    <string name="kit_demarrage_cours">"Starter kit"</string>
+    <string name="arduino_ide_cours">"The arduino IDE"</string>
+    <string name="schema_arduino_cours">"Arduino sketch"</string>
+    <string name="librairie_cours">"Library"</string>
+    <string name="led_cours">"The LED"</string>
+    <string name="resistance_cours">"Resistor"</string>
+    <string name="breadboard_cours">"The Breadboard"</string>
+    <string name="bouton_poussoir_cours">"Push button"</string>
+    <string name="capteur_distance_cours">"Distance sensor"</string>
+    <string name="moteur_dc_cours">"DC Motor"</string>
+    <string name="moteur_pas_cours">"Stepper Motor"</string>
+    <string name="joystick_cours">"Joystick"</string>
+    <string name="ecran_lcd_cours">"LCD Screen"</string>
+    <string name="buzzer_cours">"The Buzzer"</string>
+    <string name="module_rtc_cours">"RTC module"</string>
 
-
-
-
-
+    <string name="myCoolButton">"Rate button"</string>
 
 
 

@@ -36,6 +36,8 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
 //import java.io.InputStream;

@@ -16,6 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ArduinoFactory.androidstudio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -46,6 +49,20 @@ public class Cours_Detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cours_detail);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        AdView mAdView2 = findViewById(R.id.adView2);
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        mAdView2.loadAd(adRequest2);
+
+        AdView mAdView3 = findViewById(R.id.adView3);
+        AdRequest adRequest3 = new AdRequest.Builder().build();
+        mAdView3.loadAd(adRequest3);
 
         // bouton retour
         ActionBar actionBar = getSupportActionBar();

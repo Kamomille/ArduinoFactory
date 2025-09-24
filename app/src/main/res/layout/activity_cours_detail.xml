@@ -1,14 +1,23 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:layout_marginTop="80dp"> <!-- 👈 espace ajouté -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="60dp"
         android:gravity="center_horizontal">
+
+        <!-- Bannière AdMob -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-6767741813773671/7075330493" /> <!-- ⚠️ ID UNIT -->
 
         <!-- Layout Définition -->
         <LinearLayout
@@ -16,17 +25,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:paddingBottom="16dp"
+            android:layout_marginTop="16dp">
+
             <TextView
                 android:id="@+id/TextDef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
             <ImageView
                 android:id="@+id/imageDef"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter" />
         </LinearLayout>
 
         <!-- Layout Description -->
@@ -37,16 +50,35 @@
             android:orientation="vertical"
             android:visibility="gone"
             android:paddingBottom="16dp">
+
             <TextView
                 android:id="@+id/TextDes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
             <ImageView
                 android:id="@+id/imageDes"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter" />
+
+            <!-- Bannière AdMob -->
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-6767741813773671/1388803246" /> <!-- ⚠️ ID UNIT -->
+
+            <!-- Bannière AdMob -->
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-6767741813773671/7075330493" />
+
         </LinearLayout>
 
         <!-- Layout Schéma -->
@@ -57,11 +89,12 @@
             android:orientation="vertical"
             android:visibility="gone"
             android:paddingBottom="16dp">
+
             <ImageView
                 android:id="@+id/imageCablage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter" />
 
         </LinearLayout>
 
@@ -71,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitCenter"
-            android:layout_marginTop="16dp"/>
-    </LinearLayout>
+            android:layout_marginTop="16dp" />
 
+    </LinearLayout>
 </ScrollView>
