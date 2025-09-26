@@ -26,7 +26,7 @@ public class Page_Contact extends AppCompatActivity {
     private int soundIdBouton;
     private float volume;
 
-    String Arduino_Factory_url = "https://arduinofactory.fr/";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,7 @@ public class Page_Contact extends AppCompatActivity {
     public void openActivtity_site() {
         playSound();
         Intent intent = new Intent(this, Page_Internet.class);
-        intent.putExtra("url", Arduino_Factory_url);
+        intent.putExtra("url", getString(R.string.lien_url));
         startActivity(intent);
     }
 

@@ -115,14 +115,11 @@ public class Achat_Main extends AppCompatActivity {
         data.add(new Achat_Data(getString(R.string.carte_mega), R.drawable.achat_carte_mega, "https://amzn.to/2OL1SjC"));
         data.add(new Achat_Data(getString(R.string.carte_nano), R.drawable.achat_carte_nano, "https://amzn.to/30YsU9A"));
         data.add(new Achat_Data(getString(R.string.carte_raspberry), R.drawable.achat_raspberry, "https://amzn.to/2OVNSUj"));
-        data.add(new Achat_Data(getString(R.string.kit_raspberry), R.drawable.achat_kit_raspberry, "https://amzn.to/3OMBYrA"));
-        data.add(new Achat_Data(getString(R.string.machine_souder), R.drawable.achat_machine_soudure, "https://amzn.to/38TxeLW"));
         data.add(new Achat_Data(getString(R.string.etain), R.drawable.achat_etain, "https://amzn.to/3vJkGjI"));
         data.add(new Achat_Data(getString(R.string.kit_soudure), R.drawable.achat_kit_soudure, "https://amzn.to/3T1bGmT"));
         data.add(new Achat_Data(getString(R.string.denudeur_fil), R.drawable.achat_pince_soudure, "https://amzn.to/3c2NT1C"));
         data.add(new Achat_Data(getString(R.string.moteur_dc), R.drawable.achat_moteur_dc, "https://amzn.to/3r21pXx"));
         data.add(new Achat_Data(getString(R.string.servomoteur), R.drawable.achat_servomoteur, "https://amzn.to/3lw1l0R"));
-        data.add(new Achat_Data(getString(R.string.led), R.drawable.achat_led, "https://amzn.to/3c2W0Lz"));
         data.add(new Achat_Data(getString(R.string.breadboard), R.drawable.achat_breadboard, "https://amzn.to/3c1Jdc8"));
         data.add(new Achat_Data(getString(R.string.prototype), R.drawable.prototype, "https://amzn.to/3I7RF8N"));
         data.add(new Achat_Data(getString(R.string.module_wifi), R.drawable.achat_module_wifi, "https://amzn.to/3vDmPNY"));

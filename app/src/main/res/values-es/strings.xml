@@ -244,35 +244,35 @@
     <string name="preference_version">Versión Aplicación</string>
 
 
-        <!-- Liens du livre Arduino -->
-        <string name="lien_livre">https://payhip.com/b/TArm2</string>
+    <!-- Liens du livre Arduino -->
+    <string name="lien_livre">https://payhip.com/b/TArm2</string>
 
-        <!-- Texte livre -->
-        <string name="livre_titre">📘 Nuestro libro para iniciarse en Arduino!</string>
-        <string name="livre">Hemos escrito un libro sobre Arduino para ayudarte a empezar en el mundo de la electrónica. En nuestro curso encontrarás lecciones, consejos y muchos proyectos sobre Arduino para aprender divirtiéndote.</string>
-        <string name="liendulivre"> 👉 Enlace del libro (ES)</string>
-        <!-- Join us -->
-        <string name="join_us">🤝 Unete a nosotros</string>
-        <string name="site_text">🌍 Nuestro sitio web</string>
-        <string name="youtube_text">▶️ YouTube</string>
-        <string name="instagram_text">📸 Instagram</string>
+    <!-- Texte livre -->
+    <string name="livre_titre">📘 Nuestro libro para iniciarse en Arduino!</string>
+    <string name="livre">Hemos escrito un libro sobre Arduino para ayudarte a empezar en el mundo de la electrónica. En nuestro curso encontrarás lecciones, consejos y muchos proyectos sobre Arduino para aprender divirtiéndote.</string>
+    <string name="liendulivre"> 👉 Enlace del libro (ES)</string>
+    <!-- Join us -->
+    <string name="join_us">🤝 Unete a nosotros</string>
+    <string name="site_text">🌍 Nuestro sitio web</string>
+    <string name="youtube_text">▶️ YouTube</string>
+    <string name="instagram_text">📸 Instagram</string>
 
-    <string name="carte_arduino_cours">"Arduino card"</string>
-    <string name="kit_demarrage_cours">"Starter kit"</string>
-    <string name="arduino_ide_cours">"The arduino IDE"</string>
-    <string name="schema_arduino_cours">"Arduino sketch"</string>
-    <string name="librairie_cours">"Library"</string>
-    <string name="led_cours">"The LED"</string>
-    <string name="resistance_cours">"Resistor"</string>
-    <string name="breadboard_cours">"The Breadboard"</string>
-    <string name="bouton_poussoir_cours">"Push button"</string>
-    <string name="capteur_distance_cours">"Distance sensor"</string>
-    <string name="moteur_dc_cours">"DC Motor"</string>
-    <string name="moteur_pas_cours">"Stepper Motor"</string>
-    <string name="joystick_cours">"Joystick"</string>
-    <string name="ecran_lcd_cours">"LCD Screen"</string>
-    <string name="buzzer_cours">"The Buzzer"</string>
-    <string name="module_rtc_cours">"RTC module"</string>
+    <string name="carte_arduino_cours">"Placa Arduino"</string>
+    <string name="kit_demarrage_cours">"kit de inicio"</string>
+    <string name="arduino_ide_cours">"Ide Arduino"</string>
+    <string name="schema_arduino_cours">"Esquema en Arduino"</string>
+    <string name="librairie_cours">"Librería"</string>
+    <string name="led_cours">"Los LEDS"</string>
+    <string name="resistance_cours">"Resistencia"</string>
+    <string name="breadboard_cours">"El Breadboard"</string>
+    <string name="bouton_poussoir_cours">"Pulsador"</string>
+    <string name="capteur_distance_cours">"Sensor de distancia"</string>
+    <string name="moteur_dc_cours">"El DC motor"</string>
+    <string name="joystick_cours">"El joystick"</string>
+    <string name="ecran_lcd_cours">"LCD"</string>
+    <string name="moteur_pas_cours">"Motor"</string>
+    <string name="buzzer_cours">"Zumbador"</string>
+    <string name="module_rtc_cours">"Modulo RTC"</string>
     <string name="myCoolButton">"Rate button"</string>
 
 
