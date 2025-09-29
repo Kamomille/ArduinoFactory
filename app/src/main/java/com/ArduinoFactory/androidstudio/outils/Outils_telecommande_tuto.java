@@ -41,13 +41,13 @@ public class Outils_telecommande_tuto extends AppCompatActivity {
 
     private void click_boutonAchat() {
         Intent intent = new Intent(this, Page_Internet.class);
-        intent.putExtra("url_achat", getString(R.string.url_amazon_telecommande));
+        intent.putExtra("url", getString(R.string.url_amazon_telecommande));
         startActivity(intent);
     }
 
     private void click_boutonCode() {
         Intent intent = new Intent(this, Page_Internet.class);
-        intent.putExtra("url_achat", getString(R.string.url_code_telecommande));
+        intent.putExtra("url", getString(R.string.url_code_telecommande));
         startActivity(intent);
     }
 

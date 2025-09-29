@@ -73,7 +73,7 @@ public class Page_Parametre extends AppCompatActivity {
             if (button != null) {
                 button.setOnPreferenceClickListener(preference -> {
                     Intent intent = new Intent(getActivity(), Page_Internet.class);
-                    intent.putExtra("url", "https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio");
+                    intent.putExtra("url", "https://play.google.com/store/apps/details?id=com.ArduinoFactory.androidstudio&pli=1");
                     startActivity(intent);
                     return true;
                 });
